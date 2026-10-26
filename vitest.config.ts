@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitest/config'
 
-// Тесты лежат рядом с кодом в каждом пакете; у сайта появятся вместе с первыми островами.
+// Тесты лежат рядом с кодом в каждом пакете.
 export default defineConfig({
   test: {
-    projects: ['packages/*', 'scripts'],
+    projects: ['packages/*', 'scripts', 'apps/web'],
   },
 })

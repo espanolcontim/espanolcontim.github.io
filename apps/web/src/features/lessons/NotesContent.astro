@@ -1,0 +1,143 @@
+---
+import type { Notes } from '@espanolcontim/content'
+import Dialogue from './notes/Dialogue.astro'
+import Grid from './notes/Grid.astro'
+import NoteBlock from './notes/NoteBlock.astro'
+import WordList from './notes/WordList.astro'
+
+/**
+ * Конспект — как полный PDF: теория по разделам, сводные таблицы, диалоги,
+ * новые слова, итог. Сверху — оглавление.
+ */
+interface Props {
+  notes: Notes
+}
+
+const { sections, tables, dialogues, vocabulary, outcome } = Astro.props.notes
+
+const toc = [
+  ...sections.map((section) => ({ id: section.id, title: section.title })),
+  ...(tables.length > 0 ? [{ id: 'tables', title: 'Сводные таблицы' }] : []),
+  ...(dialogues.length > 0 ? [{ id: 'dialogues', title: 'Диалоги' }] : []),
+  ...(vocabulary.length > 0 ? [{ id: 'vocabulary', title: 'Новые слова' }] : []),
+  ...(outcome ? [{ id: 'outcome', title: outcome.title }] : []),
+]
+---
+
+<nav class="toc card" aria-labelledby="toc">
+  <h2 id="toc">Оглавление</h2>
+  <ol>
+    {toc.map((item) => (
+      <li>
+        <a href={`#${item.id}`}>{item.title}</a>
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<div class="notes">
+  {sections.map((section) => (
+    <section aria-labelledby={section.id}>
+      <h2 id={section.id}>{section.title}</h2>
+      {section.hint && <p class="hint">{section.hint}</p>}
+      {section.blocks.map((block) => (
+        <NoteBlock block={block} />
+      ))}
+    </section>
+  ))}
+
+  {tables.length > 0 && (
+    <section aria-labelledby="tables">
+      <h2 id="tables">Сводные таблицы</h2>
+      {tables.map((table) => (
+        <Grid {...table} />
+      ))}
+    </section>
+  )}
+
+  {dialogues.length > 0 && (
+    <section aria-labelledby="dialogues">
+      <h2 id="dialogues">Диалоги</h2>
+      {dialogues.map((dialogue) => (
+        <Dialogue {...dialogue} />
+      ))}
+    </section>
+  )}
+
+  {vocabulary.length > 0 && (
+    <section aria-labelledby="vocabulary">
+      <h2 id="vocabulary">Новые слова</h2>
+      <WordList rows={vocabulary} />
+    </section>
+  )}
+
+  {outcome && (
+    <section aria-labelledby="outcome" class="card outcome">
+      <h2 id="outcome">{outcome.title}</h2>
+      <ul>
+        {outcome.bullets.map((bullet) => (
+          <li>{bullet}</li>
+        ))}
+      </ul>
+      <p class="ru">
+        <strong>{outcome.next.title}:</strong> {outcome.next.text}
+      </p>
+    </section>
+  )}
+</div>
+
+<style>
+  .toc {
+    display: grid;
+    gap: 0.375rem;
+    margin-bottom: 2rem;
+  }
+
+  .toc h2 {
+    font-size: 1rem;
+  }
+
+  .toc ol {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    padding-left: 1.5rem;
+  }
+
+  .toc a {
+    font-weight: 650;
+  }
+
+  .notes {
+    display: grid;
+    gap: 2.25rem;
+  }
+
+  section {
+    display: grid;
+    gap: 1.125rem;
+    scroll-margin-top: 1rem;
+  }
+
+  /* Элементы сетки не распирают колонку: широкие таблицы прокручиваются внутри себя. */
+  .notes > section,
+  section > :global(*) {
+    min-width: 0;
+  }
+
+  .hint {
+    margin-top: -0.625rem;
+    color: var(--text-2);
+  }
+
+  .outcome {
+    gap: 0.75rem;
+  }
+
+  .outcome ul {
+    display: grid;
+    gap: 0.375rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+</style>

@@ -1,0 +1,10 @@
+---
+/** Транскрипция в квадратных скобках; нет транскрипции — ничего. */
+interface Props {
+  ipa?: string | undefined
+}
+
+const { ipa } = Astro.props
+---
+
+{ipa && <span class="ipa">[{ipa}]</span>}

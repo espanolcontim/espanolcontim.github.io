@@ -1,0 +1,36 @@
+---
+import { LINKS } from '../../app/links.ts'
+import { SUBSCRIPTION } from './labels.ts'
+
+/** Закрытая часть урока: что внутри и где взять. */
+interface Props {
+  /** Что внутри: «теория, таблицы, диалоги и новые слова». */
+  inside: string
+}
+
+const { inside } = Astro.props
+---
+
+<div class="locked card">
+  <p class="pill pill--lock">
+    <span aria-hidden="true">🔒 </span>
+    {SUBSCRIPTION}
+  </p>
+  <p>Внутри — {inside}.</p>
+  <p class="ru">
+    Вход на сайт для подписчиков Boosty скоро появится. Пока эти материалы выходят в PDF на Boosty.
+  </p>
+  <p>
+    <a class="button" href={LINKS.boosty}>
+      Подписка на Boosty
+    </a>
+  </p>
+</div>
+
+<style>
+  .locked {
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+import type { LessonMeta } from '@espanolcontim/content'
+import { lessonPath, planLabel, videoLink } from './navigation.ts'
+
+/**
+ * Шапка урока в стиле обложек: надзаголовок, «11/14», уровень, тема.
+ * На странице подраздела вместо темы — название подраздела и ссылка на урок.
+ */
+interface Props {
+  meta: LessonMeta
+  channel: string
+  /** Название подраздела: «Конспект». Без него — шапка самого урока. */
+  section?: string
+}
+
+const { meta, channel, section } = Astro.props
+---
+
+<header class="lesson-header">
+  <p class="overline">Испанский с нуля · урок {meta.number}</p>
+  <p class="pills">
+    <span class="pill pill--accent">
+      <span class="visually-hidden">Урок в уровне: </span>
+      {planLabel(meta)}
+    </span>
+    <span class="pill">Уровень {meta.level}</span>
+  </p>
+  {section ? (
+    <>
+      <p class="back">
+        <a href={lessonPath(meta.id)}>
+          ← Урок {meta.number}. {meta.title}
+        </a>
+      </p>
+      <h1>{section}</h1>
+    </>
+  ) : (
+    <>
+      <h1>{meta.title}</h1>
+      {meta.grammar.length > 0 && (
+        <ul class="chips" aria-label="Грамматика урока">
+          {meta.grammar.map((item) => (
+            <li class="chip">{item}</li>
+          ))}
+        </ul>
+      )}
+      <p>
+        <a class="button" href={videoLink(meta, channel)}>
+          <span aria-hidden="true">▶</span> Смотреть урок на YouTube
+        </a>
+      </p>
+    </>
+  )}
+</header>
+
+<style>
+  .lesson-header {
+    display: grid;
+    gap: 0.875rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .back a {
+    color: var(--text-2);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .back a:hover {
+    color: var(--accent);
+  }
+</style>

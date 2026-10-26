@@ -1,0 +1,147 @@
+---
+import { ACCESS_NOTE } from '../../../features/lessons/labels.ts'
+import LessonHeader from '../../../features/lessons/LessonHeader.astro'
+import { lessonPath, neighbours } from '../../../features/lessons/navigation.ts'
+import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
+import Summary from '../../../features/lessons/Summary.astro'
+import Page from '../../../app/Page.astro'
+
+export const getStaticPaths = lessonStaticPaths
+
+const { meta, body, lessons, channel } = await loadLesson(Astro.params.id)
+const { previous, next } = neighbours(lessons, meta.id)
+
+const sections = [
+  {
+    title: 'Конспект',
+    text: 'Теория с транскрипцией, сводные таблицы, диалоги и новые слова.',
+    href: lessonPath(meta.id, 'notes'),
+    note: meta.parts.notes && ACCESS_NOTE[meta.parts.notes],
+  },
+  {
+    title: 'Дополнительные материалы',
+    text: 'Живые выражения, мини-история, фразы с характером и «Испания изнутри».',
+    href: meta.parts.extras && lessonPath(meta.id, 'extras'),
+    note: meta.parts.extras && ACCESS_NOTE[meta.parts.extras],
+  },
+  {
+    title: 'Упражнения',
+    text: 'Перевод фраз урока с автопроверкой и проверка после урока.',
+    href: undefined,
+    note: 'скоро',
+  },
+]
+---
+
+<Page
+  currentLesson={meta.id}
+  title={`Урок ${meta.number}. ${meta.title}`}
+  description={`Урок ${meta.number} курса «Испанский с нуля»: ${meta.grammar.join('; ') || meta.title}.`}
+>
+  <LessonHeader meta={meta} channel={channel} />
+
+  {body.summary && <Summary summary={body.summary} sentences={body.sentences} />}
+
+  <section class="sections" aria-labelledby="sections">
+    <h2 id="sections">Материалы урока</h2>
+    <ul>
+      {sections.map((section) => (
+        <li>
+          {section.href ? (
+            <a class="section card" href={section.href}>
+              <span class="title">{section.title} →</span>
+              <span class="ru">{section.text}</span>
+              {section.note && <span class="pill pill--lock">{section.note}</span>}
+            </a>
+          ) : (
+            <div class="section card disabled">
+              <span class="title">{section.title}</span>
+              <span class="ru">{section.text}</span>
+              {section.note && <span class="pill">{section.note}</span>}
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <nav class="pager" aria-label="Соседние уроки">
+    {previous && (
+      <a href={lessonPath(previous.id)} rel="prev">
+        <span class="ru">← Урок {previous.number}</span>
+        <span>{previous.title}</span>
+      </a>
+    )}
+    {next && (
+      <a class="next" href={lessonPath(next.id)} rel="next">
+        <span class="ru">Урок {next.number} →</span>
+        <span>{next.title}</span>
+      </a>
+    )}
+  </nav>
+</Page>
+
+<style>
+  .sections {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .sections ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .section {
+    display: grid;
+    gap: 0.375rem;
+    justify-items: start;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  a.section:hover {
+    border-color: var(--accent);
+  }
+
+  .section .title {
+    font-size: 1rem;
+    font-weight: 750;
+  }
+
+  a.section .title {
+    color: var(--accent);
+  }
+
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .pager a {
+    display: grid;
+    gap: 0.125rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .pager a:hover {
+    border-color: var(--accent);
+  }
+
+  .pager .next {
+    grid-column: 2;
+    text-align: right;
+  }
+</style>

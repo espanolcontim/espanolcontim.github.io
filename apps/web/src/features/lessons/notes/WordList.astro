@@ -1,0 +1,89 @@
+---
+import Ipa from '../../../shared/ui/Ipa.astro'
+import Marked from '../../../shared/ui/Marked.astro'
+
+/**
+ * Слова и фразы: испанский, транскрипция, перевод. На телефоне испанский
+ * и транскрипция — одной строкой с переносом, перевод — под ними;
+ * на широком экране — три колонки.
+ */
+interface Props {
+  rows: { es: string; ru: string; ipa?: string | undefined }[]
+  headers?: { es: string; ru: string } | undefined
+}
+
+const { rows, headers } = Astro.props
+---
+
+<div class="words">
+  {headers && (
+    <div class="head" aria-hidden="true">
+      <span>{headers.es}</span>
+      <span>Произношение</span>
+      <span>{headers.ru}</span>
+    </div>
+  )}
+  <ul>
+    {rows.map((row) => (
+      <li>
+        <span class="line">
+          <Marked text={row.es} lang="es" class="es" />
+          <Ipa ipa={row.ipa} />
+        </span>
+        <Marked text={row.ru} class="ru" />
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li,
+  .head {
+    display: grid;
+    gap: 0.125rem 0.75rem;
+    align-items: baseline;
+    padding-block: 0.625rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 0.5rem;
+  }
+
+  .line :global(.es) {
+    font-weight: 700;
+  }
+
+  .head {
+    display: none;
+    color: var(--text-2);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 40rem) {
+    li,
+    .head {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr) minmax(0, 1.15fr);
+    }
+
+    .line {
+      display: contents;
+    }
+
+    .head {
+      display: grid;
+    }
+  }
+</style>

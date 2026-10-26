@@ -1,0 +1,51 @@
+---
+import type { Sentence } from '@espanolcontim/content'
+import Marked from '../../shared/ui/Marked.astro'
+
+/** Задание «переведите сами»: русская фраза, ответ — под спойлером. */
+interface Props {
+  sentence: Sentence
+}
+
+const { sentence } = Astro.props
+const [answer, ...alternatives] = sentence.es
+---
+
+<Marked text={sentence.ru} />
+{sentence.hint && <span class="hint">({sentence.hint})</span>}
+<details>
+  <summary>Ответ</summary>
+  {answer && <Marked text={answer} lang="es" class="es" />}
+  {alternatives.length > 0 && (
+    <span class="ru">
+      {' '}
+      или{' '}
+      {alternatives.map((alternative, i) => (
+        <>
+          {i > 0 && '; '}
+          <Marked text={alternative} lang="es" />
+        </>
+      ))}
+    </span>
+  )}
+</details>
+
+<style>
+  .hint {
+    margin-left: 0.25rem;
+    color: var(--text-2);
+    font-size: 0.9375rem;
+  }
+
+  summary {
+    width: fit-content;
+    color: var(--accent);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  details :global(.es) {
+    font-weight: 700;
+  }
+</style>

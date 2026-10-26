@@ -1,0 +1,103 @@
+/*
+ * Тема сайта — единственное место, где живут цвета. В компонентах — только var(--…).
+ *
+ * Палитра — несколько базовых цветов: фон, текст, акцент и состояния «верно /
+ * почти / ошибка». Остальные оттенки выводятся из них через color-mix().
+ * Тёмная тема и варианты палитры меняют только базовые цвета.
+ *
+ * Тема по умолчанию светлая; тёмная — атрибутом data-theme="dark" на <html>.
+ *
+ * Варианты палитры, пока Тимур выбирает: «Песок» (по обложкам, по умолчанию),
+ * «Олива», «Море». Включаются атрибутом data-palette на <html>; для просмотра —
+ * параметр ?palette=olive в адресе (см. Layout.astro). Контраст текста на фоне
+ * и карточках — не ниже 4.5:1 в обеих темах.
+ */
+
+/* --- варианты палитры: фон и акцент для светлой и тёмной темы --------------- */
+
+:root,
+:root[data-palette='sand'] {
+  --palette-bg: #f4eee4;
+  --palette-text: #1b140d;
+  --palette-accent: #a1441f; /* терракота обложек, чуть темнее — ради контраста */
+  --palette-bg-dark: #15110e;
+  --palette-text-dark: #f3ece3;
+  --palette-accent-dark: #e8774f;
+}
+
+:root[data-palette='olive'] {
+  --palette-bg: #f2f0e6;
+  --palette-text: #181a10;
+  --palette-accent: #566b1f;
+  --palette-bg-dark: #12130e;
+  --palette-text-dark: #eef0e2;
+  --palette-accent-dark: #b3c66c;
+}
+
+:root[data-palette='sea'] {
+  --palette-bg: #f1f1ec;
+  --palette-text: #121a1f;
+  --palette-accent: #1d5c78;
+  --palette-bg-dark: #0f1417;
+  --palette-text-dark: #e9eff2;
+  --palette-accent-dark: #73b6d4;
+}
+
+/* --- базовые цвета темы ----------------------------------------------------- */
+
+:root {
+  color-scheme: light;
+  --base-bg: var(--palette-bg);
+  --base-text: var(--palette-text);
+  --base-accent: var(--palette-accent);
+  --base-ok: #2f6b3f;
+  --base-almost: #8a5a08;
+  --base-bad: #a5231d;
+  --base-speaker-2: #1f6b6b;
+  --base-speaker-3: #6b4a8a;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --base-bg: var(--palette-bg-dark);
+  --base-text: var(--palette-text-dark);
+  --base-accent: var(--palette-accent-dark);
+  --base-ok: #74c48a;
+  --base-almost: #e3ad4f;
+  --base-bad: #f2857a;
+  --base-speaker-2: #5cc2c2;
+  --base-speaker-3: #b99ae0;
+}
+
+/* --- производные: ими и пользуются компоненты --------------------------------- */
+
+:root {
+  --bg: var(--base-bg);
+  --surface: color-mix(in oklab, var(--base-bg), var(--base-text) 5%);
+  --surface-strong: color-mix(in oklab, var(--base-bg), var(--base-text) 10%);
+  --line: color-mix(in oklab, var(--base-bg), var(--base-text) 18%);
+
+  --text: var(--base-text);
+  --text-2: color-mix(in oklab, var(--base-text), var(--base-bg) 28%); /* перевод, подписи */
+  --text-3: color-mix(in oklab, var(--base-text), var(--base-bg) 37%); /* транскрипция */
+
+  --accent: var(--base-accent);
+  --accent-soft: color-mix(in oklab, var(--base-accent), var(--base-bg) 84%);
+  --on-accent: var(--base-bg);
+
+  --ok: var(--base-ok);
+  --ok-soft: color-mix(in oklab, var(--base-ok), var(--base-bg) 86%);
+  --almost: var(--base-almost);
+  --almost-soft: color-mix(in oklab, var(--base-almost), var(--base-bg) 86%);
+  --bad: var(--base-bad);
+  --bad-soft: color-mix(in oklab, var(--base-bad), var(--base-bg) 86%);
+
+  /* реплики диалогов — по порядку говорящих */
+  --speaker-1: var(--base-accent);
+  --speaker-2: var(--base-speaker-2);
+  --speaker-3: var(--base-speaker-3);
+
+  --focus: var(--base-accent);
+  /* подложка под выезжающим меню на телефоне */
+  --backdrop: color-mix(in oklab, var(--base-text) 35%, transparent);
+}

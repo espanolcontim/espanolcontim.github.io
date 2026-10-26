@@ -1,0 +1,91 @@
+---
+import type { NoteBlock } from '@espanolcontim/content'
+import Ipa from '../../../shared/ui/Ipa.astro'
+
+/** Два спряжения рядом: местоимение и форма каждого глагола. */
+type Props = Extract<NoteBlock, { type: 'conjugationCompare' }>
+
+const { title, verbs, rows } = Astro.props
+---
+
+<div class="compare-conj">
+  <h3>{title}</h3>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          {verbs.map((verb) => (
+            <th scope="col">
+              <span lang="es">{verb.verb}</span>
+              <span class="ru">{verb.ru}</span>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            <th scope="row" lang="es">
+              {row.pronoun}
+            </th>
+            {row.forms.map((form) => (
+              <td>
+                <span class="form" lang="es">
+                  {form.stem}
+                  <strong class="ending">{form.ending}</strong>
+                </span>
+                <br />
+                <Ipa ipa={form.ipa} />
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .scroll {
+    margin-top: 0.75rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 0.75rem 0.5rem 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: baseline;
+  }
+
+  thead th {
+    font-weight: 800;
+  }
+
+  thead .ru {
+    display: block;
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
+  tbody th {
+    color: var(--text-2);
+    font-weight: 500;
+  }
+
+  .form {
+    font-weight: 700;
+  }
+
+  .ending {
+    color: var(--accent);
+    font-weight: 800;
+  }
+</style>

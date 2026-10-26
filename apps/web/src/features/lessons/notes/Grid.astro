@@ -1,0 +1,80 @@
+---
+import type { Grid } from '@espanolcontim/content'
+import Marked from '../../../shared/ui/Marked.astro'
+
+/** Сводная таблица: подписи строк слева, в ячейке «es — ru». */
+type Props = Grid
+
+const { title, columns, rows } = Astro.props
+---
+
+<div>
+  <h3>{title}</h3>
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr>
+          <td></td>
+          {columns.map((column) => (
+            <th scope="col">{column}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            <th scope="row">{row.label}</th>
+            {row.cells.map((cell) => (
+              <td>
+                <Marked text={cell.es} lang="es" class="es" />
+                {cell.ru && (
+                  <>
+                    <br />
+                    <Marked text={cell.ru} class="ru" />
+                  </>
+                )}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .scroll {
+    margin-top: 0.75rem;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  thead th {
+    color: var(--text-2);
+    font-size: 0.875rem;
+    font-weight: 800;
+  }
+
+  tbody th {
+    max-width: 10rem;
+    color: var(--text-2);
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  td :global(.es) {
+    font-weight: 700;
+  }
+</style>

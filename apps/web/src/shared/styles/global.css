@@ -1,0 +1,207 @@
+/*
+ * Основа: шрифты, типографика и общие элементы (таблетки, чипы, кнопки).
+ * Цвета — только из theme.css. Дизайн лёгкий: тонкие линии вместо заливок,
+ * скругления минимальные.
+ */
+
+:root {
+  --font: 'Manrope Variable', system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* В Manrope нет знаков МФА — транскрипция набирается отдельным шрифтом. */
+  --font-ipa: 'Noto Sans', 'DejaVu Sans', 'Segoe UI', sans-serif;
+
+  --content: 60rem;
+  --sidebar: 16.5rem;
+  --gutter: 1rem;
+  --radius: 3px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  font-weight: 450;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4.5vw, 2.375rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.3125rem;
+}
+
+h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- текст урока ------------------------------------------------------------------ */
+
+/* Выделение нового: **…** в данных урока. */
+.mark {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.ru {
+  color: var(--text-2);
+}
+
+.ipa {
+  font-family: var(--font-ipa);
+  font-weight: 400;
+  font-size: 0.875em;
+  color: var(--text-3);
+}
+
+/* --- общие элементы ------------------------------------------------------------- */
+
+/* «ИСПАНСКИЙ С НУЛЯ ———» как на обложках. */
+.overline {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-2);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.overline::after {
+  content: '';
+  flex: 1;
+  max-width: 10rem;
+  border-top: 1px solid currentColor;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.625rem;
+  padding: 0 0.625rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.pill--accent {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.pill--lock {
+  border-color: var(--accent);
+  color: var(--accent);
+  letter-spacing: 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 0.125rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  font-size: 0.8125rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.5rem;
+  padding: 0.375rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--on-accent);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button--ghost {
+  background: transparent;
+  color: var(--accent);
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+/* Только для экранных читалок. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

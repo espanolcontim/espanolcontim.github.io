@@ -1,26 +1,99 @@
 ---
-// Заглушка фазы 0 — проверить сборку и деплой. В фазе 1 здесь будет главная.
+import { container } from '../app/container.ts'
+import { LINKS } from '../app/links.ts'
+import { lessonPath } from '../features/lessons/navigation.ts'
+import Page from '../app/Page.astro'
+
+const [first] = await container.lessons.list()
+const channel = container.videos.channel
 ---
 
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Español con Tim — испанский с нуля</title>
-    <meta
-      name="description"
-      content="Сайт курса «Испанский с нуля»: конспекты уроков, упражнения и повторение."
-    />
-  </head>
-  <body>
-    <main>
-      <p>Испанский с нуля</p>
-      <h1>Español con Tim</h1>
-      <p>
-        Сайт курса скоро откроется. Пока уроки — на
-        <a href="https://www.youtube.com/@espanolcontimur">YouTube-канале</a>.
-      </p>
-    </main>
-  </body>
-</html>
+<Page description="Испанский с нуля для русскоязычных: видеоуроки на YouTube, а здесь — конспекты, дополнительные материалы и упражнения к каждому уроку.">
+  <section class="hero">
+    <p class="overline">Испанский с нуля</p>
+    <h1>Español con Tim</h1>
+    <p class="lead">
+      Курс испанского для тех, кто начинает с нуля. Уроки выходят на YouTube, а здесь к каждому
+      уроку — конспект, дополнительные материалы и упражнения.
+    </p>
+    <p class="actions">
+      {first && (
+        <a class="button" href={lessonPath(first.id)}>
+          Начать с урока 1
+        </a>
+      )}
+      <a class="button button--ghost" href="/lessons/">
+        Все уроки
+      </a>
+    </p>
+  </section>
+
+  <section class="method card" aria-labelledby="method">
+    <h2 id="method">Как устроен курс</h2>
+    <p>
+      По методу Мишеля Томаса: вы переводите фразы с русского на испанский, а новые слова появляются
+      только внутри предложений — никаких списков слов для зубрёжки.
+    </p>
+    <p>
+      Смотрите урок, потом закрепляйте: конспект напомнит правила, упражнения помогут довести фразы
+      до автоматизма.
+    </p>
+  </section>
+
+  <section class="links" aria-labelledby="links">
+    <h2 id="links">Где ещё курс</h2>
+    <ul>
+      <li>
+        <a href={channel}>YouTube</a> — видеоуроки
+      </li>
+      <li>
+        <a href={LINKS.boosty}>Boosty</a> — подписка «Практика»: допматериалы ко всем урокам
+      </li>
+      <li>
+        <a href={LINKS.telegram}>Telegram</a> — новости и конспекты
+      </li>
+    </ul>
+  </section>
+</Page>
+
+<style>
+  .hero {
+    display: grid;
+    gap: 1.25rem;
+    padding-block: 2rem 3rem;
+  }
+
+  .lead {
+    max-width: 36rem;
+    color: var(--text-2);
+    font-size: 1.1875rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .method {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .links {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 3rem;
+  }
+
+  .links ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .links a {
+    font-weight: 750;
+  }
+</style>

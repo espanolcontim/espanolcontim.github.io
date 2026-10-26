@@ -1,0 +1,32 @@
+---
+import type { NoteBlock } from '@espanolcontim/content'
+import Compare from './Compare.astro'
+import Conjugation from './Conjugation.astro'
+import ConjugationCompare from './ConjugationCompare.astro'
+import Rule from './Rule.astro'
+import WordList from './WordList.astro'
+
+/** Блок теории конспекта — по типу. */
+interface Props {
+  block: NoteBlock
+}
+
+const { block } = Astro.props
+---
+
+{block.type === 'words' && (
+  <div>
+    <h3>{block.title}</h3>
+    <WordList rows={block.rows} headers={block.headers} />
+  </div>
+)}
+{block.type === 'rule' && <Rule {...block} />}
+{block.type === 'conjugation' && <Conjugation {...block} />}
+{block.type === 'conjugationCompare' && <ConjugationCompare {...block} />}
+{block.type === 'compare' && <Compare {...block} />}
+
+<style>
+  h3 + :global(*) {
+    margin-top: 0.5rem;
+  }
+</style>

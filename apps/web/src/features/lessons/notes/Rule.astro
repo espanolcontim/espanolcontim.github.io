@@ -1,0 +1,89 @@
+---
+import type { NoteBlock } from '@espanolcontim/content'
+import Ipa from '../../../shared/ui/Ipa.astro'
+import Marked from '../../../shared/ui/Marked.astro'
+import { patternKind } from '../labels.ts'
+
+/** Правило: формула («quiero + инфинитив»), пояснение и примеры. */
+type Props = Extract<NoteBlock, { type: 'rule' }>
+
+const { title, pattern, text, examples } = Astro.props
+---
+
+<div class="rule card">
+  <h3>{title}</h3>
+  <p class="pattern">
+    {pattern.map((item) => {
+      const kind = patternKind(item)
+      if (kind === 'sign') return <span class="sign">{item}</span>
+      if (kind === 'slot') return <span class="slot">{item}</span>
+      return (
+        <span class="word" lang="es">
+          {item}
+        </span>
+      )
+    })}
+  </p>
+  {text && <p class="text">{text}</p>}
+  <ul class="examples">
+    {examples.map((example) => (
+      <li>
+        <Marked text={example.es} lang="es" class="es" /> <Ipa ipa={example.ipa} />
+        <br />
+        <Marked text={example.ru} class="ru" />
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .rule {
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .pattern {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .word,
+  .slot {
+    padding: 0.125rem 0.625rem;
+    border-radius: var(--radius);
+    font-weight: 700;
+  }
+
+  .word {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .slot {
+    border: 1px dashed var(--text-3);
+    color: var(--text-2);
+    font-weight: 600;
+  }
+
+  .sign {
+    color: var(--text-3);
+    font-weight: 800;
+  }
+
+  .text {
+    color: var(--text-2);
+  }
+
+  .examples {
+    display: grid;
+    gap: 0.375rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .examples :global(.es) {
+    font-weight: 700;
+  }
+</style>

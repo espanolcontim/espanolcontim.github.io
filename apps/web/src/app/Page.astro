@@ -1,0 +1,22 @@
+---
+import LessonsNav from '../features/lessons/LessonsNav.astro'
+import Layout from '../shared/ui/Layout.astro'
+import { container } from './container.ts'
+import { LINKS } from './links.ts'
+
+/** Страница сайта: общий каркас с меню всех уроков слева. */
+interface Props {
+  title?: string | undefined
+  description: string
+  /** id открытого урока — подсвечивается в меню. */
+  currentLesson?: string | undefined
+}
+
+const { title, description, currentLesson } = Astro.props
+const links = { youtube: container.videos.channel, ...LINKS }
+---
+
+<Layout title={title} description={description} links={links}>
+  <LessonsNav slot="sidebar" current={currentLesson} />
+  <slot />
+</Layout>

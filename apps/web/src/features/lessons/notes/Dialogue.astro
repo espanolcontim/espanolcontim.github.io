@@ -1,0 +1,70 @@
+---
+import Marked from '../../../shared/ui/Marked.astro'
+
+/** Диалог или история в репликах. Цвет говорящего — по порядку появления. */
+interface Props {
+  title?: string | undefined
+  lines: { speaker?: string | undefined; es: string; ru: string }[]
+}
+
+const { title, lines } = Astro.props
+const speakers = [...new Set(lines.flatMap((line) => (line.speaker ? [line.speaker] : [])))]
+const color = (speaker: string) => `speaker-${(speakers.indexOf(speaker) % 3) + 1}`
+---
+
+<div>
+  {title && <h3>{title}</h3>}
+  <ul>
+    {lines.map((line) => (
+      <li>
+        {line.speaker && <span class:list={['speaker', color(line.speaker)]}>{line.speaker}</span>}
+        <span>
+          <Marked text={line.es} lang="es" class="es" />
+          <br />
+          <Marked text={line.ru} class="ru" />
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  ul {
+    display: grid;
+    gap: 0.75rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: grid;
+    grid-template-columns: minmax(4.5rem, auto) 1fr;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  li:not(:has(.speaker)) {
+    grid-template-columns: 1fr;
+  }
+
+  .speaker {
+    font-weight: 800;
+  }
+
+  .speaker-1 {
+    color: var(--speaker-1);
+  }
+
+  .speaker-2 {
+    color: var(--speaker-2);
+  }
+
+  .speaker-3 {
+    color: var(--speaker-3);
+  }
+
+  li :global(.es) {
+    font-weight: 650;
+  }
+</style>

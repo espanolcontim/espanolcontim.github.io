@@ -1,0 +1,24 @@
+---
+import ExtrasContent from '../../../features/lessons/ExtrasContent.astro'
+import LessonHeader from '../../../features/lessons/LessonHeader.astro'
+import Locked from '../../../features/lessons/Locked.astro'
+import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
+import Page from '../../../app/Page.astro'
+
+export const getStaticPaths = lessonStaticPaths
+
+const { meta, body, channel } = await loadLesson(Astro.params.id)
+---
+
+<Page
+  currentLesson={meta.id}
+  title={`Дополнительные материалы к уроку ${meta.number}. ${meta.title}`}
+  description={`Дополнительные материалы к уроку ${meta.number} «${meta.title}»: живые выражения, мини-история и «Испания изнутри».`}
+>
+  <LessonHeader meta={meta} channel={channel} section="Дополнительные материалы" />
+  {body.extras ? (
+    <ExtrasContent extras={body.extras} />
+  ) : (
+    <Locked inside="живые выражения, мини-история с вопросами, фразы с характером, «Испания изнутри» и упражнения" />
+  )}
+</Page>

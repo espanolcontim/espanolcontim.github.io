@@ -1,0 +1,18 @@
+---
+import { splitMarks } from '@espanolcontim/content'
+
+/** Текст урока с выделением нового: "Quiero **aprender** español.". */
+interface Props {
+  text: string
+  /** Испанский текст — с lang="es": так его правильно читают экранные читалки. */
+  lang?: 'es' | undefined
+  class?: string | undefined
+}
+
+const { text, lang, class: className } = Astro.props
+const parts = splitMarks(text)
+---
+
+<span lang={lang} class={className}>
+  {parts.map((part) => (part.marked ? <strong class="mark">{part.text}</strong> : part.text))}
+</span>

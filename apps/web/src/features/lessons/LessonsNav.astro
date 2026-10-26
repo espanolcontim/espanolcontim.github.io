@@ -1,0 +1,142 @@
+---
+import { LEVEL_LESSONS, LEVELS } from '@espanolcontim/content'
+import { container } from '../../app/container.ts'
+import { LEVEL_NAMES } from './labels.ts'
+import { lessonPath } from './navigation.ts'
+
+/**
+ * Меню всех уроков по уровням. Уровни сворачиваются; открыты A0 и уровень
+ * текущего урока. Уровни из плана курса видны, даже если уроков ещё нет.
+ */
+interface Props {
+  /** id открытого урока — подсвечивается, его уровень раскрыт. */
+  current?: string | undefined
+}
+
+const { current } = Astro.props
+const lessons = await container.lessons.list()
+const currentLevel = lessons.find((lesson) => lesson.id === current)?.level
+const levels = LEVELS.map((level) => ({
+  level,
+  planned: LEVEL_LESSONS[level],
+  lessons: lessons.filter((lesson) => lesson.level === level),
+})).filter((group) => group.planned !== undefined || group.lessons.length > 0)
+---
+
+<nav class="lessons-nav" aria-label="Все уроки">
+  {levels.map(({ level, planned, lessons }) => (
+    <details open={level === 'A0' || level === currentLevel}>
+      <summary>
+        <span class="level">{level}</span>
+        <span class="name">{LEVEL_NAMES[level]}</span>
+        <span class="count">
+          {lessons.length}
+          {planned && `/${planned}`}
+        </span>
+      </summary>
+      {lessons.length > 0 ? (
+        <ol>
+          {lessons.map((lesson) => (
+            <li>
+              <a
+                href={lessonPath(lesson.id)}
+                aria-current={lesson.id === current ? 'page' : undefined}
+              >
+                <span class="n">{lesson.planLesson}</span>
+                <span>{lesson.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p class="soon">Уроки появятся позже</p>
+      )}
+    </details>
+  ))}
+</nav>
+
+<style>
+  .lessons-nav {
+    display: grid;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  summary {
+    display: grid;
+    grid-template-columns: 0.75rem auto 1fr auto;
+    gap: 0.5rem;
+    align-items: baseline;
+    padding: 0.5rem 0.25rem;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::before {
+    content: '▸';
+    color: var(--text-3);
+  }
+
+  details[open] > summary::before {
+    content: '▾';
+  }
+
+  .level {
+    font-weight: 800;
+  }
+
+  .name {
+    color: var(--text-2);
+  }
+
+  .count {
+    color: var(--text-3);
+    font-size: 0.8125rem;
+  }
+
+  ol {
+    margin: 0.25rem 0 0.75rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr;
+    gap: 0.25rem;
+    padding: 0.3125rem 0.25rem 0.3125rem 0.5rem;
+    border-left: 2px solid transparent;
+    color: var(--text);
+    line-height: 1.35;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  a[aria-current='page'] {
+    border-left-color: var(--accent);
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .n {
+    color: var(--text-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  a[aria-current='page'] .n {
+    color: var(--accent);
+  }
+
+  .soon {
+    padding: 0.5rem 0.5rem 0.75rem;
+    color: var(--text-3);
+  }
+</style>
