@@ -9,7 +9,7 @@
 - Схема контента согласована («Схема контента» в SPEC) и написана: `packages/content/src/schema.ts`, правила доступа — `access.ts`, id — `ids.ts`, склейка public/private — `body.ts`.
 - Каркас: Astro 7 + React 19, TypeScript 6.0, npm workspaces (`apps/web`, `packages/content`, `scripts`), Vitest, oxlint, Prettier.
 - Импорт `npm run content:import`: все 11 уроков A0 разложены по `content/public` и `content/private`. Постоянные id лежат в `content/ids.lock.json`, повторный импорт даёт те же файлы.
-- Деплой на GitHub Pages через Actions; сайт открывается на https://espanolcontim.github.io/.
+- Деплой на GitHub Pages через Actions: сайт открывается на https://espanolcontim.github.io/, страницы уроков вида `/lessons/a0-01/` — тоже.
 
 **Фаза 1 — бесплатная часть (начата)**
 - Главная, список уроков `/lessons/`, страница урока (выжимка, кнопка «Смотреть урок на YouTube», подразделы, соседние уроки).
@@ -27,7 +27,7 @@
 
 ## Дальше по плану
 
-1. Фаза 0, остаток: проверить на GitHub Pages, что `/lessons/a0-01/` открывается. SourceCraft Sites — позже (сборка с `SITE_URL`).
+1. SourceCraft Sites — позже (сборка с `SITE_URL`).
 2. Фаза 1, подраздел «Упражнения»:
    - функция проверки ответа в `packages/content` с тестами: нормализация, «почти верно» без диакритики, эталон при ошибке;
    - тренажёр перевода — React-остров с панелью `á é í ó ú ü ñ ¿ ¡`;

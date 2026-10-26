@@ -80,7 +80,7 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] `content:import` на 2–3 реальных уроках (импортированы 1, 8, 11; `--check` проходит на всех 11).
 - [ ] Деплой заглушки на GitHub Pages (`.github/workflows/deploy.yml`):
   - [x] сайт открывается в корне `https://espanolcontim.github.io/`;
-  - `/lessons/a0-01/` отдаёт `index.html`;
+  - [x] `/lessons/a0-01/` отдаёт `index.html`;
   - сайт открывается из России: мобильный интернет и домашний провайдер (GitHub Pages раздаётся через CDN Fastly).
 - [ ] Позже — тот же сайт на SourceCraft Sites (сборка с `SITE_URL=https://espanolcontim.sourcecraft.site`):
   - конфиг `.sourcecraft/sites.yaml` (формат: `site:` → `root: "<папка со сборкой>"`);
