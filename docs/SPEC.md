@@ -76,7 +76,11 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] Предложить zod-схему контента сайта (раздел «Схема контента» ниже) и согласовать её с Тимуром. Отдельно перечислить, чего нет в `video-lessons`: допустимые варианты ответов, стабильные id, ссылки на видео и т. п.
 - [x] Настроить Astro + React + TypeScript, npm workspaces, Vitest, линтер и форматтер. `.gitignore` сразу с `content/private/`, `.env*`, `*.raw.json`.
 - [x] `content:import` на 2–3 реальных уроках (импортированы 1, 8, 11; `--check` проходит на всех 11).
-- [ ] Деплой заглушки на SourceCraft Sites и проверки:
+- [ ] Деплой заглушки на GitHub Pages (`.github/workflows/deploy.yml`):
+  - сайт открывается в корне `https://espanolcontim.github.io/`;
+  - `/lessons/a0-01/` отдаёт `index.html`;
+  - сайт открывается из России: мобильный интернет и домашний провайдер (GitHub Pages раздаётся через CDN Fastly).
+- [ ] Позже — тот же сайт на SourceCraft Sites (сборка с `SITE_URL=https://espanolcontim.sourcecraft.site`):
   - конфиг `.sourcecraft/sites.yaml` (формат: `site:` → `root: "<папка со сборкой>"`);
   - сайт открывается в корне `https://espanolcontim.sourcecraft.site/`;
   - `/lessons/a0-01/` отдаёт `index.html` (иначе — Astro `build.format: 'file'`);
@@ -91,13 +95,13 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [ ] Тёмная тема, мобильная вёрстка.
 - [ ] SEO:
   - title и description на каждой странице, `sitemap.xml`;
-  - canonical на корневой адрес (сайт также доступен по `/espanolcontim/`, это дубль).
+  - canonical на основной адрес. Сайт будет на двух доменах (GitHub Pages и SourceCraft) — до выхода на SourceCraft решить, какой основной; на SourceCraft он ещё и доступен по `/espanolcontim/`, это дубль.
 - [ ] Мета-тег подтверждения Яндекс Вебмастера на главной (значение даст Тимур).
 - [ ] (Опционально) Яндекс Метрика.
 
 ### Фаза 2 — вход для подписчиков Boosty
 
-Схема: статика на SourceCraft → Yandex API Gateway → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
+Схема: статика на GitHub Pages / SourceCraft → Yandex API Gateway → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
 
 **Функция `sync`** (раз в час)
 - [ ] Получает подписчиков через неофициальный API Boosty:
@@ -118,7 +122,7 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [ ] `POST /auth/verify {token}` → сессия JWT на 90 дней. Субъект сессии — **Boosty id, а не email**.
 - [ ] `POST /auth/refresh` → скользящее продление, если токену больше 7 дней.
 - [ ] `GET /lessons/:id/body` → проверка сессии и активной подписки по Boosty id (по кэшу) → платный JSON из бакета.
-- [ ] Сессия хранится в localStorage и передаётся в заголовке `Authorization`. Куки не подходят: сайт и API на разных доменах. CORS — только для `https://espanolcontim.sourcecraft.site`.
+- [ ] Сессия хранится в localStorage и передаётся в заголовке `Authorization`. Куки не подходят: сайт и API на разных доменах. CORS — только для адресов сайта: `https://espanolcontim.github.io` и `https://espanolcontim.sourcecraft.site`.
 - [ ] Без базы данных на старте: всё состояние — файлы в бакете.
 
 **Сайт**
@@ -253,3 +257,4 @@ const LevelTest = z.object({ level: Level, exercises: z.array(Exercise), sentenc
 - Ссылки на видео уроков Тимур даст позже.
 - YouTube-канал: https://www.youtube.com/@espanolcontimur.
 - Репозиторий `video-lessons` на GitHub публичный, так и остаётся.
+- Хостинг: сейчас GitHub Pages (`espanolcontim/espanolcontim.github.io`), позже сайт будет и на SourceCraft. Почта автора коммитов в этом репозитории — espanolcontim@gmail.com.
