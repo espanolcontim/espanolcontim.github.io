@@ -1,0 +1,224 @@
+{
+  "lessons": [
+    {
+      "id": "a0-01",
+      "number": 1,
+      "level": "A0",
+      "planLesson": 1,
+      "title": "Приветствие, знакомство",
+      "grammar": [
+        "правила чтения",
+        "ударение и знак ударения"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "free",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-02",
+      "number": 2,
+      "level": "A0",
+      "planLesson": 2,
+      "title": "Я говорю, ты говоришь",
+      "grammar": [
+        "окончания -o и -as у глаголов на -ar",
+        "пропуск местоимений yo и tú",
+        "отрицание no + глагол",
+        "вопрос интонацией",
+        "союзы y / e и pero"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-03",
+      "number": 3,
+      "level": "A0",
+      "planLesson": 3,
+      "title": "Хочу, могу, нужно",
+      "grammar": [
+        "инфинитив: окончания -ar, -er, -ir",
+        "глагол + инфинитив",
+        "quiero / quieres + инфинитив",
+        "puedo / puedes + инфинитив",
+        "necesito / necesitas + инфинитив"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-04",
+      "number": 4,
+      "level": "A0",
+      "planLesson": 4,
+      "title": "Что я собираюсь делать",
+      "grammar": [
+        "voy a / vas a + инфинитив — ближайшее будущее",
+        "tengo que / tienes que + инфинитив — обязанность",
+        "no tengo que / no tienes que — «не нужно, не обязательно»"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-05",
+      "number": 5,
+      "level": "A0",
+      "planLesson": 5,
+      "title": "Он, мы, они: все лица",
+      "grammar": [
+        "полное спряжение глаголов на -ar в настоящем времени",
+        "личные местоимения él, ella, nosotros, vosotros, ellos",
+        "usted и ustedes с формой третьего лица",
+        "vosotros в Испании и ustedes в Латинской Америке"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-06",
+      "number": 6,
+      "level": "A0",
+      "planLesson": 6,
+      "title": "Неправильные, но нужные: querer, poder, ir, tener",
+      "grammar": [
+        "querer и poder во всех лицах: e → ie, o → ue под ударением",
+        "tener que + инфинитив во всех лицах",
+        "полное спряжение ir",
+        "vamos a + инфинитив — «давай(те)…»"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-07",
+      "number": 7,
+      "level": "A0",
+      "planLesson": 7,
+      "title": "Мне нравится",
+      "grammar": [
+        "me / te / le / nos / os / les gusta + инфинитив",
+        "отрицание no me gusta",
+        "muy и mucho",
+        "también и tampoco"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-08",
+      "number": 8,
+      "level": "A0",
+      "planLesson": 8,
+      "title": "Предметы: род, число и артикли",
+      "grammar": [
+        "род существительных: -o и -a, исключения",
+        "множественное число: -s и -es",
+        "определённые артикли el, la, los, las",
+        "неопределённые артикли un, una, unos, unas"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-09",
+      "number": 9,
+      "level": "A0",
+      "planLesson": 9,
+      "title": "Кто и какой: ser",
+      "grammar": [
+        "настоящее время ser",
+        "ser + профессия без артикля",
+        "ser de + место, национальность",
+        "согласование прилагательных в роде и числе",
+        "прилагательное после существительного"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-10",
+      "number": 10,
+      "level": "A0",
+      "planLesson": 10,
+      "title": "Глаголы на -er и -ir",
+      "grammar": [
+        "настоящее время глаголов на -er",
+        "настоящее время глаголов на -ir",
+        "en + место"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    },
+    {
+      "id": "a0-11",
+      "number": 11,
+      "level": "A0",
+      "planLesson": 11,
+      "title": "Вопросы",
+      "grammar": [
+        "вопросительные слова со знаком ударения",
+        "порядок слов в вопросе: вопросительное слово + глагол + подлежащее",
+        "¿por qué…? — porque…",
+        "cuánto / cuánta / cuántos / cuántas + существительное",
+        "предлог перед вопросительным словом: ¿de dónde?, ¿en qué?"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
+    }
+  ]
+}

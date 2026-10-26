@@ -1,0 +1,1013 @@
+{
+  "id": "a0-11",
+  "summary": {
+    "phrases": [
+      {
+        "es": "¿**Dónde** vives?",
+        "ru": "Где ты живёшь?",
+        "ipa": "ˈdonde ˈbibes"
+      },
+      {
+        "es": "¿**Qué** lees?",
+        "ru": "Что ты читаешь?",
+        "ipa": "ˈke ˈle.es"
+      },
+      {
+        "es": "¿**Cuándo** trabajas?",
+        "ru": "Когда ты работаешь?",
+        "ipa": "ˈkwando tɾaˈbaxas"
+      },
+      {
+        "es": "¿**Cómo** es Madrid?",
+        "ru": "Какой он, Мадрид?",
+        "ipa": "ˈkomo ˈes maˈdɾid"
+      },
+      {
+        "es": "¿**Cuántos idiomas** hablas?",
+        "ru": "На скольких языках ты говоришь?",
+        "ipa": "ˈkwantos iˈdjomas ˈablas"
+      },
+      {
+        "es": "¿**Por qué** estudias español?",
+        "ru": "Почему ты учишь испанский?",
+        "ipa": "poɾ ˈke esˈtudjas espaˈɲol"
+      },
+      {
+        "es": "**Porque** quiero viajar.",
+        "ru": "Потому что хочу путешествовать.",
+        "ipa": "ˈpoɾke ˈkjeɾo bjaˈxaɾ"
+      },
+      {
+        "es": "¿**De dónde** es Ana?",
+        "ru": "Откуда Ана?",
+        "ipa": "de ˈdonde ˈes ˈana"
+      }
+    ],
+    "rule": "Слово-вопрос — в начале, **глагол** сразу за ним, подлежащее — после: ¿Dónde **vive** Ana? Слова-вопросы пишутся **со знаком ударения**: qué, cómo, dónde. Предлог — **перед** словом-вопросом: ¿**De** dónde eres?",
+    "mistake": {
+      "wrong": {
+        "es": "¿Dónde **Ana vive**?"
+      },
+      "right": {
+        "es": "¿Dónde **vive Ana**?",
+        "ru": "Где живёт Ана?"
+      }
+    },
+    "practice": [
+      "a0-11-s25",
+      "a0-11-s28",
+      "a0-11-s34",
+      "a0-11-s31",
+      "a0-11-s19"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Вопросительные слова",
+        "hint": "Слово-вопрос — в начале, глагол — сразу за ним",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Где, что, когда, кто",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**Dónde** vives?",
+                "ru": "Где ты живёшь?",
+                "ipa": "ˈdonde ˈbibes"
+              },
+              {
+                "es": "¿**Qué** lees?",
+                "ru": "Что ты читаешь?",
+                "ipa": "ˈke ˈle.es"
+              },
+              {
+                "es": "¿**Cuándo** trabajas?",
+                "ru": "Когда ты работаешь?",
+                "ipa": "ˈkwando tɾaˈbaxas"
+              },
+              {
+                "es": "¿**Quién** habla español?",
+                "ru": "Кто говорит по-испански?",
+                "ipa": "ˈkjen ˈabla espaˈɲol"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Как и сколько",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**Cómo** es Madrid?",
+                "ru": "Какой он, Мадрид?",
+                "ipa": "ˈkomo ˈes maˈdɾid"
+              },
+              {
+                "es": "¿**Cuánto** trabajas?",
+                "ru": "Сколько ты работаешь?",
+                "ipa": "ˈkwanto tɾaˈbaxas"
+              },
+              {
+                "es": "¿**Cuánto** dinero necesitas?",
+                "ru": "Сколько денег тебе нужно?",
+                "ipa": "ˈkwanto diˈneɾo neθeˈsitas"
+              },
+              {
+                "es": "¿**Cuántos idiomas** hablas?",
+                "ru": "На скольких языках ты говоришь?",
+                "ipa": "ˈkwantos iˈdjomas ˈablas"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Сколько: cuánto",
+            "pattern": [
+              "cuánto",
+              "+",
+              "существительное"
+            ],
+            "text": "Cuánto согласуется с существительным: cuánto, cuánta, cuántos, cuántas.",
+            "examples": [
+              {
+                "es": "¿**Cuánta** cerveza bebes?",
+                "ru": "Сколько пива ты пьёшь?",
+                "ipa": "ˈkwanta θeɾˈbeθa ˈbebes"
+              },
+              {
+                "es": "¿**Cuántos** libros lees?",
+                "ru": "Сколько книг ты читаешь?",
+                "ipa": "ˈkwantos ˈlibɾos ˈle.es"
+              },
+              {
+                "es": "¿**Cuántas** cartas escribes?",
+                "ru": "Сколько писем ты пишешь?",
+                "ipa": "ˈkwantas ˈkaɾtas esˈkɾibes"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Какой: qué или cómo",
+            "left": {
+              "label": "qué — какой именно",
+              "items": [
+                {
+                  "es": "¿**Qué** libro lees?"
+                },
+                {
+                  "es": "¿**Qué** idioma estudias?"
+                }
+              ]
+            },
+            "right": {
+              "label": "cómo es — какой он",
+              "items": [
+                {
+                  "es": "¿**Cómo** es el libro?"
+                },
+                {
+                  "es": "¿**Cómo** es el español?"
+                }
+              ]
+            }
+          },
+          {
+            "type": "rule",
+            "title": "Порядок слов",
+            "pattern": [
+              "слово-вопрос",
+              "+",
+              "глагол",
+              "+",
+              "подлежащее"
+            ],
+            "text": "Глагол — сразу после вопросительного слова, подлежащее — после глагола.",
+            "examples": [
+              {
+                "es": "¿Dónde **vive** Ana?",
+                "ru": "Где живёт Ана?",
+                "ipa": "ˈdonde ˈbibe ˈana"
+              },
+              {
+                "es": "¿Qué **lee** Carlos?",
+                "ru": "Что читает Карлос?",
+                "ipa": "ˈke ˈle.e ˈkaɾlos"
+              },
+              {
+                "es": "¿Cuándo **trabajan** ellos?",
+                "ru": "Когда они работают?",
+                "ipa": "ˈkwando tɾaˈbaxan ˈejos"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "¿Dónde **Ana vive**?"
+                },
+                {
+                  "es": "¿Qué **Carlos lee**?"
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "¿Dónde **vive Ana**?",
+                  "ru": "Где живёт Ана?"
+                },
+                {
+                  "es": "¿Qué **lee Carlos**?",
+                  "ru": "Что читает Карлос?"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Почему? — Потому что",
+        "hint": "Вопрос — por qué, ответ — porque",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Почему?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**Por qué** estudias español?",
+                "ru": "Почему ты учишь испанский?",
+                "ipa": "poɾ ˈke esˈtudjas espaˈɲol"
+              },
+              {
+                "es": "**Porque** quiero viajar.",
+                "ru": "Потому что хочу путешествовать.",
+                "ipa": "ˈpoɾke ˈkjeɾo bjaˈxaɾ"
+              },
+              {
+                "es": "visitar — Quiero **visitar** Moscú.",
+                "ru": "Я хочу побывать в Москве.",
+                "ipa": "bisiˈtaɾ · ˈkjeɾo bisiˈtaɾ mosˈku"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Почему — потому что",
+            "left": {
+              "label": "вопрос: por qué",
+              "items": [
+                {
+                  "es": "¿**Por qué** trabajas?"
+                },
+                {
+                  "es": "¿**Por qué** no comes carne?"
+                },
+                {
+                  "es": "¿**Por qué** estudias inglés?"
+                }
+              ]
+            },
+            "right": {
+              "label": "ответ: porque",
+              "items": [
+                {
+                  "es": "**Porque** necesito dinero."
+                },
+                {
+                  "es": "**Porque** no me gusta."
+                },
+                {
+                  "es": "**Porque** voy a viajar."
+                }
+              ]
+            }
+          },
+          {
+            "type": "compare",
+            "title": "Со знаком и без",
+            "left": {
+              "label": "без знака",
+              "items": [
+                {
+                  "es": "**Como** pan."
+                },
+                {
+                  "es": "Tengo **que** leer."
+                },
+                {
+                  "es": "**Porque** quiero."
+                }
+              ]
+            },
+            "right": {
+              "label": "со знаком — вопрос",
+              "items": [
+                {
+                  "es": "¿**Cómo** te llamas?"
+                },
+                {
+                  "es": "¿**Qué** lees?"
+                },
+                {
+                  "es": "¿**Por qué**?"
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Вопрос, ответ, слово",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "No comprendo la **pregunta**.",
+                "ru": "Я не понимаю вопрос.",
+                "ipa": "no komˈpɾendo la pɾeˈgunta"
+              },
+              {
+                "es": "La **respuesta** es fácil.",
+                "ru": "Ответ простой.",
+                "ipa": "la resˈpwesta ˈes ˈfaθil"
+              },
+              {
+                "es": "¿Qué **palabra** no comprendes?",
+                "ru": "Какое слово ты не понимаешь?",
+                "ipa": "ˈke paˈlabɾa no komˈpɾendes"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Вопрос с предлогом",
+        "hint": "Предлог стоит перед вопросительным словом",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Откуда и где",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**De dónde** es Ana?",
+                "ru": "Откуда Ана?",
+                "ipa": "de ˈdonde ˈes ˈana"
+              },
+              {
+                "es": "¿De qué **país** eres?",
+                "ru": "Из какой ты страны?",
+                "ipa": "de ˈke paˈis ˈeɾes"
+              },
+              {
+                "es": "¿En qué **universidad** estudias?",
+                "ru": "В каком университете ты учишься?",
+                "ipa": "en ˈke unibeɾsiˈdad esˈtudjas"
+              },
+              {
+                "es": "Trabajo en una **oficina**.",
+                "ru": "Я работаю в офисе.",
+                "ipa": "tɾaˈbaxo en ˈuna ofiˈθina"
+              },
+              {
+                "es": "Estudio en la **biblioteca**.",
+                "ru": "Я занимаюсь в библиотеке.",
+                "ipa": "esˈtudjo en la biblioˈteka"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "¿**Dónde** eres **de**?"
+                },
+                {
+                  "es": "¿**Qué** país eres **de**?"
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "¿**De dónde** eres?",
+                  "ru": "Откуда ты?"
+                },
+                {
+                  "es": "¿**De qué** país eres?",
+                  "ru": "Из какой ты страны?"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Почему испанский?",
+        "lines": [
+          {
+            "es": "¿**De dónde** eres, Carlos?",
+            "ru": "Откуда ты, Карлос?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Soy de Rusia. Vivo en Moscú, en el centro.",
+            "ru": "Я из России. Живу в Москве, в центре.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **dónde** trabajas?",
+            "ru": "А где ты работаешь?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "En una oficina. Soy programador.",
+            "ru": "В офисе. Я программист.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿**Por qué** estudias español?",
+            "ru": "Почему ты учишь испанский?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Porque** quiero vivir en España.",
+            "ru": "Потому что хочу жить в Испании.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **cuándo** vas a visitar Madrid?",
+            "ru": "А когда ты собираешься в Мадрид?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Pronto. ¡Muy pronto!",
+            "ru": "Скоро. Очень скоро!",
+            "speaker": "Carlos"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "qué",
+        "ru": "что, какой",
+        "pos": "pron",
+        "ipa": "ˈke"
+      },
+      {
+        "es": "quién",
+        "ru": "кто",
+        "pos": "pron",
+        "ipa": "ˈkjen"
+      },
+      {
+        "es": "dónde",
+        "ru": "где",
+        "pos": "adv",
+        "ipa": "ˈdonde"
+      },
+      {
+        "es": "cuándo",
+        "ru": "когда",
+        "pos": "adv",
+        "ipa": "ˈkwando"
+      },
+      {
+        "es": "cómo",
+        "ru": "как",
+        "pos": "adv",
+        "ipa": "ˈkomo"
+      },
+      {
+        "es": "cuánto",
+        "ru": "сколько",
+        "pos": "pron",
+        "ipa": "ˈkwanto"
+      },
+      {
+        "es": "por qué",
+        "ru": "почему",
+        "pos": "adv",
+        "ipa": "poɾ ˈke"
+      },
+      {
+        "es": "porque",
+        "ru": "потому что",
+        "pos": "conj",
+        "ipa": "ˈpoɾke"
+      },
+      {
+        "es": "el idioma",
+        "ru": "язык",
+        "pos": "noun",
+        "ipa": "el iˈdjoma"
+      },
+      {
+        "es": "el país",
+        "ru": "страна",
+        "pos": "noun",
+        "ipa": "el paˈis"
+      },
+      {
+        "es": "la pregunta",
+        "ru": "вопрос",
+        "pos": "noun",
+        "ipa": "la pɾeˈgunta"
+      },
+      {
+        "es": "la respuesta",
+        "ru": "ответ",
+        "pos": "noun",
+        "ipa": "la resˈpwesta"
+      },
+      {
+        "es": "la palabra",
+        "ru": "слово",
+        "pos": "noun",
+        "ipa": "la paˈlabɾa"
+      },
+      {
+        "es": "la universidad",
+        "ru": "университет",
+        "pos": "noun",
+        "ipa": "la unibeɾsiˈdad"
+      },
+      {
+        "es": "la oficina",
+        "ru": "офис",
+        "pos": "noun",
+        "ipa": "la ofiˈθina"
+      },
+      {
+        "es": "la biblioteca",
+        "ru": "библиотека",
+        "pos": "noun",
+        "ipa": "la biblioˈteka"
+      },
+      {
+        "es": "visitar",
+        "ru": "посещать, побывать",
+        "pos": "verb",
+        "ipa": "bisiˈtaɾ"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Задавать вопросы: qué, quién, dónde, cuándo, cómo, cuánto",
+        "Спрашивать о причине и отвечать: ¿por qué? — porque",
+        "Ставить глагол сразу после вопросительного слова",
+        "Спрашивать с предлогом: ¿de dónde?, ¿en qué?"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 12: где и как — estar и hay"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Где, что, когда, кто",
+      "sentenceIds": [
+        "a0-11-s01",
+        "a0-11-s02",
+        "a0-11-s03",
+        "a0-11-s04",
+        "a0-11-s05",
+        "a0-11-s06",
+        "a0-11-s07",
+        "a0-11-s08"
+      ]
+    },
+    {
+      "name": "Как, сколько, почему",
+      "sentenceIds": [
+        "a0-11-s09",
+        "a0-11-s10",
+        "a0-11-s11",
+        "a0-11-s12",
+        "a0-11-s13",
+        "a0-11-s14",
+        "a0-11-s15",
+        "a0-11-s16",
+        "a0-11-s17"
+      ]
+    },
+    {
+      "name": "Откуда и где",
+      "sentenceIds": [
+        "a0-11-s18",
+        "a0-11-s19",
+        "a0-11-s20",
+        "a0-11-s21",
+        "a0-11-s22",
+        "a0-11-s23",
+        "a0-11-s24"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-11-s25",
+        "a0-11-s26",
+        "a0-11-s27",
+        "a0-11-s28",
+        "a0-11-s29",
+        "a0-11-s30",
+        "a0-11-s31",
+        "a0-11-s32",
+        "a0-11-s33",
+        "a0-11-s34",
+        "a0-11-s35"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-11-s25.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s25"
+    },
+    {
+      "id": "a0-11-s26.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s26"
+    },
+    {
+      "id": "a0-11-s27.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s27"
+    },
+    {
+      "id": "a0-11-s28.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s28"
+    },
+    {
+      "id": "a0-11-s29.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s29"
+    },
+    {
+      "id": "a0-11-s30.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s30"
+    },
+    {
+      "id": "a0-11-s33.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s33"
+    },
+    {
+      "id": "a0-11-s34.translate",
+      "type": "translate",
+      "sentenceId": "a0-11-s34"
+    },
+    {
+      "id": "a0-11-s31.order",
+      "type": "order",
+      "sentenceId": "a0-11-s31"
+    },
+    {
+      "id": "a0-11-s32.order",
+      "type": "order",
+      "sentenceId": "a0-11-s32"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-11-s01",
+      "ru": "Где ты живёшь?",
+      "es": [
+        "¿Dónde vives?"
+      ],
+      "ipa": "ˈdonde ˈbibes"
+    },
+    {
+      "id": "a0-11-s02",
+      "ru": "Что ты пьёшь?",
+      "es": [
+        "¿Qué bebes?"
+      ],
+      "ipa": "ˈke ˈbebes"
+    },
+    {
+      "id": "a0-11-s03",
+      "ru": "Когда ты ужинаешь?",
+      "es": [
+        "¿Cuándo cenas?"
+      ],
+      "ipa": "ˈkwando ˈθenas"
+    },
+    {
+      "id": "a0-11-s04",
+      "ru": "Кто говорит по-английски?",
+      "es": [
+        "¿Quién habla inglés?"
+      ],
+      "ipa": "ˈkjen ˈabla inˈgles"
+    },
+    {
+      "id": "a0-11-s05",
+      "ru": "Где живёт Карлос?",
+      "es": [
+        "¿Dónde vive Carlos?"
+      ],
+      "ipa": "ˈdonde ˈbibe ˈkaɾlos"
+    },
+    {
+      "id": "a0-11-s06",
+      "ru": "Что пишет Ана?",
+      "es": [
+        "¿Qué escribe Ana?"
+      ],
+      "ipa": "ˈke esˈkɾibe ˈana"
+    },
+    {
+      "id": "a0-11-s07",
+      "ru": "Где вы работаете?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Dónde trabaja usted?",
+        "¿Dónde trabaja?"
+      ],
+      "ipa": "ˈdonde tɾaˈbaxa usˈted"
+    },
+    {
+      "id": "a0-11-s08",
+      "ru": "Что вы едите?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Qué coméis?",
+        "¿Qué coméis vosotros?"
+      ],
+      "ipa": "ˈke koˈmeis"
+    },
+    {
+      "id": "a0-11-s09",
+      "ru": "Как тебя зовут?",
+      "es": [
+        "¿Cómo te llamas?"
+      ],
+      "ipa": "ˈkomo te ˈjamas"
+    },
+    {
+      "id": "a0-11-s10",
+      "ru": "Какая она, Москва?",
+      "es": [
+        "¿Cómo es Moscú?"
+      ],
+      "ipa": "ˈkomo ˈes mosˈku"
+    },
+    {
+      "id": "a0-11-s11",
+      "ru": "Какую газету ты читаешь?",
+      "es": [
+        "¿Qué periódico lees?"
+      ],
+      "ipa": "ˈke peˈɾjodiko ˈle.es"
+    },
+    {
+      "id": "a0-11-s12",
+      "ru": "Сколько кофе ты пьёшь?",
+      "es": [
+        "¿Cuánto café bebes?"
+      ],
+      "ipa": "ˈkwanto kaˈfe ˈbebes"
+    },
+    {
+      "id": "a0-11-s13",
+      "ru": "Сколько журналов ты читаешь?",
+      "es": [
+        "¿Cuántas revistas lees?"
+      ],
+      "ipa": "ˈkwantas reˈbistas ˈle.es"
+    },
+    {
+      "id": "a0-11-s14",
+      "ru": "Сколько вы зарабатываете?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Cuánto gana usted?",
+        "¿Cuánto gana?"
+      ],
+      "ipa": "ˈkwanto ˈgana usˈted"
+    },
+    {
+      "id": "a0-11-s15",
+      "ru": "На скольких языках говорит Ана?",
+      "es": [
+        "¿Cuántos idiomas habla Ana?"
+      ],
+      "ipa": "ˈkwantos iˈdjomas ˈabla ˈana"
+    },
+    {
+      "id": "a0-11-s16",
+      "ru": "Почему ты не пьёшь пиво? — Потому что не люблю.",
+      "es": [
+        "¿Por qué no bebes cerveza? — Porque no me gusta."
+      ],
+      "ipa": "poɾ ˈke no ˈbebes θeɾˈbeθa · ˈpoɾke no me ˈgusta"
+    },
+    {
+      "id": "a0-11-s17",
+      "ru": "Почему вы учите английский?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Por qué estudiáis inglés?",
+        "¿Por qué aprendéis inglés?"
+      ],
+      "ipa": "poɾ ˈke estuˈdjais inˈgles"
+    },
+    {
+      "id": "a0-11-s18",
+      "ru": "Откуда ты?",
+      "es": [
+        "¿De dónde eres?"
+      ],
+      "ipa": "de ˈdonde ˈeɾes"
+    },
+    {
+      "id": "a0-11-s19",
+      "ru": "Откуда Карлос?",
+      "es": [
+        "¿De dónde es Carlos?"
+      ],
+      "ipa": "de ˈdonde ˈes ˈkaɾlos"
+    },
+    {
+      "id": "a0-11-s20",
+      "ru": "Откуда вы?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿De dónde sois?",
+        "¿De dónde sois vosotros?"
+      ],
+      "ipa": "de ˈdonde ˈsojs"
+    },
+    {
+      "id": "a0-11-s21",
+      "ru": "Из какой вы страны?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿De qué país es usted?",
+        "¿De qué país es?"
+      ],
+      "ipa": "de ˈke paˈis ˈes usˈted"
+    },
+    {
+      "id": "a0-11-s22",
+      "ru": "На каком языке ты пишешь?",
+      "es": [
+        "¿En qué idioma escribes?"
+      ],
+      "ipa": "en ˈke iˈdjoma esˈkɾibes"
+    },
+    {
+      "id": "a0-11-s23",
+      "ru": "В каком университете учится Ана?",
+      "es": [
+        "¿En qué universidad estudia Ana?"
+      ],
+      "ipa": "en ˈke unibeɾsiˈdad esˈtudja ˈana"
+    },
+    {
+      "id": "a0-11-s24",
+      "ru": "Ты работаешь в офисе? — Нет, в библиотеке.",
+      "es": [
+        "¿Trabajas en una oficina? — No, en la biblioteca.",
+        "¿Trabajas en una oficina? — No, en una biblioteca."
+      ],
+      "ipa": "tɾaˈbaxas en ˈuna ofiˈθina · ˈno en la biblioˈteka"
+    },
+    {
+      "id": "a0-11-s25",
+      "ru": "Где ты хочешь жить?",
+      "es": [
+        "¿Dónde quieres vivir?"
+      ],
+      "ipa": "ˈdonde ˈkjeɾes biˈbiɾ"
+    },
+    {
+      "id": "a0-11-s26",
+      "ru": "Когда ты будешь работать?",
+      "es": [
+        "¿Cuándo vas a trabajar?"
+      ],
+      "ipa": "ˈkwando ˈbas a tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-11-s27",
+      "ru": "Что тебе нравится читать?",
+      "es": [
+        "¿Qué te gusta leer?"
+      ],
+      "ipa": "ˈke te ˈgusta leˈeɾ"
+    },
+    {
+      "id": "a0-11-s28",
+      "ru": "Когда ты собираешься побывать в Москве?",
+      "es": [
+        "¿Cuándo vas a visitar Moscú?"
+      ],
+      "ipa": "ˈkwando ˈbas a bisiˈtaɾ mosˈku"
+    },
+    {
+      "id": "a0-11-s29",
+      "ru": "Мы не понимаем вопрос.",
+      "es": [
+        "No comprendemos la pregunta."
+      ],
+      "ipa": "no kompɾenˈdemos la pɾeˈgunta"
+    },
+    {
+      "id": "a0-11-s30",
+      "ru": "Какое слово вы не понимаете?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Qué palabra no comprendéis?",
+        "¿Qué palabra no comprendéis vosotros?"
+      ],
+      "ipa": "ˈke paˈlabɾa no kompɾenˈdeis"
+    },
+    {
+      "id": "a0-11-s31",
+      "ru": "Почему ты хочешь выучить испанский?",
+      "es": [
+        "¿Por qué quieres aprender español?",
+        "¿Por qué quieres estudiar español?"
+      ],
+      "ipa": "poɾ ˈke ˈkjeɾes apɾenˈdeɾ espaˈɲol"
+    },
+    {
+      "id": "a0-11-s32",
+      "ru": "Потому что я собираюсь путешествовать.",
+      "es": [
+        "Porque voy a viajar."
+      ],
+      "ipa": "ˈpoɾke ˈboj a bjaˈxaɾ"
+    },
+    {
+      "id": "a0-11-s33",
+      "ru": "Ответ простой? — Нет, трудный.",
+      "es": [
+        "¿La respuesta es fácil? — No, es difícil.",
+        "¿Es fácil la respuesta? — No, es difícil."
+      ],
+      "ipa": "la resˈpwesta ˈes ˈfaθil · ˈno ˈes diˈfiθil"
+    },
+    {
+      "id": "a0-11-s34",
+      "ru": "Какой он, университет? — Большой и красивый.",
+      "es": [
+        "¿Cómo es la universidad? — Es grande y bonita."
+      ],
+      "ipa": "ˈkomo ˈes la unibeɾsiˈdad · ˈes ˈgɾande i boˈnita"
+    },
+    {
+      "id": "a0-11-s35",
+      "ru": "Почему они не говорят по-испански? — Потому что они из России.",
+      "es": [
+        "¿Por qué no hablan español? — Porque son de Rusia."
+      ],
+      "ipa": "poɾ ˈke no ˈablan espaˈɲol · ˈpoɾke ˈson de ˈrusja"
+    }
+  ]
+}

@@ -1,0 +1,1173 @@
+{
+  "id": "a0-08",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Quiero leer **el libro**.",
+        "ru": "Я хочу почитать (эту) книгу.",
+        "ipa": "ˈkjeɾo leˈeɾ el ˈlibɾo"
+      },
+      {
+        "es": "Necesito **la mesa**.",
+        "ru": "Мне нужен (этот) стол.",
+        "ipa": "neθeˈsito la ˈmesa"
+      },
+      {
+        "es": "**El perro** y **el gato** descansan.",
+        "ru": "Собака и кот отдыхают.",
+        "ipa": "el ˈpero i el ˈgato desˈkansan"
+      },
+      {
+        "es": "Hoy trabajo todo **el día**.",
+        "ru": "Сегодня я работаю весь день.",
+        "ipa": "ˈoj tɾaˈbaxo ˈtodo el ˈdi.a"
+      },
+      {
+        "es": "Vamos a estudiar **el problema**.",
+        "ru": "Давайте разберём проблему.",
+        "ipa": "ˈbamos a estuˈdjaɾ el pɾoˈblema"
+      },
+      {
+        "es": "Voy a comprar **las flores** mañana.",
+        "ru": "Цветы я куплю завтра.",
+        "ipa": "ˈboj a komˈpɾaɾ las ˈfloɾes maˈɲana"
+      },
+      {
+        "es": "Necesito **unos bolígrafos**.",
+        "ru": "Мне нужны ручки.",
+        "ipa": "neθeˈsito ˈunos boˈligɾafos"
+      },
+      {
+        "es": "Mañana llegan **unos amigos**.",
+        "ru": "Завтра приезжают друзья.",
+        "ipa": "maˈɲana ˈjegan ˈunos aˈmigos"
+      }
+    ],
+    "rule": "На **-o** — **el**, на **-a** — **la**: el libro, la casa. Исключения запоминаем: **el día**, **el problema**. Множественное: гласная + **-s**, согласная + **-es**: las flor**es**. **Un / una** — какой-то, впервые; **el / la** — тот самый, уже известный.",
+    "mistake": {
+      "wrong": {
+        "es": "Mañana llega amigo."
+      },
+      "right": {
+        "es": "Mañana llega **un** amigo.",
+        "ru": "Завтра приезжает друг."
+      }
+    },
+    "practice": [
+      "a0-08-s23",
+      "a0-08-s22",
+      "a0-08-s21",
+      "a0-08-s28"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Предметы: он или она",
+        "hint": "Каждое слово — мужского или женского рода",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "-o и -a",
+            "pattern": [
+              "-o",
+              "→",
+              "el"
+            ],
+            "text": "Слова на -a — женского рода: la.",
+            "examples": [
+              {
+                "es": "**El libro** ... **la casa**",
+                "ru": "книга… дом",
+                "ipa": "el ˈlibɾo · la ˈkasa"
+              },
+              {
+                "es": "**El trabajo** termina tarde.",
+                "ru": "Работа заканчивается поздно.",
+                "ipa": "el tɾaˈbaxo teɾˈmina ˈtaɾde"
+              },
+              {
+                "es": "Vamos a limpiar **la casa**.",
+                "ru": "Давайте уберём дом.",
+                "ipa": "ˈbamos a limˈpjaɾ la ˈkasa"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Мужской род — el",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Quiero leer **el libro**.",
+                "ru": "Я хочу почитать (эту) книгу.",
+                "ipa": "ˈkjeɾo leˈeɾ el ˈlibɾo"
+              },
+              {
+                "es": "Necesito **el bolígrafo**.",
+                "ru": "Мне нужна (эта) ручка.",
+                "ipa": "neθeˈsito el boˈligɾafo"
+              },
+              {
+                "es": "Voy a comprar **el teléfono**.",
+                "ru": "Я собираюсь купить (этот) телефон.",
+                "ipa": "ˈboj a komˈpɾaɾ el teˈlefono"
+              },
+              {
+                "es": "Vamos a limpiar **el coche**.",
+                "ru": "Давайте помоем машину.",
+                "ipa": "ˈbamos a limˈpjaɾ el ˈkotʃe"
+              },
+              {
+                "es": "Vamos a limpiar **el piso**.",
+                "ru": "Давайте уберём квартиру.",
+                "ipa": "ˈbamos a limˈpjaɾ el ˈpiso"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Женский род — la",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Necesito **la mesa**.",
+                "ru": "Мне нужен (этот) стол.",
+                "ipa": "neθeˈsito la ˈmesa"
+              },
+              {
+                "es": "Quiero comprar **la silla**.",
+                "ru": "Я хочу купить (этот) стул.",
+                "ipa": "ˈkjeɾo komˈpɾaɾ la ˈsija"
+              },
+              {
+                "es": "Voy a limpiar **la ventana**.",
+                "ru": "Я помою окно.",
+                "ipa": "ˈboj a limˈpjaɾ la benˈtana"
+              },
+              {
+                "es": "Necesito **la cama**.",
+                "ru": "Мне нужна (эта) кровать.",
+                "ipa": "neθeˈsito la ˈkama"
+              },
+              {
+                "es": "Vamos a limpiar **la puerta**.",
+                "ru": "Давайте помоем дверь.",
+                "ipa": "ˈbamos a limˈpjaɾ la ˈpweɾta"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Люди и животные",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**El niño** estudia mucho.",
+                "ru": "Мальчик много учится.",
+                "ipa": "el ˈniɲo esˈtudja ˈmutʃo"
+              },
+              {
+                "es": "**La niña** canta bien.",
+                "ru": "Девочка хорошо поёт.",
+                "ipa": "la ˈniɲa ˈkanta ˈbjen"
+              },
+              {
+                "es": "**El amigo** llega tarde.",
+                "ru": "Друг приходит поздно.",
+                "ipa": "el aˈmigo ˈjega ˈtaɾde"
+              },
+              {
+                "es": "**La amiga** trabaja mucho.",
+                "ru": "Подруга много работает.",
+                "ipa": "la aˈmiga tɾaˈbaxa ˈmutʃo"
+              },
+              {
+                "es": "**El perro** y **el gato** descansan.",
+                "ru": "Собака и кот отдыхают.",
+                "ipa": "el ˈpero i el ˈgato desˈkansan"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Ещё предметы",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Necesito **el ordenador** ahora.",
+                "ru": "Мне нужен компьютер сейчас.",
+                "ipa": "neθeˈsito el oɾdenaˈdoɾ aˈoɾa"
+              },
+              {
+                "es": "Trabajo mucho, pero gano poco **dinero**.",
+                "ru": "Я много работаю, но зарабатываю мало денег.",
+                "ipa": "tɾaˈbaxo ˈmutʃo ˈpeɾo ˈgano ˈpoko diˈneɾo"
+              },
+              {
+                "es": "Voy a terminar **el trabajo** tarde.",
+                "ru": "Я закончу работу поздно.",
+                "ipa": "ˈboj a teɾmiˈnaɾ el tɾaˈbaxo ˈtaɾde"
+              },
+              {
+                "es": "Vamos a comprar **la comida**.",
+                "ru": "Давайте купим еду.",
+                "ipa": "ˈbamos a komˈpɾaɾ la koˈmida"
+              },
+              {
+                "es": "Quiero escuchar **la música**.",
+                "ru": "Я хочу послушать (эту) музыку.",
+                "ipa": "ˈkjeɾo eskuˈtʃaɾ la ˈmusika"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Не по правилу",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Hoy trabajo todo **el día**.",
+                "ru": "Сегодня я работаю весь день.",
+                "ipa": "ˈoj tɾaˈbaxo ˈtodo el ˈdi.a"
+              },
+              {
+                "es": "Vamos a estudiar **el problema**.",
+                "ru": "Давайте разберём проблему.",
+                "ipa": "ˈbamos a estuˈdjaɾ el pɾoˈblema"
+              },
+              {
+                "es": "**La clase** termina pronto.",
+                "ru": "Занятие скоро заканчивается.",
+                "ipa": "la ˈklase teɾˈmina ˈpɾonto"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**la** día"
+                },
+                {
+                  "es": "**la** problema"
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**el** día",
+                  "ru": "день"
+                },
+                {
+                  "es": "**el** problema",
+                  "ru": "проблема"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Один или много",
+        "hint": "Добавляем -s или -es",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "-s и -es",
+            "pattern": [
+              "гласная",
+              "+",
+              "-s"
+            ],
+            "text": "После согласной добавляем -es: flor → flores.",
+            "examples": [
+              {
+                "es": "**Los niños** cantan.",
+                "ru": "Дети поют.",
+                "ipa": "los ˈniɲos ˈkantan"
+              },
+              {
+                "es": "**Las niñas** bailan.",
+                "ru": "Девочки танцуют.",
+                "ipa": "las ˈniɲas ˈbajlan"
+              },
+              {
+                "es": "Voy a comprar **las flores** mañana.",
+                "ru": "Цветы я куплю завтра.",
+                "ipa": "ˈboj a komˈpɾaɾ las ˈfloɾes maˈɲana"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Множественное число",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Vamos a limpiar **las puertas**.",
+                "ru": "Давайте помоем двери.",
+                "ipa": "ˈbamos a limˈpjaɾ las ˈpweɾtas"
+              },
+              {
+                "es": "**Los amigos** llegan mañana.",
+                "ru": "Друзья приезжают завтра.",
+                "ipa": "los aˈmigos ˈjegan maˈɲana"
+              },
+              {
+                "es": "Vamos a escuchar **las canciones**.",
+                "ru": "Давайте послушаем песни.",
+                "ipa": "ˈbamos a eskuˈtʃaɾ las kanˈθjones"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Какой-то или тот самый",
+        "hint": "un / una — впервые · el / la — уже известный",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "un и una — какой-то",
+            "pattern": [
+              "un / una",
+              "+",
+              "предмет"
+            ],
+            "text": "Говорим о предмете впервые, собеседник его ещё не знает.",
+            "examples": [
+              {
+                "es": "Necesito **un** bolígrafo.",
+                "ru": "Мне нужна ручка.",
+                "ipa": "neθeˈsito un boˈligɾafo"
+              },
+              {
+                "es": "Quiero comprar **una** mesa.",
+                "ru": "Я хочу купить стол.",
+                "ipa": "ˈkjeɾo komˈpɾaɾ ˈuna ˈmesa"
+              },
+              {
+                "es": "Mañana llega **un** amigo.",
+                "ru": "Завтра приезжает друг.",
+                "ipa": "maˈɲana ˈjega un aˈmigo"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "el и la — тот самый",
+            "pattern": [
+              "el / la",
+              "+",
+              "предмет"
+            ],
+            "text": "Обоим понятно, какой именно: о нём уже говорили или он и так один такой.",
+            "examples": [
+              {
+                "es": "Voy a leer **el** libro.",
+                "ru": "Я собираюсь прочитать (эту) книгу.",
+                "ipa": "ˈboj a leˈeɾ el ˈlibɾo"
+              },
+              {
+                "es": "Necesito **el** teléfono ahora.",
+                "ru": "Мне нужен телефон сейчас.",
+                "ipa": "neθeˈsito el teˈlefono aˈoɾa"
+              },
+              {
+                "es": "Vamos a limpiar **la** casa.",
+                "ru": "Давайте уберём дом.",
+                "ipa": "ˈbamos a limˈpjaɾ la ˈkasa"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "un coche и el coche",
+            "left": {
+              "label": "какой-то",
+              "items": [
+                {
+                  "es": "Quiero comprar **un** coche.",
+                  "ru": "Хочу купить машину."
+                },
+                {
+                  "es": "Necesito **una** silla.",
+                  "ru": "Мне нужен стул."
+                }
+              ]
+            },
+            "right": {
+              "label": "тот самый",
+              "items": [
+                {
+                  "es": "Quiero comprar **el** coche.",
+                  "ru": "Хочу купить ту самую машину."
+                },
+                {
+                  "es": "Necesito **la** silla.",
+                  "ru": "Мне нужен тот самый стул."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "unos и unas",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Necesito **unos bolígrafos**.",
+                "ru": "Мне нужны ручки.",
+                "ipa": "neθeˈsito ˈunos boˈligɾafos"
+              },
+              {
+                "es": "Quiero comprar **unas flores**.",
+                "ru": "Я хочу купить цветы.",
+                "ipa": "ˈkjeɾo komˈpɾaɾ ˈunas ˈfloɾes"
+              },
+              {
+                "es": "Mañana llegan **unos amigos**.",
+                "ru": "Завтра приезжают друзья.",
+                "ipa": "maˈɲana ˈjegan ˈunos aˈmigos"
+              },
+              {
+                "es": "Vamos a cantar **unas canciones**.",
+                "ru": "Давайте споём песни.",
+                "ipa": "ˈbamos a kanˈtaɾ ˈunas kanˈθjones"
+              },
+              {
+                "es": "Voy a descansar **unos días**.",
+                "ru": "Я отдохну несколько дней.",
+                "ipa": "ˈboj a deskanˈsaɾ ˈunos ˈdi.as"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "Mañana llega amigo."
+                },
+                {
+                  "es": "Quiero comprar libro."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "Mañana llega **un** amigo.",
+                  "ru": "Завтра приезжает друг."
+                },
+                {
+                  "es": "Quiero comprar **un** libro.",
+                  "ru": "Я хочу купить книгу."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "title": "Артикли: сводная таблица",
+        "columns": [
+          "Единственное число",
+          "Множественное число"
+        ],
+        "rows": [
+          {
+            "label": "Мужской род, определённый",
+            "cells": [
+              {
+                "es": "**el** libro",
+                "ru": "книга"
+              },
+              {
+                "es": "**los** libros",
+                "ru": "книги"
+              }
+            ]
+          },
+          {
+            "label": "Женский род, определённый",
+            "cells": [
+              {
+                "es": "**la** casa",
+                "ru": "дом"
+              },
+              {
+                "es": "**las** casas",
+                "ru": "дома"
+              }
+            ]
+          },
+          {
+            "label": "Мужской род, неопределённый",
+            "cells": [
+              {
+                "es": "**un** libro",
+                "ru": "книга"
+              },
+              {
+                "es": "**unos** libros",
+                "ru": "несколько книг"
+              }
+            ]
+          },
+          {
+            "label": "Женский род, неопределённый",
+            "cells": [
+              {
+                "es": "**una** casa",
+                "ru": "дом"
+              },
+              {
+                "es": "**unas** casas",
+                "ru": "несколько домов"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "dialogues": [
+      {
+        "title": "Карлос переезжает",
+        "lines": [
+          {
+            "es": "¿Vas a comprar **el piso**?",
+            "ru": "Ты будешь покупать квартиру?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí. Necesito **una mesa** y **unas sillas**.",
+            "ru": "Да. Мне нужны стол и стулья.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Quieres ir de compras mañana?",
+            "ru": "Хочешь завтра пойти за покупками?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Claro. También necesito **una cama**.",
+            "ru": "Конечно. Ещё мне нужна кровать.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **el ordenador**?",
+            "ru": "А компьютер?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Voy a comprar **el ordenador** más tarde. Necesito **dinero**.",
+            "ru": "Компьютер куплю позже. Мне нужны деньги.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Yo puedo ayudar.",
+            "ru": "Я могу помочь.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¡Gracias! Vamos a comprar **la mesa** mañana.",
+            "ru": "Спасибо! Давай завтра купим стол.",
+            "speaker": "Carlos"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "el libro",
+        "ru": "книга",
+        "pos": "noun",
+        "ipa": "el ˈlibɾo"
+      },
+      {
+        "es": "el bolígrafo",
+        "ru": "ручка",
+        "pos": "noun",
+        "ipa": "el boˈligɾafo"
+      },
+      {
+        "es": "el teléfono",
+        "ru": "телефон",
+        "pos": "noun",
+        "ipa": "el teˈlefono"
+      },
+      {
+        "es": "el coche",
+        "ru": "машина",
+        "pos": "noun",
+        "ipa": "el ˈkotʃe"
+      },
+      {
+        "es": "el piso",
+        "ru": "квартира",
+        "pos": "noun",
+        "ipa": "el ˈpiso"
+      },
+      {
+        "es": "la casa",
+        "ru": "дом",
+        "pos": "noun",
+        "ipa": "la ˈkasa"
+      },
+      {
+        "es": "la mesa",
+        "ru": "стол",
+        "pos": "noun",
+        "ipa": "la ˈmesa"
+      },
+      {
+        "es": "la silla",
+        "ru": "стул",
+        "pos": "noun",
+        "ipa": "la ˈsija"
+      },
+      {
+        "es": "la cama",
+        "ru": "кровать",
+        "pos": "noun",
+        "ipa": "la ˈkama"
+      },
+      {
+        "es": "la ventana",
+        "ru": "окно",
+        "pos": "noun",
+        "ipa": "la benˈtana"
+      },
+      {
+        "es": "la puerta",
+        "ru": "дверь",
+        "pos": "noun",
+        "ipa": "la ˈpweɾta"
+      },
+      {
+        "es": "el niño",
+        "ru": "ребёнок, мальчик",
+        "pos": "noun",
+        "ipa": "el ˈniɲo"
+      },
+      {
+        "es": "la niña",
+        "ru": "девочка",
+        "pos": "noun",
+        "ipa": "la ˈniɲa"
+      },
+      {
+        "es": "el amigo",
+        "ru": "друг",
+        "pos": "noun",
+        "ipa": "el aˈmigo"
+      },
+      {
+        "es": "la amiga",
+        "ru": "подруга",
+        "pos": "noun",
+        "ipa": "la aˈmiga"
+      },
+      {
+        "es": "el perro",
+        "ru": "собака",
+        "pos": "noun",
+        "ipa": "el ˈpero"
+      },
+      {
+        "es": "el gato",
+        "ru": "кот, кошка",
+        "pos": "noun",
+        "ipa": "el ˈgato"
+      },
+      {
+        "es": "el ordenador",
+        "ru": "компьютер",
+        "pos": "noun",
+        "ipa": "el oɾdenaˈdoɾ"
+      },
+      {
+        "es": "el dinero",
+        "ru": "деньги",
+        "pos": "noun",
+        "ipa": "el diˈneɾo"
+      },
+      {
+        "es": "el trabajo",
+        "ru": "работа",
+        "pos": "noun",
+        "ipa": "el tɾaˈbaxo"
+      },
+      {
+        "es": "la comida",
+        "ru": "еда",
+        "pos": "noun",
+        "ipa": "la koˈmida"
+      },
+      {
+        "es": "la música",
+        "ru": "музыка",
+        "pos": "noun",
+        "ipa": "la ˈmusika"
+      },
+      {
+        "es": "la flor",
+        "ru": "цветок",
+        "pos": "noun",
+        "ipa": "la ˈfloɾ"
+      },
+      {
+        "es": "la canción",
+        "ru": "песня",
+        "pos": "noun",
+        "ipa": "la kanˈθjon"
+      },
+      {
+        "es": "el día",
+        "ru": "день",
+        "pos": "noun",
+        "ipa": "el ˈdi.a"
+      },
+      {
+        "es": "todo el día",
+        "ru": "весь день",
+        "pos": "phrase",
+        "ipa": "ˈtodo el ˈdi.a"
+      },
+      {
+        "es": "el problema",
+        "ru": "проблема",
+        "pos": "noun",
+        "ipa": "el pɾoˈblema"
+      },
+      {
+        "es": "la clase",
+        "ru": "занятие, урок",
+        "pos": "noun",
+        "ipa": "la ˈklase"
+      },
+      {
+        "es": "el / la / los / las",
+        "ru": "определённый артикль",
+        "pos": "art",
+        "ipa": "el / la / los / las"
+      },
+      {
+        "es": "un / una / unos / unas",
+        "ru": "неопределённый артикль",
+        "pos": "art",
+        "ipa": "un / ˈuna / ˈunos / ˈunas"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Определять род: -o → el, -a → la",
+        "Помнить исключения: el día, el problema, la clase",
+        "Образовывать множественное число: -s и -es",
+        "Выбирать артикль: un coche и el coche",
+        "Говорить, что вам нужно и что вы хотите купить"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 9: кто и какой — глагол ser"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Род и артикль",
+      "sentenceIds": [
+        "a0-08-s01",
+        "a0-08-s02",
+        "a0-08-s03",
+        "a0-08-s04",
+        "a0-08-s05",
+        "a0-08-s06",
+        "a0-08-s07",
+        "a0-08-s08"
+      ]
+    },
+    {
+      "name": "Один и много",
+      "sentenceIds": [
+        "a0-08-s09",
+        "a0-08-s10",
+        "a0-08-s11",
+        "a0-08-s12",
+        "a0-08-s13",
+        "a0-08-s14",
+        "a0-08-s15",
+        "a0-08-s16"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-08-s17",
+        "a0-08-s18",
+        "a0-08-s19",
+        "a0-08-s20",
+        "a0-08-s21",
+        "a0-08-s22",
+        "a0-08-s23",
+        "a0-08-s24",
+        "a0-08-s25",
+        "a0-08-s26",
+        "a0-08-s27",
+        "a0-08-s28",
+        "a0-08-s29",
+        "a0-08-s30"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-08-s17.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s17"
+    },
+    {
+      "id": "a0-08-s18.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s18"
+    },
+    {
+      "id": "a0-08-s19.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s19"
+    },
+    {
+      "id": "a0-08-s20.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s20"
+    },
+    {
+      "id": "a0-08-s21.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s21"
+    },
+    {
+      "id": "a0-08-s22.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s22"
+    },
+    {
+      "id": "a0-08-s23.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s23"
+    },
+    {
+      "id": "a0-08-s25.translate",
+      "type": "translate",
+      "sentenceId": "a0-08-s25"
+    },
+    {
+      "id": "a0-08-s24.order",
+      "type": "order",
+      "sentenceId": "a0-08-s24"
+    },
+    {
+      "id": "a0-08-s26.order",
+      "type": "order",
+      "sentenceId": "a0-08-s26"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-08-s01",
+      "ru": "Мне нужна ручка.",
+      "es": [
+        "Necesito un bolígrafo."
+      ],
+      "ipa": "neθeˈsito un boˈligɾafo"
+    },
+    {
+      "id": "a0-08-s02",
+      "ru": "Я хочу купить машину.",
+      "es": [
+        "Quiero comprar un coche."
+      ],
+      "ipa": "ˈkjeɾo komˈpɾaɾ un ˈkotʃe"
+    },
+    {
+      "id": "a0-08-s03",
+      "ru": "Мальчик много учится.",
+      "es": [
+        "El niño estudia mucho."
+      ],
+      "ipa": "el ˈniɲo esˈtudja ˈmutʃo"
+    },
+    {
+      "id": "a0-08-s04",
+      "ru": "Давайте уберём дом.",
+      "es": [
+        "Vamos a limpiar la casa."
+      ],
+      "ipa": "ˈbamos a limˈpjaɾ la ˈkasa"
+    },
+    {
+      "id": "a0-08-s05",
+      "ru": "Мне нужен стол.",
+      "es": [
+        "Necesito una mesa."
+      ],
+      "ipa": "neθeˈsito ˈuna ˈmesa"
+    },
+    {
+      "id": "a0-08-s06",
+      "ru": "Кот хочет спать.",
+      "es": [
+        "El gato quiere dormir."
+      ],
+      "ipa": "el ˈgato ˈkjeɾe doɾˈmiɾ"
+    },
+    {
+      "id": "a0-08-s07",
+      "ru": "Занятие скоро заканчивается.",
+      "es": [
+        "La clase termina pronto."
+      ],
+      "ipa": "la ˈklase teɾˈmina ˈpɾonto"
+    },
+    {
+      "id": "a0-08-s08",
+      "ru": "Сегодня я работаю весь день.",
+      "es": [
+        "Hoy trabajo todo el día."
+      ],
+      "ipa": "ˈoj tɾaˈbaxo ˈtodo el ˈdi.a"
+    },
+    {
+      "id": "a0-08-s09",
+      "ru": "Я хочу купить цветы.",
+      "es": [
+        "Quiero comprar unas flores.",
+        "Quiero comprar flores."
+      ],
+      "ipa": "ˈkjeɾo komˈpɾaɾ ˈunas ˈfloɾes"
+    },
+    {
+      "id": "a0-08-s10",
+      "ru": "Мне нужны ручки.",
+      "es": [
+        "Necesito unos bolígrafos."
+      ],
+      "ipa": "neθeˈsito ˈunos boˈligɾafos"
+    },
+    {
+      "id": "a0-08-s11",
+      "ru": "Дети много поют.",
+      "es": [
+        "Los niños cantan mucho."
+      ],
+      "ipa": "los ˈniɲos ˈkantan ˈmutʃo"
+    },
+    {
+      "id": "a0-08-s12",
+      "ru": "Давайте помоем окна.",
+      "es": [
+        "Vamos a limpiar las ventanas."
+      ],
+      "ipa": "ˈbamos a limˈpjaɾ las benˈtanas"
+    },
+    {
+      "id": "a0-08-s13",
+      "ru": "Завтра приезжают друзья.",
+      "es": [
+        "Mañana llegan unos amigos.",
+        "Unos amigos llegan mañana."
+      ],
+      "ipa": "maˈɲana ˈjegan ˈunos aˈmigos"
+    },
+    {
+      "id": "a0-08-s14",
+      "ru": "Собаки отдыхают.",
+      "es": [
+        "Los perros descansan."
+      ],
+      "ipa": "los ˈperos desˈkansan"
+    },
+    {
+      "id": "a0-08-s15",
+      "ru": "Мы хотим купить стулья.",
+      "es": [
+        "Queremos comprar unas sillas.",
+        "Queremos comprar sillas."
+      ],
+      "ipa": "keˈɾemos komˈpɾaɾ ˈunas ˈsijas"
+    },
+    {
+      "id": "a0-08-s16",
+      "ru": "Давайте послушаем песни.",
+      "es": [
+        "Vamos a escuchar unas canciones.",
+        "Vamos a escuchar las canciones."
+      ],
+      "ipa": "ˈbamos a eskuˈtʃaɾ ˈunas kanˈθjones"
+    },
+    {
+      "id": "a0-08-s17",
+      "ru": "Мне нужен телефон.",
+      "es": [
+        "Necesito un teléfono.",
+        "Necesito el teléfono."
+      ],
+      "ipa": "neθeˈsito un teˈlefono"
+    },
+    {
+      "id": "a0-08-s18",
+      "ru": "Я много работаю, но зарабатываю мало денег.",
+      "es": [
+        "Trabajo mucho, pero gano poco dinero."
+      ],
+      "ipa": "tɾaˈbaxo ˈmutʃo ˈpeɾo ˈgano ˈpoko diˈneɾo"
+    },
+    {
+      "id": "a0-08-s19",
+      "ru": "Мне нужны деньги.",
+      "es": [
+        "Necesito dinero.",
+        "Necesito el dinero."
+      ],
+      "ipa": "neθeˈsito diˈneɾo"
+    },
+    {
+      "id": "a0-08-s20",
+      "ru": "Ты хочешь послушать музыку?",
+      "es": [
+        "¿Quieres escuchar música?",
+        "¿Quieres escuchar la música?"
+      ],
+      "ipa": "ˈkjeɾes eskuˈtʃaɾ ˈmusika"
+    },
+    {
+      "id": "a0-08-s21",
+      "ru": "Мне нравится покупать книги.",
+      "es": [
+        "Me gusta comprar libros."
+      ],
+      "ipa": "me ˈgusta komˈpɾaɾ ˈlibɾos"
+    },
+    {
+      "id": "a0-08-s22",
+      "ru": "Завтра мне нужно закончить работу.",
+      "es": [
+        "Mañana tengo que terminar el trabajo."
+      ],
+      "ipa": "maˈɲana ˈtengo ke teɾmiˈnaɾ el tɾaˈbaxo"
+    },
+    {
+      "id": "a0-08-s23",
+      "ru": "Мы собираемся купить квартиру.",
+      "es": [
+        "Vamos a comprar un piso."
+      ],
+      "ipa": "ˈbamos a komˈpɾaɾ un ˈpiso"
+    },
+    {
+      "id": "a0-08-s24",
+      "ru": "Подруга приезжает поздно.",
+      "es": [
+        "La amiga llega tarde."
+      ],
+      "ipa": "la aˈmiga ˈjega ˈtaɾde"
+    },
+    {
+      "id": "a0-08-s25",
+      "ru": "Вы можете помочь?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Puede ayudar?",
+        "¿Usted puede ayudar?",
+        "¿Puede usted ayudar?"
+      ],
+      "ipa": "ˈpwede ajuˈdaɾ"
+    },
+    {
+      "id": "a0-08-s26",
+      "ru": "Они хотят купить дом.",
+      "es": [
+        "Ellos quieren comprar una casa.",
+        "Quieren comprar una casa."
+      ],
+      "ipa": "ˈejos ˈkjeɾen komˈpɾaɾ ˈuna ˈkasa"
+    },
+    {
+      "id": "a0-08-s27",
+      "ru": "Сегодня мы убираем квартиру.",
+      "es": [
+        "Hoy limpiamos el piso."
+      ],
+      "ipa": "ˈoj limˈpjamos el ˈpiso"
+    },
+    {
+      "id": "a0-08-s28",
+      "ru": "Вы покупаете еду?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Compráis la comida?",
+        "¿Vosotros compráis la comida?",
+        "¿Compráis comida?"
+      ],
+      "ipa": "komˈpɾais la koˈmida"
+    },
+    {
+      "id": "a0-08-s29",
+      "ru": "Мне нужен компьютер сейчас.",
+      "es": [
+        "Necesito el ordenador ahora.",
+        "Necesito un ordenador ahora."
+      ],
+      "ipa": "neθeˈsito el oɾdenaˈdoɾ aˈoɾa"
+    },
+    {
+      "id": "a0-08-s30",
+      "ru": "Давайте разберём проблему.",
+      "es": [
+        "Vamos a estudiar el problema."
+      ],
+      "ipa": "ˈbamos a estuˈdjaɾ el pɾoˈblema"
+    }
+  ]
+}

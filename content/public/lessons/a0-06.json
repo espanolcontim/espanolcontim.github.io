@@ -1,0 +1,1196 @@
+{
+  "id": "a0-06",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Ella quiere viajar.",
+        "ru": "Она хочет путешествовать.",
+        "ipa": "ˈeja ˈkjeɾe bjaˈxaɾ"
+      },
+      {
+        "es": "Queremos caminar.",
+        "ru": "Мы хотим пройтись пешком.",
+        "ipa": "keˈɾemos kamiˈnaɾ"
+      },
+      {
+        "es": "¿Puedo entrar?",
+        "ru": "Можно войти?",
+        "ipa": "ˈpwedo enˈtɾaɾ"
+      },
+      {
+        "es": "Ella tiene que trabajar.",
+        "ru": "Ей нужно работать.",
+        "ipa": "ˈeja ˈtjene ke tɾabaˈxaɾ"
+      },
+      {
+        "es": "Tenemos que estudiar más.",
+        "ru": "Нам нужно больше учиться.",
+        "ipa": "teˈnemos ke estuˈdjaɾ ˈmas"
+      },
+      {
+        "es": "Mañana vamos a trabajar.",
+        "ru": "Завтра мы будем работать.",
+        "ipa": "maˈɲana ˈbamos a tɾabaˈxaɾ"
+      },
+      {
+        "es": "¡Vamos a comer!",
+        "ru": "Давайте поедим!",
+        "ipa": "ˈbamos a koˈmeɾ"
+      },
+      {
+        "es": "¿Vamos juntos? — ¡Claro!",
+        "ru": "Пойдём вместе? — Конечно!",
+        "ipa": "ˈbamos ˈxuntos · ˈklaɾo"
+      }
+    ],
+    "rule": "Под ударением e → **ie**, o → **ue**: qu**ie**ro, p**ue**des, t**ie**ne. В «мы» и «вы» основа как в инфинитиве: **queremos**, **podemos**, **tenemos**. Ir: voy, vas, va, **vamos**, vais, van.",
+    "mistake": {
+      "wrong": {
+        "es": "Nosotros quieremos."
+      },
+      "right": {
+        "es": "Nosotros queremos.",
+        "ru": "в «мы» основа без ie"
+      }
+    },
+    "practice": [
+      "a0-06-s29",
+      "a0-06-s30",
+      "a0-06-s33",
+      "a0-06-s36"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Хотеть и мочь: все лица",
+        "hint": "Quiero и puedo вы уже знаете — добавим остальные лица",
+        "blocks": [
+          {
+            "type": "conjugation",
+            "verb": "querer",
+            "ru": "хотеть",
+            "rows": [
+              {
+                "stem": "quier",
+                "ending": "o",
+                "ipa": "ˈkjeɾo",
+                "pronoun": "yo",
+                "ru": "я хочу"
+              },
+              {
+                "stem": "quier",
+                "ending": "es",
+                "ipa": "ˈkjeɾes",
+                "pronoun": "tú",
+                "ru": "ты хочешь"
+              },
+              {
+                "stem": "quier",
+                "ending": "e",
+                "ipa": "ˈkjeɾe",
+                "pronoun": "él / ella / usted",
+                "ru": "он, она хочет; вы хотите"
+              },
+              {
+                "stem": "quer",
+                "ending": "emos",
+                "ipa": "keˈɾemos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы хотим"
+              },
+              {
+                "stem": "quer",
+                "ending": "éis",
+                "ipa": "keˈɾeis",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы хотите"
+              },
+              {
+                "stem": "quier",
+                "ending": "en",
+                "ipa": "ˈkjeɾen",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они хотят"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Querer + инфинитив",
+            "pattern": [
+              "querer",
+              "+",
+              "инфинитив"
+            ],
+            "text": "Меняется только querer, второй глагол — в начальной форме.",
+            "examples": [
+              {
+                "es": "Ella **quiere** viajar.",
+                "ru": "Она хочет путешествовать.",
+                "ipa": "ˈeja ˈkjeɾe bjaˈxaɾ"
+              },
+              {
+                "es": "¿**Queréis** cenar juntos?",
+                "ru": "Хотите поужинать вместе?",
+                "ipa": "keˈɾeis θeˈnaɾ ˈxuntos"
+              },
+              {
+                "es": "Ellos **quieren** descansar.",
+                "ru": "Они хотят отдохнуть.",
+                "ipa": "ˈejos ˈkjeɾen deskanˈsaɾ"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "poder",
+            "ru": "мочь",
+            "rows": [
+              {
+                "stem": "pued",
+                "ending": "o",
+                "ipa": "ˈpwedo",
+                "pronoun": "yo",
+                "ru": "я могу"
+              },
+              {
+                "stem": "pued",
+                "ending": "es",
+                "ipa": "ˈpwedes",
+                "pronoun": "tú",
+                "ru": "ты можешь"
+              },
+              {
+                "stem": "pued",
+                "ending": "e",
+                "ipa": "ˈpwede",
+                "pronoun": "él / ella / usted",
+                "ru": "он, она может; вы можете"
+              },
+              {
+                "stem": "pod",
+                "ending": "emos",
+                "ipa": "poˈdemos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы можем"
+              },
+              {
+                "stem": "pod",
+                "ending": "éis",
+                "ipa": "poˈdeis",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы можете"
+              },
+              {
+                "stem": "pued",
+                "ending": "en",
+                "ipa": "ˈpweden",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они могут"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Poder + инфинитив",
+            "pattern": [
+              "poder",
+              "+",
+              "инфинитив"
+            ],
+            "text": "После poder глагол тоже стоит в начальной форме.",
+            "examples": [
+              {
+                "es": "**Podemos** hablar mañana.",
+                "ru": "Мы можем поговорить завтра.",
+                "ipa": "poˈdemos aˈblaɾ maˈɲana"
+              },
+              {
+                "es": "Ella no **puede** esperar.",
+                "ru": "Она не может ждать.",
+                "ipa": "ˈeja no ˈpwede espeˈɾaɾ"
+              },
+              {
+                "es": "¿**Podéis** leer más tarde?",
+                "ru": "Вы можете почитать позже?",
+                "ipa": "poˈdeis leˈeɾ mas ˈtaɾde"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Меняется или нет",
+            "left": {
+              "label": "ударение на основе",
+              "items": [
+                {
+                  "es": "qu**ie**ro",
+                  "ru": "я хочу"
+                },
+                {
+                  "es": "p**ue**des",
+                  "ru": "ты можешь"
+                },
+                {
+                  "es": "qu**ie**ren",
+                  "ru": "они хотят"
+                }
+              ]
+            },
+            "right": {
+              "label": "ударение на окончании",
+              "items": [
+                {
+                  "es": "qu**e**remos",
+                  "ru": "мы хотим"
+                },
+                {
+                  "es": "p**o**déis",
+                  "ru": "вы можете"
+                },
+                {
+                  "es": "qu**e**réis",
+                  "ru": "вы хотите"
+                }
+              ]
+            }
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "Nosotros **quieremos**."
+                },
+                {
+                  "es": "**Puedemos** hablar."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "Nosotros **queremos**.",
+                  "ru": "Мы хотим."
+                },
+                {
+                  "es": "**Podemos** hablar.",
+                  "ru": "Мы можем поговорить."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Новые глаголы",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Quiero **llamar** mañana.",
+                "ru": "Я хочу позвонить завтра.",
+                "ipa": "ˈkjeɾo jaˈmaɾ maˈɲana"
+              },
+              {
+                "es": "¿Puedo **entrar**?",
+                "ru": "Можно войти?",
+                "ipa": "ˈpwedo enˈtɾaɾ"
+              },
+              {
+                "es": "Queremos **caminar**.",
+                "ru": "Мы хотим пройтись пешком.",
+                "ipa": "keˈɾemos kamiˈnaɾ"
+              },
+              {
+                "es": "Ella quiere **regresar**.",
+                "ru": "Она хочет вернуться.",
+                "ipa": "ˈeja ˈkjeɾe regɾeˈsaɾ"
+              },
+              {
+                "es": "Quieren **ganar** más.",
+                "ru": "Они хотят больше зарабатывать.",
+                "ipa": "ˈkjeɾen gaˈnaɾ ˈmas"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Должен: tener que",
+        "hint": "Tengo que и tienes que — и ещё четыре формы",
+        "blocks": [
+          {
+            "type": "conjugation",
+            "verb": "tener que",
+            "ru": "быть должным",
+            "rows": [
+              {
+                "stem": "teng",
+                "ending": "o",
+                "ipa": "ˈtengo",
+                "pronoun": "yo",
+                "ru": "я должен"
+              },
+              {
+                "stem": "tien",
+                "ending": "es",
+                "ipa": "ˈtjenes",
+                "pronoun": "tú",
+                "ru": "ты должен"
+              },
+              {
+                "stem": "tien",
+                "ending": "e",
+                "ipa": "ˈtjene",
+                "pronoun": "él / ella / usted",
+                "ru": "он должен, она должна; вы должны"
+              },
+              {
+                "stem": "ten",
+                "ending": "emos",
+                "ipa": "teˈnemos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы должны"
+              },
+              {
+                "stem": "ten",
+                "ending": "éis",
+                "ipa": "teˈneis",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы должны"
+              },
+              {
+                "stem": "tien",
+                "ending": "en",
+                "ipa": "ˈtjenen",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они должны"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Tener que + инфинитив",
+            "pattern": [
+              "tener",
+              "+ que +",
+              "инфинитив"
+            ],
+            "text": "Меняется только tener, а que и инфинитив остаются как есть.",
+            "examples": [
+              {
+                "es": "Ella **tiene que** trabajar.",
+                "ru": "Ей нужно работать.",
+                "ipa": "ˈeja ˈtjene ke tɾabaˈxaɾ"
+              },
+              {
+                "es": "**Tenemos que** estudiar más.",
+                "ru": "Нам нужно больше учиться.",
+                "ipa": "teˈnemos ke estuˈdjaɾ ˈmas"
+              },
+              {
+                "es": "Ustedes no **tienen que** esperar.",
+                "ru": "Вам не нужно ждать.",
+                "ipa": "usˈtedes no ˈtjenen ke espeˈɾaɾ"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Когда и сколько",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Tengo que regresar **pronto**.",
+                "ru": "Мне нужно скоро вернуться.",
+                "ipa": "ˈtengo ke regɾeˈsaɾ ˈpɾonto"
+              },
+              {
+                "es": "**Esta noche** tenemos que trabajar.",
+                "ru": "Сегодня вечером нам нужно работать.",
+                "ipa": "ˈesta ˈnotʃe teˈnemos ke tɾabaˈxaɾ"
+              },
+              {
+                "es": "Él **solo** habla ruso.",
+                "ru": "Он говорит только по-русски.",
+                "ipa": "ˈel ˈsolo ˈabla ˈruso"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Ir — идти, ехать",
+        "hint": "Все формы неправильные — просто запоминаем",
+        "blocks": [
+          {
+            "type": "conjugation",
+            "verb": "ir",
+            "ru": "идти, ехать",
+            "rows": [
+              {
+                "stem": "",
+                "ending": "voy",
+                "ipa": "ˈboj",
+                "pronoun": "yo",
+                "ru": "я иду"
+              },
+              {
+                "stem": "",
+                "ending": "vas",
+                "ipa": "ˈbas",
+                "pronoun": "tú",
+                "ru": "ты идёшь"
+              },
+              {
+                "stem": "",
+                "ending": "va",
+                "ipa": "ˈba",
+                "pronoun": "él / ella / usted",
+                "ru": "он, она идёт; вы идёте"
+              },
+              {
+                "stem": "",
+                "ending": "vamos",
+                "ipa": "ˈbamos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы идём"
+              },
+              {
+                "stem": "",
+                "ending": "vais",
+                "ipa": "ˈbais",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы идёте"
+              },
+              {
+                "stem": "",
+                "ending": "van",
+                "ipa": "ˈban",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они идут"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Ir a + инфинитив",
+            "pattern": [
+              "ir",
+              "+ a +",
+              "инфинитив"
+            ],
+            "text": "«Собираюсь, буду» — теперь во всех лицах.",
+            "examples": [
+              {
+                "es": "Ella **va a** llamar.",
+                "ru": "Она собирается позвонить.",
+                "ipa": "ˈeja ˈba a jaˈmaɾ"
+              },
+              {
+                "es": "Mañana **vamos a** trabajar.",
+                "ru": "Завтра мы будем работать.",
+                "ipa": "maˈɲana ˈbamos a tɾabaˈxaɾ"
+              },
+              {
+                "es": "¿**Vais a** viajar?",
+                "ru": "Вы собираетесь путешествовать?",
+                "ipa": "ˈbais a bjaˈxaɾ"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "¡Vamos a…! — давай(те)",
+            "pattern": [
+              "¡Vamos a",
+              "+",
+              "инфинитив!"
+            ],
+            "text": "Так предлагают сделать что-то вместе.",
+            "examples": [
+              {
+                "es": "**¡Vamos a** comer!",
+                "ru": "Давайте поедим!",
+                "ipa": "ˈbamos a koˈmeɾ"
+              },
+              {
+                "es": "**¡Vamos a** bailar!",
+                "ru": "Давай потанцуем!",
+                "ipa": "ˈbamos a bajˈlaɾ"
+              },
+              {
+                "es": "**¡Vamos a** estudiar juntos!",
+                "ru": "Давай позанимаемся вместе!",
+                "ipa": "ˈbamos a estuˈdjaɾ ˈxuntos"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "План или предложение",
+            "left": {
+              "label": "мы собираемся",
+              "items": [
+                {
+                  "es": "Mañana **vamos a** bailar.",
+                  "ru": "Завтра мы будем танцевать."
+                },
+                {
+                  "es": "**Vamos a** cenar tarde.",
+                  "ru": "Мы будем ужинать поздно."
+                }
+              ]
+            },
+            "right": {
+              "label": "давай(те)",
+              "items": [
+                {
+                  "es": "**¡Vamos a** bailar!",
+                  "ru": "Давай потанцуем!"
+                },
+                {
+                  "es": "**¡Vamos a** cenar!",
+                  "ru": "Давайте ужинать!"
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Готовые фразы",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Hoy **voy de compras**.",
+                "ru": "Сегодня я иду за покупками.",
+                "ipa": "ˈoj ˈboj de ˈkompɾas"
+              },
+              {
+                "es": "**¡Vamos**, Ana!",
+                "ru": "Пошли, Ана!",
+                "ipa": "ˈbamos ˈana"
+              },
+              {
+                "es": "¿Vamos juntos? — **¡Claro!**",
+                "ru": "Пойдём вместе? — Конечно!",
+                "ipa": "ˈbamos ˈxuntos · ˈklaɾo"
+              },
+              {
+                "es": "¿Puedes llamar **otra vez**?",
+                "ru": "Можешь позвонить ещё раз?",
+                "ipa": "ˈpwedes jaˈmaɾ ˈotɾa ˈbeθ"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Какие планы?",
+        "lines": [
+          {
+            "es": "Hola, Ana. ¿**Quieres** ir de compras mañana?",
+            "ru": "Привет, Ана. Хочешь завтра пойти за покупками?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Mañana no **puedo**. **Tengo que** trabajar.",
+            "ru": "Завтра не могу. Мне нужно работать.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Y pasado mañana?",
+            "ru": "А послезавтра?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Pasado mañana **voy a** viajar.",
+            "ru": "Послезавтра я еду путешествовать.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Y hoy? ¿**Puedes** esta noche?",
+            "ru": "А сегодня? Сегодня вечером можешь?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, esta noche **puedo**.",
+            "ru": "Да, сегодня вечером могу.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¡**Vamos a** cenar juntos!",
+            "ru": "Давай поужинаем вместе!",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡Claro!",
+            "ru": "Конечно!",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "ir",
+        "ru": "идти, ехать",
+        "pos": "verb",
+        "ipa": "ˈiɾ"
+      },
+      {
+        "es": "tener que",
+        "ru": "быть должным, приходиться",
+        "pos": "phrase",
+        "ipa": "teˈneɾ ke"
+      },
+      {
+        "es": "llamar",
+        "ru": "звонить",
+        "pos": "verb",
+        "ipa": "jaˈmaɾ"
+      },
+      {
+        "es": "caminar",
+        "ru": "ходить пешком",
+        "pos": "verb",
+        "ipa": "kamiˈnaɾ"
+      },
+      {
+        "es": "entrar",
+        "ru": "входить",
+        "pos": "verb",
+        "ipa": "enˈtɾaɾ"
+      },
+      {
+        "es": "regresar",
+        "ru": "возвращаться",
+        "pos": "verb",
+        "ipa": "regɾeˈsaɾ"
+      },
+      {
+        "es": "ganar",
+        "ru": "зарабатывать, выигрывать",
+        "pos": "verb",
+        "ipa": "gaˈnaɾ"
+      },
+      {
+        "es": "ir de compras",
+        "ru": "ходить за покупками",
+        "pos": "phrase",
+        "ipa": "ˈiɾ de ˈkompɾas"
+      },
+      {
+        "es": "pronto",
+        "ru": "скоро",
+        "pos": "adv",
+        "ipa": "ˈpɾonto"
+      },
+      {
+        "es": "solo",
+        "ru": "только",
+        "pos": "adv",
+        "ipa": "ˈsolo"
+      },
+      {
+        "es": "esta noche",
+        "ru": "сегодня вечером",
+        "pos": "phrase",
+        "ipa": "ˈesta ˈnotʃe"
+      },
+      {
+        "es": "otra vez",
+        "ru": "ещё раз, снова",
+        "pos": "phrase",
+        "ipa": "ˈotɾa ˈbeθ"
+      },
+      {
+        "es": "claro",
+        "ru": "конечно",
+        "pos": "interj",
+        "ipa": "ˈklaɾo"
+      },
+      {
+        "es": "¡vamos!",
+        "ru": "пошли!, давай!",
+        "pos": "interj",
+        "ipa": "ˈbamos"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Спрягать querer и poder: quiero, queremos, pueden",
+        "Говорить, кому что нужно сделать: tiene que, tenemos que",
+        "Спрягать ir и говорить о планах: va a, vamos a",
+        "Предлагать сделать что-то вместе: ¡Vamos a…!"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 7: Мне нравится — me gusta"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Querer и poder",
+      "sentenceIds": [
+        "a0-06-s01",
+        "a0-06-s02",
+        "a0-06-s03",
+        "a0-06-s04",
+        "a0-06-s05",
+        "a0-06-s06",
+        "a0-06-s07",
+        "a0-06-s08",
+        "a0-06-s09"
+      ]
+    },
+    {
+      "name": "Tener que",
+      "sentenceIds": [
+        "a0-06-s10",
+        "a0-06-s11",
+        "a0-06-s12",
+        "a0-06-s13",
+        "a0-06-s14",
+        "a0-06-s15",
+        "a0-06-s16",
+        "a0-06-s17"
+      ]
+    },
+    {
+      "name": "Ir a и vamos a",
+      "sentenceIds": [
+        "a0-06-s18",
+        "a0-06-s19",
+        "a0-06-s20",
+        "a0-06-s21",
+        "a0-06-s22",
+        "a0-06-s23",
+        "a0-06-s24",
+        "a0-06-s25",
+        "a0-06-s26"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-06-s27",
+        "a0-06-s28",
+        "a0-06-s29",
+        "a0-06-s30",
+        "a0-06-s31",
+        "a0-06-s32",
+        "a0-06-s33",
+        "a0-06-s34",
+        "a0-06-s35",
+        "a0-06-s36",
+        "a0-06-s37"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-06-s27.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s27"
+    },
+    {
+      "id": "a0-06-s28.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s28"
+    },
+    {
+      "id": "a0-06-s29.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s29"
+    },
+    {
+      "id": "a0-06-s30.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s30"
+    },
+    {
+      "id": "a0-06-s31.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s31"
+    },
+    {
+      "id": "a0-06-s32.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s32"
+    },
+    {
+      "id": "a0-06-s33.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s33"
+    },
+    {
+      "id": "a0-06-s35.translate",
+      "type": "translate",
+      "sentenceId": "a0-06-s35"
+    },
+    {
+      "id": "a0-06-s34.order",
+      "type": "order",
+      "sentenceId": "a0-06-s34"
+    },
+    {
+      "id": "a0-06-s36.order",
+      "type": "order",
+      "sentenceId": "a0-06-s36"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-06-s01",
+      "ru": "Он хочет спать.",
+      "es": [
+        "Él quiere dormir.",
+        "Quiere dormir."
+      ],
+      "ipa": "ˈel ˈkjeɾe doɾˈmiɾ"
+    },
+    {
+      "id": "a0-06-s02",
+      "ru": "Мы хотим путешествовать.",
+      "es": [
+        "Queremos viajar.",
+        "Nosotros queremos viajar."
+      ],
+      "ipa": "keˈɾemos bjaˈxaɾ"
+    },
+    {
+      "id": "a0-06-s03",
+      "ru": "Сегодня они не могут работать.",
+      "es": [
+        "Hoy no pueden trabajar.",
+        "Ellos no pueden trabajar hoy."
+      ],
+      "ipa": "ˈoj no ˈpweden tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-06-s04",
+      "ru": "Можно войти?",
+      "es": [
+        "¿Puedo entrar?"
+      ],
+      "ipa": "ˈpwedo enˈtɾaɾ"
+    },
+    {
+      "id": "a0-06-s05",
+      "ru": "Вы хотите поесть?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted quiere comer?",
+        "¿Quiere usted comer?",
+        "¿Quiere comer?"
+      ],
+      "ipa": "usˈted ˈkjeɾe koˈmeɾ"
+    },
+    {
+      "id": "a0-06-s06",
+      "ru": "Вы можете говорить по-английски?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Podéis hablar inglés?",
+        "¿Vosotros podéis hablar inglés?"
+      ],
+      "ipa": "poˈdeis aˈblaɾ inˈgles"
+    },
+    {
+      "id": "a0-06-s07",
+      "ru": "Она хочет вернуться.",
+      "es": [
+        "Ella quiere regresar."
+      ],
+      "ipa": "ˈeja ˈkjeɾe regɾeˈsaɾ"
+    },
+    {
+      "id": "a0-06-s08",
+      "ru": "Мы можем пройтись пешком.",
+      "es": [
+        "Podemos caminar.",
+        "Nosotros podemos caminar."
+      ],
+      "ipa": "poˈdemos kamiˈnaɾ"
+    },
+    {
+      "id": "a0-06-s09",
+      "ru": "Они хотят больше зарабатывать.",
+      "es": [
+        "Ellos quieren ganar más.",
+        "Quieren ganar más."
+      ],
+      "ipa": "ˈejos ˈkjeɾen gaˈnaɾ ˈmas"
+    },
+    {
+      "id": "a0-06-s10",
+      "ru": "Ей нужно работать.",
+      "es": [
+        "Ella tiene que trabajar."
+      ],
+      "ipa": "ˈeja ˈtjene ke tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-06-s11",
+      "ru": "Нам нужно больше учиться.",
+      "es": [
+        "Tenemos que estudiar más."
+      ],
+      "ipa": "teˈnemos ke estuˈdjaɾ ˈmas"
+    },
+    {
+      "id": "a0-06-s12",
+      "ru": "Тебе нужно готовить сегодня?",
+      "es": [
+        "¿Tienes que cocinar hoy?"
+      ],
+      "ipa": "ˈtjenes ke koθiˈnaɾ ˈoj"
+    },
+    {
+      "id": "a0-06-s13",
+      "ru": "Вам не нужно ждать.",
+      "hint": "вежливо, нескольким людям",
+      "es": [
+        "Ustedes no tienen que esperar."
+      ],
+      "ipa": "usˈtedes no ˈtjenen ke espeˈɾaɾ"
+    },
+    {
+      "id": "a0-06-s14",
+      "ru": "Ему нужно позвонить сегодня вечером.",
+      "es": [
+        "Él tiene que llamar esta noche.",
+        "Esta noche él tiene que llamar."
+      ],
+      "ipa": "ˈel ˈtjene ke jaˈmaɾ ˈesta ˈnotʃe"
+    },
+    {
+      "id": "a0-06-s15",
+      "ru": "Вам нужно отдохнуть.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "Tenéis que descansar.",
+        "Vosotros tenéis que descansar."
+      ],
+      "ipa": "teˈneis ke deskanˈsaɾ"
+    },
+    {
+      "id": "a0-06-s16",
+      "ru": "Им нужно скоро вернуться.",
+      "es": [
+        "Ellos tienen que regresar pronto.",
+        "Tienen que regresar pronto."
+      ],
+      "ipa": "ˈejos ˈtjenen ke regɾeˈsaɾ ˈpɾonto"
+    },
+    {
+      "id": "a0-06-s17",
+      "ru": "Завтра мне нужно рано позавтракать.",
+      "es": [
+        "Mañana tengo que desayunar temprano."
+      ],
+      "ipa": "maˈɲana ˈtengo ke desajuˈnaɾ temˈpɾano"
+    },
+    {
+      "id": "a0-06-s18",
+      "ru": "Она будет учиться завтра.",
+      "es": [
+        "Ella va a estudiar mañana.",
+        "Mañana ella va a estudiar."
+      ],
+      "ipa": "ˈeja ˈba a estuˈdjaɾ maˈɲana"
+    },
+    {
+      "id": "a0-06-s19",
+      "ru": "Мы будем ужинать поздно.",
+      "es": [
+        "Vamos a cenar tarde.",
+        "Nosotros vamos a cenar tarde."
+      ],
+      "ipa": "ˈbamos a θeˈnaɾ ˈtaɾde"
+    },
+    {
+      "id": "a0-06-s20",
+      "ru": "Они будут петь.",
+      "es": [
+        "Ellos van a cantar.",
+        "Van a cantar."
+      ],
+      "ipa": "ˈejos ˈban a kanˈtaɾ"
+    },
+    {
+      "id": "a0-06-s21",
+      "ru": "Вы собираетесь путешествовать?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Vais a viajar?",
+        "¿Vosotros vais a viajar?"
+      ],
+      "ipa": "ˈbais a bjaˈxaɾ"
+    },
+    {
+      "id": "a0-06-s22",
+      "ru": "Сегодня я иду за покупками.",
+      "es": [
+        "Hoy voy de compras."
+      ],
+      "ipa": "ˈoj ˈboj de ˈkompɾas"
+    },
+    {
+      "id": "a0-06-s23",
+      "ru": "Вы идёте за покупками?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted va de compras?",
+        "¿Va usted de compras?"
+      ],
+      "ipa": "usˈted ˈba de ˈkompɾas"
+    },
+    {
+      "id": "a0-06-s24",
+      "ru": "Пошли!",
+      "es": [
+        "¡Vamos!"
+      ],
+      "ipa": "ˈbamos"
+    },
+    {
+      "id": "a0-06-s25",
+      "ru": "Давайте потанцуем!",
+      "es": [
+        "¡Vamos a bailar!"
+      ],
+      "ipa": "ˈbamos a bajˈlaɾ"
+    },
+    {
+      "id": "a0-06-s26",
+      "ru": "Давай поужинаем вместе!",
+      "hint": "хотя бы один из вас мужчина",
+      "es": [
+        "¡Vamos a cenar juntos!"
+      ],
+      "ipa": "ˈbamos a θeˈnaɾ ˈxuntos"
+    },
+    {
+      "id": "a0-06-s27",
+      "ru": "Мы можем поговорить завтра.",
+      "es": [
+        "Podemos hablar mañana."
+      ],
+      "ipa": "poˈdemos aˈblaɾ maˈɲana"
+    },
+    {
+      "id": "a0-06-s28",
+      "ru": "Ты можешь позвонить ещё раз?",
+      "es": [
+        "¿Puedes llamar otra vez?"
+      ],
+      "ipa": "ˈpwedes jaˈmaɾ ˈotɾa ˈbeθ"
+    },
+    {
+      "id": "a0-06-s29",
+      "ru": "Я хочу выучить итальянский, но не могу.",
+      "es": [
+        "Quiero aprender italiano, pero no puedo."
+      ],
+      "ipa": "ˈkjeɾo apɾenˈdeɾ itaˈljano ˈpeɾo no ˈpwedo"
+    },
+    {
+      "id": "a0-06-s30",
+      "ru": "Он хочет поехать, но ему нужно работать.",
+      "es": [
+        "Él quiere ir, pero tiene que trabajar."
+      ],
+      "ipa": "ˈel ˈkjeɾe ˈiɾ ˈpeɾo ˈtjene ke tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-06-s31",
+      "ru": "Сегодня вечером я не могу, мне нужно учиться.",
+      "es": [
+        "Esta noche no puedo, tengo que estudiar."
+      ],
+      "ipa": "ˈesta ˈnotʃe no ˈpwedo ˈtengo ke estuˈdjaɾ"
+    },
+    {
+      "id": "a0-06-s32",
+      "ru": "Они хотят потом погулять.",
+      "es": [
+        "Ellos quieren pasear después.",
+        "Quieren pasear luego."
+      ],
+      "ipa": "ˈejos ˈkjeɾen paseˈaɾ desˈpwes"
+    },
+    {
+      "id": "a0-06-s33",
+      "ru": "Вам нужно больше говорить по-испански.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "Tenéis que hablar más español.",
+        "Vosotros tenéis que hablar más español."
+      ],
+      "ipa": "teˈneis ke aˈblaɾ ˈmas espaˈɲol"
+    },
+    {
+      "id": "a0-06-s34",
+      "ru": "Вы хотите пойти за покупками?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted quiere ir de compras?",
+        "¿Quiere usted ir de compras?",
+        "¿Quiere ir de compras?"
+      ],
+      "ipa": "usˈted ˈkjeɾe ˈiɾ de ˈkompɾas"
+    },
+    {
+      "id": "a0-06-s35",
+      "ru": "Завтра они будут отдыхать, а послезавтра — работать.",
+      "es": [
+        "Mañana van a descansar y pasado mañana van a trabajar.",
+        "Mañana ellos van a descansar y pasado mañana van a trabajar."
+      ],
+      "ipa": "maˈɲana ˈban a deskanˈsaɾ i paˈsado maˈɲana ˈban a tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-06-s36",
+      "ru": "Давай позанимаемся вместе!",
+      "hint": "хотя бы один из вас мужчина",
+      "es": [
+        "¡Vamos a estudiar juntos!",
+        "¡Vamos a practicar juntos!"
+      ],
+      "ipa": "ˈbamos a estuˈdjaɾ ˈxuntos"
+    },
+    {
+      "id": "a0-06-s37",
+      "ru": "Мы хотим путешествовать вместе, но не можем.",
+      "hint": "мужчины или смешанная компания",
+      "es": [
+        "Queremos viajar juntos, pero no podemos."
+      ],
+      "ipa": "keˈɾemos bjaˈxaɾ ˈxuntos ˈpeɾo no poˈdemos"
+    }
+  ]
+}

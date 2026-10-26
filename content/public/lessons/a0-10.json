@@ -1,0 +1,1137 @@
+{
+  "id": "a0-10",
+  "summary": {
+    "phrases": [
+      {
+        "es": "**Como** poco.",
+        "ru": "Я мало ем.",
+        "ipa": "ˈkomo ˈpoko"
+      },
+      {
+        "es": "¿**Aprendes** español?",
+        "ru": "Ты учишь испанский?",
+        "ipa": "aˈpɾendes espaˈɲol"
+      },
+      {
+        "es": "Hoy **comemos** poco.",
+        "ru": "Сегодня мы мало едим.",
+        "ipa": "ˈoj koˈmemos ˈpoko"
+      },
+      {
+        "es": "No bebo **café**.",
+        "ru": "Я не пью кофе.",
+        "ipa": "no ˈbebo kaˈfe"
+      },
+      {
+        "es": "No **comprendo**.",
+        "ru": "Я не понимаю.",
+        "ipa": "no komˈpɾendo"
+      },
+      {
+        "es": "**Vivo** en Moscú.",
+        "ru": "Я живу в Москве.",
+        "ipa": "ˈbibo en mosˈku"
+      },
+      {
+        "es": "Vivimos en el **centro**.",
+        "ru": "Мы живём в центре.",
+        "ipa": "biˈbimos en el ˈθentɾo"
+      },
+      {
+        "es": "Ella **escribe** un libro.",
+        "ru": "Она пишет книгу.",
+        "ipa": "ˈeja esˈkɾibe un ˈlibɾo"
+      }
+    ],
+    "rule": "Отбрасываем **-er** / **-ir** и добавляем окончание: **-o, -es, -e, -emos, -éis, -en** — como, comes, come… У **-ir** иначе только «мы» и «вы»: viv**imos**, viv**ís**. Где? — **en** + место: vivo **en** Moscú.",
+    "mistake": {
+      "wrong": {
+        "es": "Nosotros **vivemos**."
+      },
+      "right": {
+        "es": "Nosotros **vivimos**.",
+        "ru": "Мы живём."
+      }
+    },
+    "practice": [
+      "a0-10-s17",
+      "a0-10-s18",
+      "a0-10-s24",
+      "a0-10-s29",
+      "a0-10-s28"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Глаголы на -er",
+        "hint": "Отбрасываем -er и добавляем окончание",
+        "blocks": [
+          {
+            "type": "conjugation",
+            "verb": "comer",
+            "ru": "есть",
+            "rows": [
+              {
+                "stem": "com",
+                "ending": "o",
+                "ipa": "ˈkomo",
+                "pronoun": "yo",
+                "ru": "я ем"
+              },
+              {
+                "stem": "com",
+                "ending": "es",
+                "ipa": "ˈkomes",
+                "pronoun": "tú",
+                "ru": "ты ешь"
+              },
+              {
+                "stem": "com",
+                "ending": "e",
+                "ipa": "ˈkome",
+                "pronoun": "él / ella / usted",
+                "ru": "он, она ест; вы едите"
+              },
+              {
+                "stem": "com",
+                "ending": "emos",
+                "ipa": "koˈmemos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы едим"
+              },
+              {
+                "stem": "com",
+                "ending": "éis",
+                "ipa": "koˈmeis",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы едите"
+              },
+              {
+                "stem": "com",
+                "ending": "en",
+                "ipa": "ˈkomen",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они едят"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Ем, читаю, учу",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Como** poco.",
+                "ru": "Я мало ем.",
+                "ipa": "ˈkomo ˈpoko"
+              },
+              {
+                "es": "¿**Aprendes** español?",
+                "ru": "Ты учишь испанский?",
+                "ipa": "aˈpɾendes espaˈɲol"
+              },
+              {
+                "es": "Ella **lee** mucho.",
+                "ru": "Она много читает.",
+                "ipa": "ˈeja ˈle.e ˈmutʃo"
+              },
+              {
+                "es": "Hoy **comemos** poco.",
+                "ru": "Сегодня мы мало едим.",
+                "ipa": "ˈoj koˈmemos ˈpoko"
+              },
+              {
+                "es": "Ellos **aprenden** inglés.",
+                "ru": "Они учат английский.",
+                "ipa": "ˈejos aˈpɾenden inˈgles"
+              }
+            ]
+          },
+          {
+            "type": "conjugationCompare",
+            "title": "-ar и -er",
+            "verbs": [
+              {
+                "verb": "hablar",
+                "ru": "говорить"
+              },
+              {
+                "verb": "comer",
+                "ru": "есть"
+              }
+            ],
+            "rows": [
+              {
+                "pronoun": "yo",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "o",
+                    "ipa": "ˈablo"
+                  },
+                  {
+                    "stem": "com",
+                    "ending": "o",
+                    "ipa": "ˈkomo"
+                  }
+                ]
+              },
+              {
+                "pronoun": "tú",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "as",
+                    "ipa": "ˈablas"
+                  },
+                  {
+                    "stem": "com",
+                    "ending": "es",
+                    "ipa": "ˈkomes"
+                  }
+                ]
+              },
+              {
+                "pronoun": "él / ella / usted",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "a",
+                    "ipa": "ˈabla"
+                  },
+                  {
+                    "stem": "com",
+                    "ending": "e",
+                    "ipa": "ˈkome"
+                  }
+                ]
+              },
+              {
+                "pronoun": "nosotros / nosotras",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "amos",
+                    "ipa": "aˈblamos"
+                  },
+                  {
+                    "stem": "com",
+                    "ending": "emos",
+                    "ipa": "koˈmemos"
+                  }
+                ]
+              },
+              {
+                "pronoun": "vosotros / vosotras",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "áis",
+                    "ipa": "aˈblais"
+                  },
+                  {
+                    "stem": "com",
+                    "ending": "éis",
+                    "ipa": "koˈmeis"
+                  }
+                ]
+              },
+              {
+                "pronoun": "ellos / ellas / ustedes",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "an",
+                    "ipa": "ˈablan"
+                  },
+                  {
+                    "stem": "com",
+                    "ending": "en",
+                    "ipa": "ˈkomen"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Новые глаголы на -er",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "beber — Quiero **beber**.",
+                "ru": "Я хочу пить.",
+                "ipa": "beˈbeɾ · ˈkjeɾo beˈbeɾ"
+              },
+              {
+                "es": "vender — **Vendo** un coche.",
+                "ru": "Я продаю машину.",
+                "ipa": "benˈdeɾ · ˈbendo un ˈkotʃe"
+              },
+              {
+                "es": "correr — Ella **corre** mucho.",
+                "ru": "Она много бегает.",
+                "ipa": "koˈreɾ · ˈeja ˈkore ˈmutʃo"
+              },
+              {
+                "es": "comprender — No **comprendo**.",
+                "ru": "Я не понимаю.",
+                "ipa": "kompɾenˈdeɾ · no komˈpɾendo"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Еда и напитки",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "No bebo **café**.",
+                "ru": "Я не пью кофе.",
+                "ipa": "no ˈbebo kaˈfe"
+              },
+              {
+                "es": "Él bebe **cerveza**.",
+                "ru": "Он пьёт пиво.",
+                "ipa": "ˈel ˈbebe θeɾˈbeθa"
+              },
+              {
+                "es": "Como **pan**.",
+                "ru": "Я ем хлеб.",
+                "ipa": "ˈkomo ˈpan"
+              },
+              {
+                "es": "No comemos **carne**.",
+                "ru": "Мы не едим мясо.",
+                "ipa": "no koˈmemos ˈkaɾne"
+              },
+              {
+                "es": "Ellos comen **pescado**.",
+                "ru": "Они едят рыбу.",
+                "ipa": "ˈejos ˈkomen pesˈkado"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Глаголы на -ir",
+        "hint": "Почти как -er: отличаются только «мы» и «вы»",
+        "blocks": [
+          {
+            "type": "conjugation",
+            "verb": "vivir",
+            "ru": "жить",
+            "rows": [
+              {
+                "stem": "viv",
+                "ending": "o",
+                "ipa": "ˈbibo",
+                "pronoun": "yo",
+                "ru": "я живу"
+              },
+              {
+                "stem": "viv",
+                "ending": "es",
+                "ipa": "ˈbibes",
+                "pronoun": "tú",
+                "ru": "ты живёшь"
+              },
+              {
+                "stem": "viv",
+                "ending": "e",
+                "ipa": "ˈbibe",
+                "pronoun": "él / ella / usted",
+                "ru": "он, она живёт; вы живёте"
+              },
+              {
+                "stem": "viv",
+                "ending": "imos",
+                "ipa": "biˈbimos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы живём"
+              },
+              {
+                "stem": "viv",
+                "ending": "ís",
+                "ipa": "biˈbis",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы живёте"
+              },
+              {
+                "stem": "viv",
+                "ending": "en",
+                "ipa": "ˈbiben",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они живут"
+              }
+            ]
+          },
+          {
+            "type": "conjugationCompare",
+            "title": "-er и -ir",
+            "verbs": [
+              {
+                "verb": "comer",
+                "ru": "есть"
+              },
+              {
+                "verb": "vivir",
+                "ru": "жить"
+              }
+            ],
+            "rows": [
+              {
+                "pronoun": "yo",
+                "forms": [
+                  {
+                    "stem": "com",
+                    "ending": "o",
+                    "ipa": "ˈkomo"
+                  },
+                  {
+                    "stem": "viv",
+                    "ending": "o",
+                    "ipa": "ˈbibo"
+                  }
+                ]
+              },
+              {
+                "pronoun": "tú",
+                "forms": [
+                  {
+                    "stem": "com",
+                    "ending": "es",
+                    "ipa": "ˈkomes"
+                  },
+                  {
+                    "stem": "viv",
+                    "ending": "es",
+                    "ipa": "ˈbibes"
+                  }
+                ]
+              },
+              {
+                "pronoun": "él / ella / usted",
+                "forms": [
+                  {
+                    "stem": "com",
+                    "ending": "e",
+                    "ipa": "ˈkome"
+                  },
+                  {
+                    "stem": "viv",
+                    "ending": "e",
+                    "ipa": "ˈbibe"
+                  }
+                ]
+              },
+              {
+                "pronoun": "nosotros / nosotras",
+                "forms": [
+                  {
+                    "stem": "com",
+                    "ending": "emos",
+                    "ipa": "koˈmemos"
+                  },
+                  {
+                    "stem": "viv",
+                    "ending": "imos",
+                    "ipa": "biˈbimos"
+                  }
+                ]
+              },
+              {
+                "pronoun": "vosotros / vosotras",
+                "forms": [
+                  {
+                    "stem": "com",
+                    "ending": "éis",
+                    "ipa": "koˈmeis"
+                  },
+                  {
+                    "stem": "viv",
+                    "ending": "ís",
+                    "ipa": "biˈbis"
+                  }
+                ]
+              },
+              {
+                "pronoun": "ellos / ellas / ustedes",
+                "forms": [
+                  {
+                    "stem": "com",
+                    "ending": "en",
+                    "ipa": "ˈkomen"
+                  },
+                  {
+                    "stem": "viv",
+                    "ending": "en",
+                    "ipa": "ˈbiben"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "Nosotros **vivemos**."
+                },
+                {
+                  "es": "Vosotros **vivéis**."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "Nosotros **vivimos**.",
+                  "ru": "Мы живём."
+                },
+                {
+                  "es": "Vosotros **vivís**.",
+                  "ru": "Вы живёте."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Новые глаголы на -ir",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "vivir — **Vivo** en Moscú.",
+                "ru": "Я живу в Москве.",
+                "ipa": "biˈbiɾ · ˈbibo en mosˈku"
+              },
+              {
+                "es": "escribir — Ella **escribe** un libro.",
+                "ru": "Она пишет книгу.",
+                "ipa": "eskɾiˈbiɾ · ˈeja esˈkɾibe un ˈlibɾo"
+              },
+              {
+                "es": "abrir — **Abro** el libro.",
+                "ru": "Я открываю книгу.",
+                "ipa": "aˈbɾiɾ · ˈabɾo el ˈlibɾo"
+              },
+              {
+                "es": "recibir — Los niños **reciben** libros.",
+                "ru": "Дети получают книги.",
+                "ipa": "reθiˈbiɾ · los ˈniɲos reˈθiben ˈlibɾos"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Ещё новые слова",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Leo el **periódico**.",
+                "ru": "Я читаю газету.",
+                "ipa": "ˈle.o el peˈɾjodiko"
+              },
+              {
+                "es": "Ella lee una **revista**.",
+                "ru": "Она читает журнал.",
+                "ipa": "ˈeja ˈle.e ˈuna reˈbista"
+              },
+              {
+                "es": "Escribo una **carta**.",
+                "ru": "Я пишу письмо.",
+                "ipa": "esˈkɾibo ˈuna ˈkaɾta"
+              },
+              {
+                "es": "Vivimos en el **centro**.",
+                "ru": "Мы живём в центре.",
+                "ipa": "biˈbimos en el ˈθentɾo"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Предлог en",
+            "pattern": [
+              "en",
+              "+",
+              "место"
+            ],
+            "text": "en — это «в» или «на», когда говорим, где что-то происходит.",
+            "examples": [
+              {
+                "es": "Como **en** casa.",
+                "ru": "Я ем дома.",
+                "ipa": "ˈkomo en ˈkasa"
+              },
+              {
+                "es": "Trabajo **en** el centro.",
+                "ru": "Я работаю в центре.",
+                "ipa": "tɾaˈbaxo en el ˈθentɾo"
+              },
+              {
+                "es": "Estudio **en** Moscú.",
+                "ru": "Я учусь в Москве.",
+                "ipa": "esˈtudjo en mosˈku"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Где ты живёшь?",
+        "lines": [
+          {
+            "es": "¿**Vives** en Moscú?",
+            "ru": "Ты живёшь в Москве?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "No, **vivo** en Madrid. ¿Y tú?",
+            "ru": "Нет, я живу в Мадриде. А ты?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Yo **vivo** en Moscú, en el centro.",
+            "ru": "Я живу в Москве, в центре.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿**Comprendes** español?",
+            "ru": "Ты понимаешь по-испански?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, pero **leo** poco.",
+            "ru": "Да, но читаю мало.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Yo **leo** mucho. Leo el periódico.",
+            "ru": "Я читаю много. Читаю газету.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Y **escribes** en español?",
+            "ru": "А по-испански пишешь?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, **escribo** un libro.",
+            "ru": "Да, я пишу книгу.",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "vivir",
+        "ru": "жить",
+        "pos": "verb",
+        "ipa": "biˈbiɾ"
+      },
+      {
+        "es": "beber",
+        "ru": "пить",
+        "pos": "verb",
+        "ipa": "beˈbeɾ"
+      },
+      {
+        "es": "escribir",
+        "ru": "писать",
+        "pos": "verb",
+        "ipa": "eskɾiˈbiɾ"
+      },
+      {
+        "es": "comprender",
+        "ru": "понимать",
+        "pos": "verb",
+        "ipa": "kompɾenˈdeɾ"
+      },
+      {
+        "es": "abrir",
+        "ru": "открывать",
+        "pos": "verb",
+        "ipa": "aˈbɾiɾ"
+      },
+      {
+        "es": "recibir",
+        "ru": "получать",
+        "pos": "verb",
+        "ipa": "reθiˈbiɾ"
+      },
+      {
+        "es": "vender",
+        "ru": "продавать",
+        "pos": "verb",
+        "ipa": "benˈdeɾ"
+      },
+      {
+        "es": "correr",
+        "ru": "бегать",
+        "pos": "verb",
+        "ipa": "koˈreɾ"
+      },
+      {
+        "es": "en",
+        "ru": "в, на (где?)",
+        "pos": "prep",
+        "ipa": "en"
+      },
+      {
+        "es": "el café",
+        "ru": "кофе",
+        "pos": "noun",
+        "ipa": "el kaˈfe"
+      },
+      {
+        "es": "la cerveza",
+        "ru": "пиво",
+        "pos": "noun",
+        "ipa": "la θeɾˈbeθa"
+      },
+      {
+        "es": "el pan",
+        "ru": "хлеб",
+        "pos": "noun",
+        "ipa": "el ˈpan"
+      },
+      {
+        "es": "la carne",
+        "ru": "мясо",
+        "pos": "noun",
+        "ipa": "la ˈkaɾne"
+      },
+      {
+        "es": "el pescado",
+        "ru": "рыба (еда)",
+        "pos": "noun",
+        "ipa": "el pesˈkado"
+      },
+      {
+        "es": "el periódico",
+        "ru": "газета",
+        "pos": "noun",
+        "ipa": "el peˈɾjodiko"
+      },
+      {
+        "es": "la revista",
+        "ru": "журнал",
+        "pos": "noun",
+        "ipa": "la reˈbista"
+      },
+      {
+        "es": "la carta",
+        "ru": "письмо",
+        "pos": "noun",
+        "ipa": "la ˈkaɾta"
+      },
+      {
+        "es": "el centro",
+        "ru": "центр",
+        "pos": "noun",
+        "ipa": "el ˈθentɾo"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Спрягать глаголы на -er: como, comes, comemos",
+        "Спрягать глаголы на -ir: vivo, vives, vivimos",
+        "Говорить, где что происходит: en + место",
+        "Рассказывать, где живёте, что едите, пьёте и читаете"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 11: вопросы — qué, dónde, cuándo, por qué"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Глаголы на -er",
+      "sentenceIds": [
+        "a0-10-s01",
+        "a0-10-s02",
+        "a0-10-s03",
+        "a0-10-s04",
+        "a0-10-s05",
+        "a0-10-s06",
+        "a0-10-s07",
+        "a0-10-s08"
+      ]
+    },
+    {
+      "name": "Глаголы на -ir",
+      "sentenceIds": [
+        "a0-10-s09",
+        "a0-10-s10",
+        "a0-10-s11",
+        "a0-10-s12",
+        "a0-10-s13",
+        "a0-10-s14",
+        "a0-10-s15",
+        "a0-10-s16"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-10-s17",
+        "a0-10-s18",
+        "a0-10-s19",
+        "a0-10-s20",
+        "a0-10-s21",
+        "a0-10-s22",
+        "a0-10-s23",
+        "a0-10-s24",
+        "a0-10-s25",
+        "a0-10-s26",
+        "a0-10-s27",
+        "a0-10-s28",
+        "a0-10-s29",
+        "a0-10-s30"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-10-s17.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s17"
+    },
+    {
+      "id": "a0-10-s18.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s18"
+    },
+    {
+      "id": "a0-10-s19.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s19"
+    },
+    {
+      "id": "a0-10-s20.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s20"
+    },
+    {
+      "id": "a0-10-s21.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s21"
+    },
+    {
+      "id": "a0-10-s22.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s22"
+    },
+    {
+      "id": "a0-10-s23.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s23"
+    },
+    {
+      "id": "a0-10-s24.translate",
+      "type": "translate",
+      "sentenceId": "a0-10-s24"
+    },
+    {
+      "id": "a0-10-s25.order",
+      "type": "order",
+      "sentenceId": "a0-10-s25"
+    },
+    {
+      "id": "a0-10-s26.order",
+      "type": "order",
+      "sentenceId": "a0-10-s26"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-10-s01",
+      "ru": "Я много ем.",
+      "es": [
+        "Como mucho.",
+        "Yo como mucho."
+      ],
+      "ipa": "ˈkomo ˈmutʃo"
+    },
+    {
+      "id": "a0-10-s02",
+      "ru": "Ты много читаешь?",
+      "es": [
+        "¿Lees mucho?"
+      ],
+      "ipa": "ˈle.es ˈmutʃo"
+    },
+    {
+      "id": "a0-10-s03",
+      "ru": "Она не пьёт кофе.",
+      "es": [
+        "Ella no bebe café."
+      ],
+      "ipa": "ˈeja no ˈbebe kaˈfe"
+    },
+    {
+      "id": "a0-10-s04",
+      "ru": "Они продают книги.",
+      "es": [
+        "Ellos venden libros.",
+        "Venden libros."
+      ],
+      "ipa": "ˈejos ˈbenden ˈlibɾos"
+    },
+    {
+      "id": "a0-10-s05",
+      "ru": "Я не понимаю.",
+      "es": [
+        "No comprendo."
+      ],
+      "ipa": "no komˈpɾendo"
+    },
+    {
+      "id": "a0-10-s06",
+      "ru": "Вы много бегаете?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Corréis mucho?",
+        "¿Vosotros corréis mucho?"
+      ],
+      "ipa": "koˈreis ˈmutʃo"
+    },
+    {
+      "id": "a0-10-s07",
+      "ru": "Он учит английский.",
+      "es": [
+        "Él aprende inglés.",
+        "Él estudia inglés."
+      ],
+      "ipa": "ˈel aˈpɾende inˈgles"
+    },
+    {
+      "id": "a0-10-s08",
+      "ru": "Вы пьёте пиво?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted bebe cerveza?",
+        "¿Bebe usted cerveza?"
+      ],
+      "ipa": "usˈted ˈbebe θeɾˈbeθa"
+    },
+    {
+      "id": "a0-10-s09",
+      "ru": "Я живу в Москве.",
+      "es": [
+        "Vivo en Moscú.",
+        "Yo vivo en Moscú."
+      ],
+      "ipa": "ˈbibo en mosˈku"
+    },
+    {
+      "id": "a0-10-s10",
+      "ru": "Мы живём в центре.",
+      "es": [
+        "Vivimos en el centro."
+      ],
+      "ipa": "biˈbimos en el ˈθentɾo"
+    },
+    {
+      "id": "a0-10-s11",
+      "ru": "Она пишет книгу.",
+      "es": [
+        "Ella escribe un libro."
+      ],
+      "ipa": "ˈeja esˈkɾibe un ˈlibɾo"
+    },
+    {
+      "id": "a0-10-s12",
+      "ru": "Ты открываешь книгу?",
+      "es": [
+        "¿Abres el libro?"
+      ],
+      "ipa": "ˈabɾes el ˈlibɾo"
+    },
+    {
+      "id": "a0-10-s13",
+      "ru": "Я получаю письмо.",
+      "es": [
+        "Recibo una carta."
+      ],
+      "ipa": "reˈθibo ˈuna ˈkaɾta"
+    },
+    {
+      "id": "a0-10-s14",
+      "ru": "Вы живёте в Мадриде?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Vivís en Madrid?",
+        "¿Vosotros vivís en Madrid?"
+      ],
+      "ipa": "biˈbis en maˈdɾid"
+    },
+    {
+      "id": "a0-10-s15",
+      "ru": "Они пишут по-испански.",
+      "es": [
+        "Ellos escriben en español.",
+        "Escriben en español."
+      ],
+      "ipa": "ˈejos esˈkɾiben en espaˈɲol"
+    },
+    {
+      "id": "a0-10-s16",
+      "ru": "Вы живёте в центре?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted vive en el centro?",
+        "¿Vive usted en el centro?"
+      ],
+      "ipa": "usˈted ˈbibe en el ˈθentɾo"
+    },
+    {
+      "id": "a0-10-s17",
+      "ru": "Я не ем мясо.",
+      "es": [
+        "No como carne."
+      ],
+      "ipa": "no ˈkomo ˈkaɾne"
+    },
+    {
+      "id": "a0-10-s18",
+      "ru": "Мы едим рыбу дома.",
+      "es": [
+        "Comemos pescado en casa."
+      ],
+      "ipa": "koˈmemos pesˈkado en ˈkasa"
+    },
+    {
+      "id": "a0-10-s19",
+      "ru": "Он читает газету.",
+      "es": [
+        "Él lee el periódico."
+      ],
+      "ipa": "ˈel ˈle.e el peˈɾjodiko"
+    },
+    {
+      "id": "a0-10-s20",
+      "ru": "Я хочу жить в Мадриде.",
+      "es": [
+        "Quiero vivir en Madrid."
+      ],
+      "ipa": "ˈkjeɾo biˈbiɾ en maˈdɾid"
+    },
+    {
+      "id": "a0-10-s21",
+      "ru": "Завтра я буду писать письмо.",
+      "es": [
+        "Mañana voy a escribir una carta."
+      ],
+      "ipa": "maˈɲana ˈboj a eskɾiˈbiɾ ˈuna ˈkaɾta"
+    },
+    {
+      "id": "a0-10-s22",
+      "ru": "Мне нужно купить хлеб.",
+      "es": [
+        "Necesito comprar pan.",
+        "Tengo que comprar pan."
+      ],
+      "ipa": "neθeˈsito komˈpɾaɾ ˈpan"
+    },
+    {
+      "id": "a0-10-s23",
+      "ru": "Мне нравится читать журналы.",
+      "es": [
+        "Me gusta leer revistas."
+      ],
+      "ipa": "me ˈgusta leˈeɾ reˈbistas"
+    },
+    {
+      "id": "a0-10-s24",
+      "ru": "Она русская, но живёт в Мадриде.",
+      "es": [
+        "Ella es rusa, pero vive en Madrid."
+      ],
+      "ipa": "ˈeja es ˈrusa ˈpeɾo ˈbibe en maˈdɾid"
+    },
+    {
+      "id": "a0-10-s25",
+      "ru": "Я программист и работаю в центре.",
+      "hint": "говорит мужчина",
+      "es": [
+        "Soy programador y trabajo en el centro."
+      ],
+      "ipa": "ˈsoj pɾogɾamaˈdoɾ i tɾaˈbaxo en el ˈθentɾo"
+    },
+    {
+      "id": "a0-10-s26",
+      "ru": "Дети много едят.",
+      "es": [
+        "Los niños comen mucho."
+      ],
+      "ipa": "los ˈniɲos ˈkomen ˈmutʃo"
+    },
+    {
+      "id": "a0-10-s27",
+      "ru": "Сегодня мы не можем бегать.",
+      "es": [
+        "Hoy no podemos correr."
+      ],
+      "ipa": "ˈoj no poˈdemos koˈreɾ"
+    },
+    {
+      "id": "a0-10-s28",
+      "ru": "Ты понимаешь по-испански?",
+      "es": [
+        "¿Comprendes español?",
+        "¿Comprendes el español?"
+      ],
+      "ipa": "komˈpɾendes espaˈɲol"
+    },
+    {
+      "id": "a0-10-s29",
+      "ru": "Они пьют кофе и читают газету.",
+      "es": [
+        "Ellos beben café y leen el periódico."
+      ],
+      "ipa": "ˈejos ˈbeben kaˈfe i ˈle.en el peˈɾjodiko"
+    },
+    {
+      "id": "a0-10-s30",
+      "ru": "Я не пью пиво, но пью кофе.",
+      "es": [
+        "No bebo cerveza, pero bebo café."
+      ],
+      "ipa": "no ˈbebo θeɾˈbeθa ˈpeɾo ˈbebo kaˈfe"
+    }
+  ]
+}

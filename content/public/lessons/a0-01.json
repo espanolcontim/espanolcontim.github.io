@@ -1,0 +1,1436 @@
+{
+  "id": "a0-01",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Hola.",
+        "ru": "Привет.",
+        "ipa": "ˈola"
+      },
+      {
+        "es": "Buenos días.",
+        "ru": "Доброе утро, добрый день.",
+        "ipa": "ˈbwenos ˈdi.as"
+      },
+      {
+        "es": "Buenas tardes.",
+        "ru": "Добрый день, добрый вечер.",
+        "ipa": "ˈbwenas ˈtaɾdes"
+      },
+      {
+        "es": "Buenas noches.",
+        "ru": "Добрый вечер, спокойной ночи.",
+        "ipa": "ˈbwenas ˈnotʃes"
+      },
+      {
+        "es": "Gracias.",
+        "ru": "Спасибо.",
+        "ipa": "ˈgɾaθjas"
+      },
+      {
+        "es": "¿Cómo te llamas?",
+        "ru": "Как тебя зовут?",
+        "ipa": "ˈkomo te ˈjamas"
+      },
+      {
+        "es": "Me llamo…",
+        "ru": "Меня зовут…",
+        "ipa": "me ˈjamo"
+      },
+      {
+        "es": "¿De dónde eres?",
+        "ru": "Откуда ты?",
+        "ipa": "de ˈdonde ˈeɾes"
+      },
+      {
+        "es": "Soy de…",
+        "ru": "Я из…",
+        "ipa": "ˈsoj de"
+      }
+    ],
+    "rule": "Слово кончается на гласную, **n** или **s** — ударение на предпоследний слог: **no**ches, **lla**mas. На другую согласную — на последний: Ma**drid**. Исключения пишутся со знаком ударения: Mos**cú**, **dón**de.",
+    "mistake": {
+      "wrong": {
+        "label": "так не читают",
+        "es": "hola",
+        "ru": "«хола»"
+      },
+      "right": {
+        "label": "так читают",
+        "es": "hola",
+        "ru": "«ола» — h не читается"
+      }
+    },
+    "practice": [
+      "a0-01-s20",
+      "a0-01-s17",
+      "a0-01-s18",
+      "a0-01-s26"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Приветствие, знакомство",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Первые фразы",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Hola**.",
+                "ru": "Привет.",
+                "ipa": "ˈola"
+              },
+              {
+                "es": "**Buenos días**.",
+                "ru": "Доброе утро, добрый день.",
+                "ipa": "ˈbwenos ˈdi.as"
+              },
+              {
+                "es": "**Buenas tardes**.",
+                "ru": "Добрый день, добрый вечер.",
+                "ipa": "ˈbwenas ˈtaɾdes"
+              },
+              {
+                "es": "**Buenas noches**.",
+                "ru": "Добрый вечер, спокойной ночи.",
+                "ipa": "ˈbwenas ˈnotʃes"
+              },
+              {
+                "es": "**Adiós**.",
+                "ru": "До свидания.",
+                "ipa": "aˈdjos"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Вежливые фразы",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Hasta luego**.",
+                "ru": "До встречи.",
+                "ipa": "ˈasta ˈlwego"
+              },
+              {
+                "es": "**Por favor**.",
+                "ru": "Пожалуйста.",
+                "ipa": "poɾ faˈboɾ"
+              },
+              {
+                "es": "**Gracias**.",
+                "ru": "Спасибо.",
+                "ipa": "ˈgɾaθjas"
+              },
+              {
+                "es": "**De nada**.",
+                "ru": "Не за что.",
+                "ipa": "de ˈnada"
+              },
+              {
+                "es": "**Perdón**.",
+                "ru": "Извините.",
+                "ipa": "peɾˈdon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Знакомимся",
+        "hint": "Две готовые фразы: как вас зовут и откуда вы",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Как тебя зовут?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**Cómo te llamas**?",
+                "ru": "Как тебя зовут?",
+                "ipa": "ˈkomo te ˈjamas"
+              },
+              {
+                "es": "**Me llamo** Ana.",
+                "ru": "Меня зовут Ана.",
+                "ipa": "me ˈjamo ˈana"
+              },
+              {
+                "es": "¿**Y tú**?",
+                "ru": "А ты?",
+                "ipa": "i ˈtu"
+              },
+              {
+                "es": "Me llamo Carlos.",
+                "ru": "Меня зовут Карлос.",
+                "ipa": "me ˈjamo ˈkaɾlos"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Откуда ты?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**De dónde eres**?",
+                "ru": "Откуда ты?",
+                "ipa": "de ˈdonde ˈeɾes"
+              },
+              {
+                "es": "**Soy de** Madrid.",
+                "ru": "Я из Мадрида.",
+                "ipa": "ˈsoj de maˈdɾid"
+              },
+              {
+                "es": "Soy de Moscú.",
+                "ru": "Я из Москвы.",
+                "ipa": "ˈsoj de mosˈku"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Как читать",
+        "hint": "Почти всё читается так, как пишется",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Гласные",
+            "pattern": [
+              "a, e, i, o, u",
+              "=",
+              "всегда чётко"
+            ],
+            "text": "Гласные не меняются: o всегда «о», e всегда «э».",
+            "examples": [
+              {
+                "es": "Me llamo Ana.",
+                "ru": "Меня зовут Ана.",
+                "ipa": "me ˈjamo ˈana"
+              },
+              {
+                "es": "Soy de Toledo.",
+                "ru": "Я из Толедо.",
+                "ipa": "ˈsoj de toˈledo"
+              },
+              {
+                "es": "Buenas noches.",
+                "ru": "Добрый вечер.",
+                "ipa": "ˈbwenas ˈnotʃes"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Ударение",
+            "pattern": [
+              "гласная, n, s",
+              "→",
+              "предпоследний слог"
+            ],
+            "text": "Слово кончается на гласную, n или s — ударение на предпоследний слог. На другую согласную — на последний.",
+            "examples": [
+              {
+                "es": "Me llamo **Car**los.",
+                "ru": "Меня зовут Карлос.",
+                "ipa": "me ˈjamo ˈkaɾlos"
+              },
+              {
+                "es": "Buenas **no**ches.",
+                "ru": "Добрый вечер.",
+                "ipa": "ˈbwenas ˈnotʃes"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Знак ударения",
+            "pattern": [
+              "не по правилу",
+              "→",
+              "знак над гласной"
+            ],
+            "text": "Если ударение нарушает правило, над ударной гласной ставят знак.",
+            "examples": [
+              {
+                "es": "Soy de Mos**cú**.",
+                "ru": "Я из Москвы.",
+                "ipa": "ˈsoj de mosˈku"
+              },
+              {
+                "es": "Me llamo Jo**sé**.",
+                "ru": "Меня зовут Хосе.",
+                "ipa": "me ˈjamo xoˈse"
+              },
+              {
+                "es": "Soy de **Má**laga.",
+                "ru": "Я из Малаги.",
+                "ipa": "ˈsoj de ˈmalaga"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "ll и y",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Soy de **Sevilla**.",
+                "ru": "Я из Севильи.",
+                "ipa": "ˈsoj de seˈbija"
+              },
+              {
+                "es": "Soy de **Mallorca**.",
+                "ru": "Я с Майорки.",
+                "ipa": "ˈsoj de maˈjoɾka"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "ñ",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Soy de **España**.",
+                "ru": "Я из Испании.",
+                "ipa": "ˈsoj de esˈpaɲa"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "j",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Me llamo **José**.",
+                "ru": "Меня зовут Хосе.",
+                "ipa": "me ˈjamo xoˈse"
+              },
+              {
+                "es": "Me llamo **Jorge**.",
+                "ru": "Меня зовут Хорхе.",
+                "ipa": "me ˈjamo ˈxoɾxe"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "b и v",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Soy de **Valencia**.",
+                "ru": "Я из Валенсии.",
+                "ipa": "ˈsoj de baˈlenθja"
+              },
+              {
+                "es": "Soy de **Bilbao**.",
+                "ru": "Я из Бильбао.",
+                "ipa": "ˈsoj de bilˈba.o"
+              },
+              {
+                "es": "Me llamo **Víctor**.",
+                "ru": "Меня зовут Виктор.",
+                "ipa": "me ˈjamo ˈbiktoɾ"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не читают",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "hola",
+                  "ru": "«хола»"
+                },
+                {
+                  "es": "José",
+                  "ru": "«жозе»"
+                },
+                {
+                  "es": "Sevilla",
+                  "ru": "«севилла»"
+                }
+              ]
+            },
+            "right": {
+              "label": "так читают",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "hola",
+                  "ru": "«ола»"
+                },
+                {
+                  "es": "José",
+                  "ru": "«хосе»"
+                },
+                {
+                  "es": "Sevilla",
+                  "ru": "«севийя»"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Знакомство",
+        "lines": [
+          {
+            "es": "Hola, buenos días.",
+            "ru": "Привет, доброе утро.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Buenos días. ¿**Cómo te llamas**?",
+            "ru": "Доброе утро. Как тебя зовут?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Me llamo** Carlos. ¿**Y tú**?",
+            "ru": "Меня зовут Карлос. А тебя?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "**Me llamo** Ana.",
+            "ru": "Меня зовут Ана.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿**De dónde eres**?",
+            "ru": "Откуда ты?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "**Soy de** Madrid. ¿Y tú?",
+            "ru": "Я из Мадрида. А ты?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Soy de** Moscú. Hasta luego.",
+            "ru": "Я из Москвы. До встречи!",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Adiós.",
+            "ru": "Пока!",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "hola",
+        "ru": "привет",
+        "pos": "interj",
+        "ipa": "ˈola"
+      },
+      {
+        "es": "buenos días",
+        "ru": "доброе утро, добрый день",
+        "pos": "phrase",
+        "ipa": "ˈbwenos ˈdi.as"
+      },
+      {
+        "es": "gracias",
+        "ru": "спасибо",
+        "pos": "interj",
+        "ipa": "ˈgɾaθjas"
+      },
+      {
+        "es": "por favor",
+        "ru": "пожалуйста (просьба)",
+        "pos": "phrase",
+        "ipa": "poɾ faˈboɾ"
+      },
+      {
+        "es": "adiós",
+        "ru": "до свидания, пока",
+        "pos": "interj",
+        "ipa": "aˈdjos"
+      },
+      {
+        "es": "buenas tardes",
+        "ru": "добрый день, добрый вечер",
+        "pos": "phrase",
+        "ipa": "ˈbwenas ˈtaɾdes"
+      },
+      {
+        "es": "buenas noches",
+        "ru": "добрый вечер, спокойной ночи",
+        "pos": "phrase",
+        "ipa": "ˈbwenas ˈnotʃes"
+      },
+      {
+        "es": "de nada",
+        "ru": "не за что",
+        "pos": "phrase",
+        "ipa": "de ˈnada"
+      },
+      {
+        "es": "perdón",
+        "ru": "извините, извини",
+        "pos": "interj",
+        "ipa": "peɾˈdon"
+      },
+      {
+        "es": "hasta luego",
+        "ru": "до встречи, пока",
+        "pos": "phrase",
+        "ipa": "ˈasta ˈlwego"
+      },
+      {
+        "es": "¿cómo te llamas?",
+        "ru": "как тебя зовут?",
+        "pos": "phrase",
+        "ipa": "ˈkomo te ˈjamas"
+      },
+      {
+        "es": "me llamo",
+        "ru": "меня зовут",
+        "pos": "phrase",
+        "ipa": "me ˈjamo"
+      },
+      {
+        "es": "¿y tú?",
+        "ru": "а ты? а тебя?",
+        "pos": "phrase",
+        "ipa": "i ˈtu"
+      },
+      {
+        "es": "¿de dónde eres?",
+        "ru": "откуда ты?",
+        "pos": "phrase",
+        "ipa": "de ˈdonde ˈeɾes"
+      },
+      {
+        "es": "soy de",
+        "ru": "я из",
+        "pos": "phrase",
+        "ipa": "ˈsoj de"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Читать испанские слова вслух",
+        "Ставить ударение по правилу и по знаку",
+        "Здороваться, благодарить и прощаться",
+        "Говорить, как вас зовут и откуда вы"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 2: я говорю, ты говоришь"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Приветствия и вежливость",
+      "sentenceIds": [
+        "a0-01-s01",
+        "a0-01-s02",
+        "a0-01-s03",
+        "a0-01-s04",
+        "a0-01-s05",
+        "a0-01-s06",
+        "a0-01-s07",
+        "a0-01-s08",
+        "a0-01-s09",
+        "a0-01-s10",
+        "a0-01-s11",
+        "a0-01-s12"
+      ]
+    },
+    {
+      "name": "Как тебя зовут",
+      "sentenceIds": [
+        "a0-01-s13",
+        "a0-01-s14",
+        "a0-01-s15",
+        "a0-01-s16"
+      ]
+    },
+    {
+      "name": "Откуда ты",
+      "sentenceIds": [
+        "a0-01-s17",
+        "a0-01-s18",
+        "a0-01-s19"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-01-s20",
+        "a0-01-s21",
+        "a0-01-s22",
+        "a0-01-s23",
+        "a0-01-s24",
+        "a0-01-s25",
+        "a0-01-s26"
+      ]
+    }
+  ],
+  "extras": {
+    "expressions": [
+      {
+        "es": "¿Qué tal?",
+        "ru": "Как дела? Как ты?",
+        "ipa": "ke ˈtal",
+        "note": "Самый частый вопрос после hola. Часто говорят одним духом: ¡Hola, qué tal!",
+        "example": {
+          "es": "¡Hola, Carlos! ¿Qué tal?",
+          "ru": "Привет, Карлос! Как дела?"
+        }
+      },
+      {
+        "es": "¡Buenas!",
+        "ru": "Здравствуйте! Привет!",
+        "ipa": "ˈbwenas",
+        "note": "Короткое buenas tardes или buenas noches, годится в любое время дня. Так здороваются в магазине, в баре, с соседями.",
+        "example": {
+          "es": "¡Buenas! ¿Qué tal?",
+          "ru": "Здрасьте! Как дела?"
+        }
+      },
+      {
+        "es": "Encantado. / Encantada.",
+        "ru": "Очень приятно.",
+        "ipa": "enkanˈtado / enkanˈtada",
+        "note": "Говорят при знакомстве. Мужчина — encantado, женщина — encantada: окончание зависит от того, кто говорит.",
+        "example": {
+          "es": "Me llamo Ana. — Encantado. Me llamo Carlos.",
+          "ru": "Меня зовут Ана. — Очень приятно. Меня зовут Карлос."
+        }
+      },
+      {
+        "es": "¡Hasta mañana!",
+        "ru": "До завтра!",
+        "ipa": "ˈasta maˈɲana",
+        "note": "Устроено как hasta luego: hasta, а потом — когда увидимся. Mañana — «завтра», подробно — в уроке 4.",
+        "example": {
+          "es": "Gracias, José. ¡Hasta mañana!",
+          "ru": "Спасибо, Хосе. До завтра!"
+        }
+      }
+    ],
+    "exercises": [
+      {
+        "title": "Переведите на испанский",
+        "items": [
+          {
+            "id": "a0-01-s27.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s27"
+          },
+          {
+            "id": "a0-01-s28.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s28"
+          },
+          {
+            "id": "a0-01-s29.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s29"
+          },
+          {
+            "id": "a0-01-s30.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s30"
+          },
+          {
+            "id": "a0-01-s31.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s31"
+          },
+          {
+            "id": "a0-01-s32.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s32"
+          },
+          {
+            "id": "a0-01-s33.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s33"
+          },
+          {
+            "id": "a0-01-s34.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s34"
+          },
+          {
+            "id": "a0-01-s35.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s35"
+          },
+          {
+            "id": "a0-01-s36.translate",
+            "type": "translate",
+            "sentenceId": "a0-01-s36"
+          }
+        ]
+      },
+      {
+        "title": "Найдите ошибку",
+        "items": [
+          {
+            "id": "a0-01-s37.fix",
+            "type": "fix",
+            "wrong": "Ola, me llamo Ana.",
+            "sentenceId": "a0-01-s37"
+          },
+          {
+            "id": "a0-01-s38.fix",
+            "type": "fix",
+            "wrong": "Hola, me yamo Víctor.",
+            "sentenceId": "a0-01-s38"
+          },
+          {
+            "id": "a0-01-s39.fix",
+            "type": "fix",
+            "wrong": "Grasias, José.",
+            "sentenceId": "a0-01-s39"
+          },
+          {
+            "id": "a0-01-s40.fix",
+            "type": "fix",
+            "wrong": "Me llamo José, soy de Espania.",
+            "sentenceId": "a0-01-s40"
+          },
+          {
+            "id": "a0-01-s41.fix",
+            "type": "fix",
+            "wrong": "Buenos dias, Víctor.",
+            "sentenceId": "a0-01-s41"
+          },
+          {
+            "id": "a0-01-s42.fix",
+            "type": "fix",
+            "wrong": "Adios, Ana.",
+            "sentenceId": "a0-01-s42"
+          },
+          {
+            "id": "a0-01-s43.fix",
+            "type": "fix",
+            "wrong": "Me llamo Jorge. ¿Y tu?",
+            "sentenceId": "a0-01-s43"
+          },
+          {
+            "id": "a0-01-s44.fix",
+            "type": "fix",
+            "wrong": "Hola. De dónde eres?",
+            "sentenceId": "a0-01-s44"
+          }
+        ]
+      },
+      {
+        "title": "Días, tardes или noches?",
+        "items": [
+          {
+            "id": "a0-01-x01",
+            "type": "gap",
+            "text": "¡Buenos ___, José!",
+            "answer": "días",
+            "options": [
+              "días",
+              "tardes",
+              "noches"
+            ],
+            "ru": "Доброе утро, Хосе! — в 8 утра"
+          },
+          {
+            "id": "a0-01-x02",
+            "type": "gap",
+            "text": "Buenas ___, Jorge.",
+            "answer": "tardes",
+            "options": [
+              "días",
+              "tardes",
+              "noches"
+            ],
+            "ru": "Добрый день, Хорхе! — в 3 часа дня"
+          },
+          {
+            "id": "a0-01-x03",
+            "type": "gap",
+            "text": "¡Buenas ___, Carlos!",
+            "answer": "noches",
+            "options": [
+              "días",
+              "tardes",
+              "noches"
+            ],
+            "ru": "Спокойной ночи, Карлос!"
+          },
+          {
+            "id": "a0-01-x04",
+            "type": "gap",
+            "text": "Buenos ___, Ana.",
+            "answer": "días",
+            "options": [
+              "días",
+              "tardes",
+              "noches"
+            ],
+            "ru": "Добрый день, Ана! — в 11 утра"
+          },
+          {
+            "id": "a0-01-x05",
+            "type": "gap",
+            "text": "Buenas ___. Me llamo Víctor.",
+            "answer": "tardes",
+            "options": [
+              "días",
+              "tardes",
+              "noches"
+            ],
+            "ru": "Добрый вечер! — в 7 вечера"
+          },
+          {
+            "id": "a0-01-x06",
+            "type": "gap",
+            "text": "Buenas ___. Soy de Bilbao.",
+            "answer": "noches",
+            "options": [
+              "días",
+              "tardes",
+              "noches"
+            ],
+            "ru": "Добрый вечер! — в 10 вечера"
+          }
+        ]
+      },
+      {
+        "title": "Переведите на русский",
+        "items": [
+          {
+            "id": "a0-01-x07",
+            "type": "read",
+            "es": "¡Hola! Me llamo Jorge. Soy de Valencia.",
+            "ru": "Привет! Меня зовут Хорхе. Я из Валенсии."
+          },
+          {
+            "id": "a0-01-x08",
+            "type": "read",
+            "es": "¡Buenas! ¿Qué tal?",
+            "ru": "Здравствуйте! Как дела?"
+          },
+          {
+            "id": "a0-01-x09",
+            "type": "read",
+            "es": "Buenas tardes. ¿De dónde eres, Víctor?",
+            "ru": "Добрый день. Откуда ты, Виктор?"
+          },
+          {
+            "id": "a0-01-x10",
+            "type": "read",
+            "es": "Perdón, ¿cómo te llamas? ¿Y de dónde eres?",
+            "ru": "Извини, как тебя зовут? И откуда ты?"
+          },
+          {
+            "id": "a0-01-x11",
+            "type": "read",
+            "es": "Encantado. Soy de Moscú. ¿Y tú?",
+            "ru": "Очень приятно. Я из Москвы. А ты?"
+          },
+          {
+            "id": "a0-01-x12",
+            "type": "read",
+            "es": "Adiós, Jorge. ¡Hasta mañana!",
+            "ru": "Пока, Хорхе. До завтра!"
+          }
+        ]
+      }
+    ],
+    "story": {
+      "title": "Семь вечера в Мадриде",
+      "lines": [
+        {
+          "es": "¡Hola, Ana! ¡Buenas noches!",
+          "ru": "Привет, Ана! Добрый вечер!",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "¿Buenas noches? ¡Buenas tardes, Carlos!",
+          "ru": "«Buenas noches»? В семь вечера ещё «buenas tardes», Карлос!",
+          "speaker": "Ana"
+        },
+        {
+          "es": "Perdón… ¡Buenas tardes! ¿Qué tal?",
+          "ru": "Извини… Добрый день! Как дела?",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "Carlos, José. José, Carlos.",
+          "ru": "Карлос, это Хосе. Хосе, это Карлос.",
+          "speaker": "Ana"
+        },
+        {
+          "es": "Encantado. ¿De dónde eres?",
+          "ru": "Очень приятно. Откуда ты?",
+          "speaker": "José"
+        },
+        {
+          "es": "Soy de Moscú. ¿Y tú?",
+          "ru": "Я из Москвы. А ты?",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "Soy de Sevilla.",
+          "ru": "Я из Севильи.",
+          "speaker": "José"
+        },
+        {
+          "es": "¡Encantado! ¡Buenas noches!",
+          "ru": "Очень приятно! Добрый вечер!",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "¡Buenas **tardes**, Carlos!",
+          "ru": "Да «buenas tardes» же, Карлос!",
+          "speaker": "Ana y José"
+        }
+      ],
+      "questions": [
+        {
+          "question": "Откуда Карлос?",
+          "answer": "De Moscú."
+        },
+        {
+          "question": "Откуда Хосе?",
+          "answer": "De Sevilla."
+        },
+        {
+          "question": "Как Карлосу поздороваться в семь вечера?",
+          "answer": "¡Buenas tardes!"
+        }
+      ]
+    },
+    "phrases": [
+      {
+        "es": "¡Buenas! ¿Qué tal? ¡Hasta luego!",
+        "ru": "Здрасьте! Как дела? Пока! — весь разговор с соседом в лифте",
+        "ipa": "ˈbwenas · ke ˈtal · ˈasta ˈlwego"
+      },
+      {
+        "es": "¿Buenos días? ¡Buenas tardes!",
+        "ru": "Доброе утро? Уже день! — тому, кто проспал",
+        "ipa": "ˈbwenos ˈdi.as · ˈbwenas ˈtaɾdes"
+      },
+      {
+        "es": "Encantado. ¿Cómo te llamas? Perdón… ¿cómo te llamas?",
+        "ru": "Очень приятно. Как тебя зовут? Извини… как-как тебя зовут?",
+        "ipa": "enkanˈtado · ˈkomo te ˈjamas · peɾˈdon · ˈkomo te ˈjamas"
+      },
+      {
+        "es": "Perdón, perdón, perdón… ¡Gracias!",
+        "ru": "Простите, простите, простите… Спасибо! — пробираясь к выходу в метро",
+        "ipa": "peɾˈdon peɾˈdon peɾˈdon · ˈgɾaθjas"
+      },
+      {
+        "es": "Por favor, por favor, por favor…",
+        "ru": "Ну пожалуйста, пожалуйста, пожалуйста…",
+        "ipa": "poɾ faˈboɾ poɾ faˈboɾ poɾ faˈboɾ"
+      },
+      {
+        "es": "Hola, hola. Adiós, adiós.",
+        "ru": "Привет-привет. Пока-пока.",
+        "ipa": "ˈola ˈola · aˈdjos aˈdjos"
+      }
+    ],
+    "culture": {
+      "kind": "trabalenguas",
+      "title": "Скороговорка на r",
+      "text": "Одна из самых известных испанских скороговорок. Здесь везде одиночное r после t — один короткий удар кончиком языка, как в русском «три». Читайте сначала медленно, по слогам, потом всё быстрее. Смысла в ней немного — зато язык привыкает.",
+      "es": "Tres tristes tigres tragan trigo en un trigal.",
+      "ipa": "ˈtɾes ˈtɾistes ˈtigɾes ˈtɾagan ˈtɾigo en un tɾiˈgal",
+      "ru": "Три грустных тигра глотают пшеницу на пшеничном поле."
+    },
+    "yourTurn": {
+      "task": "Представьтесь, как при знакомстве: поздоровайтесь, назовите имя и город, спросите собеседника о том же и попрощайтесь. Потом прочитайте вслух.",
+      "template": [
+        "¡Hola!",
+        "Me llamo…",
+        "Soy de…",
+        "¿Y tú?"
+      ],
+      "model": [
+        {
+          "es": "¡Buenas tardes!",
+          "ru": "Добрый день!"
+        },
+        {
+          "es": "Me llamo Víctor.",
+          "ru": "Меня зовут Виктор."
+        },
+        {
+          "es": "Soy de Kazán.",
+          "ru": "Я из Казани."
+        },
+        {
+          "es": "¿Y tú? ¿Cómo te llamas?",
+          "ru": "А тебя как зовут?"
+        },
+        {
+          "es": "¿De dónde eres?",
+          "ru": "Откуда ты?"
+        },
+        {
+          "es": "¡Hasta luego!",
+          "ru": "До встречи!"
+        }
+      ]
+    }
+  },
+  "quiz": [
+    {
+      "id": "a0-01-s17.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s17"
+    },
+    {
+      "id": "a0-01-s18.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s18"
+    },
+    {
+      "id": "a0-01-s19.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s19"
+    },
+    {
+      "id": "a0-01-s20.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s20"
+    },
+    {
+      "id": "a0-01-s21.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s21"
+    },
+    {
+      "id": "a0-01-s22.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s22"
+    },
+    {
+      "id": "a0-01-s23.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s23"
+    },
+    {
+      "id": "a0-01-s24.translate",
+      "type": "translate",
+      "sentenceId": "a0-01-s24"
+    },
+    {
+      "id": "a0-01-s25.order",
+      "type": "order",
+      "sentenceId": "a0-01-s25"
+    },
+    {
+      "id": "a0-01-s26.order",
+      "type": "order",
+      "sentenceId": "a0-01-s26"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-01-s01",
+      "ru": "Привет.",
+      "es": [
+        "Hola."
+      ],
+      "ipa": "ˈola"
+    },
+    {
+      "id": "a0-01-s02",
+      "ru": "Доброе утро.",
+      "es": [
+        "Buenos días."
+      ],
+      "ipa": "ˈbwenos ˈdi.as"
+    },
+    {
+      "id": "a0-01-s03",
+      "ru": "Добрый день.",
+      "hint": "в 11 утра",
+      "es": [
+        "Buenos días."
+      ],
+      "ipa": "ˈbwenos ˈdi.as"
+    },
+    {
+      "id": "a0-01-s04",
+      "ru": "Добрый день.",
+      "hint": "в 5 вечера",
+      "es": [
+        "Buenas tardes."
+      ],
+      "ipa": "ˈbwenas ˈtaɾdes"
+    },
+    {
+      "id": "a0-01-s05",
+      "ru": "Добрый вечер.",
+      "hint": "в 7 вечера",
+      "es": [
+        "Buenas tardes."
+      ],
+      "ipa": "ˈbwenas ˈtaɾdes"
+    },
+    {
+      "id": "a0-01-s06",
+      "ru": "Добрый вечер.",
+      "hint": "в 10 вечера",
+      "es": [
+        "Buenas noches."
+      ],
+      "ipa": "ˈbwenas ˈnotʃes"
+    },
+    {
+      "id": "a0-01-s07",
+      "ru": "Спасибо.",
+      "es": [
+        "Gracias."
+      ],
+      "ipa": "ˈgɾaθjas"
+    },
+    {
+      "id": "a0-01-s08",
+      "ru": "Пожалуйста.",
+      "hint": "просьба",
+      "es": [
+        "Por favor."
+      ],
+      "ipa": "poɾ faˈboɾ"
+    },
+    {
+      "id": "a0-01-s09",
+      "ru": "Пожалуйста.",
+      "hint": "ответ на «спасибо»",
+      "es": [
+        "De nada."
+      ],
+      "ipa": "de ˈnada"
+    },
+    {
+      "id": "a0-01-s10",
+      "ru": "Извините.",
+      "es": [
+        "Perdón."
+      ],
+      "ipa": "peɾˈdon"
+    },
+    {
+      "id": "a0-01-s11",
+      "ru": "До свидания.",
+      "es": [
+        "Adiós."
+      ],
+      "ipa": "aˈdjos"
+    },
+    {
+      "id": "a0-01-s12",
+      "ru": "До встречи.",
+      "es": [
+        "Hasta luego."
+      ],
+      "ipa": "ˈasta ˈlwego"
+    },
+    {
+      "id": "a0-01-s13",
+      "ru": "Как тебя зовут?",
+      "es": [
+        "¿Cómo te llamas?"
+      ],
+      "ipa": "ˈkomo te ˈjamas"
+    },
+    {
+      "id": "a0-01-s14",
+      "ru": "Меня зовут Ана.",
+      "es": [
+        "Me llamo Ana."
+      ],
+      "ipa": "me ˈjamo ˈana"
+    },
+    {
+      "id": "a0-01-s15",
+      "ru": "А ты?",
+      "es": [
+        "¿Y tú?"
+      ],
+      "ipa": "i ˈtu"
+    },
+    {
+      "id": "a0-01-s16",
+      "ru": "Меня зовут Хосе.",
+      "es": [
+        "Me llamo José."
+      ],
+      "ipa": "me ˈjamo xoˈse"
+    },
+    {
+      "id": "a0-01-s17",
+      "ru": "Откуда ты?",
+      "es": [
+        "¿De dónde eres?"
+      ],
+      "ipa": "de ˈdonde ˈeɾes"
+    },
+    {
+      "id": "a0-01-s18",
+      "ru": "Я из Москвы.",
+      "es": [
+        "Soy de Moscú."
+      ],
+      "ipa": "ˈsoj de mosˈku"
+    },
+    {
+      "id": "a0-01-s19",
+      "ru": "Я из Испании.",
+      "es": [
+        "Soy de España."
+      ],
+      "ipa": "ˈsoj de esˈpaɲa"
+    },
+    {
+      "id": "a0-01-s20",
+      "ru": "Привет! Меня зовут Карлос.",
+      "es": [
+        "Hola. Me llamo Carlos.",
+        "Hola, me llamo Carlos."
+      ],
+      "ipa": "ˈola · me ˈjamo ˈkaɾlos"
+    },
+    {
+      "id": "a0-01-s21",
+      "ru": "Доброе утро! Как тебя зовут?",
+      "es": [
+        "Buenos días. ¿Cómo te llamas?"
+      ],
+      "ipa": "ˈbwenos ˈdi.as · ˈkomo te ˈjamas"
+    },
+    {
+      "id": "a0-01-s22",
+      "ru": "Я из Мадрида. А ты?",
+      "es": [
+        "Soy de Madrid. ¿Y tú?"
+      ],
+      "ipa": "ˈsoj de maˈdɾid · i ˈtu"
+    },
+    {
+      "id": "a0-01-s23",
+      "ru": "Извини, как тебя зовут?",
+      "es": [
+        "Perdón, ¿cómo te llamas?"
+      ],
+      "ipa": "peɾˈdon ˈkomo te ˈjamas"
+    },
+    {
+      "id": "a0-01-s24",
+      "ru": "Откуда ты, Хосе?",
+      "es": [
+        "¿De dónde eres, José?"
+      ],
+      "ipa": "de ˈdonde ˈeɾes xoˈse"
+    },
+    {
+      "id": "a0-01-s25",
+      "ru": "Спасибо, до встречи!",
+      "es": [
+        "Gracias, hasta luego.",
+        "Gracias. Hasta luego."
+      ],
+      "ipa": "ˈgɾaθjas ˈasta ˈlwego"
+    },
+    {
+      "id": "a0-01-s26",
+      "ru": "Добрый вечер! Я из Валенсии.",
+      "hint": "в 10 вечера",
+      "es": [
+        "Buenas noches. Soy de Valencia."
+      ],
+      "ipa": "ˈbwenas ˈnotʃes · ˈsoj de baˈlenθja"
+    },
+    {
+      "id": "a0-01-s27",
+      "ru": "Спасибо, Карлос! До свидания!",
+      "es": [
+        "Gracias, Carlos. Adiós."
+      ]
+    },
+    {
+      "id": "a0-01-s28",
+      "ru": "Спасибо, Хорхе! — Не за что, Ана.",
+      "es": [
+        "Gracias, Jorge. — De nada, Ana."
+      ]
+    },
+    {
+      "id": "a0-01-s29",
+      "ru": "Привет, Ана! Как дела?",
+      "es": [
+        "¡Hola, Ana! ¿Qué tal?"
+      ]
+    },
+    {
+      "id": "a0-01-s30",
+      "ru": "Привет! Меня зовут Виктор. А тебя?",
+      "es": [
+        "¡Hola! Me llamo Víctor. ¿Y tú?"
+      ]
+    },
+    {
+      "id": "a0-01-s31",
+      "ru": "Доброе утро, Ана! Откуда ты?",
+      "es": [
+        "¡Buenos días, Ana! ¿De dónde eres?"
+      ]
+    },
+    {
+      "id": "a0-01-s32",
+      "ru": "Меня зовут Ана, я из Мадрида.",
+      "es": [
+        "Me llamo Ana, soy de Madrid."
+      ]
+    },
+    {
+      "id": "a0-01-s33",
+      "ru": "Я из Бильбао. А ты откуда?",
+      "es": [
+        "Soy de Bilbao. ¿Y tú?",
+        "Soy de Bilbao. ¿De dónde eres?"
+      ]
+    },
+    {
+      "id": "a0-01-s34",
+      "ru": "Добрый вечер! Меня зовут Хосе.",
+      "hint": "в 7 вечера",
+      "es": [
+        "Buenas tardes. Me llamo José."
+      ]
+    },
+    {
+      "id": "a0-01-s35",
+      "ru": "Очень приятно! Я с Майорки.",
+      "hint": "говорит девушка",
+      "es": [
+        "Encantada. Soy de Mallorca."
+      ]
+    },
+    {
+      "id": "a0-01-s36",
+      "ru": "Спокойной ночи! До завтра!",
+      "es": [
+        "Buenas noches. ¡Hasta mañana!"
+      ]
+    },
+    {
+      "id": "a0-01-s37",
+      "ru": "Привет, меня зовут Ана.",
+      "es": [
+        "**Hola**, me llamo Ana."
+      ],
+      "why": "h не читается, но пишется."
+    },
+    {
+      "id": "a0-01-s38",
+      "ru": "Привет, меня зовут Виктор.",
+      "es": [
+        "Hola, me **llamo** Víctor."
+      ],
+      "why": "ll и y звучат одинаково, но пишется llamo."
+    },
+    {
+      "id": "a0-01-s39",
+      "ru": "Спасибо, Хосе.",
+      "es": [
+        "**Gracias**, José."
+      ],
+      "why": "Здесь c: перед e и i она звучит как английское th."
+    },
+    {
+      "id": "a0-01-s40",
+      "ru": "Меня зовут Хосе, я из Испании.",
+      "es": [
+        "Me llamo José, soy de **España**."
+      ],
+      "why": "Звук «нь» — одна буква ñ."
+    },
+    {
+      "id": "a0-01-s41",
+      "ru": "Доброе утро, Виктор.",
+      "es": [
+        "Buenos **días**, Víctor."
+      ],
+      "why": "Знак на í: i ударная и читается отдельным слогом — dí-as."
+    },
+    {
+      "id": "a0-01-s42",
+      "ru": "До свидания, Ана.",
+      "es": [
+        "**Adiós**, Ana."
+      ],
+      "why": "Слово на s — по правилу ударение упало бы на a. Знак переносит его на o."
+    },
+    {
+      "id": "a0-01-s43",
+      "ru": "Меня зовут Хорхе. А ты?",
+      "es": [
+        "Me llamo Jorge. ¿Y **tú**?"
+      ],
+      "why": "«Ты» — tú со знаком. Tu без знака — «твой»."
+    },
+    {
+      "id": "a0-01-s44",
+      "ru": "Привет. Откуда ты?",
+      "es": [
+        "Hola. **¿**De dónde eres?"
+      ],
+      "why": "Вопрос открывается перевёрнутым ¿ — его видно ещё до первого слова."
+    }
+  ]
+}

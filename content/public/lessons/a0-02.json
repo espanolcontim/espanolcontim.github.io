@@ -1,0 +1,1017 @@
+{
+  "id": "a0-02",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Hablo español.",
+        "ru": "Я говорю по-испански.",
+        "ipa": "ˈablo espaˈɲol"
+      },
+      {
+        "es": "Estudio inglés.",
+        "ru": "Я учу английский.",
+        "ipa": "esˈtudjo inˈgles"
+      },
+      {
+        "es": "Trabajo mucho.",
+        "ru": "Я много работаю.",
+        "ipa": "tɾaˈbaxo ˈmutʃo"
+      },
+      {
+        "es": "¿Hablas español?",
+        "ru": "Ты говоришь по-испански?",
+        "ipa": "ˈablas espaˈɲol"
+      },
+      {
+        "es": "No hablo inglés.",
+        "ru": "Я не говорю по-английски.",
+        "ipa": "no ˈablo inˈgles"
+      },
+      {
+        "es": "Sí, estudio español.",
+        "ru": "Да, я учу испанский.",
+        "ipa": "ˈsi esˈtudjo espaˈɲol"
+      },
+      {
+        "es": "Trabajo y estudio.",
+        "ru": "Я работаю и учусь.",
+        "ipa": "tɾaˈbaxo i esˈtudjo"
+      },
+      {
+        "es": "Estudio mucho, pero hablo poco.",
+        "ru": "Я много учусь, но говорю мало.",
+        "ipa": "esˈtudjo ˈmutʃo ˈpeɾo ˈablo ˈpoko"
+      },
+      {
+        "es": "Hablo español e inglés.",
+        "ru": "Я говорю по-испански и по-английски.",
+        "ipa": "ˈablo espaˈɲol e inˈgles"
+      }
+    ],
+    "rule": "Глагол на **-ar**: убираем -ar и добавляем **-o** (я) или **-as** (ты): habl**o**, habl**as**. Yo и tú обычно не нужны. Отрицание — **no** перед глаголом, вопрос — интонацией: ¿Hablas español?",
+    "mistake": {
+      "wrong": {
+        "es": "Hablo español y inglés."
+      },
+      "right": {
+        "es": "Hablo español e inglés.",
+        "ru": "перед звуком [i] вместо y — e"
+      }
+    },
+    "practice": [
+      "a0-02-s21",
+      "a0-02-s24",
+      "a0-02-s26",
+      "a0-02-s27"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Форма «я»",
+        "hint": "Убираем -ar и добавляем -o",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Форма «я»",
+            "pattern": [
+              "основа",
+              "+",
+              "-o"
+            ],
+            "text": "Убираем -ar и добавляем -o: hablar → hablo.",
+            "examples": [
+              {
+                "es": "hablar — **Hablo** inglés.",
+                "ru": "Я говорю по-английски.",
+                "ipa": "aˈblaɾ · ˈablo inˈgles"
+              },
+              {
+                "es": "estudiar — **Estudio** mucho.",
+                "ru": "Я много учусь.",
+                "ipa": "estuˈdjaɾ · esˈtudjo ˈmutʃo"
+              },
+              {
+                "es": "trabajar — **Trabajo**.",
+                "ru": "Я работаю.",
+                "ipa": "tɾabaˈxaɾ · tɾaˈbaxo"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Первые глаголы",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Hablo** **español**.",
+                "ru": "Я говорю по-испански.",
+                "ipa": "ˈablo espaˈɲol"
+              },
+              {
+                "es": "**Trabajo** **mucho**.",
+                "ru": "Я много работаю.",
+                "ipa": "tɾaˈbaxo ˈmutʃo"
+              },
+              {
+                "es": "**Estudio** **inglés**.",
+                "ru": "Я учу английский.",
+                "ipa": "esˈtudjo inˈgles"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Форма «ты»",
+        "hint": "Убираем -ar и добавляем -as",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Форма «ты»",
+            "pattern": [
+              "основа",
+              "+",
+              "-as"
+            ],
+            "text": "Убираем -ar и добавляем -as: hablar → hablas.",
+            "examples": [
+              {
+                "es": "**Hablas** inglés.",
+                "ru": "Ты говоришь по-английски.",
+                "ipa": "ˈablas inˈgles"
+              },
+              {
+                "es": "**Estudias** español.",
+                "ru": "Ты учишь испанский.",
+                "ipa": "esˈtudjas espaˈɲol"
+              },
+              {
+                "es": "**Trabajas**.",
+                "ru": "Ты работаешь.",
+                "ipa": "tɾaˈbaxas"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Форма «ты»",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Hablas** español.",
+                "ru": "Ты говоришь по-испански.",
+                "ipa": "ˈablas espaˈɲol"
+              },
+              {
+                "es": "**Estudias** mucho.",
+                "ru": "Ты много учишься.",
+                "ipa": "esˈtudjas ˈmutʃo"
+              },
+              {
+                "es": "**Trabajas** **poco**.",
+                "ru": "Ты мало работаешь.",
+                "ipa": "tɾaˈbaxas ˈpoko"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "hablar",
+            "ru": "говорить",
+            "rows": [
+              {
+                "stem": "habl",
+                "ending": "o",
+                "ipa": "ˈablo",
+                "pronoun": "yo",
+                "ru": "я говорю"
+              },
+              {
+                "stem": "habl",
+                "ending": "as",
+                "ipa": "ˈablas",
+                "pronoun": "tú",
+                "ru": "ты говоришь"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Я и ты",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Yo** hablo mucho, **tú** hablas poco.",
+                "ru": "Я говорю много, а ты — мало.",
+                "ipa": "ˈjo ˈablo ˈmutʃo ˈtu ˈablas ˈpoko"
+              },
+              {
+                "es": "**Tú** estudias inglés, yo estudio español.",
+                "ru": "Ты учишь английский, а я — испанский.",
+                "ipa": "ˈtu esˈtudjas inˈgles ˈjo esˈtudjo espaˈɲol"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Когда нужны yo и tú",
+            "left": {
+              "label": "обычно",
+              "items": [
+                {
+                  "es": "Hablo mucho.",
+                  "ru": "Я много говорю."
+                },
+                {
+                  "es": "Estudias inglés.",
+                  "ru": "Ты учишь английский."
+                }
+              ]
+            },
+            "right": {
+              "label": "когда противопоставляем",
+              "items": [
+                {
+                  "es": "**Yo** hablo mucho.",
+                  "ru": "А вот я много говорю."
+                },
+                {
+                  "es": "**Tú** estudias inglés.",
+                  "ru": "А вот ты учишь английский."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Нет и вопрос",
+        "hint": "No перед глаголом, вопрос — интонацией",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Отрицание",
+            "pattern": [
+              "no",
+              "+",
+              "глагол"
+            ],
+            "text": "No ставим прямо перед глаголом, как русское «не».",
+            "examples": [
+              {
+                "es": "**No** trabajo.",
+                "ru": "Я не работаю.",
+                "ipa": "no tɾaˈbaxo"
+              },
+              {
+                "es": "**No** hablas mucho.",
+                "ru": "Ты говоришь немного.",
+                "ipa": "no ˈablas ˈmutʃo"
+              },
+              {
+                "es": "**No**, **no** estudio.",
+                "ru": "Нет, я не учусь.",
+                "ipa": "ˈno no esˈtudjo"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Да и нет",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**No** hablo inglés.",
+                "ru": "Я не говорю по-английски.",
+                "ipa": "no ˈablo inˈgles"
+              },
+              {
+                "es": "Tú **no** estudias.",
+                "ru": "Ты не учишься.",
+                "ipa": "ˈtu no esˈtudjas"
+              },
+              {
+                "es": "**Sí**, estudio español.",
+                "ru": "Да, я учу испанский.",
+                "ipa": "ˈsi esˈtudjo espaˈɲol"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Вопрос",
+            "pattern": [
+              "¿",
+              "фраза",
+              "?"
+            ],
+            "text": "Порядок слов тот же. Вопрос слышно по интонации.",
+            "examples": [
+              {
+                "es": "¿Hablas español?",
+                "ru": "Ты говоришь по-испански?",
+                "ipa": "ˈablas espaˈɲol"
+              },
+              {
+                "es": "¿Trabajas mucho?",
+                "ru": "Ты много работаешь?",
+                "ipa": "tɾaˈbaxas ˈmutʃo"
+              },
+              {
+                "es": "¿No estudias?",
+                "ru": "Ты не учишься?",
+                "ipa": "no esˈtudjas"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "Языки",
+        "hint": "hablar + язык — без артикля",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Языки",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Hablo **ruso**.",
+                "ru": "Я говорю по-русски.",
+                "ipa": "ˈablo ˈruso"
+              },
+              {
+                "es": "No hablo **francés**.",
+                "ru": "Я не говорю по-французски.",
+                "ipa": "no ˈablo fɾanˈθes"
+              },
+              {
+                "es": "¿Estudias **alemán**?",
+                "ru": "Ты учишь немецкий?",
+                "ipa": "esˈtudjas aleˈman"
+              },
+              {
+                "es": "enseñar — **Enseño** **chino**.",
+                "ru": "Я преподаю китайский.",
+                "ipa": "enseˈɲaɾ · enˈseɲo ˈtʃino"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-5",
+        "title": "И, но",
+        "hint": "y — «и», перед i- — e; pero — «но»",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "И и но",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Trabajo **y** estudio.",
+                "ru": "Я работаю и учусь.",
+                "ipa": "tɾaˈbaxo i esˈtudjo"
+              },
+              {
+                "es": "Hablo ruso **y** francés.",
+                "ru": "Я говорю по-русски и по-французски.",
+                "ipa": "ˈablo ˈruso i fɾanˈθes"
+              },
+              {
+                "es": "Estudio mucho, **pero** hablo poco.",
+                "ru": "Я много учусь, но говорю мало.",
+                "ipa": "esˈtudjo ˈmutʃo ˈpeɾo ˈablo ˈpoko"
+              },
+              {
+                "es": "Hablo español **e** inglés.",
+                "ru": "Я говорю по-испански и по-английски.",
+                "ipa": "ˈablo espaˈɲol e inˈgles"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "y превращается в e",
+            "pattern": [
+              "y",
+              "→",
+              "e перед i-, hi-"
+            ],
+            "text": "Перед словом на звук [i] вместо y говорим e.",
+            "examples": [
+              {
+                "es": "Hablo español **e** inglés.",
+                "ru": "Я говорю по-испански и по-английски.",
+                "ipa": "ˈablo espaˈɲol e inˈgles"
+              },
+              {
+                "es": "Estudio alemán **e** inglés.",
+                "ru": "Я учу немецкий и английский.",
+                "ipa": "esˈtudjo aleˈman e inˈgles"
+              },
+              {
+                "es": "Hablo ruso **y** español.",
+                "ru": "Я говорю по-русски и по-испански.",
+                "ipa": "ˈablo ˈruso i espaˈɲol"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "Hablo español **y** inglés."
+                },
+                {
+                  "es": "Estudio francés **y** inglés."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "Hablo español **e** inglés.",
+                  "ru": "Я говорю по-испански и по-английски."
+                },
+                {
+                  "es": "Estudio francés **e** inglés.",
+                  "ru": "Я учу французский и английский."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Ты говоришь по-русски?",
+        "lines": [
+          {
+            "es": "Hola. Me llamo Ana. ¿Y tú?",
+            "ru": "Привет. Меня зовут Ана. А тебя?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Me llamo Carlos. ¿**Hablas** ruso?",
+            "ru": "Меня зовут Карлос. Ты говоришь по-русски?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, **hablo** ruso e inglés. ¿Y tú?",
+            "ru": "Да, я говорю по-русски и по-английски. А ты?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Hablo** español y francés.",
+            "ru": "Я говорю по-испански и по-французски.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿**Estudias** ruso?",
+            "ru": "Ты учишь русский?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, pero **hablo** poco.",
+            "ru": "Да, но говорю мало.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Yo **enseño** ruso.",
+            "ru": "А я преподаю русский.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Sí? Yo **trabajo** mucho y **estudio** poco.",
+            "ru": "Правда? А я много работаю и мало учусь.",
+            "speaker": "Carlos"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "hablar",
+        "ru": "говорить",
+        "pos": "verb",
+        "ipa": "aˈblaɾ"
+      },
+      {
+        "es": "trabajar",
+        "ru": "работать",
+        "pos": "verb",
+        "ipa": "tɾabaˈxaɾ"
+      },
+      {
+        "es": "estudiar",
+        "ru": "учиться, учить",
+        "pos": "verb",
+        "ipa": "estuˈdjaɾ"
+      },
+      {
+        "es": "enseñar",
+        "ru": "преподавать, учить кого-то",
+        "pos": "verb",
+        "ipa": "enseˈɲaɾ"
+      },
+      {
+        "es": "yo",
+        "ru": "я",
+        "pos": "pron",
+        "ipa": "ˈjo"
+      },
+      {
+        "es": "tú",
+        "ru": "ты",
+        "pos": "pron",
+        "ipa": "ˈtu"
+      },
+      {
+        "es": "no",
+        "ru": "не, нет",
+        "pos": "adv",
+        "ipa": "no"
+      },
+      {
+        "es": "sí",
+        "ru": "да",
+        "pos": "adv",
+        "ipa": "ˈsi"
+      },
+      {
+        "es": "y",
+        "ru": "и",
+        "pos": "conj",
+        "ipa": "i"
+      },
+      {
+        "es": "e",
+        "ru": "и (перед i-, hi-)",
+        "pos": "conj",
+        "ipa": "e"
+      },
+      {
+        "es": "pero",
+        "ru": "но",
+        "pos": "conj",
+        "ipa": "ˈpeɾo"
+      },
+      {
+        "es": "mucho",
+        "ru": "много",
+        "pos": "adv",
+        "ipa": "ˈmutʃo"
+      },
+      {
+        "es": "poco",
+        "ru": "мало",
+        "pos": "adv",
+        "ipa": "ˈpoko"
+      },
+      {
+        "es": "el español",
+        "ru": "испанский язык",
+        "pos": "noun",
+        "ipa": "el espaˈɲol"
+      },
+      {
+        "es": "el inglés",
+        "ru": "английский язык",
+        "pos": "noun",
+        "ipa": "el inˈgles"
+      },
+      {
+        "es": "el ruso",
+        "ru": "русский язык",
+        "pos": "noun",
+        "ipa": "el ˈruso"
+      },
+      {
+        "es": "el francés",
+        "ru": "французский язык",
+        "pos": "noun",
+        "ipa": "el fɾanˈθes"
+      },
+      {
+        "es": "el alemán",
+        "ru": "немецкий язык",
+        "pos": "noun",
+        "ipa": "el aleˈman"
+      },
+      {
+        "es": "el chino",
+        "ru": "китайский язык",
+        "pos": "noun",
+        "ipa": "el ˈtʃino"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Говорить о себе: hablo, trabajo, estudio",
+        "Обращаться к собеседнику: hablas, trabajas, estudias",
+        "Отрицать и спрашивать: no hablo, ¿hablas?",
+        "Соединять фразы: y, e, pero",
+        "Называть языки, на которых говорите"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 3: хочу, могу, нужно"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Я и ты",
+      "sentenceIds": [
+        "a0-02-s01",
+        "a0-02-s02",
+        "a0-02-s03",
+        "a0-02-s04",
+        "a0-02-s05",
+        "a0-02-s06",
+        "a0-02-s07",
+        "a0-02-s08"
+      ]
+    },
+    {
+      "name": "Нет и вопросы",
+      "sentenceIds": [
+        "a0-02-s09",
+        "a0-02-s10",
+        "a0-02-s11",
+        "a0-02-s12",
+        "a0-02-s13",
+        "a0-02-s14",
+        "a0-02-s15",
+        "a0-02-s16",
+        "a0-02-s17",
+        "a0-02-s18"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-02-s19",
+        "a0-02-s20",
+        "a0-02-s21",
+        "a0-02-s22",
+        "a0-02-s23",
+        "a0-02-s24",
+        "a0-02-s25",
+        "a0-02-s26",
+        "a0-02-s27",
+        "a0-02-s28",
+        "a0-02-s29",
+        "a0-02-s30",
+        "a0-02-s31"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-02-s19.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s19"
+    },
+    {
+      "id": "a0-02-s20.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s20"
+    },
+    {
+      "id": "a0-02-s21.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s21"
+    },
+    {
+      "id": "a0-02-s22.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s22"
+    },
+    {
+      "id": "a0-02-s23.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s23"
+    },
+    {
+      "id": "a0-02-s24.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s24"
+    },
+    {
+      "id": "a0-02-s25.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s25"
+    },
+    {
+      "id": "a0-02-s26.translate",
+      "type": "translate",
+      "sentenceId": "a0-02-s26"
+    },
+    {
+      "id": "a0-02-s27.order",
+      "type": "order",
+      "sentenceId": "a0-02-s27"
+    },
+    {
+      "id": "a0-02-s28.order",
+      "type": "order",
+      "sentenceId": "a0-02-s28"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-02-s01",
+      "ru": "Я говорю по-испански.",
+      "es": [
+        "Hablo español.",
+        "Yo hablo español."
+      ],
+      "ipa": "ˈablo espaˈɲol"
+    },
+    {
+      "id": "a0-02-s02",
+      "ru": "Ты работаешь.",
+      "es": [
+        "Trabajas.",
+        "Tú trabajas."
+      ],
+      "ipa": "tɾaˈbaxas"
+    },
+    {
+      "id": "a0-02-s03",
+      "ru": "Я учу английский.",
+      "es": [
+        "Estudio inglés.",
+        "Yo estudio inglés."
+      ],
+      "ipa": "esˈtudjo inˈgles"
+    },
+    {
+      "id": "a0-02-s04",
+      "ru": "Ты говоришь по-русски.",
+      "es": [
+        "Hablas ruso.",
+        "Tú hablas ruso."
+      ],
+      "ipa": "ˈablas ˈruso"
+    },
+    {
+      "id": "a0-02-s05",
+      "ru": "Я много работаю.",
+      "es": [
+        "Trabajo mucho."
+      ],
+      "ipa": "tɾaˈbaxo ˈmutʃo"
+    },
+    {
+      "id": "a0-02-s06",
+      "ru": "Ты мало учишься.",
+      "es": [
+        "Estudias poco."
+      ],
+      "ipa": "esˈtudjas ˈpoko"
+    },
+    {
+      "id": "a0-02-s07",
+      "ru": "Я преподаю испанский.",
+      "es": [
+        "Enseño español."
+      ],
+      "ipa": "enˈseɲo espaˈɲol"
+    },
+    {
+      "id": "a0-02-s08",
+      "ru": "Ты учишь французский.",
+      "es": [
+        "Estudias francés.",
+        "Tú estudias francés."
+      ],
+      "ipa": "esˈtudjas fɾanˈθes"
+    },
+    {
+      "id": "a0-02-s09",
+      "ru": "Я не работаю.",
+      "es": [
+        "No trabajo.",
+        "Yo no trabajo."
+      ],
+      "ipa": "no tɾaˈbaxo"
+    },
+    {
+      "id": "a0-02-s10",
+      "ru": "Я не говорю по-французски.",
+      "es": [
+        "No hablo francés.",
+        "Yo no hablo francés."
+      ],
+      "ipa": "no ˈablo fɾanˈθes"
+    },
+    {
+      "id": "a0-02-s11",
+      "ru": "Ты говоришь по-английски?",
+      "es": [
+        "¿Hablas inglés?",
+        "¿Tú hablas inglés?"
+      ],
+      "ipa": "ˈablas inˈgles"
+    },
+    {
+      "id": "a0-02-s12",
+      "ru": "Ты много работаешь?",
+      "es": [
+        "¿Trabajas mucho?"
+      ],
+      "ipa": "tɾaˈbaxas ˈmutʃo"
+    },
+    {
+      "id": "a0-02-s13",
+      "ru": "Ты не учишься?",
+      "es": [
+        "¿No estudias?"
+      ],
+      "ipa": "no esˈtudjas"
+    },
+    {
+      "id": "a0-02-s14",
+      "ru": "Да, я учу немецкий.",
+      "es": [
+        "Sí, estudio alemán."
+      ],
+      "ipa": "ˈsi esˈtudjo aleˈman"
+    },
+    {
+      "id": "a0-02-s15",
+      "ru": "Нет, я не преподаю английский.",
+      "es": [
+        "No, no enseño inglés."
+      ],
+      "ipa": "ˈno no enˈseɲo inˈgles"
+    },
+    {
+      "id": "a0-02-s16",
+      "ru": "Ты не говоришь по-китайски?",
+      "es": [
+        "¿No hablas chino?"
+      ],
+      "ipa": "no ˈablas ˈtʃino"
+    },
+    {
+      "id": "a0-02-s17",
+      "ru": "Я мало говорю по-испански.",
+      "es": [
+        "Hablo poco español."
+      ],
+      "ipa": "ˈablo ˈpoko espaˈɲol"
+    },
+    {
+      "id": "a0-02-s18",
+      "ru": "Ты преподаёшь русский?",
+      "es": [
+        "¿Enseñas ruso?"
+      ],
+      "ipa": "enˈseɲas ˈruso"
+    },
+    {
+      "id": "a0-02-s19",
+      "ru": "Я работаю и учусь.",
+      "es": [
+        "Trabajo y estudio."
+      ],
+      "ipa": "tɾaˈbaxo i esˈtudjo"
+    },
+    {
+      "id": "a0-02-s20",
+      "ru": "Я учу испанский и французский.",
+      "es": [
+        "Estudio español y francés."
+      ],
+      "ipa": "esˈtudjo espaˈɲol i fɾanˈθes"
+    },
+    {
+      "id": "a0-02-s21",
+      "ru": "Я говорю по-русски и по-английски.",
+      "es": [
+        "Hablo ruso e inglés."
+      ],
+      "ipa": "ˈablo ˈruso e inˈgles"
+    },
+    {
+      "id": "a0-02-s22",
+      "ru": "Ты говоришь по-немецки и по-английски?",
+      "es": [
+        "¿Hablas alemán e inglés?"
+      ],
+      "ipa": "ˈablas aleˈman e inˈgles"
+    },
+    {
+      "id": "a0-02-s23",
+      "ru": "Я много учусь, но говорю мало.",
+      "es": [
+        "Estudio mucho, pero hablo poco."
+      ],
+      "ipa": "esˈtudjo ˈmutʃo ˈpeɾo ˈablo ˈpoko"
+    },
+    {
+      "id": "a0-02-s24",
+      "ru": "Я говорю по-английски, но не говорю по-французски.",
+      "es": [
+        "Hablo inglés, pero no hablo francés."
+      ],
+      "ipa": "ˈablo inˈgles ˈpeɾo no ˈablo fɾanˈθes"
+    },
+    {
+      "id": "a0-02-s25",
+      "ru": "Я говорю много, а ты мало.",
+      "es": [
+        "Yo hablo mucho y tú hablas poco.",
+        "Yo hablo mucho, pero tú hablas poco."
+      ],
+      "ipa": "ˈjo ˈablo ˈmutʃo i ˈtu ˈablas ˈpoko"
+    },
+    {
+      "id": "a0-02-s26",
+      "ru": "Ты работаешь? — Нет, я учусь.",
+      "es": [
+        "¿Trabajas? — No, estudio."
+      ],
+      "ipa": "tɾaˈbaxas · ˈno esˈtudjo"
+    },
+    {
+      "id": "a0-02-s27",
+      "ru": "Привет! Ты говоришь по-испански?",
+      "es": [
+        "¡Hola! ¿Hablas español?",
+        "Hola, ¿hablas español?"
+      ],
+      "ipa": "ˈola · ˈablas espaˈɲol"
+    },
+    {
+      "id": "a0-02-s28",
+      "ru": "Спасибо, но я не говорю по-немецки.",
+      "es": [
+        "Gracias, pero no hablo alemán."
+      ],
+      "ipa": "ˈgɾaθjas ˈpeɾo no ˈablo aleˈman"
+    },
+    {
+      "id": "a0-02-s29",
+      "ru": "Меня зовут Ана, я преподаю испанский.",
+      "es": [
+        "Me llamo Ana y enseño español.",
+        "Me llamo Ana. Enseño español."
+      ],
+      "ipa": "me ˈjamo ˈana i enˈseɲo espaˈɲol"
+    },
+    {
+      "id": "a0-02-s30",
+      "ru": "Я из Москвы и говорю по-русски.",
+      "es": [
+        "Soy de Moscú y hablo ruso."
+      ],
+      "ipa": "ˈsoj de mosˈku i ˈablo ˈruso"
+    },
+    {
+      "id": "a0-02-s31",
+      "ru": "Я учу испанский. А ты?",
+      "es": [
+        "Estudio español. ¿Y tú?"
+      ],
+      "ipa": "esˈtudjo espaˈɲol · i ˈtu"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+coverage/
+package-lock.json
+
+# Контент генерируется импортом
+content/
+
+# Документацию правим руками: Prettier выравнивал бы таблицы
+*.md

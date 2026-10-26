@@ -1,0 +1,16 @@
+# Платный контент — только в приватном бакете, в git никогда
+content/private/
+
+# Секреты и сырые выгрузки (дампы API Boosty и т. п.)
+.env*
+*.raw.json
+
+# Зависимости и сборка
+node_modules/
+dist/
+.astro/
+coverage/
+
+# Логи и мусор
+*.log
+.DS_Store

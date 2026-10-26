@@ -1,0 +1,1017 @@
+{
+  "id": "a0-03",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Quiero hablar español.",
+        "ru": "Я хочу говорить по-испански.",
+        "ipa": "ˈkjeɾo aˈblaɾ espaˈɲol"
+      },
+      {
+        "es": "Quiero comer.",
+        "ru": "Я хочу есть.",
+        "ipa": "ˈkjeɾo koˈmeɾ"
+      },
+      {
+        "es": "Quiero dormir.",
+        "ru": "Я хочу спать.",
+        "ipa": "ˈkjeɾo doɾˈmiɾ"
+      },
+      {
+        "es": "Puedo nadar.",
+        "ru": "Я могу плавать.",
+        "ipa": "ˈpwedo naˈdaɾ"
+      },
+      {
+        "es": "¿Puedes bailar?",
+        "ru": "Ты можешь танцевать?",
+        "ipa": "ˈpwedes bajˈlaɾ"
+      },
+      {
+        "es": "No puedo hablar ahora.",
+        "ru": "Я не могу говорить сейчас.",
+        "ipa": "no ˈpwedo aˈblaɾ aˈoɾa"
+      },
+      {
+        "es": "Necesito descansar.",
+        "ru": "Мне нужно отдохнуть.",
+        "ipa": "neθeˈsito deskanˈsaɾ"
+      },
+      {
+        "es": "Necesito aprender español.",
+        "ru": "Мне нужно выучить испанский.",
+        "ipa": "neθeˈsito apɾenˈdeɾ espaˈɲol"
+      },
+      {
+        "es": "Quiero trabajar hoy.",
+        "ru": "Я хочу работать сегодня.",
+        "ipa": "ˈkjeɾo tɾabaˈxaɾ ˈoj"
+      }
+    ],
+    "rule": "Лицо показывает только первый глагол: **quiero**, **puedo**, **necesito** (я) / **quieres**, **puedes**, **necesitas** (ты). Второй стоит в инфинитиве на **-ar**, **-er**, **-ir**: Quiero **hablar** español.",
+    "mistake": {
+      "wrong": {
+        "es": "Quiero hablo español."
+      },
+      "right": {
+        "es": "Quiero hablar español.",
+        "ru": "второй глагол — в инфинитиве"
+      }
+    },
+    "practice": [
+      "a0-03-s27",
+      "a0-03-s28",
+      "a0-03-s29",
+      "a0-03-s32",
+      "a0-03-s35"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Инфинитив",
+        "hint": "Начальная форма глагола — как русское «-ть»",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Инфинитив",
+            "pattern": [
+              "-ar",
+              "-er",
+              "-ir"
+            ],
+            "text": "Инфинитив отвечает на вопрос «что делать?»",
+            "examples": [
+              {
+                "es": "habl**ar**",
+                "ru": "говорить",
+                "ipa": "aˈblaɾ"
+              },
+              {
+                "es": "com**er**",
+                "ru": "есть",
+                "ipa": "koˈmeɾ"
+              },
+              {
+                "es": "dorm**ir**",
+                "ru": "спать",
+                "ipa": "doɾˈmiɾ"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Хочу",
+        "hint": "querer + инфинитив — как русское «хочу говорить»",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "querer + инфинитив",
+            "pattern": [
+              "querer",
+              "+",
+              "инфинитив"
+            ],
+            "text": "Меняется только первый глагол, второй стоит в инфинитиве.",
+            "examples": [
+              {
+                "es": "**Quiero** hablar español.",
+                "ru": "Я хочу говорить по-испански.",
+                "ipa": "ˈkjeɾo aˈblaɾ espaˈɲol"
+              },
+              {
+                "es": "¿**Quieres** trabajar?",
+                "ru": "Ты хочешь работать?",
+                "ipa": "ˈkjeɾes tɾabaˈxaɾ"
+              },
+              {
+                "es": "No **quiero** estudiar.",
+                "ru": "Я не хочу учиться.",
+                "ipa": "no ˈkjeɾo estuˈdjaɾ"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "querer",
+            "ru": "хотеть",
+            "rows": [
+              {
+                "stem": "quier",
+                "ending": "o",
+                "ipa": "ˈkjeɾo",
+                "pronoun": "yo",
+                "ru": "я хочу"
+              },
+              {
+                "stem": "quier",
+                "ending": "es",
+                "ipa": "ˈkjeɾes",
+                "pronoun": "tú",
+                "ru": "ты хочешь"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Что я хочу делать",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Quiero **comer**.",
+                "ru": "Я хочу есть.",
+                "ipa": "ˈkjeɾo koˈmeɾ"
+              },
+              {
+                "es": "Quiero **leer**.",
+                "ru": "Я хочу читать.",
+                "ipa": "ˈkjeɾo leˈeɾ"
+              },
+              {
+                "es": "Quiero **dormir**.",
+                "ru": "Я хочу спать.",
+                "ipa": "ˈkjeɾo doɾˈmiɾ"
+              },
+              {
+                "es": "Quiero **viajar** mucho.",
+                "ru": "Я хочу много путешествовать.",
+                "ipa": "ˈkjeɾo bjaˈxaɾ ˈmutʃo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Могу",
+        "hint": "poder + инфинитив",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "poder + инфинитив",
+            "pattern": [
+              "poder",
+              "+",
+              "инфинитив"
+            ],
+            "text": "После puedo глагол тоже стоит в инфинитиве.",
+            "examples": [
+              {
+                "es": "**Puedo** trabajar.",
+                "ru": "Я могу работать.",
+                "ipa": "ˈpwedo tɾabaˈxaɾ"
+              },
+              {
+                "es": "¿**Puedes** hablar español?",
+                "ru": "Ты можешь говорить по-испански?",
+                "ipa": "ˈpwedes aˈblaɾ espaˈɲol"
+              },
+              {
+                "es": "No **puedo** estudiar.",
+                "ru": "Я не могу учиться.",
+                "ipa": "no ˈpwedo estuˈdjaɾ"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "poder",
+            "ru": "мочь",
+            "rows": [
+              {
+                "stem": "pued",
+                "ending": "o",
+                "ipa": "ˈpwedo",
+                "pronoun": "yo",
+                "ru": "я могу"
+              },
+              {
+                "stem": "pued",
+                "ending": "es",
+                "ipa": "ˈpwedes",
+                "pronoun": "tú",
+                "ru": "ты можешь"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Что я могу делать",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "No puedo **cocinar**.",
+                "ru": "Я не могу готовить.",
+                "ipa": "no ˈpwedo koθiˈnaɾ"
+              },
+              {
+                "es": "Puedo **nadar**.",
+                "ru": "Я могу плавать.",
+                "ipa": "ˈpwedo naˈdaɾ"
+              },
+              {
+                "es": "¿Puedes **bailar**?",
+                "ru": "Ты можешь танцевать?",
+                "ipa": "ˈpwedes bajˈlaɾ"
+              },
+              {
+                "es": "¿Puedes **cantar**?",
+                "ru": "Ты можешь петь?",
+                "ipa": "ˈpwedes kanˈtaɾ"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "Нужно",
+        "hint": "necesitar + инфинитив — «мне нужно»",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "necesitar + инфинитив",
+            "pattern": [
+              "necesitar",
+              "+",
+              "инфинитив"
+            ],
+            "text": "necesito — «мне нужно», «я должен».",
+            "examples": [
+              {
+                "es": "**Necesito** trabajar.",
+                "ru": "Мне нужно работать.",
+                "ipa": "neθeˈsito tɾabaˈxaɾ"
+              },
+              {
+                "es": "¿**Necesitas** estudiar?",
+                "ru": "Тебе нужно учиться?",
+                "ipa": "neθeˈsitas estuˈdjaɾ"
+              },
+              {
+                "es": "No **necesito** hablar.",
+                "ru": "Мне не нужно говорить.",
+                "ipa": "no neθeˈsito aˈblaɾ"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "necesitar",
+            "ru": "нуждаться",
+            "rows": [
+              {
+                "stem": "necesit",
+                "ending": "o",
+                "ipa": "neθeˈsito",
+                "pronoun": "yo",
+                "ru": "мне нужно"
+              },
+              {
+                "stem": "necesit",
+                "ending": "as",
+                "ipa": "neθeˈsitas",
+                "pronoun": "tú",
+                "ru": "тебе нужно"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Что мне нужно делать",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Necesito **descansar**.",
+                "ru": "Мне нужно отдохнуть.",
+                "ipa": "neθeˈsito deskanˈsaɾ"
+              },
+              {
+                "es": "Necesito **practicar** mucho.",
+                "ru": "Мне нужно много практиковаться.",
+                "ipa": "neθeˈsito pɾaktiˈkaɾ ˈmutʃo"
+              },
+              {
+                "es": "Necesito **escuchar** más.",
+                "ru": "Мне нужно больше слушать.",
+                "ipa": "neθeˈsito eskuˈtʃaɾ ˈmas"
+              },
+              {
+                "es": "Necesito **aprender** español.",
+                "ru": "Мне нужно выучить испанский.",
+                "ipa": "neθeˈsito apɾenˈdeɾ espaˈɲol"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Слова времени",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Quiero trabajar **hoy**.",
+                "ru": "Я хочу работать сегодня.",
+                "ipa": "ˈkjeɾo tɾabaˈxaɾ ˈoj"
+              },
+              {
+                "es": "No puedo hablar **ahora**.",
+                "ru": "Я не могу говорить сейчас.",
+                "ipa": "no ˈpwedo aˈblaɾ aˈoɾa"
+              },
+              {
+                "es": "Necesito estudiar **más**.",
+                "ru": "Мне нужно больше учиться.",
+                "ipa": "neθeˈsito estuˈdjaɾ ˈmas"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "Quiero **hablo** español."
+                },
+                {
+                  "es": "¿Puedes **trabajas** hoy?"
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "Quiero **hablar** español.",
+                  "ru": "Я хочу говорить по-испански."
+                },
+                {
+                  "es": "¿Puedes **trabajar** hoy?",
+                  "ru": "Ты можешь работать сегодня?"
+                }
+              ]
+            }
+          },
+          {
+            "type": "compare",
+            "title": "Мне нужно",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**Me** necesito descansar."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**Necesito** descansar.",
+                  "ru": "Мне нужно отдохнуть."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Hoy no puedo",
+        "lines": [
+          {
+            "es": "Hola, Ana. ¿**Quieres comer**?",
+            "ru": "Привет, Ана. Хочешь поесть?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Ahora no **puedo**. **Necesito estudiar**.",
+            "ru": "Сейчас не могу. Мне нужно учиться.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Estudias español?",
+            "ru": "Ты учишь испанский?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, pero hablo poco. **Necesito practicar más**.",
+            "ru": "Да, но говорю мало. Мне нужно больше практиковаться.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Yo **quiero aprender** ruso. ¿Puedes enseñar?",
+            "ru": "Я хочу выучить русский. Можешь научить?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, pero **hoy** no **puedo**. **Quiero descansar**.",
+            "ru": "Да, но сегодня не могу. Я хочу отдохнуть.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿**Quieres comer ahora**?",
+            "ru": "Хочешь поесть сейчас?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡Sí! **Quiero comer** y **descansar**.",
+            "ru": "Да! Хочу поесть и отдохнуть.",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "querer",
+        "ru": "хотеть",
+        "pos": "verb",
+        "ipa": "keˈɾeɾ"
+      },
+      {
+        "es": "poder",
+        "ru": "мочь",
+        "pos": "verb",
+        "ipa": "poˈdeɾ"
+      },
+      {
+        "es": "necesitar",
+        "ru": "нуждаться, быть нужным",
+        "pos": "verb",
+        "ipa": "neθesiˈtaɾ"
+      },
+      {
+        "es": "aprender",
+        "ru": "учить, выучить",
+        "pos": "verb",
+        "ipa": "apɾenˈdeɾ"
+      },
+      {
+        "es": "comer",
+        "ru": "есть",
+        "pos": "verb",
+        "ipa": "koˈmeɾ"
+      },
+      {
+        "es": "leer",
+        "ru": "читать",
+        "pos": "verb",
+        "ipa": "leˈeɾ"
+      },
+      {
+        "es": "dormir",
+        "ru": "спать",
+        "pos": "verb",
+        "ipa": "doɾˈmiɾ"
+      },
+      {
+        "es": "viajar",
+        "ru": "путешествовать",
+        "pos": "verb",
+        "ipa": "bjaˈxaɾ"
+      },
+      {
+        "es": "bailar",
+        "ru": "танцевать",
+        "pos": "verb",
+        "ipa": "bajˈlaɾ"
+      },
+      {
+        "es": "cantar",
+        "ru": "петь",
+        "pos": "verb",
+        "ipa": "kanˈtaɾ"
+      },
+      {
+        "es": "nadar",
+        "ru": "плавать",
+        "pos": "verb",
+        "ipa": "naˈdaɾ"
+      },
+      {
+        "es": "cocinar",
+        "ru": "готовить",
+        "pos": "verb",
+        "ipa": "koθiˈnaɾ"
+      },
+      {
+        "es": "descansar",
+        "ru": "отдыхать",
+        "pos": "verb",
+        "ipa": "deskanˈsaɾ"
+      },
+      {
+        "es": "practicar",
+        "ru": "практиковать, заниматься",
+        "pos": "verb",
+        "ipa": "pɾaktiˈkaɾ"
+      },
+      {
+        "es": "escuchar",
+        "ru": "слушать",
+        "pos": "verb",
+        "ipa": "eskuˈtʃaɾ"
+      },
+      {
+        "es": "hoy",
+        "ru": "сегодня",
+        "pos": "adv",
+        "ipa": "ˈoj"
+      },
+      {
+        "es": "ahora",
+        "ru": "сейчас",
+        "pos": "adv",
+        "ipa": "aˈoɾa"
+      },
+      {
+        "es": "más",
+        "ru": "больше",
+        "pos": "adv",
+        "ipa": "ˈmas"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Говорить, чего хотите: quiero + инфинитив",
+        "Говорить, что можете: puedo + инфинитив",
+        "Говорить, что вам нужно: necesito + инфинитив",
+        "Узнавать инфинитив по окончанию -ar, -er, -ir"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 4: планы — voy a и tengo que"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Хочу",
+      "sentenceIds": [
+        "a0-03-s01",
+        "a0-03-s02",
+        "a0-03-s03",
+        "a0-03-s04",
+        "a0-03-s05",
+        "a0-03-s06",
+        "a0-03-s07",
+        "a0-03-s08"
+      ]
+    },
+    {
+      "name": "Могу",
+      "sentenceIds": [
+        "a0-03-s09",
+        "a0-03-s10",
+        "a0-03-s11",
+        "a0-03-s12",
+        "a0-03-s13",
+        "a0-03-s14",
+        "a0-03-s15",
+        "a0-03-s16"
+      ]
+    },
+    {
+      "name": "Нужно",
+      "sentenceIds": [
+        "a0-03-s17",
+        "a0-03-s18",
+        "a0-03-s19",
+        "a0-03-s20",
+        "a0-03-s21",
+        "a0-03-s22",
+        "a0-03-s23",
+        "a0-03-s24"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-03-s25",
+        "a0-03-s26",
+        "a0-03-s27",
+        "a0-03-s28",
+        "a0-03-s29",
+        "a0-03-s30",
+        "a0-03-s31",
+        "a0-03-s32",
+        "a0-03-s33",
+        "a0-03-s34",
+        "a0-03-s35"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-03-s25.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s25"
+    },
+    {
+      "id": "a0-03-s26.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s26"
+    },
+    {
+      "id": "a0-03-s27.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s27"
+    },
+    {
+      "id": "a0-03-s28.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s28"
+    },
+    {
+      "id": "a0-03-s29.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s29"
+    },
+    {
+      "id": "a0-03-s30.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s30"
+    },
+    {
+      "id": "a0-03-s31.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s31"
+    },
+    {
+      "id": "a0-03-s32.translate",
+      "type": "translate",
+      "sentenceId": "a0-03-s32"
+    },
+    {
+      "id": "a0-03-s33.order",
+      "type": "order",
+      "sentenceId": "a0-03-s33"
+    },
+    {
+      "id": "a0-03-s34.order",
+      "type": "order",
+      "sentenceId": "a0-03-s34"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-03-s01",
+      "ru": "Я хочу работать.",
+      "es": [
+        "Quiero trabajar.",
+        "Yo quiero trabajar."
+      ],
+      "ipa": "ˈkjeɾo tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-03-s02",
+      "ru": "Ты хочешь есть?",
+      "es": [
+        "¿Quieres comer?"
+      ],
+      "ipa": "ˈkjeɾes koˈmeɾ"
+    },
+    {
+      "id": "a0-03-s03",
+      "ru": "Я не хочу спать.",
+      "es": [
+        "No quiero dormir."
+      ],
+      "ipa": "no ˈkjeɾo doɾˈmiɾ"
+    },
+    {
+      "id": "a0-03-s04",
+      "ru": "Я хочу много путешествовать.",
+      "es": [
+        "Quiero viajar mucho."
+      ],
+      "ipa": "ˈkjeɾo bjaˈxaɾ ˈmutʃo"
+    },
+    {
+      "id": "a0-03-s05",
+      "ru": "Ты хочешь готовить сегодня?",
+      "es": [
+        "¿Quieres cocinar hoy?",
+        "¿Hoy quieres cocinar?"
+      ],
+      "ipa": "ˈkjeɾes koθiˈnaɾ ˈoj"
+    },
+    {
+      "id": "a0-03-s06",
+      "ru": "Я хочу выучить испанский.",
+      "es": [
+        "Quiero aprender español.",
+        "Quiero estudiar español."
+      ],
+      "ipa": "ˈkjeɾo apɾenˈdeɾ espaˈɲol"
+    },
+    {
+      "id": "a0-03-s07",
+      "ru": "Я хочу читать больше.",
+      "es": [
+        "Quiero leer más."
+      ],
+      "ipa": "ˈkjeɾo leˈeɾ ˈmas"
+    },
+    {
+      "id": "a0-03-s08",
+      "ru": "Я хочу учить английский, но не хочу учить немецкий.",
+      "es": [
+        "Quiero estudiar inglés, pero no quiero estudiar alemán.",
+        "Quiero aprender inglés, pero no quiero aprender alemán."
+      ],
+      "ipa": "ˈkjeɾo estuˈdjaɾ inˈgles ˈpeɾo no ˈkjeɾo estuˈdjaɾ aleˈman"
+    },
+    {
+      "id": "a0-03-s09",
+      "ru": "Я не могу говорить сейчас.",
+      "es": [
+        "No puedo hablar ahora."
+      ],
+      "ipa": "no ˈpwedo aˈblaɾ aˈoɾa"
+    },
+    {
+      "id": "a0-03-s10",
+      "ru": "Ты можешь работать сегодня?",
+      "es": [
+        "¿Puedes trabajar hoy?",
+        "¿Hoy puedes trabajar?"
+      ],
+      "ipa": "ˈpwedes tɾabaˈxaɾ ˈoj"
+    },
+    {
+      "id": "a0-03-s11",
+      "ru": "Я могу плавать.",
+      "es": [
+        "Puedo nadar.",
+        "Yo puedo nadar."
+      ],
+      "ipa": "ˈpwedo naˈdaɾ"
+    },
+    {
+      "id": "a0-03-s12",
+      "ru": "Ты можешь петь?",
+      "es": [
+        "¿Puedes cantar?"
+      ],
+      "ipa": "ˈpwedes kanˈtaɾ"
+    },
+    {
+      "id": "a0-03-s13",
+      "ru": "Я не могу танцевать.",
+      "es": [
+        "No puedo bailar."
+      ],
+      "ipa": "no ˈpwedo bajˈlaɾ"
+    },
+    {
+      "id": "a0-03-s14",
+      "ru": "Сегодня я не могу учиться.",
+      "es": [
+        "Hoy no puedo estudiar.",
+        "No puedo estudiar hoy."
+      ],
+      "ipa": "ˈoj no ˈpwedo estuˈdjaɾ"
+    },
+    {
+      "id": "a0-03-s15",
+      "ru": "Ты можешь говорить по-испански?",
+      "es": [
+        "¿Puedes hablar español?"
+      ],
+      "ipa": "ˈpwedes aˈblaɾ espaˈɲol"
+    },
+    {
+      "id": "a0-03-s16",
+      "ru": "Я не могу есть сейчас.",
+      "es": [
+        "No puedo comer ahora."
+      ],
+      "ipa": "no ˈpwedo koˈmeɾ aˈoɾa"
+    },
+    {
+      "id": "a0-03-s17",
+      "ru": "Мне нужно отдохнуть.",
+      "es": [
+        "Necesito descansar."
+      ],
+      "ipa": "neθeˈsito deskanˈsaɾ"
+    },
+    {
+      "id": "a0-03-s18",
+      "ru": "Мне нужно больше учиться.",
+      "es": [
+        "Necesito estudiar más."
+      ],
+      "ipa": "neθeˈsito estuˈdjaɾ ˈmas"
+    },
+    {
+      "id": "a0-03-s19",
+      "ru": "Тебе нужно много практиковаться?",
+      "es": [
+        "¿Necesitas practicar mucho?"
+      ],
+      "ipa": "neθeˈsitas pɾaktiˈkaɾ ˈmutʃo"
+    },
+    {
+      "id": "a0-03-s20",
+      "ru": "Мне нужно больше слушать.",
+      "es": [
+        "Necesito escuchar más."
+      ],
+      "ipa": "neθeˈsito eskuˈtʃaɾ ˈmas"
+    },
+    {
+      "id": "a0-03-s21",
+      "ru": "Мне не нужно работать сегодня.",
+      "es": [
+        "No necesito trabajar hoy.",
+        "Hoy no necesito trabajar."
+      ],
+      "ipa": "no neθeˈsito tɾabaˈxaɾ ˈoj"
+    },
+    {
+      "id": "a0-03-s22",
+      "ru": "Тебе нужно спать.",
+      "es": [
+        "Necesitas dormir."
+      ],
+      "ipa": "neθeˈsitas doɾˈmiɾ"
+    },
+    {
+      "id": "a0-03-s23",
+      "ru": "Мне нужно поесть сейчас.",
+      "es": [
+        "Necesito comer ahora."
+      ],
+      "ipa": "neθeˈsito koˈmeɾ aˈoɾa"
+    },
+    {
+      "id": "a0-03-s24",
+      "ru": "Тебе нужно выучить испанский?",
+      "es": [
+        "¿Necesitas aprender español?",
+        "¿Necesitas estudiar español?"
+      ],
+      "ipa": "neθeˈsitas apɾenˈdeɾ espaˈɲol"
+    },
+    {
+      "id": "a0-03-s25",
+      "ru": "Я много работаю, но говорю по-испански мало.",
+      "es": [
+        "Trabajo mucho, pero hablo poco español.",
+        "Trabajo mucho, pero hablo español poco."
+      ],
+      "ipa": "tɾaˈbaxo ˈmutʃo ˈpeɾo ˈablo ˈpoko espaˈɲol"
+    },
+    {
+      "id": "a0-03-s26",
+      "ru": "Я хочу учить испанский и английский.",
+      "es": [
+        "Quiero estudiar español e inglés.",
+        "Quiero aprender español e inglés."
+      ],
+      "ipa": "ˈkjeɾo estuˈdjaɾ espaˈɲol e inˈgles"
+    },
+    {
+      "id": "a0-03-s27",
+      "ru": "Сегодня я хочу отдохнуть.",
+      "es": [
+        "Hoy quiero descansar.",
+        "Quiero descansar hoy."
+      ],
+      "ipa": "ˈoj ˈkjeɾo deskanˈsaɾ"
+    },
+    {
+      "id": "a0-03-s28",
+      "ru": "Ты не можешь говорить по-французски?",
+      "es": [
+        "¿No puedes hablar francés?"
+      ],
+      "ipa": "no ˈpwedes aˈblaɾ fɾanˈθes"
+    },
+    {
+      "id": "a0-03-s29",
+      "ru": "Я не хочу готовить, я хочу есть.",
+      "es": [
+        "No quiero cocinar, quiero comer."
+      ],
+      "ipa": "no ˈkjeɾo koθiˈnaɾ ˈkjeɾo koˈmeɾ"
+    },
+    {
+      "id": "a0-03-s30",
+      "ru": "Ты много путешествуешь?",
+      "es": [
+        "¿Viajas mucho?",
+        "¿Tú viajas mucho?"
+      ],
+      "ipa": "ˈbjaxas ˈmutʃo"
+    },
+    {
+      "id": "a0-03-s31",
+      "ru": "Я преподаю английский, но хочу учить китайский.",
+      "es": [
+        "Enseño inglés, pero quiero aprender chino.",
+        "Enseño inglés, pero quiero estudiar chino."
+      ],
+      "ipa": "enˈseɲo inˈgles ˈpeɾo ˈkjeɾo apɾenˈdeɾ ˈtʃino"
+    },
+    {
+      "id": "a0-03-s32",
+      "ru": "Мне нужно работать сегодня, но я хочу спать.",
+      "es": [
+        "Necesito trabajar hoy, pero quiero dormir."
+      ],
+      "ipa": "neθeˈsito tɾabaˈxaɾ ˈoj ˈpeɾo ˈkjeɾo doɾˈmiɾ"
+    },
+    {
+      "id": "a0-03-s33",
+      "ru": "Я могу петь и танцевать.",
+      "es": [
+        "Puedo cantar y bailar."
+      ],
+      "ipa": "ˈpwedo kanˈtaɾ i bajˈlaɾ"
+    },
+    {
+      "id": "a0-03-s34",
+      "ru": "Я не могу путешествовать сейчас, но хочу много путешествовать.",
+      "es": [
+        "No puedo viajar ahora, pero quiero viajar mucho."
+      ],
+      "ipa": "no ˈpwedo bjaˈxaɾ aˈoɾa ˈpeɾo ˈkjeɾo bjaˈxaɾ ˈmutʃo"
+    },
+    {
+      "id": "a0-03-s35",
+      "ru": "Спасибо, но сейчас я не могу.",
+      "es": [
+        "Gracias, pero ahora no puedo.",
+        "Gracias, pero no puedo ahora."
+      ],
+      "ipa": "ˈgɾaθjas ˈpeɾo aˈoɾa no ˈpwedo"
+    }
+  ]
+}
