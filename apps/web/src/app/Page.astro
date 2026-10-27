@@ -4,6 +4,7 @@ import ReviewLink from '../features/review/ReviewLink.astro'
 import Layout from '../shared/ui/Layout.astro'
 import { container } from './container.ts'
 import { LINKS } from './links.ts'
+import Seo from './Seo.astro'
 
 /** Страница сайта: общий каркас с меню всех уроков слева. */
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
   description: string
   /** id открытого урока — подсвечивается в меню. */
   currentLesson?: string | undefined
-  /** Не индексировать: страница-заглушка закрытой части урока. */
+  /** Не индексировать: заглушки закрытых частей, личные страницы (повторение), 404. */
   noindex?: boolean | undefined
 }
 
@@ -20,6 +21,7 @@ const links = { youtube: container.videos.channel, ...LINKS }
 ---
 
 <Layout title={title} description={description} links={links} noindex={noindex}>
+  <Seo slot="head" title={title} description={description} noindex={noindex} />
   <ReviewLink slot="nav" />
   <LessonsNav slot="sidebar" current={currentLesson} />
   <slot />

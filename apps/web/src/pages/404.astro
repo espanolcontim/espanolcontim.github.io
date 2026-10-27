@@ -1,0 +1,52 @@
+---
+import Page from '../app/Page.astro'
+import { lessonPath } from '../features/lessons/navigation.ts'
+import { container } from '../app/container.ts'
+
+/** Нет такой страницы: GitHub Pages отдаёт 404.html с кодом 404. */
+const [first] = await container.lessons.list()
+---
+
+<Page title="Страница не найдена" description="Такой страницы на сайте нет." noindex>
+  <section class="not-found">
+    <p class="overline">Ошибка 404</p>
+    <h1>Такой страницы нет</h1>
+    <p class="lead">
+      Возможно, ссылка устарела или в адресе опечатка. Все уроки — в списке, а начать можно с
+      первого.
+    </p>
+    <p class="actions">
+      <a class="button" href="/lessons/">
+        Все уроки
+      </a>
+      {first && (
+        <a class="button button--ghost" href={lessonPath(first.id)}>
+          Урок 1
+        </a>
+      )}
+      <a class="button button--ghost" href="/">
+        На главную
+      </a>
+    </p>
+  </section>
+</Page>
+
+<style>
+  .not-found {
+    display: grid;
+    gap: 1.25rem;
+    padding-block: 2rem 3rem;
+  }
+
+  .lead {
+    max-width: 36rem;
+    color: var(--text-2);
+    font-size: 1.1875rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>

@@ -5,6 +5,7 @@ import { lessonPath, neighbours } from '../../../features/lessons/navigation.ts'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
 import Summary from '../../../features/lessons/Summary.astro'
 import Page from '../../../app/Page.astro'
+import { fitDescription } from '../../../app/seo.ts'
 
 export const getStaticPaths = lessonStaticPaths
 
@@ -36,7 +37,11 @@ const sections = [
 <Page
   currentLesson={meta.id}
   title={`Урок ${meta.number}. ${meta.title}`}
-  description={`Урок ${meta.number} курса «Испанский с нуля»: ${meta.grammar.join('; ') || meta.title}.`}
+  description={fitDescription(
+    `Урок ${meta.number} курса «Испанский с нуля»: `,
+    meta.grammar,
+    meta.title,
+  )}
 >
   <LessonHeader meta={meta} channel={channel} />
 

@@ -7,7 +7,8 @@ import '../styles/theme.css'
 import '../styles/global.css'
 
 /**
- * Каркас страницы: шапка (ссылки — слот nav), слева меню (слот sidebar), справа контент.
+ * Каркас страницы: шапка (ссылки — слот nav), слева меню (слот sidebar), справа контент;
+ * в <head> — слот head (превью ссылок, значки).
  * На широком экране меню видно всегда и не уезжает при прокрутке,
  * на телефоне выезжает по кнопке «Уроки».
  */
@@ -16,7 +17,7 @@ interface Props {
   title?: string | undefined
   description: string
   links: { youtube: string; boosty: string; telegram: string }
-  /** Не индексировать: страница-заглушка закрытой части урока. */
+  /** Не индексировать: заглушки закрытых частей, личные страницы (повторение), 404. */
   noindex?: boolean | undefined
 }
 
@@ -32,7 +33,8 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    {!noindex && <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />}
+    <slot name="head" />
   </head>
   <body>
     <a class="skip visually-hidden" href="#main">

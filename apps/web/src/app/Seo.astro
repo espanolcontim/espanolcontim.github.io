@@ -1,0 +1,41 @@
+---
+import { getImage } from 'astro:assets'
+import ogImage from '../assets/og.png'
+import { SITE_NAME, YANDEX_VERIFICATION } from './seo.ts'
+
+/**
+ * Превью ссылки (Open Graph: Telegram, VK, WhatsApp), значки сайта и
+ * подтверждение Яндекс Вебмастера. Картинка превью одна на весь сайт,
+ * заголовок и описание — свои у каждой страницы.
+ */
+interface Props {
+  /** Заголовок страницы без «— Español con Tim»; у главной — пусто. */
+  title?: string | undefined
+  description: string
+  /** Страница не для поиска — без og:url (у 404 своего адреса нет). */
+  noindex?: boolean | undefined
+}
+
+const { title, description, noindex } = Astro.props
+const url = new URL(Astro.url.pathname, Astro.site)
+const image = await getImage({ src: ogImage, format: 'jpg', quality: 85 })
+const imageUrl = new URL(image.src, Astro.site)
+---
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:title" content={title ?? `${SITE_NAME} — испанский с нуля`} />
+<meta property="og:description" content={description} />
+{!noindex && <meta property="og:url" content={url} />}
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content={String(ogImage.width)} />
+<meta property="og:image:height" content={String(ogImage.height)} />
+<meta property="og:image:alt" content={`${SITE_NAME}: испанский с нуля`} />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+<link rel="icon" href="/favicon.png" type="image/png" sizes="120x120" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+{YANDEX_VERIFICATION && Astro.url.pathname === '/' && (
+  <meta name="yandex-verification" content={YANDEX_VERIFICATION} />
+)}
