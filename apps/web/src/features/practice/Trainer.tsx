@@ -15,10 +15,12 @@ const hashId = () => location.hash.slice(1) || undefined
  * возвращает к списку, на проверку можно сослаться прямо.
  */
 export default function Trainer({
+  lessonId,
   sets,
   locked,
   boosty,
 }: {
+  lessonId: string
   sets: PracticeSet[]
   locked: Locked
   boosty: string
@@ -73,9 +75,16 @@ export default function Trainer({
   return (
     <div ref={root} className={styles.trainer}>
       {open ? (
-        <Session key={open.id} set={open} onClose={close} />
+        <Session key={open.id} set={open} lessonId={lessonId} onClose={close} />
       ) : (
-        <SetList sets={sets} locked={locked} boosty={boosty} returnTo={returnTo} onOpen={openSet} />
+        <SetList
+          lessonId={lessonId}
+          sets={sets}
+          locked={locked}
+          boosty={boosty}
+          returnTo={returnTo}
+          onOpen={openSet}
+        />
       )}
     </div>
   )

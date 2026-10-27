@@ -1,6 +1,9 @@
 import { useEffect, useRef, type MouseEvent, type ReactNode } from 'react'
 import { plural } from '../../shared/plural.ts'
 import { SUBSCRIPTION } from '../lessons/labels.ts'
+import { REVIEW_PATH } from '../review/navigation.ts'
+import { resultKey, type SetResult } from '../review/progress.ts'
+import { useProgress } from '../review/useProgress.ts'
 import styles from './practice.module.css'
 import type { PracticeSet, SetKind } from './sets.ts'
 
@@ -20,12 +23,14 @@ const TASKS = ['задание', 'задания', 'заданий'] as const
  * ломает, а тренажёр открывает набор сам (onOpen).
  */
 export function SetList({
+  lessonId,
   sets,
   locked,
   boosty,
   returnTo,
   onOpen,
 }: {
+  lessonId: string
   sets: PracticeSet[]
   locked: Locked
   boosty: string
@@ -38,6 +43,10 @@ export function SetList({
   const extras = of('extras')
   const quiz = of('quiz')[0]
   const back = useRef<HTMLAnchorElement>(null)
+  const progress = useProgress()
+  /** Лучший результат набора; появляется после загрузки прогресса. */
+  const best = (set: PracticeSet) => progress?.results[resultKey(lessonId, set.id)]
+  const quizBest = quiz && best(quiz)
 
   useEffect(() => back.current?.focus(), [])
 
@@ -61,7 +70,8 @@ export function SetList({
         </p>
         <p className="ru">
           Буквы <span lang="es">á, é, ñ</span> и знаки <span lang="es">¿ ¡</span> — кнопками под
-          полем ввода.
+          полем ввода. Решённые фразы попадут в <a href={REVIEW_PATH}>повторение</a>: они вернутся
+          завтра, а потом через несколько дней.
         </p>
       </div>
 
@@ -78,7 +88,7 @@ export function SetList({
                     `card ${styles.set}`,
                     <>
                       <span className={styles.setTitle}>{set.title}</span>
-                      <span className="ru">{plural(set.tasks.length, PHRASES)}</span>
+                      <SetMeta count={plural(set.tasks.length, PHRASES)} best={best(set)} />
                     </>,
                   )}
                 </li>
@@ -102,7 +112,7 @@ export function SetList({
                     `card ${styles.set}`,
                     <>
                       <span className={styles.setTitle}>{set.title}</span>
-                      <span className="ru">{plural(set.tasks.length, TASKS)}</span>
+                      <SetMeta count={plural(set.tasks.length, TASKS)} best={best(set)} />
                     </>,
                   )}
                 </li>
@@ -125,11 +135,30 @@ export function SetList({
               {plural(quiz.tasks.length, TASKS)} по фразам урока. В конце — результат и разбор
               ошибок.
             </p>
+            {quizBest && (
+              <p className={styles.best}>
+                Лучший результат: {quizBest.best} из {quizBest.total}
+              </p>
+            )}
             {link(quiz, 'button', 'Начать проверку')}
           </div>
         </section>
       )}
     </>
+  )
+}
+
+function SetMeta({ count, best }: { count: string; best: SetResult | undefined }) {
+  return (
+    <span className="ru">
+      {count}
+      {best && (
+        <span className={styles.best}>
+          {' '}
+          · ✓ {best.best} из {best.total}
+        </span>
+      )}
+    </span>
   )
 }
 

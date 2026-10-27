@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { MarkedText } from '../../shared/ui/MarkedText.tsx'
 import { plural } from '../../shared/plural.ts'
 import styles from './practice.module.css'
-import { Question } from './Question.tsx'
+import { Mistakes } from './Mistakes.tsx'
 import { score, type TaskResult } from './session.ts'
 import type { PracticeSet, Task } from './sets.ts'
 
@@ -20,7 +19,6 @@ export function Summary({
 }) {
   const root = useRef<HTMLDivElement>(null)
   const { total, correct, almost, wrong } = score(results)
-  const mistakes = results.filter((result) => result.verdict !== 'correct')
   const failed = results.filter((result) => result.verdict === 'wrong').map((result) => result.task)
 
   // Итог появляется вместо карточки — переводим на него фокус и читалку.
@@ -41,31 +39,7 @@ export function Summary({
         {wrong > 0 ? `Ошибок: ${wrong}.` : 'Без ошибок!'}
       </p>
 
-      {mistakes.length > 0 && (
-        <section className={styles.group} aria-labelledby="review-title">
-          <h4 id="review-title">Разбор ошибок</h4>
-          <ol className={styles.review}>
-            {mistakes.map(({ task, verdict, given, right }, i) => (
-              <li key={i} className={styles.reviewItem} data-verdict={verdict}>
-                <Question task={task} compact />
-                {given !== '' && (
-                  <p>
-                    <span className="ru">Ваш ответ: </span>
-                    <span className={styles.given} lang="es">
-                      {given}
-                    </span>
-                  </p>
-                )}
-                <p>
-                  <span className="ru">Правильно: </span>
-                  <MarkedText text={right} lang={task.kind === 'read' ? undefined : 'es'} />
-                </p>
-                {'why' in task && task.why && <p className="ru">{task.why}</p>}
-              </li>
-            ))}
-          </ol>
-        </section>
-      )}
+      <Mistakes results={results} />
 
       <div className={styles.actions}>
         {failed.length > 0 && (

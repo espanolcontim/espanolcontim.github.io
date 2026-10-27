@@ -17,10 +17,13 @@ import { TextTask } from './TextTask.tsx'
 export function TaskCard({
   task,
   last,
+  note,
   onNext,
 }: {
   task: Task
   last: boolean
+  /** Откуда задание: «Урок 3» — в повторении фразы из разных уроков. */
+  note?: string | undefined
   onNext: (result: TaskResult) => void
 }) {
   const [answer, setAnswer] = useState<Answer>()
@@ -35,6 +38,7 @@ export function TaskCard({
 
   return (
     <div className={styles.card}>
+      {note && <p className={styles.note}>{note}</p>}
       <Question task={task} />
       <TaskInput
         task={task}

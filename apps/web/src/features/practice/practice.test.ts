@@ -54,6 +54,7 @@ describe('buildPracticeSets', () => {
     expect(sets[0]?.tasks[1]).toEqual({
       kind: 'translate',
       id: 'a0-01-s02.translate',
+      sentenceId: 'a0-01-s02',
       ru: 'Добрый день.',
       hint: 'в 11 утра',
       answers: ['Buenos días.'],

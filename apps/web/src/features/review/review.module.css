@@ -1,0 +1,56 @@
+/* Повторение: «на сегодня», коробки, перенос. Цвета — только из theme.css. */
+
+.review {
+  display: grid;
+  gap: 2rem;
+  max-width: 40rem;
+}
+
+.today {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  border-color: var(--accent);
+}
+
+.warning {
+  border-color: var(--almost);
+  color: var(--almost);
+}
+
+.group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.375rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.box {
+  display: grid;
+  gap: 0.125rem;
+  padding: 0.5rem 0.375rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.count {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

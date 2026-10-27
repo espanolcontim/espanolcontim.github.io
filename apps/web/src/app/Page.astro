@@ -1,5 +1,6 @@
 ---
 import LessonsNav from '../features/lessons/LessonsNav.astro'
+import ReviewLink from '../features/review/ReviewLink.astro'
 import Layout from '../shared/ui/Layout.astro'
 import { container } from './container.ts'
 import { LINKS } from './links.ts'
@@ -17,6 +18,7 @@ const links = { youtube: container.videos.channel, ...LINKS }
 ---
 
 <Layout title={title} description={description} links={links}>
+  <ReviewLink slot="nav" />
   <LessonsNav slot="sidebar" current={currentLesson} />
   <slot />
 </Layout>

@@ -14,6 +14,8 @@ import {
 /** Задание на предложении: задание по-русски, верные ответы — первый эталон. */
 interface SentenceFields {
   id: string
+  /** Предложение — по нему фраза попадает в повторение. */
+  sentenceId: string
   ru: string
   hint?: string | undefined
   answers: string[]
@@ -54,12 +56,25 @@ export const QUIZ_TITLE = 'Проверка после урока'
 
 const sentenceFields = (id: string, sentence: Sentence): SentenceFields => ({
   id,
+  sentenceId: sentence.id,
   ru: sentence.ru,
   hint: sentence.hint,
   answers: sentence.es,
   ipa: sentence.ipa,
   why: sentence.why,
 })
+
+/** Перевод предложения на испанский — так фразы урока идут в тренажёр и в повторение. */
+export function translateTask(sentence: Sentence): Task {
+  return {
+    kind: 'translate',
+    ...sentenceFields(sentenceExerciseId(sentence.id, 'translate'), sentence),
+  }
+}
+
+/** Предложение задания, если оно есть: «вставьте слово» и самопроверка — без него. */
+export const taskSentence = (task: Task): string | undefined =>
+  'sentenceId' in task ? task.sentenceId : undefined
 
 export function buildPracticeSets(body: LessonBody): PracticeSet[] {
   const sentences = new Map(body.sentences.map((sentence) => [sentence.id, sentence]))
@@ -96,10 +111,7 @@ export function buildPracticeSets(body: LessonBody): PracticeSet[] {
     id: `p${i + 1}`,
     kind: 'phrases',
     title: group.name,
-    tasks: group.sentenceIds.map((id) => ({
-      kind: 'translate',
-      ...sentenceFields(sentenceExerciseId(id, 'translate'), sentence(id)),
-    })),
+    tasks: group.sentenceIds.map((id) => translateTask(sentence(id))),
   }))
 
   const extras: PracticeSet[] = (body.extras?.exercises ?? []).map((block, i) => ({

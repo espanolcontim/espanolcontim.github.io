@@ -45,6 +45,12 @@
   font-weight: 750;
 }
 
+/* Лучший результат набора. */
+.best {
+  color: var(--ok);
+  font-weight: 700;
+}
+
 .quiz {
   display: grid;
   gap: 0.625rem;
@@ -109,6 +115,12 @@
 .card {
   display: grid;
   gap: 1rem;
+}
+
+.note {
+  margin-bottom: -0.625rem;
+  color: var(--text-3);
+  font-size: 0.8125rem;
 }
 
 .question {

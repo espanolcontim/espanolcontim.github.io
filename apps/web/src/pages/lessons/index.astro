@@ -4,6 +4,7 @@ import { container } from '../../app/container.ts'
 import Page from '../../app/Page.astro'
 import { ACCESS_NOTE, LEVEL_NAMES } from '../../features/lessons/labels.ts'
 import { lessonPath } from '../../features/lessons/navigation.ts'
+import LessonMark from '../../features/review/LessonMark.astro'
 
 const lessons = await container.lessons.list()
 const levels = LEVELS.map((level) => ({
@@ -38,6 +39,7 @@ const levels = LEVELS.map((level) => ({
               <span class="n">{lesson.planLesson}</span>
               <span class="title">{lesson.title}</span>
               <span class="meta">
+                <LessonMark lessonId={lesson.id} />
                 Урок {lesson.number}
                 {lesson.parts.notes && ACCESS_NOTE[lesson.parts.notes] && (
                   <span class="pill pill--lock">{ACCESS_NOTE[lesson.parts.notes]}</span>

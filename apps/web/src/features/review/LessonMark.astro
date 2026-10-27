@@ -1,0 +1,44 @@
+---
+/** Отметка прогресса урока в списке — заполняется в браузере из прогресса. */
+interface Props {
+  lessonId: string
+}
+
+const { lessonId } = Astro.props
+---
+
+<span class="lesson-mark" data-lesson-mark={lessonId} hidden></span>
+
+<script>
+  import { progress } from '../../app/browser.ts'
+  import { lessonMark } from './progress.ts'
+
+  const update = () => {
+    const current = progress.load()
+    for (const element of document.querySelectorAll<HTMLElement>('[data-lesson-mark]')) {
+      const mark = lessonMark(current, element.dataset.lessonMark ?? '')
+      element.hidden = !mark
+      element.textContent = mark?.text ?? ''
+      element.dataset.state = mark?.state ?? ''
+    }
+  }
+
+  update()
+  progress.subscribe(update)
+</script>
+
+<style>
+  .lesson-mark {
+    color: var(--text-2);
+    white-space: nowrap;
+  }
+
+  .lesson-mark[data-state='done'] {
+    color: var(--ok);
+    font-weight: 700;
+  }
+
+  .lesson-mark[hidden] {
+    display: none;
+  }
+</style>

@@ -7,7 +7,7 @@ import '../styles/theme.css'
 import '../styles/global.css'
 
 /**
- * Каркас страницы: шапка, слева меню (слот sidebar), справа контент.
+ * Каркас страницы: шапка (ссылки — слот nav), слева меню (слот sidebar), справа контент.
  * На широком экране меню видно всегда и не уезжает при прокрутке,
  * на телефоне выезжает по кнопке «Уроки».
  */
@@ -50,6 +50,7 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
           Español con Tim
         </a>
         <nav class="topnav" aria-label="Ссылки курса">
+          <slot name="nav" />
           <a href={links.youtube}>YouTube</a>
           <a href={links.boosty}>Boosty</a>
         </nav>
@@ -147,9 +148,9 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     color: var(--accent);
   }
 
-  /* На узком телефоне в шапке только YouTube; Boosty — в подвале. */
+  /* На узком телефоне в шапке только ссылки из слота; YouTube и Boosty — в подвале. */
   @media (max-width: 27.99rem) {
-    .topnav a + a {
+    .topnav a {
       display: none;
     }
   }

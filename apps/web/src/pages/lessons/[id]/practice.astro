@@ -23,5 +23,5 @@ const locked = {
   description={`Упражнения к уроку ${meta.number} «${meta.title}»: перевод фраз на испанский с автопроверкой и проверка после урока.`}
 >
   <LessonHeader meta={meta} channel={channel} section="Упражнения" />
-  <Trainer client:load sets={sets} locked={locked} boosty={LINKS.boosty} />
+  <Trainer client:load lessonId={meta.id} sets={sets} locked={locked} boosty={LINKS.boosty} />
 </Page>
