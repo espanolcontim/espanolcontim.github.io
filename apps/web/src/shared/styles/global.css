@@ -189,6 +189,11 @@ a {
   color: var(--accent);
 }
 
+.button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
 .card {
   padding: 1rem;
   border: 1px solid var(--line);

@@ -1,0 +1,361 @@
+/* Тренажёр: список наборов, карточка задания, итог. Цвета — только из theme.css. */
+
+.trainer {
+  display: grid;
+  gap: 2rem;
+  scroll-margin-top: 1rem;
+}
+
+/* --- список наборов --------------------------------------------------------------- */
+
+.intro {
+  display: grid;
+  gap: 0.375rem;
+  max-width: 44rem;
+}
+
+.group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.set {
+  display: grid;
+  gap: 0.25rem;
+  height: 100%;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.set:hover {
+  border-color: var(--accent);
+}
+
+.setTitle {
+  color: var(--accent);
+  font-weight: 750;
+}
+
+.quiz {
+  display: grid;
+  gap: 0.625rem;
+  justify-items: start;
+  border-color: var(--accent);
+}
+
+.locked {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+/* --- сессия ------------------------------------------------------------------------- */
+
+.session {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+}
+
+.head {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.back {
+  justify-self: start;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--text-2);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: var(--accent);
+}
+
+.progress {
+  display: grid;
+  gap: 0.375rem;
+  color: var(--text-2);
+  font-size: 0.875rem;
+}
+
+.bar {
+  height: 3px;
+  background: var(--line);
+}
+
+.barFill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.2s ease;
+}
+
+/* --- карточка задания ---------------------------------------------------------------- */
+
+.card {
+  display: grid;
+  gap: 1rem;
+}
+
+.question {
+  display: grid;
+  gap: 0.375rem;
+}
+
+.label {
+  color: var(--text-2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.prompt {
+  font-size: 1.1875rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.hint {
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.gap {
+  display: inline-block;
+  min-width: 3.5em;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+  text-align: center;
+}
+
+/* Группы кнопок — fieldset: без его рамки и отступов. */
+.panel,
+.options,
+.line,
+.pool {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.input {
+  width: 100%;
+  min-height: 4.5rem;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  /* 16px: меньше — и iPhone увеличивает страницу при вводе. */
+  font: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.input:read-only {
+  background: var(--surface);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 0.25rem;
+  max-width: 27rem;
+}
+
+.key {
+  min-height: 2.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.0625rem;
+  cursor: pointer;
+}
+
+.key:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.key:disabled {
+  color: var(--text-3);
+  cursor: default;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* «Собери фразу»: строка ответа и плашки. */
+.line,
+.pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.line {
+  min-height: 3.25rem;
+  padding: 0.375rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.placeholder {
+  color: var(--text-3);
+}
+
+.tile {
+  min-height: 2.5rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tile:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.line .tile {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.tile:disabled {
+  cursor: default;
+}
+
+/* «Вставьте слово»: варианты. */
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.option {
+  composes: tile;
+  min-width: 5rem;
+}
+
+.option[data-state='right'] {
+  border-color: var(--ok);
+  color: var(--ok);
+}
+
+.option[data-state='wrong'] {
+  border-color: var(--bad);
+  color: var(--bad);
+  text-decoration: line-through;
+}
+
+/* --- ответ ---------------------------------------------------------------------------- */
+
+.feedback {
+  display: grid;
+  gap: 0.375rem;
+  padding: 0.25rem 0 0.25rem 0.875rem;
+  border-left: 2px solid var(--line);
+}
+
+.feedback[data-verdict='correct'] {
+  border-left-color: var(--ok);
+}
+
+.feedback[data-verdict='almost'] {
+  border-left-color: var(--almost);
+}
+
+.feedback[data-verdict='wrong'] {
+  border-left-color: var(--bad);
+}
+
+.verdict {
+  font-weight: 750;
+}
+
+[data-verdict='correct'] > .verdict {
+  color: var(--ok);
+}
+
+[data-verdict='almost'] > .verdict {
+  color: var(--almost);
+}
+
+[data-verdict='wrong'] > .verdict {
+  color: var(--bad);
+}
+
+.answer {
+  font-size: 1.0625rem;
+  font-weight: 650;
+}
+
+/* --- итог ------------------------------------------------------------------------------- */
+
+.summary {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary:focus {
+  outline: none;
+}
+
+.score {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+.review {
+  display: grid;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviewItem {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.125rem 0 0.125rem 0.875rem;
+  border-left: 2px solid var(--bad);
+}
+
+.reviewItem[data-verdict='almost'] {
+  border-left-color: var(--almost);
+}
+
+.given {
+  color: var(--text-2);
+}
+
+/* Неверный ответ зачёркнут; «почти верный» — нет: в нём только знаки не те. */
+[data-verdict='wrong'] .given {
+  text-decoration: line-through;
+  text-decoration-color: var(--bad);
+}

@@ -27,8 +27,8 @@ const sections = [
   {
     title: 'Упражнения',
     text: 'Перевод фраз урока с автопроверкой и проверка после урока.',
-    href: undefined,
-    note: 'скоро',
+    href: lessonPath(meta.id, 'practice'),
+    note: meta.parts.practice && ACCESS_NOTE[meta.parts.practice],
   },
 ]
 ---
