@@ -86,9 +86,11 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [ ] SourceCraft Sites — **основной хостинг** (решение Тимура, план — `docs/sourcecraft.md`; сборка с `SITE_URL=https://espanolcontim.sourcecraft.site`):
   - [x] репозиторий `espanolcontim/espanolcontim` — зеркало GitHub, синхронизация `main` раз в два часа;
   - [x] конфиги: `.sourcecraft/ci.yaml` собирает `main` в ветку `release` (в ней только сборка), `.sourcecraft/sites.yaml` публикует `release`;
-  - сайт открывается в корне `https://espanolcontim.sourcecraft.site/`;
-  - `/lessons/a0-01/` отдаёт `index.html` (иначе — Astro `build.format: 'file'`), несуществующий адрес — 404;
-  - CI запускается после синхронизации зеркала (если нет — запасные пути в `docs/sourcecraft.md`).
+  - [x] сайт открывается в корне `https://espanolcontim.sourcecraft.site/`;
+  - [x] `/lessons/a0-01/` отдаёт `index.html`, несуществующий адрес — 404 (страница 404 — своя у SourceCraft, наша не используется);
+  - [x] CI запускается после синхронизации зеркала;
+  - основной адрес по умолчанию — SourceCraft (`site` в `astro.config.mjs`), мета-тег Вебмастера для нового адреса;
+  - без сжатия и кэширования (заголовки не настраиваются) — страницы тяжелее, чем на GitHub Pages; см. `docs/sourcecraft.md`.
 
 ### Фаза 1 — бесплатная часть
 
