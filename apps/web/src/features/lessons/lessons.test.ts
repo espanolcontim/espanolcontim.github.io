@@ -1,6 +1,6 @@
 import type { LessonBody, LessonMeta } from '@espanolcontim/content'
 import { describe, expect, it } from 'vitest'
-import { patternKind } from './labels.ts'
+import { patternKind, practiceNote, SUBSCRIPTION } from './labels.ts'
 import { lessonPath, neighbours, planLabel, videoLink } from './navigation.ts'
 import { StaticLessonRepository } from './StaticLessonRepository.ts'
 
@@ -67,5 +67,15 @@ describe('формула правила', () => {
       'sign',
       'word',
     ])
+  })
+})
+
+describe('пометка подписки у упражнений', () => {
+  it('говорит, что именно закрыто', () => {
+    expect(practiceNote({ practice: 'free', quiz: 'free' })).toBeUndefined()
+    expect(practiceNote({ practice: 'paid', quiz: 'free' })).toBe(`фразы — ${SUBSCRIPTION}`)
+    expect(practiceNote({ practice: 'free', quiz: 'paid' })).toBe(`проверка — ${SUBSCRIPTION}`)
+    expect(practiceNote({ practice: 'paid', quiz: 'paid' })).toBe(SUBSCRIPTION)
+    expect(practiceNote({})).toBeUndefined()
   })
 })

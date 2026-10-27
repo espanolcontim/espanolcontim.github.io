@@ -12,6 +12,7 @@ const { meta, body, channel } = await loadLesson(Astro.params.id)
 
 <Page
   currentLesson={meta.id}
+  noindex={!body.notes}
   title={`Конспект урока ${meta.number}. ${meta.title}`}
   description={`Конспект урока ${meta.number} «${meta.title}»: правила, таблицы с транскрипцией, диалоги и новые слова.`}
 >

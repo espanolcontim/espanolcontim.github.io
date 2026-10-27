@@ -11,13 +11,15 @@ interface Props {
   description: string
   /** id открытого урока — подсвечивается в меню. */
   currentLesson?: string | undefined
+  /** Не индексировать: страница-заглушка закрытой части урока. */
+  noindex?: boolean | undefined
 }
 
-const { title, description, currentLesson } = Astro.props
+const { title, description, currentLesson, noindex } = Astro.props
 const links = { youtube: container.videos.channel, ...LINKS }
 ---
 
-<Layout title={title} description={description} links={links}>
+<Layout title={title} description={description} links={links} noindex={noindex}>
   <ReviewLink slot="nav" />
   <LessonsNav slot="sidebar" current={currentLesson} />
   <slot />

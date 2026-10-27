@@ -1,5 +1,5 @@
 ---
-import { ACCESS_NOTE } from '../../../features/lessons/labels.ts'
+import { ACCESS_NOTE, practiceNote } from '../../../features/lessons/labels.ts'
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
 import { lessonPath, neighbours } from '../../../features/lessons/navigation.ts'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
@@ -28,7 +28,7 @@ const sections = [
     title: 'Упражнения',
     text: 'Перевод фраз урока с автопроверкой и проверка после урока.',
     href: lessonPath(meta.id, 'practice'),
-    note: meta.parts.practice && ACCESS_NOTE[meta.parts.practice],
+    note: practiceNote(meta.parts),
   },
 ]
 ---

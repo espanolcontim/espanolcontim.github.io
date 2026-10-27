@@ -1,6 +1,6 @@
 ---
 import { LINKS } from '../../app/links.ts'
-import { SUBSCRIPTION } from './labels.ts'
+import { LOCKED_HINT, SUBSCRIPTION } from './labels.ts'
 
 /** Закрытая часть урока: что внутри и где взять. */
 interface Props {
@@ -12,14 +12,9 @@ const { inside } = Astro.props
 ---
 
 <div class="locked card">
-  <p class="pill pill--lock">
-    <span aria-hidden="true">🔒 </span>
-    {SUBSCRIPTION}
-  </p>
+  <p class="pill pill--lock">{SUBSCRIPTION}</p>
   <p>Внутри — {inside}.</p>
-  <p class="ru">
-    Вход на сайт для подписчиков Boosty скоро появится. Пока эти материалы выходят в PDF на Boosty.
-  </p>
+  <p class="ru">{LOCKED_HINT}</p>
   <p>
     <a class="button" href={LINKS.boosty}>
       Подписка на Boosty

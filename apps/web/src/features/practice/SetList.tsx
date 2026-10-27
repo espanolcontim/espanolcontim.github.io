@@ -1,6 +1,6 @@
 import { useEffect, useRef, type MouseEvent, type ReactNode } from 'react'
 import { plural } from '../../shared/plural.ts'
-import { SUBSCRIPTION } from '../lessons/labels.ts'
+import { LOCKED_HINT, SUBSCRIPTION } from '../lessons/labels.ts'
 import { REVIEW_PATH } from '../review/navigation.ts'
 import { resultKey, type SetResult } from '../review/progress.ts'
 import { useProgress } from '../review/useProgress.ts'
@@ -16,6 +16,12 @@ export interface Locked {
 
 const PHRASES = ['фраза', 'фразы', 'фраз'] as const
 const TASKS = ['задание', 'задания', 'заданий'] as const
+
+/** Что внутри закрытых наборов. */
+const INSIDE = {
+  phrases: 'перевод фраз урока с автопроверкой',
+  extras: '«найдите ошибку», «вставьте слово», перевод с испанского и на испанский',
+}
 
 /**
  * Список наборов: фразы урока, упражнения из дополнительных материалов,
@@ -75,56 +81,63 @@ export function SetList({
         </p>
       </div>
 
-      {(phrases.length > 0 || locked.phrases) && (
-        <section className={styles.group} aria-labelledby="practice-phrases">
-          <h2 id="practice-phrases">Фразы урока</h2>
-          <p className="ru">Переводите с русского на испанский — по группам, как в уроке.</p>
-          {phrases.length > 0 ? (
-            <ul className={styles.sets}>
-              {phrases.map((set) => (
-                <li key={set.id}>
-                  {link(
-                    set,
-                    `card ${styles.set}`,
-                    <>
-                      <span className={styles.setTitle}>{set.title}</span>
-                      <SetMeta count={plural(set.tasks.length, PHRASES)} best={best(set)} />
-                    </>,
-                  )}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <LockedNote boosty={boosty} inside="перевод фраз урока с автопроверкой" />
-          )}
+      {locked.phrases && locked.extras ? (
+        // Закрыто всё, кроме проверки, — одна плашка вместо двух одинаковых.
+        <section className={styles.group} aria-labelledby="practice-locked">
+          <h2 id="practice-locked">Фразы урока и дополнительные материалы</h2>
+          <LockedNote boosty={boosty} inside={`${INSIDE.phrases}, ${INSIDE.extras}`} />
         </section>
-      )}
+      ) : (
+        <>
+          {(phrases.length > 0 || locked.phrases) && (
+            <section className={styles.group} aria-labelledby="practice-phrases">
+              <h2 id="practice-phrases">Фразы урока</h2>
+              <p className="ru">Переводите с русского на испанский — по группам, как в уроке.</p>
+              {phrases.length > 0 ? (
+                <ul className={styles.sets}>
+                  {phrases.map((set) => (
+                    <li key={set.id}>
+                      {link(
+                        set,
+                        `card ${styles.set}`,
+                        <>
+                          <span className={styles.setTitle}>{set.title}</span>
+                          <SetMeta count={plural(set.tasks.length, PHRASES)} best={best(set)} />
+                        </>,
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <LockedNote boosty={boosty} inside={INSIDE.phrases} />
+              )}
+            </section>
+          )}
 
-      {(extras.length > 0 || locked.extras) && (
-        <section className={styles.group} aria-labelledby="practice-extras">
-          <h2 id="practice-extras">Из дополнительных материалов</h2>
-          {extras.length > 0 ? (
-            <ul className={styles.sets}>
-              {extras.map((set) => (
-                <li key={set.id}>
-                  {link(
-                    set,
-                    `card ${styles.set}`,
-                    <>
-                      <span className={styles.setTitle}>{set.title}</span>
-                      <SetMeta count={plural(set.tasks.length, TASKS)} best={best(set)} />
-                    </>,
-                  )}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <LockedNote
-              boosty={boosty}
-              inside="«найдите ошибку», «вставьте слово», перевод с испанского и на испанский"
-            />
+          {(extras.length > 0 || locked.extras) && (
+            <section className={styles.group} aria-labelledby="practice-extras">
+              <h2 id="practice-extras">Из дополнительных материалов</h2>
+              {extras.length > 0 ? (
+                <ul className={styles.sets}>
+                  {extras.map((set) => (
+                    <li key={set.id}>
+                      {link(
+                        set,
+                        `card ${styles.set}`,
+                        <>
+                          <span className={styles.setTitle}>{set.title}</span>
+                          <SetMeta count={plural(set.tasks.length, TASKS)} best={best(set)} />
+                        </>,
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <LockedNote boosty={boosty} inside={INSIDE.extras} />
+              )}
+            </section>
           )}
-        </section>
+        </>
       )}
 
       {quiz && (
@@ -165,11 +178,9 @@ function SetMeta({ count, best }: { count: string; best: SetResult | undefined }
 function LockedNote({ boosty, inside }: { boosty: string; inside: string }) {
   return (
     <div className={`card ${styles.locked}`}>
-      <p className="pill pill--lock">
-        <span aria-hidden="true">🔒 </span>
-        {SUBSCRIPTION}
-      </p>
+      <p className="pill pill--lock">{SUBSCRIPTION}</p>
       <p>Внутри — {inside}.</p>
+      <p className="ru">{LOCKED_HINT}</p>
       <a className="button button--ghost" href={boosty}>
         Подписка на Boosty
       </a>

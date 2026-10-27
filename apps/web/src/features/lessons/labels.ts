@@ -17,6 +17,23 @@ export const ACCESS_NOTE: Record<Access, string | undefined> = {
   paid: SUBSCRIPTION,
 }
 
+/** Под плашкой закрытой части: где её взять, пока нет входа на сайт. */
+export const LOCKED_HINT =
+  'Вход на сайт для подписчиков Boosty скоро появится. Пока эти материалы выходят в PDF на Boosty.'
+
+/**
+ * Пометка подраздела «Упражнения»: в нём фразы урока и проверка после урока,
+ * а доступ к ним может различаться.
+ */
+export function practiceNote(parts: Partial<Record<'practice' | 'quiz', Access>>) {
+  const phrases = parts.practice === 'paid'
+  const quiz = parts.quiz === 'paid'
+  if (phrases && quiz) return SUBSCRIPTION
+  if (phrases) return `фразы — ${SUBSCRIPTION}`
+  if (quiz) return `проверка — ${SUBSCRIPTION}`
+  return undefined
+}
+
 export const CULTURE_KINDS: Record<Extras['culture']['kind'], string> = {
   refrán: 'Пословица',
   trabalenguas: 'Скороговорка',

@@ -16,9 +16,11 @@ interface Props {
   title?: string | undefined
   description: string
   links: { youtube: string; boosty: string; telegram: string }
+  /** Не индексировать: страница-заглушка закрытой части урока. */
+  noindex?: boolean | undefined
 }
 
-const { title, description, links } = Astro.props
+const { title, description, links, noindex } = Astro.props
 const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim — испанский с нуля'
 ---
 
@@ -29,6 +31,7 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
   </head>
   <body>
