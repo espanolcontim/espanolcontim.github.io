@@ -120,10 +120,14 @@ const levels = LEVELS.map((level) => ({
     color: var(--accent);
   }
 
-  /* Без жирного: он шире, и длинное название переносится иначе — меню прыгает. */
+  /*
+   * Жирный — обводкой, а не font-weight: настоящий жирный шире, длинное
+   * название переносится на вторую строку, и меню прыгает.
+   */
   a[aria-current='page'] {
     border-left-color: var(--accent);
     color: var(--accent);
+    -webkit-text-stroke: 0.035em currentColor;
   }
 
   .n {
