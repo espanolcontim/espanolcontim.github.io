@@ -50,7 +50,7 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
           <span aria-hidden="true">☰</span> Уроки
         </button>
         <a class="logo" href="/">
-          Español con Tim
+          <span>Español</span> <span>con Tim</span>
         </a>
         <nav class="topnav" aria-label="Ссылки курса">
           <slot name="nav" />
@@ -62,6 +62,9 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
 
     <div class="shell">
       <aside id="sidebar" class="sidebar">
+        <button class="sidebar-close" type="button" data-sidebar-close>
+          <span aria-hidden="true">✕</span> Закрыть
+        </button>
         <slot name="sidebar" />
       </aside>
       <div class="column">
@@ -87,14 +90,27 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
   const sidebar = document.getElementById('sidebar')
   const backdrop = document.querySelector<HTMLElement>('[data-backdrop]')
   const button = document.querySelector<HTMLButtonElement>('[data-sidebar-toggle]')
+  const close = document.querySelector<HTMLButtonElement>('[data-sidebar-close]')
+  const column = document.querySelector<HTMLElement>('.column')
 
   const setOpen = (open: boolean) => {
     sidebar?.toggleAttribute('data-open', open)
     backdrop?.toggleAttribute('data-open', open)
     button?.setAttribute('aria-expanded', String(open))
+    // Пока меню открыто, страница под подложкой недоступна ни мышью, ни с клавиатуры.
+    column?.toggleAttribute('inert', open)
   }
 
-  button?.addEventListener('click', () => setOpen(!sidebar?.hasAttribute('data-open')))
+  button?.addEventListener('click', () => {
+    const open = !sidebar?.hasAttribute('data-open')
+    setOpen(open)
+    // Фокус — в меню, на «Закрыть»: дальше Tab идёт по урокам.
+    if (open) close?.focus()
+  })
+  close?.addEventListener('click', () => {
+    setOpen(false)
+    button?.focus()
+  })
   backdrop?.addEventListener('click', () => setOpen(false))
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && sidebar?.hasAttribute('data-open')) {
@@ -102,6 +118,9 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
       button?.focus()
     }
   })
+
+  // На широком экране меню видно всегда — выезжающее закрываем.
+  matchMedia('(min-width: 64rem)').addEventListener('change', () => setOpen(false))
 
   // Открытый урок — в поле зрения меню, даже если он далеко внизу списка.
   const current = sidebar?.querySelector<HTMLElement>('[aria-current="page"]')
@@ -123,24 +142,33 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
   .topbar-inner {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.75rem;
     min-height: 3.25rem;
   }
 
+  /* Сжимается только логотип: на узком экране — в две строки, «Español / con Tim». */
   .logo {
+    padding-block: 0.375rem;
     color: var(--text);
     font-weight: 800;
+    line-height: 1.15;
     text-decoration: none;
+  }
+
+  .logo span {
     white-space: nowrap;
   }
 
   .topnav {
     display: flex;
+    flex: none;
     gap: 1.25rem;
+    align-items: center;
     margin-left: auto;
   }
 
   .topnav a {
+    padding-block: 0.375rem;
     color: var(--text-2);
     font-size: 0.875rem;
     font-weight: 700;
@@ -151,8 +179,8 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     color: var(--accent);
   }
 
-  /* На узком телефоне в шапке только ссылки из слота; YouTube и Boosty — в подвале. */
-  @media (max-width: 27.99rem) {
+  /* На телефоне в шапке только ссылки из слота; YouTube и Boosty — в подвале. */
+  @media (max-width: 39.99rem) {
     .topnav a {
       display: none;
     }
@@ -160,9 +188,42 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
 
   .menu-button {
     display: inline-flex;
+    flex: none;
     gap: 0.375rem;
     align-items: center;
-    padding: 0.25rem 0.625rem;
+    justify-content: center;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    padding: 0 0.625rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  /* Узкий телефон: промежутки поменьше, чтобы «Повторение» со счётчиком влезало. */
+  @media (max-width: 24.99rem) {
+    .topbar-inner {
+      gap: 0.5rem;
+    }
+  }
+
+  .sidebar {
+    padding-block: 1rem 2rem;
+  }
+
+  .sidebar-close {
+    display: flex;
+    gap: 0.375rem;
+    align-items: center;
+    min-height: 2.25rem;
+    margin: 0 0 0.75rem auto;
+    padding: 0 0.625rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
     background: none;
@@ -171,10 +232,6 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     font-size: 0.875rem;
     font-weight: 700;
     cursor: pointer;
-  }
-
-  .sidebar {
-    padding-block: 1rem 2rem;
   }
 
   main {
@@ -193,7 +250,11 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
   .footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.25rem;
+    gap: 0 1.25rem;
+  }
+
+  .footer-links a {
+    padding-block: 0.25rem;
   }
 
   /* Телефон и планшет: меню выезжает слева поверх страницы. */
@@ -205,18 +266,22 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
       width: min(19rem, 86vw);
       padding-inline: 1.25rem;
       overflow-y: auto;
+      overscroll-behavior: contain;
       border-right: 1px solid var(--line);
       background: var(--bg);
       transform: translateX(-100%);
       visibility: hidden;
+      /* Закрываясь, прячется, когда уже уехало. */
       transition:
         transform 0.2s ease,
-        visibility 0.2s;
+        visibility 0s 0.2s;
     }
 
+    /* Открываясь, видно сразу — чтобы на «Закрыть» можно было поставить фокус. */
     .sidebar[data-open] {
       transform: none;
       visibility: visible;
+      transition: transform 0.2s ease;
     }
 
     .backdrop[data-open] {
@@ -247,7 +312,8 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
       max-width: var(--content);
     }
 
-    .menu-button {
+    .menu-button,
+    .sidebar-close {
       display: none;
     }
   }

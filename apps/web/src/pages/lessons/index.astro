@@ -37,14 +37,14 @@ const levels = LEVELS.map((level) => ({
           const note = lesson.parts.notes && ACCESS_NOTE[lesson.parts.notes]
           return (
             <li>
-              <a class:list={['lesson', { locked: note }]} href={lessonPath(lesson.id)}>
+              <a class="lesson" href={lessonPath(lesson.id)}>
                 <span class="n">{lesson.planLesson}</span>
                 <span class="title">{lesson.title}</span>
-                <span class="meta">
+                <span class="badges">
                   <LessonMark lessonId={lesson.id} />
-                  Урок {lesson.number}
+                  {note && <span class="pill pill--lock">{note}</span>}
                 </span>
-                {note && <span class="pill pill--lock">{note}</span>}
+                <span class="meta">Урок {lesson.number}</span>
               </a>
             </li>
           )
@@ -79,10 +79,17 @@ const levels = LEVELS.map((level) => ({
     list-style: none;
   }
 
+  /*
+   * Отметка прогресса и пометка подписки (badges) на телефоне — строкой под
+   * названием, чтобы его не сжимать; на широком экране — в той же строке.
+   */
   .lesson {
     display: grid;
-    grid-template-columns: 2rem 1fr auto;
-    gap: 0.375rem 0.75rem;
+    grid-template-columns: 2rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      'n title meta'
+      '. badges badges';
+    gap: 0 0.75rem;
     align-items: baseline;
     padding: 0.625rem 0.25rem;
     border-bottom: 1px solid var(--line);
@@ -95,36 +102,45 @@ const levels = LEVELS.map((level) => ({
   }
 
   .n {
+    grid-area: n;
     color: var(--accent);
     font-weight: 800;
     font-variant-numeric: tabular-nums;
   }
 
   .title {
+    grid-area: title;
     font-weight: 700;
   }
 
   .meta {
-    display: flex;
-    gap: 0.5rem;
-    align-items: baseline;
+    grid-area: meta;
     color: var(--text-3);
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: badges;
+    gap: 0.375rem 0.75rem;
+    align-items: center;
     font-size: 0.8125rem;
   }
 
-  /* Пометка подписки: на телефоне — строкой под названием, чтобы его не сжимать. */
-  .lesson .pill {
-    grid-column: 2 / -1;
-    justify-self: start;
+  .badges:has(> :not([hidden])) {
+    padding-top: 0.375rem;
   }
 
   @media (min-width: 40rem) {
-    .lesson.locked {
-      grid-template-columns: 2rem 1fr auto auto;
+    .lesson {
+      grid-template-columns: 2rem minmax(0, 1fr) auto auto;
+      grid-template-areas: 'n title badges meta';
     }
 
-    .lesson .pill {
-      grid-column: auto;
+    .badges:has(> :not([hidden])) {
+      padding-top: 0;
     }
   }
 </style>

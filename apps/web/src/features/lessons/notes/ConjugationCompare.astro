@@ -65,6 +65,15 @@ const { title, verbs, rows } = Astro.props
     vertical-align: baseline;
   }
 
+  /*
+   * Заголовки столбцов («Единственное число») на телефоне переносятся по слогам —
+   * таблица влезает в экран. Подписи строк — только по словам, иначе рвутся все.
+   */
+  thead th {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
   thead th {
     font-weight: 800;
   }

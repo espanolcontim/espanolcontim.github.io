@@ -61,6 +61,15 @@ const { title, columns, rows } = Astro.props
     vertical-align: top;
   }
 
+  /*
+   * Заголовки столбцов («Единственное число») на телефоне переносятся по слогам —
+   * таблица влезает в экран. Подписи строк — только по словам, иначе рвутся все.
+   */
+  thead th {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+
   thead th {
     color: var(--text-2);
     font-size: 0.875rem;
@@ -76,5 +85,17 @@ const { title, columns, rows } = Astro.props
 
   td :global(.es) {
     font-weight: 700;
+  }
+
+  /* Телефон: подписи строк — по самому длинному слову, столбцы с формами — поровну. */
+  @media (max-width: 29.99rem) {
+    tbody th {
+      width: 0;
+    }
+
+    thead th,
+    tbody td {
+      width: 50%;
+    }
   }
 </style>

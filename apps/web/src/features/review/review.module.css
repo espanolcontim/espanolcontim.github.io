@@ -34,6 +34,7 @@
 
 .box {
   display: grid;
+  align-content: start;
   gap: 0.125rem;
   padding: 0.5rem 0.375rem;
   border: 1px solid var(--line);
@@ -41,6 +42,14 @@
   font-size: 0.8125rem;
   line-height: 1.25;
   text-align: center;
+}
+
+/* Пять плиток в ряд на узком телефоне: «через 2 недели» — в две строки, не в три. */
+@media (max-width: 24.99rem) {
+  .box {
+    padding-inline: 0.25rem;
+    font-size: 0.75rem;
+  }
 }
 
 .count {
