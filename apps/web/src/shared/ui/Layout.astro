@@ -30,17 +30,6 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
-    {/* Временно, пока Тимур выбирает палитру: ?palette=olive|sea|sand запоминается в браузере. */}
-    <script is:inline>
-      try {
-        const palette =
-          new URLSearchParams(location.search).get('palette') ?? localStorage.getItem('palette')
-        if (palette) {
-          document.documentElement.dataset.palette = palette
-          localStorage.setItem('palette', palette)
-        }
-      } catch {}
-    </script>
   </head>
   <body>
     <a class="skip visually-hidden" href="#main">

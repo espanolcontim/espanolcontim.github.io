@@ -33,7 +33,7 @@
 - **Astro** (статическая генерация) + **React-острова** для интерактива, TypeScript strict.
   Почему не SPA: бесплатные конспекты должны индексироваться Яндексом, а у статического хостинга нет серверного рендеринга. Каждая страница урока — отдельный HTML-файл.
 - **zod** — схемы контента: единый контракт для импорта, сайта и функций.
-- Стили: CSS-переменные из `apps/web/src/shared/styles/theme.css` (светлая и тёмная тема); в `.astro` — scoped `<style>`, в React-островах — CSS Modules. Без UI-фреймворков, если нет веской причины.
+- Стили: CSS-переменные из `apps/web/src/shared/styles/theme.css` (светлая и тёмная тема; сами темы — в `styles/themes/`, активная — одна строка `@import` в `theme.css`); в `.astro` — scoped `<style>`, в React-островах — CSS Modules. Без UI-фреймворков, если нет веской причины.
 - Шрифты — из npm: Manrope (`@fontsource-variable/manrope`), транскрипция — Noto Sans (`@fontsource/noto-sans`): в Manrope нет знаков МФА.
 - Бэкенд: Yandex Cloud Functions (Node.js, TypeScript), API Gateway, Object Storage.
 - Тесты: Vitest. Node 22.23+ (так требует Astro 7), npm workspaces.

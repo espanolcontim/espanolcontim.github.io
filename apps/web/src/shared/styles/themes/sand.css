@@ -1,0 +1,28 @@
+/*
+ * «Песок»: по обложкам канала — тёплый фон, терракотовый акцент
+ * (чуть темнее, чем на обложках, — ради контраста).
+ */
+
+/* светлая */
+:root:not([data-theme='dark']) {
+  --base-bg: #f4eee4;
+  --base-text: #1b140d;
+  --base-accent: #a1441f;
+  --base-ok: #2f6b3f;
+  --base-almost: #8a5a08;
+  --base-bad: #a5231d;
+  --base-speaker-2: #1f6b6b;
+  --base-speaker-3: #6b4a8a;
+}
+
+/* тёмная */
+:root[data-theme='dark'] {
+  --base-bg: #15110e;
+  --base-text: #f3ece3;
+  --base-accent: #e8774f;
+  --base-ok: #74c48a;
+  --base-almost: #e3ad4f;
+  --base-bad: #f2857a;
+  --base-speaker-2: #5cc2c2;
+  --base-speaker-3: #b99ae0;
+}

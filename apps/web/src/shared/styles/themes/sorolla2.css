@@ -1,0 +1,41 @@
+/*
+ * «Sorolla 2»: валенсийское море и солнце — лазурь и бирюза на тёплом белом.
+ * Светлая — из ../video-lessons (src/features/settings/palettes.ts, SOROLLA_2):
+ * те же цвета, что на слайдах и в PDF. «Верно» — основным синим, как там:
+ * на «так говорят / так не говорят» два цвета, а не три.
+ *
+ * Отступления от слайдов — ради контраста мелкого текста на сайте (≥ 4.5:1):
+ * транскрипция (text-3) — цвет из PDF-конспекта, а не со слайда.
+ * Тёмной у слайдов нет — она своя: ночное море, тот же синий светлее.
+ */
+
+/* светлая */
+:root:not([data-theme='dark']) {
+  --base-bg: #fffcf6;
+  --base-text: #10202e;
+  --base-accent: #0062a8;
+  --base-ok: var(--base-accent);
+  --base-almost: #8a5a08;
+  --base-bad: #c0392b;
+  --base-speaker-2: #00796b;
+  --base-speaker-3: #6d4cc2;
+
+  --base-line: #e6ddcb;
+  --base-text-2: #4f5a63;
+  --base-text-3: #6b7177;
+  --base-accent-soft: #d9e9f7;
+  --base-on-accent: #ffffff;
+  --base-bad-soft: #fbe3df;
+}
+
+/* тёмная */
+:root[data-theme='dark'] {
+  --base-bg: #0e1720;
+  --base-text: #e9eef2;
+  --base-accent: #6cb6ec;
+  --base-ok: var(--base-accent);
+  --base-almost: #e3ad4f;
+  --base-bad: #f2857a;
+  --base-speaker-2: #4fc2b2;
+  --base-speaker-3: #b9a0f0;
+}
