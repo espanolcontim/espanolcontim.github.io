@@ -26,8 +26,11 @@ workflows:
               - npm test
               - npm run build
           # Без image: в образе node нет git, а у воркера есть и git, и доступ на запись.
+          # Своего имени для коммитов у воркера нет — берём автора коммита из main.
           - name: publish
             script:
+              - git config user.name "$(git log -1 --format=%an)"
+              - git config user.email "$(git log -1 --format=%ae)"
               - git checkout -q --orphan release
               - git read-tree --empty
               - git --work-tree=apps/web/dist add -A
