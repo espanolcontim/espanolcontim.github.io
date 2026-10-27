@@ -8,7 +8,7 @@ import '../styles/global.css'
 
 /**
  * Каркас страницы: шапка (ссылки — слот nav), слева меню (слот sidebar), справа контент;
- * в <head> — слот head (превью ссылок, значки).
+ * в <head> — слот head (превью ссылок, значки), в подвале — слот footer, поверх страницы — overlay.
  * На широком экране меню видно всегда и не уезжает при прокрутке,
  * на телефоне выезжает по кнопке «Уроки».
  */
@@ -80,10 +80,12 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
             <a href={links.boosty}>Boosty</a>
             <a href={links.telegram}>Telegram</a>
           </p>
+          <slot name="footer" />
         </footer>
       </div>
     </div>
     <div class="backdrop" data-backdrop></div>
+    <slot name="overlay" />
   </body>
 </html>
 

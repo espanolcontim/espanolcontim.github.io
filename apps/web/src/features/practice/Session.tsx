@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { analytics } from '../../app/browser.ts'
+import { GOALS } from '../analytics/Analytics.ts'
 import { addToReview, recordResult, resultKey } from '../review/progress.ts'
 import { updateProgress } from '../review/useProgress.ts'
 import styles from './practice.module.css'
@@ -37,6 +39,7 @@ export function Session({
   const complete = task === undefined && round.tasks === set.tasks
   useEffect(() => {
     if (!complete) return
+    analytics.goal(set.kind === 'quiz' ? GOALS.quizDone : GOALS.practiceDone)
     const { correct, almost } = score(results)
     updateProgress((progress, today) =>
       recordResult(progress, resultKey(lessonId, set.id), {
@@ -45,7 +48,7 @@ export function Session({
         day: today,
       }),
     )
-  }, [complete, results, lessonId, set.id])
+  }, [complete, results, lessonId, set.id, set.kind])
 
   const repeat = (tasks: Task[]) => {
     setRound(({ n }) => ({ tasks, n: n + 1 }))

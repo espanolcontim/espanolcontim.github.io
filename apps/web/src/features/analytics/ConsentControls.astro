@@ -1,0 +1,38 @@
+---
+import { METRIKA_ID } from '../../app/analytics.ts'
+
+/**
+ * Решение о cookie на странице политики: разрешить или отозвать согласие.
+ * Кнопки и строку состояния обслуживает скрипт CookieBanner.astro.
+ */
+---
+
+{METRIKA_ID > 0 ? (
+  <div class="controls card">
+    <p data-consent-status>Решение хранится в этом браузере.</p>
+    <p class="actions">
+      <button type="button" class="button" data-consent="accepted">
+        Разрешить
+      </button>
+      <button type="button" class="button button--ghost" data-consent="declined">
+        Отозвать согласие
+      </button>
+    </p>
+  </div>
+) : (
+  <p class="ru">Сейчас Яндекс Метрика на сайте не подключена.</p>
+)}
+
+<style>
+  .controls {
+    display: grid;
+    gap: 0.75rem;
+    justify-items: start;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+</style>

@@ -2,7 +2,8 @@
 
 Сайт курса «Испанский с нуля»: конспекты уроков, дополнительные материалы, упражнения.
 
-- Сайт: https://espanolcontim.github.io/ — GitHub Pages, публикуется сам при каждом push в `main` (`.github/workflows/deploy.yml`).
+- Сайт: https://espanolcontim.github.io/ — GitHub Pages, публикуется сам при каждом push в `main` (`.github/workflows/deploy.yml`). Переезжает на SourceCraft Sites (`https://espanolcontim.sourcecraft.site/`) — `docs/sourcecraft.md`.
+- Поиск, превью ссылок, Яндекс Метрика — `docs/seo.md`; персональные данные и Роскомнадзор — `docs/privacy.md`.
 - Спецификация и план по фазам — `docs/SPEC.md`.
 - Где остановились и что дальше — `docs/STATUS.md`.
 - Правила для Claude Code — `CLAUDE.md`.
@@ -32,6 +33,7 @@
    ```
 5. Для `git push` по HTTPS GitHub просит не пароль, а personal access token
    (GitHub → Settings → Developer settings → Personal access tokens).
+6. Исходник фото на главной (`docs/design/tim.png`) в git не хранится — он нужен, только чтобы заново вырезать фото; перенести вручную, если понадобится.
 
 ## Команды
 

@@ -1,8 +1,11 @@
 ---
+import CookieBanner from '../features/analytics/CookieBanner.astro'
 import LessonsNav from '../features/lessons/LessonsNav.astro'
 import ReviewLink from '../features/review/ReviewLink.astro'
 import Layout from '../shared/ui/Layout.astro'
+import { METRIKA_ID } from './analytics.ts'
 import { container } from './container.ts'
+import { PRIVACY_PATH } from './legal.ts'
 import { LINKS } from './links.ts'
 import Seo from './Seo.astro'
 
@@ -25,4 +28,8 @@ const links = { youtube: container.videos.channel, ...LINKS }
   <ReviewLink slot="nav" />
   <LessonsNav slot="sidebar" current={currentLesson} />
   <slot />
+  <p slot="footer">
+    <a href={PRIVACY_PATH}>Обработка персональных данных</a>
+  </p>
+  {METRIKA_ID > 0 && <CookieBanner slot="overlay" />}
 </Layout>

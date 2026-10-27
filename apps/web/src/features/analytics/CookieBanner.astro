@@ -1,0 +1,120 @@
+---
+import { CONSENT_PATH, PRIVACY_PATH } from '../../app/legal.ts'
+
+/**
+ * Уведомление о cookie внизу экрана — пока посетитель не решил. Метрика
+ * грузится только после «Принять». Скрипт обслуживает и кнопки согласия
+ * на странице политики (ConsentControls.astro): у них тот же data-consent.
+ * Подключается, только если задан счётчик (METRIKA_ID).
+ */
+---
+
+<section class="cookie" aria-label="Cookie и Яндекс Метрика" data-cookie-banner hidden>
+  <div class="inner">
+    <p>
+      Сайт использует cookie и Яндекс Метрику, чтобы считать посещения и понимать, какие уроки
+      полезны. Нажимая «Принять», вы даёте{' '}
+      <a href={CONSENT_PATH}>согласие на обработку этих данных</a>. Подробнее — в{' '}
+      <a href={PRIVACY_PATH}>политике</a>.
+    </p>
+    <p class="actions">
+      <button type="button" class="button" data-consent="accepted">
+        Принять
+      </button>
+      <button type="button" class="button button--ghost" data-consent="declined">
+        Отклонить
+      </button>
+    </p>
+  </div>
+</section>
+
+<script>
+  import { analytics, consent } from '../../app/browser.ts'
+  import { GOALS } from './Analytics.ts'
+  import { clearMetrikaCookies, type Consent } from './consent.ts'
+
+  const banner = document.querySelector<HTMLElement>('[data-cookie-banner]')
+
+  const STATUS: Record<Consent | 'none', string> = {
+    accepted: 'Вы разрешили cookie и Яндекс Метрику.',
+    declined: 'Вы отказались от cookie и Яндекс Метрики — она на сайте не загружается.',
+    none: 'Вы ещё не решили — Яндекс Метрика не загружается.',
+  }
+
+  const show = (decision: Consent | undefined) => {
+    for (const status of document.querySelectorAll<HTMLElement>('[data-consent-status]')) {
+      status.textContent = STATUS[decision ?? 'none']
+    }
+  }
+
+  if (analytics.enabled()) {
+    const decision = consent.load()
+    if (decision === 'accepted') analytics.start()
+    if (decision === undefined && banner) banner.hidden = false
+    show(decision)
+  }
+
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-consent]')) {
+    button.addEventListener('click', () => {
+      const decision: Consent = button.dataset.consent === 'accepted' ? 'accepted' : 'declined'
+      consent.save(decision)
+      if (banner) banner.hidden = true
+      show(decision)
+      if (decision === 'accepted') {
+        analytics.start()
+        return
+      }
+      clearMetrikaCookies(document)
+      // Метрика уже работает на этой странице — остановит её только перезагрузка.
+      if (window.ym) location.reload()
+    })
+  }
+
+  document.addEventListener('click', (event) => {
+    if (event.target instanceof Element && event.target.closest('a[href*="boosty.to"]')) {
+      analytics.goal(GOALS.boosty)
+    }
+  })
+</script>
+
+<style>
+  .cookie {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 8;
+    padding: 1rem var(--gutter);
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+    font-size: 0.875rem;
+  }
+
+  .cookie[hidden] {
+    display: none;
+  }
+
+  .inner {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 60rem;
+    margin-inline: auto;
+  }
+
+  .inner p {
+    margin: 0;
+    color: var(--text-2);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    .inner {
+      grid-template-columns: 1fr auto;
+      gap: 1.5rem;
+      align-items: center;
+    }
+  }
+</style>

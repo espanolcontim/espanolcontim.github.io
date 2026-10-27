@@ -1,7 +1,8 @@
 import { addDays, BOXES, dueCards, localDay } from '@espanolcontim/content'
 import { useEffect, useMemo, useState } from 'react'
-import { progress as repository } from '../../app/browser.ts'
+import { analytics, progress as repository } from '../../app/browser.ts'
 import { plural } from '../../shared/plural.ts'
+import { GOALS } from '../analytics/Analytics.ts'
 import practice from '../practice/practice.module.css'
 import { BOX_LABELS, dayLabel } from './labels.ts'
 import { cardsOf, postpone } from './progress.ts'
@@ -52,11 +53,13 @@ export default function Review({
 
   if (!progress) return null
 
-  const begin = () =>
+  const begin = () => {
+    analytics.goal(GOALS.reviewStart)
     setBatch((previous) => ({
       sentences: due.slice(0, BATCH).flatMap((card) => byId.get(card.id) ?? []),
       n: (previous?.n ?? 0) + 1,
     }))
+  }
 
   if (batch) {
     return (
