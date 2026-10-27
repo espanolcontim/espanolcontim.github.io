@@ -120,10 +120,10 @@ const levels = LEVELS.map((level) => ({
     color: var(--accent);
   }
 
+  /* Без жирного: он шире, и длинное название переносится иначе — меню прыгает. */
   a[aria-current='page'] {
     border-left-color: var(--accent);
     color: var(--accent);
-    font-weight: 700;
   }
 
   .n {
