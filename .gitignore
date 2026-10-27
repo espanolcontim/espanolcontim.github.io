@@ -14,3 +14,6 @@ coverage/
 # Логи и мусор
 *.log
 .DS_Store
+
+# Исходник фото на главной: на сайте — вырезанный apps/web/src/assets/tim.png
+docs/design/tim.png

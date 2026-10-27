@@ -1,6 +1,8 @@
 ---
+import { Picture } from 'astro:assets'
 import { container } from '../app/container.ts'
 import { LINKS } from '../app/links.ts'
+import tim from '../assets/tim.png'
 import { lessonPath } from '../features/lessons/navigation.ts'
 import Page from '../app/Page.astro'
 
@@ -10,22 +12,37 @@ const channel = container.videos.channel
 
 <Page description="Испанский с нуля для русскоязычных: видеоуроки на YouTube, а здесь — конспекты, дополнительные материалы и упражнения к каждому уроку.">
   <section class="hero">
-    <p class="overline">Испанский с нуля</p>
-    <h1>Español con Tim</h1>
-    <p class="lead">
-      Курс испанского для тех, кто начинает с нуля. Уроки выходят на YouTube, а здесь к каждому
-      уроку — конспект, дополнительные материалы и упражнения.
-    </p>
-    <p class="actions">
-      {first && (
-        <a class="button" href={lessonPath(first.id)}>
-          Начать с урока 1
+    <div class="head">
+      <p class="overline">Испанский с нуля</p>
+      <h1>Español con Tim</h1>
+    </div>
+    <Picture
+      pictureAttributes={{ class: 'portrait' }}
+      src={tim}
+      alt="Тимур, автор курса"
+      formats={['avif']}
+      fallbackFormat="webp"
+      quality={80}
+      widths={[200, 320, 480, 672, 900]}
+      sizes="(min-width: 40rem) 21rem, 40vw"
+      loading="eager"
+    />
+    <div class="body">
+      <p class="lead">
+        Курс испанского для тех, кто начинает с нуля. Уроки выходят на YouTube, а здесь к каждому
+        уроку — конспект, дополнительные материалы и упражнения.
+      </p>
+      <p class="actions">
+        {first && (
+          <a class="button" href={lessonPath(first.id)}>
+            Начать с урока 1
+          </a>
+        )}
+        <a class="button button--ghost" href="/lessons/">
+          Все уроки
         </a>
-      )}
-      <a class="button button--ghost" href="/lessons/">
-        Все уроки
-      </a>
-    </p>
+      </p>
+    </div>
   </section>
 
   <section class="method card" aria-labelledby="method">
@@ -57,10 +74,85 @@ const channel = container.videos.channel
 </Page>
 
 <style>
+  /*
+   * Шапка как на обложках: фото без фона справа стоит на тонкой линии.
+   * На телефоне — рядом с заголовком, на широком экране — рядом со всем текстом.
+   */
   .hero {
     display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'head portrait'
+      'body body';
+    margin-bottom: 2.5rem;
+  }
+
+  .head {
+    display: grid;
+    grid-area: head;
+    gap: 1rem;
+    align-self: end;
+    padding-block: 1rem 1.25rem;
+  }
+
+  /* Рядом с фото на телефоне: «Español / con Tim», а не «Español con / Tim». */
+  .head h1 {
+    text-wrap: balance;
+  }
+
+  .head,
+  .portrait {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .portrait {
+    grid-area: portrait;
+    align-self: end;
+    width: min(40vw, 11rem);
+  }
+
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .body {
+    display: grid;
+    grid-area: body;
     gap: 1.25rem;
-    padding-block: 2rem 3rem;
+    padding-top: 1.25rem;
+  }
+
+  @media (min-width: 40rem) {
+    .hero {
+      grid-template-columns: minmax(0, 1fr) min(21rem, 40%);
+      grid-template-rows: 1fr auto auto 1fr;
+      grid-template-areas:
+        '. portrait'
+        'head portrait'
+        'body portrait'
+        '. portrait';
+      column-gap: 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .head,
+    .portrait {
+      border-bottom: 0;
+    }
+
+    .head {
+      padding-block: 2rem 0;
+    }
+
+    .portrait {
+      width: 100%;
+    }
+
+    .body {
+      padding-block: 1.25rem 2.5rem;
+    }
   }
 
   .lead {
