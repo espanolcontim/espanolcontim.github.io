@@ -84,10 +84,11 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
   - [x] `/lessons/a0-01/` отдаёт `index.html`;
   - сайт открывается из России: мобильный интернет и домашний провайдер (GitHub Pages раздаётся через CDN Fastly).
 - [ ] SourceCraft Sites — **основной хостинг** (решение Тимура, план — `docs/sourcecraft.md`; сборка с `SITE_URL=https://espanolcontim.sourcecraft.site`):
-  - конфиг `.sourcecraft/sites.yaml` (формат: `site:` → `root: "<папка со сборкой>"`);
+  - [x] репозиторий `espanolcontim/espanolcontim` — зеркало GitHub, синхронизация `main` раз в два часа;
+  - [x] конфиги: `.sourcecraft/ci.yaml` собирает `main` в ветку `release` (в ней только сборка), `.sourcecraft/sites.yaml` публикует `release`;
   - сайт открывается в корне `https://espanolcontim.sourcecraft.site/`;
-  - `/lessons/a0-01/` отдаёт `index.html` (иначе — Astro `build.format: 'file'`);
-  - CI SourceCraft умеет собирать сайт: шаблон `sites-landing` собирает из `main` в ветку `release`, Sites публикует из неё. Запасной путь — `npm run deploy` собирает локально и коммитит сборку.
+  - `/lessons/a0-01/` отдаёт `index.html` (иначе — Astro `build.format: 'file'`), несуществующий адрес — 404;
+  - CI запускается после синхронизации зеркала (если нет — запасные пути в `docs/sourcecraft.md`).
 
 ### Фаза 1 — бесплатная часть
 

@@ -1,0 +1,35 @@
+# Сборка сайта для SourceCraft Sites при каждом push в main.
+# Готовый сайт (apps/web/dist) кладётся в ветку release — в ней только собранные файлы,
+# одним коммитом без истории. Sites публикует её (.sourcecraft/sites.yaml).
+# Контент уже лежит в content/public (коммитится), импорт из video-lessons здесь не нужен.
+# Справочник: https://sourcecraft.dev/portal/docs/ru/sourcecraft/ci-cd-ref/
+on:
+  push:
+    workflows: build-site
+    filter:
+      branches: main
+
+workflows:
+  build-site:
+    tasks:
+      - name: build-site
+        checkout:
+          fetch_depth: 1
+        cubes:
+          - name: build
+            image: node:24-slim
+            env:
+              SITE_URL: https://espanolcontim.sourcecraft.site
+            script:
+              - npm ci
+              - npm run lint
+              - npm test
+              - npm run build
+          # Без image: в образе node нет git, а у воркера есть и git, и доступ на запись.
+          - name: publish
+            script:
+              - git checkout -q --orphan release
+              - git read-tree --empty
+              - git --work-tree=apps/web/dist add -A
+              - git commit -q -m "Сборка $SOURCECRAFT_COMMIT_SHA"
+              - git push -f origin release
