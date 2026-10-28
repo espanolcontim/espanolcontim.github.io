@@ -65,7 +65,7 @@
 
 ## Ход переезда
 
-Обновлено 28.10.2026, 13:00.
+Обновлено 28.10.2026, 15:00.
 
 | Шаг | Состояние |
 | --- | --- |
@@ -77,13 +77,14 @@
 | 6. DNS | ✓ зона `espanolcontim.ru.` в Cloud DNS (ANAME на бакет, CNAME `www`), у Beget — `ns1/ns2.yandexcloud.net` (WHOIS); `http://espanolcontim.ru` открывает бакет |
 | 7. Сертификат | ✓ `espanolcontim-ru` (`fpqmic94joo3lbr3q7mh`) выпущен 28.10.2026 (Let's Encrypt, до 25.01.2027, продлевается сам), подключён к обоим бакетам: `https://espanolcontim.ru` с замком, `http://` → `https://`, `https://www.` → без www (проверено 28.10.2026) |
 | 8. Ключ для деплоя | ✓ сервисный аккаунт `site-deploy` (`storage.editor` на каталог `site`), секреты `YC_ACCESS_KEY_ID` и `YC_SECRET_ACCESS_KEY` в GitHub |
-| Claude: деплой и проверка | ✓ деплой — задача `bucket` в `.github/workflows/deploy.yml` («Деплой» ниже); живой сайт проверен 28.10.2026 («Как отдаёт сайт» ниже). Дальше — основной адрес по умолчанию и снять с публикации GitHub Pages и SourceCraft («Что сделать Claude», 3–4) |
+| Claude: деплой и проверка | ✓ деплой — `.github/workflows/deploy.yml` («Деплой» ниже); живой сайт проверен 28.10.2026 («Как отдаёт сайт» ниже) |
+| Claude: основной адрес, старые сайты | ✓ 28.10.2026: `site` по умолчанию — `https://espanolcontim.ru`, политика — хостинг Object Storage, деплой только в бакет, `.sourcecraft/sites.yaml` пустой. **Тимуру:** снять GitHub Pages в настройках, синхронизировать SourceCraft, Вебмастер и Метрика (10–12 ниже) |
 
 Проверить DNS-записи: `dig @ns1.yandexcloud.net _acme-challenge.espanolcontim.ru CNAME +short` (и то же для `_acme-challenge.www`) — должно быть `fpqmic94joo3lbr3q7mh.cm.yandexcloud.net.`.
 
 ## Деплой
 
-При каждом push в `main` задача `bucket` в `.github/workflows/deploy.yml` собирает сайт с `SITE_URL=https://espanolcontim.ru` и запускает `scripts/deploy-bucket.ts` (правила — `scripts/deploy/bucket.ts`, с тестами). Скрипт работает через AWS CLI, который есть на раннерах GitHub; ключ `site-deploy` передаётся только в этот шаг.
+При каждом push в `main` `.github/workflows/deploy.yml` проверяет и собирает сайт (адрес по умолчанию — `https://espanolcontim.ru`) и запускает `scripts/deploy-bucket.ts` (правила — `scripts/deploy/bucket.ts`, с тестами). Скрипт работает через AWS CLI, который есть на раннерах GitHub; ключ `site-deploy` передаётся только в этот шаг.
 
 - Текст (HTML, JS, CSS, SVG, XML, TXT, JSON) лежит в бакете сжатым gzip, с `Content-Encoding: gzip`. Картинки и шрифты не сжимаются. `Content-Type` берётся из таблицы `TYPES`: файл незнакомого типа останавливает деплой — допишите тип в таблицу.
 - `/_astro/*` — `Cache-Control: public, max-age=31536000, immutable`, остальное — `no-cache`.
@@ -106,7 +107,7 @@
 
 ## Что сделать Тимуру
 
-Токены и ключи в чат не вставлять. Шаги 1–8 сделаны (выше — «Ход переезда»).
+Токены и ключи в чат не вставлять. Шаги 1–9 сделаны (выше — «Ход переезда»), остались 10–12.
 
 1. **Домен.** Купить `espanolcontim.ru` в Timeweb или Beget — только домен, без хостинга и без платных услуг (DNS будет в Яндекс Облаке). Аккаунт — на `espanolcontim@yandex.ru`, с двухфакторной аутентификацией, автопродление включить. Для `.ru` спросят паспортные данные (так требуют правила зоны) — в публичном WHOIS их не видно, там «Private Person».
 2. **Яндекс Облако.** https://console.yandex.cloud под тем же Яндекс ID, что почта `espanolcontim@yandex.ru`. Создать платёжный аккаунт (физлицо, карта). В облаке создать каталог `site` — только для сайта; для фазы 2 будет отдельный каталог.
@@ -136,11 +137,14 @@
       | `YC_SECRET_ACCESS_KEY` | секретный ключ (длинный, показан один раз) |
 
       Значения секретов GitHub потом не показывает — только имена. Больше ключ нигде не хранить; если потерялся или утёк — удалить в `site-deploy` и создать новый.
-9. Написать Claude: «шаг 8 готов» — без ключей.
+9. ~~Написать Claude: «шаг 8 готов»~~ — сделано.
+10. **GitHub Pages — снять с публикации.** https://github.com/espanolcontim/espanolcontim.github.io/settings/pages → рядом с «Your site is live at …» — «…» → «Unpublish site». Деплой туда больше ничего не публикует, но последняя версия висит, пока её не снять. Окружение `github-pages` (Settings → Environments) можно удалить.
+11. **SourceCraft — синхронизировать.** https://sourcecraft.dev/espanolcontim/espanolcontim → «Синхронизировать сейчас» (или подождать до двух часов): зеркало получит пустой `sites.yaml`, и сайт снимется. Проверить: https://espanolcontim.sourcecraft.site/ не открывается. Ветку `release` там можно удалить.
+12. **Вебмастер и Метрика** — на `espanolcontim.ru`, по шагам — `docs/seo.md`. Описание репозитория на GitHub (шестерёнка у «About» → Website) — тоже `https://espanolcontim.ru`.
 
 ## Что сделать Claude
 
 1. Деплой в `.github/workflows/deploy.yml`: сборка с `SITE_URL=https://espanolcontim.ru`, загрузка `apps/web/dist` в бакет. HTML, JS, CSS, SVG, XML и TXT — сжатыми (gzip, `Content-Encoding: gzip`); `/_astro/*` — `Cache-Control: public, max-age=31536000, immutable`, остальное — `no-cache`; правильные `Content-Type` (`.avif`, `.woff2`, `.webmanifest`); удалённые из сборки файлы — удалить из бакета. *(Сделано.)*
 2. Проверить на живом сайте: своя 404 с кодом 404, `/lessons/a0-01` → `/lessons/a0-01/`, сжатие, кэширование, нет ли cookie от хостинга, `www` → без www, HTTP → HTTPS, sitemap, robots.txt, превью ссылок, значок. *(Сделано, 28.10.2026.)*
-3. Основной адрес — свой домен: `site` в `astro.config.mjs`, README, `CLAUDE.md`, `docs/seo.md`, `docs/privacy.md` (адрес политики и раздел «Хостинг» — Object Storage, ООО «Яндекс.Облако»), CORS для фазы 2 в SPEC.
-4. GitHub Pages и SourceCraft Sites — снять с публикации (SourceCraft: очистить `.sourcecraft/sites.yaml`), когда сайт на своём домене проверен. Тимуру: новый сайт в Вебмастере (мета-тег), адрес в счётчике Метрики.
+3. Основной адрес — свой домен: `site` в `astro.config.mjs`, README, `CLAUDE.md`, `docs/seo.md`, `docs/privacy.md` (адрес политики и раздел «Хостинг» — Object Storage, ООО «Яндекс.Облако»), CORS для фазы 2 в SPEC. *(Сделано, 28.10.2026.)*
+4. GitHub Pages и SourceCraft Sites — снять с публикации (SourceCraft: очистить `.sourcecraft/sites.yaml`), когда сайт на своём домене проверен. Тимуру: новый сайт в Вебмастере (мета-тег), адрес в счётчике Метрики. *(Сделано со стороны репозитория, 28.10.2026: деплой — только в бакет, `sites.yaml` пустой, `ci.yaml` удалён; остальное — Тимуру, 10–12 выше.)*

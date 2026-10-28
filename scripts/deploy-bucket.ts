@@ -5,8 +5,8 @@
  *   node scripts/deploy-bucket.ts --force      загрузить всё заново (поменялись правила заголовков)
  *   node scripts/deploy-bucket.ts --dry-run    показать, что изменится, ничего не меняя
  *
- * Запускается из GitHub Actions после сборки с SITE_URL=https://espanolcontim.ru
- * (.github/workflows/deploy.yml). Работает через AWS CLI — он есть на раннерах
+ * Запускается из GitHub Actions после npm run build (.github/workflows/deploy.yml);
+ * адрес сайта в сборке по умолчанию — https://espanolcontim.ru. Работает через AWS CLI — он есть на раннерах
  * GitHub. Ключ сервисного аккаунта site-deploy — в AWS_ACCESS_KEY_ID и
  * AWS_SECRET_ACCESS_KEY. Бакет — DEPLOY_BUCKET, по умолчанию espanolcontim.ru;
  * имя бакета совпадает с доменом, сборка должна быть сделана для него.

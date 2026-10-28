@@ -1,8 +1,7 @@
-# Сборка и публикация сайта при каждом push в main: на GitHub Pages и в бакет
-# Object Storage (https://espanolcontim.ru, docs/object-storage.md).
+# Сборка и публикация сайта в бакет Object Storage (https://espanolcontim.ru,
+# docs/object-storage.md) при каждом push в main. Разработка — в develop (check.yml).
 # Контент уже лежит в content/public (коммитится), импорт из video-lessons здесь не нужен.
-# Однократно в репозитории: Settings → Pages → Source: GitHub Actions;
-# секреты YC_ACCESS_KEY_ID и YC_SECRET_ACCESS_KEY — статический ключ сервисного аккаунта site-deploy.
+# Секреты YC_ACCESS_KEY_ID и YC_SECRET_ACCESS_KEY — статический ключ сервисного аккаунта site-deploy.
 name: Деплой
 
 on:
@@ -17,48 +16,15 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 # Один деплой за раз; начатый не прерываем.
 concurrency:
-  group: pages
+  group: deploy
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v5
-        with:
-          path: apps/web/dist
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v5
-
-  # Своя сборка: адрес сайта (canonical, sitemap, превью) — https://espanolcontim.ru.
-  # Линтер и тесты уже прошли в build.
-  bucket:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
     environment:
       name: object-storage
       url: https://espanolcontim.ru/
@@ -69,9 +35,9 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run lint
+      - run: npm test
       - run: npm run build
-        env:
-          SITE_URL: https://espanolcontim.ru
       # Ключ — только в этом шаге: npm ci и сборка его не видят.
       - run: node scripts/deploy-bucket.ts ${{ inputs.force && '--force' || '' }}
         env:

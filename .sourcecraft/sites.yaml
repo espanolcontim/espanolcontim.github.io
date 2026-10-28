@@ -1,4 +1,0 @@
-# SourceCraft Sites: сайт — из ветки release, её собирает .sourcecraft/ci.yaml.
-# root не задан: файлы сайта лежат в корне ветки.
-site:
-  ref: release

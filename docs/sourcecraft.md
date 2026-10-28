@@ -2,7 +2,7 @@
 
 Решение Тимура: основной хостинг — SourceCraft Sites (Яндекс, Россия), адрес `https://espanolcontim.sourcecraft.site/`. Зачем — `docs/privacy.md` (GitHub Pages в США видит IP посетителей).
 
-**27.10.2026 решение заменено:** основной хостинг — Yandex Object Storage на своём домене `espanolcontim.ru` (`docs/object-storage.md`), из-за ограничений ниже («Как отдаёт сайт»). Сайт на SourceCraft пока работает; репозиторий остаётся зеркалом GitHub, Sites снимем после переезда.
+**27.10.2026 решение заменено:** основной хостинг — Yandex Object Storage на своём домене `espanolcontim.ru` (`docs/object-storage.md`), из-за ограничений ниже («Как отдаёт сайт»). **28.10.2026 сайт снят с публикации:** `.sourcecraft/sites.yaml` пустой — так по документации отключается Sites («очистите содержимое файла» в основной ветке); `.sourcecraft/ci.yaml` удалён. Репозиторий остаётся зеркалом GitHub (`main`). Ветку `release` в SourceCraft можно удалить. Ниже — как было устроено, для истории.
 
 ## Что известно из документации
 

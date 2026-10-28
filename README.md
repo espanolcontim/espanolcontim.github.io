@@ -2,7 +2,7 @@
 
 Сайт курса «Испанский с нуля»: конспекты уроков, дополнительные материалы, упражнения.
 
-- Сайт: https://espanolcontim.ru/ — Yandex Object Storage (`docs/object-storage.md`); пока открывается и на GitHub Pages (https://espanolcontim.github.io/) и SourceCraft Sites (`docs/sourcecraft.md`). Публикуется сам при каждом push в `main` (`.github/workflows/deploy.yml`).
+- Сайт: https://espanolcontim.ru/ — Yandex Object Storage (`docs/object-storage.md`). Публикуется сам при каждом push в `main` (`.github/workflows/deploy.yml`).
 - Разработка — в ветке `develop`: push туда проверяет линтер, тесты и сборку (`.github/workflows/check.yml`), но ничего не публикует. Выложить на сайт — влить `develop` в `main`.
 - Поиск, превью ссылок, Яндекс Метрика — `docs/seo.md`; персональные данные и Роскомнадзор — `docs/privacy.md`.
 - Спецификация и план по фазам — `docs/SPEC.md`.

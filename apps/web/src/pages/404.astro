@@ -3,7 +3,7 @@ import Page from '../app/Page.astro'
 import { lessonPath } from '../features/lessons/navigation.ts'
 import { container } from '../app/container.ts'
 
-/** Нет такой страницы: GitHub Pages отдаёт 404.html с кодом 404. */
+/** Нет такой страницы: бакет отдаёт 404.html с кодом 404 (страница ошибки в настройках бакета). */
 const [first] = await container.lessons.list()
 ---
 

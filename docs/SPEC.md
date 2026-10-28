@@ -79,25 +79,26 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] Предложить zod-схему контента сайта (раздел «Схема контента» ниже) и согласовать её с Тимуром. Отдельно перечислить, чего нет в `video-lessons`: допустимые варианты ответов, стабильные id, ссылки на видео и т. п.
 - [x] Настроить Astro + React + TypeScript, npm workspaces, Vitest, линтер и форматтер. `.gitignore` сразу с `content/private/`, `.env*`, `*.raw.json`.
 - [x] `content:import` на 2–3 реальных уроках (импортированы 1, 8, 11; `--check` проходит на всех 11).
-- [ ] Деплой заглушки на GitHub Pages (`.github/workflows/deploy.yml`):
+- [x] Деплой заглушки на GitHub Pages (`.github/workflows/deploy.yml`) — был первым хостингом, снят с публикации 28.10.2026 (сайт — на своём домене, пункт ниже):
   - [x] сайт открывается в корне `https://espanolcontim.github.io/`;
   - [x] `/lessons/a0-01/` отдаёт `index.html`;
-  - сайт открывается из России: мобильный интернет и домашний провайдер (GitHub Pages раздаётся через CDN Fastly).
-- [ ] SourceCraft Sites — был основным хостингом, 27.10.2026 заменён своим доменом (пункт ниже); пока сайт открывается и там (план — `docs/sourcecraft.md`; сборка с `SITE_URL=https://espanolcontim.sourcecraft.site`):
+- [x] SourceCraft Sites — был основным хостингом, 27.10.2026 заменён своим доменом (пункт ниже), снят с публикации 28.10.2026 (`docs/sourcecraft.md`):
   - [x] репозиторий `espanolcontim/espanolcontim` — зеркало GitHub, синхронизация `main` раз в два часа;
-  - [x] конфиги: `.sourcecraft/ci.yaml` собирает `main` в ветку `release` (в ней только сборка), `.sourcecraft/sites.yaml` публикует `release`;
+  - [x] конфиги: `.sourcecraft/ci.yaml` собирал `main` в ветку `release` (в ней только сборка), `.sourcecraft/sites.yaml` публиковал `release`;
   - [x] сайт открывается в корне `https://espanolcontim.sourcecraft.site/`;
   - [x] `/lessons/a0-01/` отдаёт `index.html`, несуществующий адрес — 404 (страница 404 — своя у SourceCraft, наша не используется);
   - [x] CI запускается после синхронизации зеркала;
   - без сжатия и кэширования (заголовки не настраиваются), своя 404 и cookie `_yasc` — поэтому и переезжаем; см. `docs/sourcecraft.md`;
-  - снять с публикации (очистить `.sourcecraft/sites.yaml`), когда сайт на своём домене проверен.
-- [ ] Yandex Object Storage на своём домене `https://espanolcontim.ru/` — **основной хостинг** (решение Тимура, план и ход — `docs/object-storage.md`):
+  - [x] снят с публикации: `.sourcecraft/sites.yaml` пустой, `ci.yaml` удалён; репозиторий остаётся зеркалом GitHub.
+- [ ] Yandex Object Storage на своём домене `https://espanolcontim.ru/` — **хостинг сайта** (решение Тимура, план и ход — `docs/object-storage.md`):
   - [x] домен `espanolcontim.ru` (Beget), бакеты `espanolcontim.ru` (хостинг, `404.html`) и `www.espanolcontim.ru` (переадресация), зона в Cloud DNS, домен делегирован;
   - [x] сертификат Let's Encrypt на оба адреса, подключён к бакетам;
   - [x] ключ для деплоя: сервисный аккаунт `site-deploy`, секреты GitHub;
   - [x] деплой из GitHub Actions: сжатие, `Cache-Control`, удаление старых файлов;
   - [x] проверено на живом сайте: своя 404, сжатие, кэш, `www` и HTTP → `https://espanolcontim.ru`;
-  - основной адрес по умолчанию — `https://espanolcontim.ru` (`site` в `astro.config.mjs`, доки), мета-тег Вебмастера для нового адреса.
+  - [x] основной адрес по умолчанию — `https://espanolcontim.ru` (`site` в `astro.config.mjs`, доки); политика — раздел «Хостинг» про Object Storage;
+  - сайт открывается из России: мобильный интернет и домашний провайдер;
+  - Вебмастер и Метрика — на новый адрес (`docs/seo.md`).
 
 ### Фаза 1 — бесплатная часть
 
@@ -123,17 +124,17 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] SEO (`app/seo.ts`, `app/Seo.astro`; как проверить — `docs/seo.md`):
   - title и description на каждой странице (описание урока — до 160 символов); `sitemap.xml` и `robots.txt` собираются из уроков; заглушки закрытых частей, повторение и 404 — `noindex`, в sitemap их нет;
   - Open Graph — превью ссылок в Telegram, VK, WhatsApp: картинка в стиле обложек, заголовок и описание страницы; значки сайта; своя страница 404;
-  - canonical — на адрес из `site`. Основной — SourceCraft (решение Тимура); там сайт ещё и доступен по `/espanolcontim/` — дубль, его закрывает canonical.
+  - canonical — на адрес из `site`: `https://espanolcontim.ru`.
 - [x] Мета-тег подтверждения Яндекс Вебмастера на главной: `YANDEX_VERIFICATION` в `app/seo.ts`. После деплоя — «Проверить» в Вебмастере и добавить sitemap (`docs/seo.md`).
 - [x] Яндекс Метрика, политика обработки персональных данных, согласие, уведомление о cookie (`features/analytics/`, `/privacy/`):
   - Метрика грузится только после «Принять» в уведомлении о cookie; без номера счётчика (`METRIKA_ID` в `app/analytics.ts`) её нет вовсе — ни скрипта, ни уведомления; Вебвизор выключен;
   - цели: клик на Boosty, пройден набор упражнений, пройдена проверка после урока, начато повторение;
   - политика `/privacy/` и отдельный текст согласия `/privacy/consent/`; на странице политики — отозвать согласие (cookie Метрики удаляются).
-  - Счётчик 113827960; включается на SourceCraft в дату из уведомления в Роскомнадзор (`docs/privacy.md`), до этого `METRIKA_ID = 0`.
+  - Счётчик 113827960; включается в дату из уведомления в Роскомнадзор (`docs/privacy.md`), до этого `METRIKA_ID = 0`.
 
 ### Фаза 2 — вход для подписчиков Boosty
 
-Схема: статика на GitHub Pages / SourceCraft → Yandex API Gateway → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
+Схема: статика в Object Storage (`espanolcontim.ru`) → Yandex API Gateway → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
 
 **Функция `sync`** (раз в час)
 - [ ] Получает подписчиков через неофициальный API Boosty:
@@ -154,7 +155,7 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [ ] `POST /auth/verify {token}` → сессия JWT на 90 дней. Субъект сессии — **Boosty id, а не email**.
 - [ ] `POST /auth/refresh` → скользящее продление, если токену больше 7 дней.
 - [ ] `GET /lessons/:id/body` → проверка сессии и активной подписки по Boosty id (по кэшу) → платный JSON из бакета.
-- [ ] Сессия хранится в localStorage и передаётся в заголовке `Authorization`. Куки не подходят: сайт и API на разных доменах. CORS — только для адресов сайта: `https://espanolcontim.github.io` и `https://espanolcontim.sourcecraft.site`.
+- [ ] Сессия хранится в localStorage и передаётся в заголовке `Authorization`. Куки не подходят: сайт и API на разных доменах. CORS — только для адреса сайта: `https://espanolcontim.ru`.
 - [ ] Без базы данных на старте: всё состояние — файлы в бакете.
 
 **Сайт**
@@ -293,4 +294,4 @@ const LevelTest = z.object({ level: Level, exercises: z.array(Exercise), sentenc
 - Ссылки на видео уроков Тимур даст позже.
 - YouTube-канал: https://www.youtube.com/@espanolcontimur.
 - Репозиторий `video-lessons` на GitHub публичный, так и остаётся.
-- Хостинг: до переезда — GitHub Pages (`espanolcontim/espanolcontim.github.io`), основной — Object Storage на `espanolcontim.ru`. SourceCraft остаётся зеркалом репозитория. Почта автора коммитов в этом репозитории — espanolcontim@gmail.com.
+- Хостинг — Object Storage на `espanolcontim.ru`; GitHub Pages и SourceCraft Sites сняты с публикации 28.10.2026. Код — на GitHub (`espanolcontim/espanolcontim.github.io`), SourceCraft остаётся зеркалом репозитория. Почта автора коммитов в этом репозитории — espanolcontim@gmail.com.

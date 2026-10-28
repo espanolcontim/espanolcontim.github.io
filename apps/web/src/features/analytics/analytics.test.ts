@@ -32,17 +32,17 @@ function memoryStorage(): Storage {
 
 describe('Яндекс Метрика', () => {
   it('только с номером счётчика и только на адресе сайта', () => {
-    const site = fakeWindow('espanolcontim.github.io').window
+    const site = fakeWindow('espanolcontim.ru').window
     const local = fakeWindow('localhost').window
-    expect(new YandexMetrika(123, 'espanolcontim.github.io', () => site).enabled()).toBe(true)
-    expect(new YandexMetrika(0, 'espanolcontim.github.io', () => site).enabled()).toBe(false)
-    expect(new YandexMetrika(123, 'espanolcontim.github.io', () => local).enabled()).toBe(false)
-    expect(new YandexMetrika(123, 'espanolcontim.github.io', () => undefined).enabled()).toBe(false)
+    expect(new YandexMetrika(123, 'espanolcontim.ru', () => site).enabled()).toBe(true)
+    expect(new YandexMetrika(0, 'espanolcontim.ru', () => site).enabled()).toBe(false)
+    expect(new YandexMetrika(123, 'espanolcontim.ru', () => local).enabled()).toBe(false)
+    expect(new YandexMetrika(123, 'espanolcontim.ru', () => undefined).enabled()).toBe(false)
   })
 
   it('до start() — ни скрипта, ни целей', () => {
     const { window, scripts } = fakeWindow('localhost')
-    const metrika = new YandexMetrika(123, 'espanolcontim.github.io', () => window)
+    const metrika = new YandexMetrika(123, 'espanolcontim.ru', () => window)
     metrika.start()
     metrika.goal(GOALS.boosty)
     expect(scripts).toEqual([])
@@ -50,8 +50,8 @@ describe('Яндекс Метрика', () => {
   })
 
   it('start() подключает скрипт один раз, цели копятся до его загрузки', () => {
-    const { window, scripts } = fakeWindow('espanolcontim.github.io')
-    const metrika = new YandexMetrika(123, 'espanolcontim.github.io', () => window)
+    const { window, scripts } = fakeWindow('espanolcontim.ru')
+    const metrika = new YandexMetrika(123, 'espanolcontim.ru', () => window)
     metrika.start()
     metrika.start()
     metrika.goal(GOALS.quizDone)
@@ -67,9 +67,9 @@ describe('Яндекс Метрика', () => {
   })
 
   it('второй экземпляр (другой бандл) видит уже запущенный счётчик', () => {
-    const { window, scripts } = fakeWindow('espanolcontim.github.io')
-    new YandexMetrika(123, 'espanolcontim.github.io', () => window).start()
-    const other = new YandexMetrika(123, 'espanolcontim.github.io', () => window)
+    const { window, scripts } = fakeWindow('espanolcontim.ru')
+    new YandexMetrika(123, 'espanolcontim.ru', () => window).start()
+    const other = new YandexMetrika(123, 'espanolcontim.ru', () => window)
     other.start()
     other.goal(GOALS.reviewStart)
     expect(scripts).toHaveLength(1)
