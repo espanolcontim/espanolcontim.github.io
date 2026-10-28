@@ -12,7 +12,7 @@
 
 ## Как развернуть на новом компьютере
 
-1. Нужны git и Node.js 22.23 или новее (проверено на Node 24).
+1. Нужны git и Node.js 22.23 или новее; проверки и деплой собирают на Node 24. С nvm в папке проекта достаточно `nvm install` / `nvm use` — версия берётся из `.nvmrc`.
 2. Два репозитория — рядом, в одной папке:
    ```bash
    git clone https://github.com/espanolcontim/espanolcontim.github.io.git espanolcontim
