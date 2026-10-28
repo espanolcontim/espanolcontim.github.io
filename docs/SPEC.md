@@ -93,8 +93,8 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
   - снять с публикации (очистить `.sourcecraft/sites.yaml`), когда сайт на своём домене проверен.
 - [ ] Yandex Object Storage на своём домене `https://espanolcontim.ru/` — **основной хостинг** (решение Тимура, план и ход — `docs/object-storage.md`):
   - [x] домен `espanolcontim.ru` (Beget), бакеты `espanolcontim.ru` (хостинг, `404.html`) и `www.espanolcontim.ru` (переадресация), зона в Cloud DNS, домен делегирован;
-  - сертификат Let's Encrypt на оба адреса, подключён к бакетам;
-  - ключ для деплоя: сервисный аккаунт `site-deploy`, секреты GitHub;
+  - [x] сертификат Let's Encrypt на оба адреса, подключён к бакетам;
+  - [x] ключ для деплоя: сервисный аккаунт `site-deploy`, секреты GitHub;
   - деплой из GitHub Actions: сжатие, `Cache-Control`, удаление старых файлов;
   - проверено на живом сайте: своя 404, сжатие, кэш, `www` и HTTP → `https://espanolcontim.ru`;
   - основной адрес по умолчанию — `https://espanolcontim.ru` (`site` в `astro.config.mjs`, доки), мета-тег Вебмастера для нового адреса.
