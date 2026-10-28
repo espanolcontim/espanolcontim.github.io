@@ -9,7 +9,7 @@ export const OPERATOR = {
     status: 'самозанятому (плательщику налога на профессиональный доход)',
   },
   inn: '164445998737',
-  email: 'espanolcontim@gmail.com',
+  email: 'espanolcontim@yandex.ru',
 } as const
 
 /** Дата редакции политики и согласия: меняется вместе с текстом. */
