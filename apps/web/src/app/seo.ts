@@ -10,7 +10,7 @@ export const SITE_NAME = 'Español con Tim'
  * Подтверждение прав в Яндекс Вебмастере — значение content из мета-тега
  * `<meta name="yandex-verification" content="…">`. Пока пусто — тега нет.
  */
-export const YANDEX_VERIFICATION = '01a536ef283504fb'
+export const YANDEX_VERIFICATION = '8ade9113bcce30a3'
 
 /** Сколько символов описания Яндекс показывает в сниппете. */
 export const DESCRIPTION_LIMIT = 160
