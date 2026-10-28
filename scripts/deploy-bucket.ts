@@ -32,6 +32,16 @@ const args = process.argv.slice(2)
 const force = args.includes('--force')
 const dryRun = args.includes('--dry-run')
 
+// Секрета нет — GitHub подставляет пустую строку, и AWS CLI пишет только «Unable to locate credentials».
+for (const name of ['AWS_ACCESS_KEY_ID', 'AWS_SECRET_ACCESS_KEY']) {
+  if (process.env[name] === '') {
+    throw new Error(
+      `${name} пустой: в GitHub нет секрета YC_ACCESS_KEY_ID или YC_SECRET_ACCESS_KEY ` +
+        '(docs/object-storage.md, «Что сделать Тимуру», 8.4)',
+    )
+  }
+}
+
 const exec = promisify(execFile)
 
 const s3api = async (command: string, ...params: string[]): Promise<Record<string, unknown>> => {

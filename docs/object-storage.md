@@ -65,7 +65,7 @@
 
 ## Ход переезда
 
-Обновлено 28.10.2026, 12:15.
+Обновлено 28.10.2026, 13:00.
 
 | Шаг | Состояние |
 | --- | --- |
@@ -77,7 +77,7 @@
 | 6. DNS | ✓ зона `espanolcontim.ru.` в Cloud DNS (ANAME на бакет, CNAME `www`), у Beget — `ns1/ns2.yandexcloud.net` (WHOIS); `http://espanolcontim.ru` открывает бакет |
 | 7. Сертификат | ✓ `espanolcontim-ru` (`fpqmic94joo3lbr3q7mh`) выпущен 28.10.2026 (Let's Encrypt, до 25.01.2027, продлевается сам), подключён к обоим бакетам: `https://espanolcontim.ru` с замком, `http://` → `https://`, `https://www.` → без www (проверено 28.10.2026) |
 | 8. Ключ для деплоя | ✓ сервисный аккаунт `site-deploy` (`storage.editor` на каталог `site`), секреты `YC_ACCESS_KEY_ID` и `YC_SECRET_ACCESS_KEY` в GitHub |
-| Claude: деплой и проверка | **идёт:** деплой — задача `bucket` в `.github/workflows/deploy.yml`, скрипт `scripts/deploy-bucket.ts` |
+| Claude: деплой и проверка | ✓ деплой — задача `bucket` в `.github/workflows/deploy.yml` («Деплой» ниже); живой сайт проверен 28.10.2026 («Как отдаёт сайт» ниже). Дальше — основной адрес по умолчанию и снять с публикации GitHub Pages и SourceCraft («Что сделать Claude», 3–4) |
 
 Проверить DNS-записи: `dig @ns1.yandexcloud.net _acme-challenge.espanolcontim.ru CNAME +short` (и то же для `_acme-challenge.www`) — должно быть `fpqmic94joo3lbr3q7mh.cm.yandexcloud.net.`.
 
@@ -90,6 +90,19 @@
 - Загружаются только изменённые файлы: MD5 сравнивается с ETag в бакете. Обычно деплой — это HTML и новые файлы в `_astro/`. Сначала грузится `_astro/`, потом прочее, HTML — последним; удалённые из сборки файлы удаляются в самом конце.
 - Поменялись только заголовки (по ETag этого не видно) — Actions → «Деплой» → «Run workflow» с галочкой «Загрузить в бакет все файлы заново».
 - Скрипт не запустится, если в сборке нет `index.html`, `404.html` или `sitemap.xml`, а также если сборка сделана не для `https://espanolcontim.ru`: пустая или чужая сборка стёрла бы сайт.
+
+### Как отдаёт сайт
+
+Проверено 28.10.2026 на `https://espanolcontim.ru`:
+
+- страницы, sitemap, robots.txt и значки — 200 с правильным `Content-Type`; текст — `Content-Encoding: gzip` (главная — 3,6 КБ вместо 13);
+- `/_astro/*` — `Cache-Control: public, max-age=31536000, immutable`, остальное — `no-cache`; есть `ETag` и `Last-Modified`, повторный запрос с `If-None-Match` — 304;
+- нет страницы — своя `404.html` с кодом 404;
+- `/lessons/a0-01` → 302 на `/lessons/a0-01/` (так отвечает сам бакет, не 301; поисковикам хватает canonical);
+- `http://` → 301 на `https://`; `https://www.` → 301 на `https://espanolcontim.ru` с тем же путём; `http://www.` — в два шага, через `https://www.`;
+- cookie хостинг не ставит (у SourceCraft была `_yasc`);
+- gzip отдаётся и без `Accept-Encoding` — его понимают все браузеры и поисковые роботы;
+- canonical, sitemap (36 адресов), robots.txt и картинка превью — на `https://espanolcontim.ru`.
 
 ## Что сделать Тимуру
 
@@ -115,12 +128,19 @@
    1. Identity and Access Management (https://console.yandex.cloud/link/iam, каталог `site`) → «Создать сервисный аккаунт» → имя `site-deploy` → «Создать».
    2. Права — на каталог `site`, не на облако (так ключ не дотянется до бакетов фазы 2): каталог `site` → «Права доступа» → «Настроить доступ» → «Сервисные аккаунты» → `site-deploy` → «Добавить роль» `storage.editor` → «Сохранить».
    3. Identity and Access Management (вверху выбран каталог `site`) → на панели слева «Сервисные аккаунты» → нажать на имя `site-deploy` → откроется страница аккаунта → на верхней панели справа «Создать новый ключ» → «Создать статический ключ доступа» → описание `github deploy` → «Создать». Кнопка есть только на странице самого аккаунта, на странице «Права доступа» каталога её нет. Секретный ключ показывается **один раз** — окно не закрывать до пункта 4.
-   4. https://github.com/espanolcontim/espanolcontim.github.io/settings/secrets/actions (под аккаунтом `espanolcontim`) → «New repository secret» два раза: `YC_ACCESS_KEY_ID` — идентификатор ключа, `YC_SECRET_ACCESS_KEY` — секретный ключ. Больше ключ нигде не хранить; если потерялся или утёк — удалить в `site-deploy` и создать новый.
+   4. https://github.com/espanolcontim/espanolcontim.github.io/settings/secrets/actions (под аккаунтом `espanolcontim`) → «New repository secret» два раза. В поле **Name** — имя секрета, ровно как здесь, в поле **Secret** — значение из Яндекса:
+
+      | Name | Secret |
+      | --- | --- |
+      | `YC_ACCESS_KEY_ID` | идентификатор ключа (короткий, начинается с `YCAJ`) |
+      | `YC_SECRET_ACCESS_KEY` | секретный ключ (длинный, показан один раз) |
+
+      Значения секретов GitHub потом не показывает — только имена. Больше ключ нигде не хранить; если потерялся или утёк — удалить в `site-deploy` и создать новый.
 9. Написать Claude: «шаг 8 готов» — без ключей.
 
 ## Что сделать Claude
 
-1. Деплой в `.github/workflows/deploy.yml`: сборка с `SITE_URL=https://espanolcontim.ru`, загрузка `apps/web/dist` в бакет. HTML, JS, CSS, SVG, XML и TXT — сжатыми (gzip, `Content-Encoding: gzip`); `/_astro/*` — `Cache-Control: public, max-age=31536000, immutable`, остальное — `no-cache`; правильные `Content-Type` (`.avif`, `.woff2`, `.webmanifest`); удалённые из сборки файлы — удалить из бакета.
-2. Проверить на живом сайте: своя 404 с кодом 404, `/lessons/a0-01` → `/lessons/a0-01/`, сжатие, кэширование, нет ли cookie от хостинга, `www` → без www, HTTP → HTTPS, sitemap, robots.txt, превью ссылок, значок.
+1. Деплой в `.github/workflows/deploy.yml`: сборка с `SITE_URL=https://espanolcontim.ru`, загрузка `apps/web/dist` в бакет. HTML, JS, CSS, SVG, XML и TXT — сжатыми (gzip, `Content-Encoding: gzip`); `/_astro/*` — `Cache-Control: public, max-age=31536000, immutable`, остальное — `no-cache`; правильные `Content-Type` (`.avif`, `.woff2`, `.webmanifest`); удалённые из сборки файлы — удалить из бакета. *(Сделано.)*
+2. Проверить на живом сайте: своя 404 с кодом 404, `/lessons/a0-01` → `/lessons/a0-01/`, сжатие, кэширование, нет ли cookie от хостинга, `www` → без www, HTTP → HTTPS, sitemap, robots.txt, превью ссылок, значок. *(Сделано, 28.10.2026.)*
 3. Основной адрес — свой домен: `site` в `astro.config.mjs`, README, `CLAUDE.md`, `docs/seo.md`, `docs/privacy.md` (адрес политики и раздел «Хостинг» — Object Storage, ООО «Яндекс.Облако»), CORS для фазы 2 в SPEC.
 4. GitHub Pages и SourceCraft Sites — снять с публикации (SourceCraft: очистить `.sourcecraft/sites.yaml`), когда сайт на своём домене проверен. Тимуру: новый сайт в Вебмастере (мета-тег), адрес в счётчике Метрики.
