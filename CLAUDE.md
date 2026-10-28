@@ -25,8 +25,8 @@
    Сомневаешься, попадёт ли файл в git, — проверь `.gitignore` и спроси.
 2. **Аудитория в России.** Ничего не грузить с Cloudflare, Google Fonts и других CDN, которые в РФ замедляются или блокируются. Шрифты и библиотеки — только из npm в собственный бандл. Внешние скрипты — только Яндекс Метрика, и та — только после согласия посетителя (`features/analytics/`). Номер счётчика (`METRIKA_ID`) не включать, пока сайт на GitHub Pages и до даты из уведомления в Роскомнадзор — см. `docs/privacy.md`.
 3. **Видео на сайт не встраиваем.** Только ссылки на YouTube (см. `docs/SPEC.md`).
-4. **Хостинг — только статика.** Основной — SourceCraft Sites: `https://espanolcontim.sourcecraft.site/` (переезд — `docs/sourcecraft.md`). До переезда — GitHub Pages: `https://espanolcontim.github.io/`, деплой — `.github/workflows/deploy.yml` при push в `main`. На обоих адресах сайт открывается в корне. В сайте нет серверного кода; бэкенд — функции Yandex Cloud в папке `functions/`.
-5. **Ноль рублей.** Всё должно укладываться в бесплатные тарифы (GitHub Pages и Actions для публичного репозитория, SourceCraft Sites, free tier Yandex Cloud). Если решение требует платного сервиса — сначала спроси.
+4. **Хостинг — только статика.** Основной — Yandex Object Storage на своём домене `https://espanolcontim.ru/` (переезд идёт — `docs/object-storage.md`, «Ход переезда»). Пока сайт открывается и на SourceCraft Sites: `https://espanolcontim.sourcecraft.site/` (`docs/sourcecraft.md`). До переезда — GitHub Pages: `https://espanolcontim.github.io/`, деплой — `.github/workflows/deploy.yml` при push в `main`. На всех адресах сайт открывается в корне. В сайте нет серверного кода; бэкенд — функции Yandex Cloud в папке `functions/`.
+5. **Ноль рублей.** Всё должно укладываться в бесплатные тарифы (GitHub Pages и Actions для публичного репозитория, SourceCraft Sites, free tier Yandex Cloud). Если решение требует платного сервиса — сначала спроси. Согласованное исключение — домен `espanolcontim.ru` и зона в Yandex Cloud DNS (~920 ₽ в год).
 
 ## Стек
 
