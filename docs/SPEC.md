@@ -134,7 +134,9 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 
 ### Фаза 2 — вход для подписчиков Boosty
 
-Схема: статика в Object Storage (`espanolcontim.ru`) → Yandex API Gateway → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
+Ресурсы в облаке, что где и как развернуть — `docs/backend.md`.
+
+Схема: статика в Object Storage (`espanolcontim.ru`) → Yandex API Gateway на `api.espanolcontim.ru` → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
 
 **Функция `sync`** (раз в час) — `functions/sync/`, общий с `api` код — `functions/shared/`; как устроена и что лежит в бакете — README, «Функция sync». Код и тесты готовы, проверено 30.10.2026 на настоящем Boosty с папкой `.bucket` вместо бакета (`npm run sync:local`); в облаке ещё не развёрнута.
 - [x] Получает подписчиков через неофициальный API Boosty (`functions/sync/src/boosty.ts`):
@@ -144,8 +146,8 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] Платные — это `level.price > 0`; активные — `subscribed === true` и `status === "active"`. Пустой email приходит как `""` (аккаунты, созданные через VK). На 30.10.2026 платных подписчиков нет: 2 записи, обе — бесплатный уровень.
 - [x] Обновляет токен Boosty через refresh token: `POST https://api.boosty.to/oauth/token/`, форма `grant_type=refresh_token`, `refresh_token`, `device_id` (ключ `_clentId` из Local Storage boosty.to), `device_os=web` — как в boostylib. В ответе `access_token`, `refresh_token`, `expires_in` (2592000 — 30 дней); refresh token каждый раз новый, поэтому новая пара сразу пишется в бакет. Обновляет за неделю до конца и при 401. Токены — `boosty/auth.json` в приватном бакете.
 - [x] Пишет в бакет кэш активных платных подписчиков (`subscribers.json`): Boosty id, хэш email (HMAC-SHA256 с секретом `EMAIL_HASH_SECRET`, общим с `api`), уровень. Кэш пишется только после полной выгрузки; если был список, а стал пустым — не перезаписывается.
-- [x] Учитывает `overrides.json` (`boostyId → email`) для подписчиков без почты в Boosty. Тимур добавляет их вручную после сообщения в личку; запись действует, только пока подписчик — активный платный. `canWrite` пока не проверяется: ждёт решения Тимура (`docs/STATUS.md`).
-- [ ] Развернуть в Yandex Cloud: приватный бакет, сервисный аккаунт, функция, таймер раз в час; токены — в бакет.
+- [x] Учитывает `overrides.json` (`boostyId → email`) для подписчиков без почты в Boosty. Тимур добавляет их вручную после сообщения в личку; запись действует, только пока подписчик — активный платный. `canWrite` не проверяем (решение Тимура 30.10.2026): у Boosty он `true` и у бесплатных.
+- [ ] Развернуть в Yandex Cloud (`docs/backend.md`, «Что сделать Тимуру»): каталог `backend`, приватный бакет `espanolcontim-private`, сервисный аккаунт `sync`, функция, таймер раз в час; токены — в бакет. Инструкция и архив `functions/sync/dist/sync.zip` готовы.
 
 **Функция `api`**
 - [ ] `POST /auth/request {email}`:
@@ -156,11 +158,13 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [ ] `POST /auth/refresh` → скользящее продление, если токену больше 7 дней.
 - [ ] `GET /lessons/:id/body` → проверка сессии и активной подписки по Boosty id (по кэшу) → платный JSON из бакета.
 - [ ] Сессия хранится в localStorage и передаётся в заголовке `Authorization`. Куки не подходят: сайт и API на разных доменах. CORS — только для адреса сайта: `https://espanolcontim.ru`.
+- [ ] API на своём домене `api.espanolcontim.ru` (решение Тимура 30.10.2026): API Gateway, запись в зоне Cloud DNS `espanolcontim.ru.`, сертификат Let's Encrypt в Certificate Manager (бесплатно, как у бакета).
 - [ ] Без базы данных на старте: всё состояние — файлы в бакете.
 
 **Сайт**
 - [ ] `ApiLessonRepository`, экран входа по email, экран «проверь почту», страница-обработчик ссылки.
 - [ ] Понятная ошибка: «Не нашли почту среди подписчиков — проверь, что она указана в настройках Boosty, или напиши в личку на Boosty».
+- [ ] Страница «Подписка» (решение Тимура 30.10.2026 — в фазе 2): что входит в «Практику», ссылка на Boosty, как войти на сайт.
 
 **Скрипты и инструкции**
 - [ ] `content:upload` — выгрузка `content/private` в бакет.
@@ -294,4 +298,5 @@ const LevelTest = z.object({ level: Level, exercises: z.array(Exercise), sentenc
 - Ссылки на видео уроков Тимур даст позже.
 - YouTube-канал: https://www.youtube.com/@espanolcontimur.
 - Репозиторий `video-lessons` на GitHub публичный, так и остаётся.
+- Фаза 2 (30.10.2026): API — на `api.espanolcontim.ru`; страница «Подписка» — в фазе 2, вместе со входом; `canWrite` у подписчиков из `overrides.json` не проверяем.
 - Хостинг — Object Storage на `espanolcontim.ru`; GitHub Pages и SourceCraft Sites сняты с публикации 28.10.2026. Код — на GitHub (`espanolcontim/espanolcontim.github.io`), SourceCraft остаётся зеркалом репозитория. Почта автора коммитов в этом репозитории — espanolcontim@gmail.com.

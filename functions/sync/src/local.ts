@@ -3,9 +3,8 @@
  * (в .gitignore): `npm run sync:local`. Токены — в `.bucket/boosty/auth.json`,
  * `BOOSTY_BLOG` и `EMAIL_HASH_SECRET` — в `.env`.
  *
- * Осторожно: обновлённые здесь токены Boosty живут только в `.bucket`. Если та же пара
- * уже лежит в облачном бакете, после обновления здесь облачная перестанет работать —
- * перед запуском в облаке положите туда `.bucket/boosty/auth.json`.
+ * Токены здесь — от своего, отдельного входа в Boosty, а не копия облачных: refresh token
+ * после обновления новый, и две копии одного входа выбивали бы друг друга.
  */
 import { join } from 'node:path'
 import { DirStorage, requireEnv } from '@espanolcontim/functions-shared'

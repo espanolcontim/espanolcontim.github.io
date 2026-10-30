@@ -3,7 +3,10 @@
  * Каждая `functions/<имя>/src/index.ts` → `functions/<имя>/dist/index.js` — один файл
  * со всеми зависимостями (zod, общий код), без node_modules. Рядом — package.json с
  * `"type": "module"`: среда nodejs22 грузит index.js как ES-модуль. Точка входа — `index.handler`.
+ * Оба файла — ещё и в `functions/<имя>/dist/<имя>.zip`: его загружают в консоли Yandex Cloud
+ * (docs/backend.md). Архив собирает `zip` — он есть в Ubuntu и на раннерах GitHub.
  */
+import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { build } from 'rolldown'
@@ -27,5 +30,7 @@ for (const name of names.length ? names : ALL) {
     logLevel: 'warn',
   })
   writeFileSync(join(dist, 'package.json'), `${JSON.stringify({ type: 'module' }, null, 2)}\n`)
-  console.log(`functions/${name}/dist/index.js`)
+  // -X — без лишних атрибутов файлов, -j — оба файла в корне архива.
+  execFileSync('zip', ['-q', '-X', '-j', `${name}.zip`, 'index.js', 'package.json'], { cwd: dist })
+  console.log(`functions/${name}/dist/${name}.zip`)
 }
