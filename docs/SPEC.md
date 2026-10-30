@@ -138,7 +138,7 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 
 Схема: статика в Object Storage (`espanolcontim.ru`) → Yandex API Gateway на `api.espanolcontim.ru` → функция `api`. Функция `sync` работает по таймеру. Данные лежат в приватном бакете Object Storage, письма уходят через SMTP Яндекс Почты. Всё в бесплатных лимитах, но нужен платёжный аккаунт Yandex Cloud с картой.
 
-**Функция `sync`** (раз в час) — `functions/sync/`, общий с `api` код — `functions/shared/`; как устроена и что лежит в бакете — README, «Функция sync». Код и тесты готовы, проверено 30.10.2026 на настоящем Boosty с папкой `.bucket` вместо бакета (`npm run sync:local`); в облаке ещё не развёрнута.
+**Функция `sync`** (раз в час) — `functions/sync/`, общий с `api` код — `functions/shared/`; как устроена и что лежит в бакете — README, «Функция sync». Код и тесты готовы, проверено 30.10.2026 на настоящем Boosty — сначала с папкой `.bucket` вместо бакета (`npm run sync:local`), потом в облаке.
 - [x] Получает подписчиков через неофициальный API Boosty (`functions/sync/src/boosty.ts`):
   - `GET https://api.boosty.to/v1/blog/espanolcontim/subscribers?sort_by=on_time&offset=N&limit=100&order=gt`;
   - заголовок `Authorization: Bearer <accessToken>`;
@@ -147,7 +147,7 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] Обновляет токен Boosty через refresh token: `POST https://api.boosty.to/oauth/token/`, форма `grant_type=refresh_token`, `refresh_token`, `device_id` (ключ `_clentId` из Local Storage boosty.to), `device_os=web` — как в boostylib. В ответе `access_token`, `refresh_token`, `expires_in` (2592000 — 30 дней); refresh token каждый раз новый, поэтому новая пара сразу пишется в бакет. Обновляет за неделю до конца и при 401. Токены — `boosty/auth.json` в приватном бакете.
 - [x] Пишет в бакет кэш активных платных подписчиков (`subscribers.json`): Boosty id, хэш email (HMAC-SHA256 с секретом `EMAIL_HASH_SECRET`, общим с `api`), уровень. Кэш пишется только после полной выгрузки; если был список, а стал пустым — не перезаписывается.
 - [x] Учитывает `overrides.json` (`boostyId → email`) для подписчиков без почты в Boosty. Тимур добавляет их вручную после сообщения в личку; запись действует, только пока подписчик — активный платный. `canWrite` не проверяем (решение Тимура 30.10.2026): у Boosty он `true` и у бесплатных.
-- [ ] Развернуть в Yandex Cloud (`docs/backend.md`, «Что сделать Тимуру»): каталог `backend`, приватный бакет `espanolcontim-private`, сервисный аккаунт `sync`, функция, таймер раз в час; токены — в бакет. Инструкция и архив `functions/sync/dist/sync.zip` готовы.
+- [x] Развернуть в Yandex Cloud (`docs/backend.md`): каталог `backend`, приватный бакет `espanolcontim-private`, сервисный аккаунт `sync`, функция, таймер раз в час; токены — в бакете. Развёрнута 30.10.2026, тест в консоли прошёл (`total: 2, paid: 0`).
 
 **Функция `api`**
 - [ ] `POST /auth/request {email}`:
