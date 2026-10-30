@@ -12,7 +12,7 @@ import { join } from 'node:path'
 import { build } from 'rolldown'
 
 const FUNCTIONS = join(import.meta.dirname, '..', 'functions')
-const ALL = ['sync']
+const ALL = ['sync', 'api']
 
 const names = process.argv.slice(2)
 for (const name of names.length ? names : ALL) {

@@ -50,6 +50,7 @@
 | `npm run format` | форматирование (Prettier) |
 | `npm run content:import` | импорт уроков из `../video-lessons`; `-- 1 8 11` — только эти, `-- --check` — проверить без записи |
 | `npm run sync:local` | функция `sync` на этом компьютере: настоящий Boosty, вместо бакета — папка `.bucket` |
+| `npm run api:local` | функция `api` на http://localhost:8787; `-- --subscriber почта` — считать её подписчиком, `-- --send` — отправлять письма по-настоящему |
 | `npm run functions:build` | сборка функций Yandex Cloud в `functions/<имя>/dist/` |
 
 ## Как обновить уроки на сайте
@@ -96,12 +97,27 @@
 
 **В Yandex Cloud** — каталог `backend`, бакет, сервисный аккаунт, функция и таймер: `docs/backend.md`. Новая версия функции: `npm run functions:build` и загрузить `functions/sync/dist/sync.zip` в консоли (функция → «Редактор» → ZIP-архив → «Сохранить изменения»).
 
+## Функция api
+
+Вход подписчиков и платные уроки (`functions/api/`), за API Gateway на `https://api.espanolcontim.ru` (`docs/backend.md`). Сессия — подписанный токен на 90 дней, субъект — Boosty id; подписка проверяется на каждом запросе по кэшу `sync`. Базы нет: всё — файлы в приватном бакете.
+
+| Запрос | Что делает |
+|---|---|
+| `POST /auth/request {email}` | письмо со ссылкой `https://espanolcontim.ru/login/#token=…` (15 минут), если почта есть среди активных платных подписчиков. Ответ `{ok: true}` в любом случае — кто подписан, не видно. На один адрес — не чаще раза в минуту и не больше 5 писем в час |
+| `POST /auth/verify {token}` | ссылка из письма → `{token, expiresAt}` — сессия на 90 дней |
+| `POST /auth/refresh` | сессия старше недели → новая на 90 дней, иначе та же |
+| `GET /lessons/:id/body` | платная часть урока — `lessons/<id>.json` из бакета |
+
+Сессия передаётся в `Authorization: Bearer …`. Ошибки — `{error: код}`: `bad_request` (400), `invalid_token` (401 — ссылка или сессия недействительна), `not_subscribed` (403 — подписка кончилась), `not_found` (404), `mail_failed` (502 — письмо не ушло). CORS — только для адреса сайта.
+
+**На компьютере** — `npm run api:local`: http://localhost:8787, бакет — `.bucket/`, платные уроки — прямо из `content/private/lessons`, секреты — из `.env` (`SESSION_SECRET`, `EMAIL_HASH_SECRET`, для `--send` — `SMTP_USER` и `SMTP_PASSWORD`). Платных подписчиков пока нет, поэтому для проверки входа — `npm run api:local -- --subscriber почта`. Письма печатаются в консоль; `-- --send` — отправить по-настоящему.
+
 ## Устройство
 
 ```
 apps/web/            сайт: Astro + React, страницы в src/pages, фичи в src/features
 packages/content/    схема контента (zod), правила доступа, id, общие функции
-functions/           функции Yandex Cloud: sync — подписчики Boosty; shared — общий код (бакет, кэш подписчиков)
+functions/           функции Yandex Cloud: sync — подписчики Boosty; api — вход и платные уроки; shared — общий код (бакет, кэш подписчиков)
 scripts/             импорт контента (content:import), сборка функций
 content/public/      бесплатный контент (в git)
 content/private/     платный контент (не в git)

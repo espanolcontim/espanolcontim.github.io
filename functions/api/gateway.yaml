@@ -1,0 +1,21 @@
+# Спецификация API Gateway `api` (docs/backend.md, шаги про api).
+# Один маршрут на все адреса: запрос целиком уходит в функцию api, адреса разбирает она сама
+# (functions/api/src/api.ts). Перед вставкой в консоль заменить два значения в угловых скобках.
+openapi: 3.0.0
+info:
+  title: espanolcontim-api
+  version: 1.0.0
+paths:
+  /{path+}:
+    x-yc-apigateway-any-method:
+      parameters:
+        - name: path
+          in: path
+          required: true
+          schema:
+            type: string
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id: <ID функции api>
+        service_account_id: <ID сервисного аккаунта api>
+        payload_format_version: '1.0'

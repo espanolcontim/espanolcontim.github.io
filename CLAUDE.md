@@ -104,7 +104,7 @@ docs/SPEC.md
 - `npm run lint` — oxlint; `npm run format` / `npm run format:check` — Prettier (`.md` не форматирует).
 - `npm run content:import` — импорт из `../video-lessons`: все уроки, `-- 1 8 11` — только эти, `-- --check` — проверить, ничего не записывая.
 - `npm run content:upload` — появится в фазе 2.
-- `npm run sync:local` — функция `sync` на компьютере: настоящий Boosty, вместо бакета — `.bucket/` (в `.gitignore`); `npm run functions:build` — сборка функций в `functions/<имя>/dist/`.
+- `npm run sync:local` — функция `sync` на компьютере: настоящий Boosty, вместо бакета — `.bucket/` (в `.gitignore`); `npm run api:local` — функция `api` на http://localhost:8787 (`-- --subscriber почта`, `-- --send`); `npm run functions:build` — сборка функций в `functions/<имя>/dist/`.
 
 ## Как работаем
 
