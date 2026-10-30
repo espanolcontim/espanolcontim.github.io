@@ -5,6 +5,9 @@ content/private/
 .env*
 *.raw.json
 
+# Приватный бакет на этом компьютере: токены Boosty, подписчики (npm run sync:local)
+.bucket/
+
 # Зависимости и сборка
 node_modules/
 dist/

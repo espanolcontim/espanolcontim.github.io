@@ -1,0 +1,12 @@
+{
+  "name": "@espanolcontim/sync",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@espanolcontim/functions-shared": "*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2"
+  }
+}
