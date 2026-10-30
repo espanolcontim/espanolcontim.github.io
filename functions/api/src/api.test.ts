@@ -256,17 +256,20 @@ describe('GET /lessons/:id/body', () => {
 })
 
 describe('маршруты и CORS', () => {
-  it('сайту — Access-Control-Allow-Origin, чужим — нет', async () => {
+  it('сайту — его адрес в Access-Control-Allow-Origin, чужим — тоже адрес сайта, не их', async () => {
     const own = await call('POST', '/auth/request', { body: { email: 'petr@example.com' } })
     expect(own.headers['Access-Control-Allow-Origin']).toBe(SITE)
 
-    const foreign = await api()({
-      method: 'POST',
-      path: '/auth/request',
-      headers: { origin: 'https://evil.example' },
-      body: '{"email":"petr@example.com"}',
-    })
-    expect(foreign.headers['Access-Control-Allow-Origin']).toBeUndefined()
+    // Без заголовка API Gateway подставил бы `*` — и чужой сайт прочёл бы ответ.
+    for (const headers of [{ origin: 'https://evil.example' }, {}]) {
+      const foreign = await api()({
+        method: 'POST',
+        path: '/auth/request',
+        headers,
+        body: '{"email":"petr@example.com"}',
+      })
+      expect(foreign.headers['Access-Control-Allow-Origin']).toBe(SITE)
+    }
   })
 
   it('OPTIONS — разрешения для браузера', async () => {

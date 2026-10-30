@@ -95,7 +95,7 @@
 
 **На компьютере** — `npm run sync:local`: настоящий Boosty, вместо бакета — `.bucket/`, переменные — из `.env`. Токены в `.bucket/boosty/auth.json` — от своего отдельного входа в Boosty, не копия облачных.
 
-**В Yandex Cloud** — каталог `backend`, бакет, сервисный аккаунт, функция и таймер: `docs/backend.md`. Новая версия функции: `npm run functions:build` и загрузить `functions/sync/dist/sync.zip` в консоли (функция → «Редактор» → ZIP-архив → «Сохранить изменения»).
+**В Yandex Cloud** — каталог `backend`, бакет, сервисный аккаунт, функция и таймер: `docs/backend.md`. Новая версия функции: `npm run functions:build` и загрузить `functions/<имя>/dist/<имя>.zip` в консоли (функция → «Редактор» → ZIP-архив → «Сохранить изменения»).
 
 ## Функция api
 

@@ -158,7 +158,7 @@ Boosty: уровни «Практика» (290 ₽/мес) и «Поддержк
 - [x] `POST /auth/refresh` → скользящее продление, если токену больше 7 дней.
 - [x] `GET /lessons/:id/body` → проверка сессии и активной подписки по Boosty id (по кэшу) → платный JSON из бакета (`lessons/<id>.json`).
 - [x] Сессия передаётся в заголовке `Authorization` (хранит её сайт в localStorage — пункт «Сайт»). Куки не подходят: сайт и API на разных доменах. CORS — только для адреса сайта: `https://espanolcontim.ru`.
-- [ ] Развернуть в Yandex Cloud (`docs/backend.md`, шаги 9–14): почта, сервисный аккаунт и функция `api`, API Gateway (`functions/api/gateway.yaml`) — готовы 30.10.2026; сертификат и домен — в работе.
+- [x] Развернуть в Yandex Cloud (`docs/backend.md`, шаги 9–15): почта, сервисный аккаунт и функция `api`, API Gateway (`functions/api/gateway.yaml`), сертификат и домен `api.espanolcontim.ru` — 30.10.2026. Заголовок CORS функция ставит в каждом ответе: без него API Gateway подставляет `*`.
 - [ ] API на своём домене `api.espanolcontim.ru` (решение Тимура 30.10.2026): API Gateway, запись в зоне Cloud DNS `espanolcontim.ru.`, сертификат Let's Encrypt в Certificate Manager (бесплатно, как у бакета).
 - [x] Без базы данных на старте: всё состояние — файлы в бакете.
 

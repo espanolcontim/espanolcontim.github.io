@@ -34,14 +34,16 @@ export const error = (status: number, code: ApiError): ApiResponse => json(statu
 /**
  * CORS: сайт и API на разных доменах. Разрешены только адреса из `allowedOrigins`;
  * остальным браузер ответ не покажет. Это не защита данных — её дают токены.
+ * Заголовок — в каждом ответе: без него API Gateway подставляет `Access-Control-Allow-Origin: *`
+ * (проверено 30.10.2026). Чужому адресу — адрес сайта: с его `Origin` не совпадает, и браузер ответ не отдаст.
  */
 export const corsHeaders = (
   origin: string | undefined,
   allowedOrigins: readonly string[],
-): Record<string, string> =>
-  origin && allowedOrigins.includes(origin)
-    ? { 'Access-Control-Allow-Origin': origin, Vary: 'Origin' }
-    : { Vary: 'Origin' }
+): Record<string, string> => {
+  const allowed = origin && allowedOrigins.includes(origin) ? origin : allowedOrigins[0]
+  return allowed ? { 'Access-Control-Allow-Origin': allowed, Vary: 'Origin' } : { Vary: 'Origin' }
+}
 
 export const preflight = (cors: Record<string, string>): ApiResponse => ({
   status: 204,
