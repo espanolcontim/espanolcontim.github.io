@@ -44,10 +44,10 @@
 | 7. Таймер `sync-hourly` | проверить: в «Логах» функции раз в час — строка `{"message":"sync", …}` |
 | Claude: функция `api`, архив `functions/api/dist/api.zip`, `gateway.yaml` | ✓ вход проверен на компьютере (`npm run api:local`): ссылка → сессия → платный урок |
 | 9. Почта: доступ для программ, новый пароль приложения | ✓ 30.10.2026: пробное письмо ушло с компьютера |
-| 10. Сервисный аккаунт `api` | |
-| 11. Функция `api` | |
-| 12. API Gateway `api` | |
-| 13. Сертификат `api.espanolcontim.ru` | |
+| 10. Сервисный аккаунт `api` | ✓ 30.10.2026 |
+| 11. Функция `api` | ✓ 30.10.2026 |
+| 12. API Gateway `api` | ✓ 30.10.2026; Claude снаружи ещё не проверял — нужен служебный домен шлюза |
+| 13. Сертификат `api.espanolcontim.ru` | **в работе.** Сертификат `api-espanolcontim-ru` создан, запись `_acme-challenge.api` → `fpq3mcles2ogs1qu52al.cm.yandexcloud.net.` есть. В 15:23 — `Failed to check challenges 3/5 times`: проверка шла сразу после создания записи. В 15:30 запись и TXT за ней видны с DNS Яндекса, Google и Cloudflare — ждать `Issued` (шаг 13.4) |
 | 14. Домен шлюза `api.espanolcontim.ru` | |
 
 ## Что сделать Тимуру
@@ -151,7 +151,7 @@
     1. Certificate Manager (https://console.yandex.cloud/link/certificate-manager, каталог `backend` — тот же, что у шлюза) → «Добавить сертификат» → «Сертификат от Let's Encrypt»: имя `api-espanolcontim-ru`, домен `api.espanolcontim.ru` (один, без `*`), тип проверки — `DNS` → «Создать». Статус — `Validating`.
     2. Сертификат → «Проверка прав на домены» → у `api.espanolcontim.ru` выбрать запись **CNAME** (не TXT: TXT пришлось бы обновлять каждые 60 дней) и скопировать её значение — вида `fpq….cm.yandexcloud.net.`. Оно своё, не такое, как у сертификата сайта.
     3. Cloud DNS (https://console.yandex.cloud/link/dns, каталог **`site`** — зона там) → зона `espanolcontim.ru.` → «Создать запись»: имя `_acme-challenge.api`, тип CNAME, TTL 600, значение — из пункта 2, с точкой на конце → «Создать». Запись не удалять: по ней сертификат продлевается сам.
-    4. Дождаться у сертификата статуса `Issued` — от минут до пары часов. `Invalid` — удалить сертификат, создать заново и поменять значение записи `_acme-challenge.api` на новое.
+    4. Дождаться у сертификата статуса `Issued` — от минут до пары часов. Certificate Manager проверяет запись сам, несколько раз; ошибка «Failed to check challenges N/5 times: Challenges were not passed» в первые минуты после создания записи — обычное дело: новую запись видно не сразу, а «записи нет» DNS-серверы помнят до 15 минут. Проверить запись с компьютера: `dig @77.88.8.8 _acme-challenge.api.espanolcontim.ru TXT +short` — должно показать `fpq….cm.yandexcloud.net.` и строку в кавычках. Статус стал `Invalid` — удалить сертификат, создать заново и поменять значение записи `_acme-challenge.api` на новое.
 14. **Домен `api.espanolcontim.ru`.**
     1. Cloud DNS (каталог `site`) → зона `espanolcontim.ru.` → «Создать запись»: имя `api`, тип CNAME, TTL 600, значение — служебный домен шлюза из шага 12 с точкой на конце (`d5d….apigw.yandexcloud.net.`) → «Создать».
     2. API Gateway (каталог `backend`) → шлюз `api` → вкладка «Домены» → «Подключить»: сертификат `api-espanolcontim-ru`, домен `api.espanolcontim.ru` → «Подключить». Если консоль предложит создать запись в Cloud DNS — не нужно: CNAME уже есть (пункт 1).
