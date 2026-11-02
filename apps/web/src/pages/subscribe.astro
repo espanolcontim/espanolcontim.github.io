@@ -1,0 +1,157 @@
+---
+import { PARTS, partAccess, type Part } from '@espanolcontim/content'
+import { LINKS } from '../app/links.ts'
+import Page from '../app/Page.astro'
+import { LOGIN_PATH } from '../features/auth/navigation.ts'
+
+/** Таблица — из access.ts: модель доступа поменяется, и страница поменяется с ней. */
+const COLUMNS = [
+  { title: 'A0', lesson: { level: 'A0', planLesson: 2 } },
+  { title: 'A1 и выше', lesson: { level: 'A1', planLesson: 2 } },
+] as const
+
+const firstLessonOpen = PARTS.every(
+  (part) => partAccess(part, { level: 'A1', planLesson: 1 }) === 'free',
+)
+
+const ROWS: { part: Part; title: string }[] = [
+  { part: 'summary', title: 'Краткий конспект' },
+  { part: 'notes', title: 'Полный конспект' },
+  { part: 'practice', title: 'Упражнения по фразам урока' },
+  { part: 'extras', title: 'Дополнительные материалы и упражнения к ним' },
+  { part: 'quiz', title: 'Проверка после урока' },
+]
+---
+
+<Page
+  title="Подписка"
+  description="Что входит в подписку «Практика» на Boosty и как подписчику войти на сайт курса «Испанский с нуля»."
+>
+  <header class="page-header">
+    <p class="overline">Boosty</p>
+    <h1>Подписка «Практика»</h1>
+    <p class="lead">
+      Видео и основа курса открыты всем. Подписка на Boosty открывает на сайте остальные материалы к
+      урокам и поддерживает выход новых.
+    </p>
+    <p>
+      <a class="button" href={LINKS.boosty}>
+        Подписка на Boosty
+      </a>
+    </p>
+    <p class="ru">
+      Уровни «Практика» (290 ₽ в месяц) и «Поддержка курса» (490 ₽ в месяц) открывают одно и то же.
+    </p>
+  </header>
+
+  <div class="sections">
+    <section aria-labelledby="included">
+      <h2 id="included">Что входит</h2>
+      <div class="scroll">
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+              {COLUMNS.map((column) => (
+                <th scope="col">{column.title}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {ROWS.map((row) => (
+              <tr>
+                <th scope="row">{row.title}</th>
+                {COLUMNS.map((column) =>
+                  partAccess(row.part, column.lesson) === 'paid' ? (
+                    <td class="paid">в подписке</td>
+                  ) : (
+                    <td class="ru">бесплатно</td>
+                  ),
+                )}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {firstLessonOpen && <p class="ru">Первый урок каждого уровня открыт целиком.</p>}
+    </section>
+
+    <section aria-labelledby="how-to">
+      <h2 id="how-to">Как войти на сайт</h2>
+      <ol>
+        <li>Оформите подписку на Boosty. Сайт узнаёт о новой подписке в течение часа.</li>
+        <li>
+          На <a href={LOGIN_PATH}>странице входа</a> укажите почту из вашего аккаунта Boosty.
+        </li>
+        <li>
+          Откройте ссылку из письма: она действует 15 минут. Входить нужно один раз на каждом
+          устройстве.
+        </li>
+      </ol>
+      <p class="ru">
+        В аккаунте Boosty нет почты, например вы регистрировались через VK? Напишите в{' '}
+        <a href={LINKS.boosty}>личку на Boosty</a>: подключим вход вручную.
+      </p>
+    </section>
+  </div>
+</Page>
+
+<style>
+  .page-header {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 40rem;
+    padding-bottom: 2rem;
+  }
+
+  .sections {
+    display: grid;
+    gap: 2.25rem;
+    max-width: 44rem;
+  }
+
+  section {
+    display: grid;
+    gap: 0.875rem;
+    min-width: 0;
+  }
+
+  .scroll {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 0.625rem 0.75rem 0.625rem 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  thead th {
+    color: var(--text-2);
+    font-size: 0.875rem;
+    font-weight: 800;
+  }
+
+  tbody th {
+    font-weight: 600;
+  }
+
+  .paid {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  ol {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+</style>

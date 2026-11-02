@@ -1,4 +1,4 @@
-import { addDays, BOXES, dueCards, localDay } from '@espanolcontim/content'
+import { addDays, BOXES, dueCards, localDay, sentenceLesson } from '@espanolcontim/content'
 import { useEffect, useMemo, useState } from 'react'
 import { analytics, progress as repository } from '../../app/browser.ts'
 import { plural } from '../../shared/plural.ts'
@@ -10,6 +10,7 @@ import styles from './review.module.css'
 import { ReviewSession } from './ReviewSession.tsx'
 import { BATCH, PHRASES, type ReviewSentence } from './session.ts'
 import { Transfer } from './Transfer.tsx'
+import { usePaidSentences } from './usePaidSentences.ts'
 import { updateProgress, useProgress } from './useProgress.ts'
 
 /**
@@ -18,19 +19,29 @@ import { updateProgress, useProgress } from './useProgress.ts'
  */
 export default function Review({
   sentences,
+  lessonNumbers,
   start,
 }: {
-  /** Все фразы, к которым у ученика есть доступ. */
+  /** Все бесплатные фразы; платные подписчику приходят из API. */
   sentences: ReviewSentence[]
+  /** Сквозные номера уроков: урок → номер. */
+  lessonNumbers: Record<string, number>
   /** Куда идти, если повторять пока нечего: упражнения первого урока. */
   start: string
 }) {
   const progress = useProgress()
   const [today] = useState(() => localDay(new Date()))
   const [batch, setBatch] = useState<{ sentences: ReviewSentence[]; n: number }>()
+  const free = useMemo(() => new Set(sentences.map((sentence) => sentence.id)), [sentences])
+  // Уроки, у которых в прогрессе есть фразы вне бесплатных: возможно, платные.
+  const paidLessons = useMemo(() => {
+    const ids = progress ? cardsOf(progress).map((card) => card.id) : []
+    return [...new Set(ids.filter((id) => !free.has(id)).map(sentenceLesson))].toSorted().join(',')
+  }, [progress, free])
+  const paid = usePaidSentences(paidLessons, lessonNumbers)
   const byId = useMemo(
-    () => new Map(sentences.map((sentence) => [sentence.id, sentence])),
-    [sentences],
+    () => new Map([...sentences, ...paid.sentences].map((sentence) => [sentence.id, sentence])),
+    [sentences, paid.sentences],
   )
 
   const { known, due, missing } = useMemo(() => {
@@ -48,8 +59,9 @@ export default function Review({
   // Фразы, которых здесь нет (платные без входа, исправленные в уроке), не висят
   // в счётчике вечно: откладываем на месяц, прогресс по ним не теряется.
   useEffect(() => {
-    if (missing.length > 0) updateProgress((now) => postpone(now, missing, addDays(today, 30)))
-  }, [missing, today])
+    if (paid.pending || missing.length === 0) return
+    updateProgress((now) => postpone(now, missing, addDays(today, 30)))
+  }, [missing, today, paid.pending])
 
   if (!progress) return null
 

@@ -2,7 +2,8 @@ import type { LessonBody, LessonMeta } from '@espanolcontim/content'
 
 /**
  * Доступ к урокам. Компоненты не знают, откуда пришли данные: бесплатные
- * части лежат в content/public (StaticLessonRepository), платные придут через API.
+ * части лежат в content/public (StaticLessonRepository), платные приходят
+ * через API (ApiLessonRepository).
  */
 export interface LessonRepository {
   /** Все уроки по порядку номеров. */

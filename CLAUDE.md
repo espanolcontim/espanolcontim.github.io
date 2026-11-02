@@ -33,7 +33,7 @@
 - **Astro** (статическая генерация) + **React-острова** для интерактива, TypeScript strict.
   Почему не SPA: бесплатные конспекты должны индексироваться Яндексом, а у статического хостинга нет серверного рендеринга. Каждая страница урока — отдельный HTML-файл.
 - **zod** — схемы контента: единый контракт для импорта, сайта и функций.
-- Стили: CSS-переменные из `apps/web/src/shared/styles/theme.css` (светлая и тёмная тема; сами темы — в `styles/themes/`, активная — одна строка `@import` в `theme.css`; тёмной темы на сайте пока нет — палитры есть, переключателя нет); в `.astro` — scoped `<style>`, в React-островах — CSS Modules. Без UI-фреймворков, если нет веской причины.
+- Стили: CSS-переменные из `apps/web/src/shared/styles/theme.css` (светлая и тёмная тема; сами темы — в `styles/themes/`, активная — одна строка `@import` в `theme.css`; тёмной темы на сайте пока нет — палитры есть, переключателя нет); в `.astro` — scoped `<style>`, в React-компонентах — CSS Modules. Без UI-фреймворков, если нет веской причины.
 - Шрифты — из npm: Manrope (`@fontsource-variable/manrope`), транскрипция — Noto Sans (`@fontsource/noto-sans`): в Manrope нет знаков МФА.
 - Бэкенд: Yandex Cloud Functions (Node.js, TypeScript), API Gateway, Object Storage.
 - Тесты: Vitest. Node 22.23+ (так требует Astro 7), npm workspaces.
@@ -57,7 +57,7 @@ apps/web/                      Astro-сайт
   src/shared/                  UI-компоненты, утилиты
   src/assets/                  картинки сайта (фото на главной), Astro сжимает их в AVIF/WebP
   src/app/container.ts         композиционный корень сборки (весь контент — в браузер не импортировать)
-  src/app/browser.ts           композиционный корень браузера: острова и скрипты (прогресс)
+  src/app/browser.ts           композиционный корень браузера: острова и скрипты (прогресс, вход, платные уроки)
 packages/content/              zod-схемы, типы, правила доступа, проверка ответов, алгоритм повторения
 functions/api/                 вход, сессии, выдача платных уроков
 functions/sync/                выгрузка подписчиков Boosty по таймеру
@@ -71,7 +71,7 @@ docs/SPEC.md
 ```
 
 Репозитории и сервисы:
-- `LessonRepository` — `list()`, `getMeta(id)`, `getBody(id)`. Бесплатные части берутся из `content/public` (`StaticLessonRepository`), платные — через API (`ApiLessonRepository`). Компоненты не знают, откуда пришли данные.
+- `LessonRepository` — `list()`, `getMeta(id)`, `getBody(id)`. Бесплатные части берутся из `content/public` (`StaticLessonRepository`, при сборке), платные — через API (`ApiLessonRepository`, в браузере, только `getBody`). Компоненты контента — на React и не знают, откуда пришли данные: бесплатное рисуется при сборке без JS в браузере, платное — в острове (`PaidNotes`, `PaidExtras`).
 - `ProgressRepository` — прогресс по урокам и карточки повторения. Сейчас `LocalStorageProgressRepository`: все обращения к storage в try/catch, сайт работает и без него.
 - `AuthService` — запрос ссылки, обмен её на сессию, продление, выход.
 
@@ -103,7 +103,7 @@ docs/SPEC.md
 - `npm test` — Vitest по всем пакетам (тесты рядом с кодом, `*.test.ts`); `npm run typecheck` — tsc для пакетов и `astro check`.
 - `npm run lint` — oxlint; `npm run format` / `npm run format:check` — Prettier (`.md` не форматирует).
 - `npm run content:import` — импорт из `../video-lessons`: все уроки, `-- 1 8 11` — только эти, `-- --check` — проверить, ничего не записывая.
-- `npm run content:upload` — появится в фазе 2.
+- `npm run content:upload` — платные уроки из `content/private` в приватный бакет: загружает изменённое, удаляет лишнее, `-- --check` — только показать. Ключ — в `.env` (`docs/backend.md`, шаг 16).
 - `npm run sync:local` — функция `sync` на компьютере: настоящий Boosty, вместо бакета — `.bucket/` (в `.gitignore`); `npm run api:local` — функция `api` на http://localhost:8787 (`-- --subscriber почта`, `-- --send`); `npm run functions:build` — сборка функций в `functions/<имя>/dist/`.
 
 ## Как работаем

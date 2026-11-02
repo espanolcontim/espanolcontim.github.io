@@ -1,0 +1,53 @@
+---
+import { LOGIN_PATH } from './navigation.ts'
+
+/**
+ * Вход в шапке: «Войти» или «Вы вошли» — там же и выход. На самых узких экранах в шапку
+ * не влезает: там вход — в подвале и на плашках подписки. Скрипт есть на всех страницах,
+ * поэтому здесь же продлевается сессия.
+ */
+---
+
+<a class="auth-link" href={LOGIN_PATH} data-auth-link>
+  Войти
+</a>
+
+<script>
+  import { auth } from '../../app/browser.ts'
+  import { LOGIN_PATH, loginPath } from './navigation.ts'
+
+  const update = () => {
+    const signedIn = auth.session() !== undefined
+    for (const link of document.querySelectorAll<HTMLAnchorElement>('[data-auth-link]')) {
+      link.textContent = signedIn ? 'Вы вошли' : 'Войти'
+      link.href = signedIn ? LOGIN_PATH : loginPath(location.pathname)
+    }
+  }
+
+  update()
+  auth.subscribe(update)
+  void auth.renew()
+</script>
+
+<style>
+  .auth-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.25rem;
+    color: var(--text-2);
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .auth-link:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 24.99rem) {
+    .auth-link {
+      display: none;
+    }
+  }
+</style>

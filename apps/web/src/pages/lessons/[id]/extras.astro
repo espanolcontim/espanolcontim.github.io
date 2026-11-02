@@ -1,13 +1,17 @@
 ---
-import ExtrasContent from '../../../features/lessons/ExtrasContent.astro'
+import { ExtrasContent } from '../../../features/lessons/ExtrasContent.tsx'
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
-import Locked from '../../../features/lessons/Locked.astro'
+import { Locked } from '../../../features/lessons/Locked.tsx'
+import { lessonPath } from '../../../features/lessons/navigation.ts'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
+import PaidExtras from '../../../features/lessons/PaidExtras.tsx'
 import Page from '../../../app/Page.astro'
 
 export const getStaticPaths = lessonStaticPaths
 
 const { meta, body, channel } = await loadLesson(Astro.params.id)
+const inside =
+  'живые выражения, мини-история с вопросами, фразы с характером, «Испания изнутри» и упражнения'
 ---
 
 <Page
@@ -20,6 +24,11 @@ const { meta, body, channel } = await loadLesson(Astro.params.id)
   {body.extras ? (
     <ExtrasContent extras={body.extras} />
   ) : (
-    <Locked inside="живые выражения, мини-история с вопросами, фразы с характером, «Испания изнутри» и упражнения" />
+    <>
+      <PaidExtras client:only="react" lessonId={meta.id} inside={inside} />
+      <noscript>
+        <Locked inside={inside} from={lessonPath(meta.id, 'extras')} />
+      </noscript>
+    </>
   )}
 </Page>

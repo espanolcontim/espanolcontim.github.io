@@ -17,6 +17,9 @@ import {
 
 export const AUTH_KEY = 'boosty/auth.json'
 export const OVERRIDES_KEY = 'overrides.json'
+export const FREE_ACCESS_KEY = 'free-access.json'
+/** Уровень в кэше у тех, кто вошёл по free-access.json: так их не считают подписчиками. */
+export const FREE_ACCESS_LEVEL = 'без подписки'
 
 /** Обновлять токен, когда до конца осталось меньше недели: живёт он 30 дней, `sync` — раз в час. */
 export const REFRESH_BEFORE_MS = 7 * 24 * 60 * 60 * 1000
@@ -27,6 +30,13 @@ export const REFRESH_BEFORE_MS = 7 * 24 * 60 * 60 * 1000
  * Доступа сама запись не даёт: она действует, только пока подписчик — активный платный.
  */
 const Overrides = z.record(z.string().regex(/^\d+$/, 'ключ — Boosty id цифрами'), z.email())
+
+/**
+ * `free-access.json` — кто входит без подписки: Тимур, тестеры. `{ "<id>": "почта" }`, Тимур
+ * ведёт вручную. id — Boosty id или любые другие цифры: он только субъект сессии.
+ * В отличие от overrides.json, запись сама даёт доступ; убрать её — доступ закроется при следующем `sync`.
+ */
+const FreeAccess = Overrides
 
 export interface SyncDeps {
   storage: Storage
@@ -49,6 +59,8 @@ export interface SyncReport {
   fromOverrides: number
   /** Записи overrides.json, чей подписчик сейчас не активный платный. */
   unusedOverrides: number
+  /** Вошедшие в кэш по free-access.json. */
+  freeAccess: number
   /** Обновлялся ли токен Boosty. */
   refreshed: boolean
   tokenExpiresAt: string
@@ -105,24 +117,41 @@ export async function runSync(deps: SyncDeps): Promise<SyncReport> {
   })
 
   // Был список, а стал пустым — скорее Boosty поменял ответ, чем ушли все подписчики сразу.
+  // Считаем только платных: free-access.json ничего не говорит о том, что ответил Boosty.
   const previous = await readJson(storage, SUBSCRIBERS_KEY, SubscriberCache)
-  if (subscribers.length === 0 && previous && previous.subscribers.length > 0) {
+  const previousPaid = (previous?.subscribers ?? []).filter((s) => s.level !== FREE_ACCESS_LEVEL)
+  if (subscribers.length === 0 && previousPaid.length > 0) {
     throw new Error(
-      `Boosty вернул 0 активных платных подписчиков, а в кэше ${previous.subscribers.length} — ` +
+      `Boosty вернул 0 активных платных подписчиков, а в кэше ${previousPaid.length} — ` +
         `кэш не перезаписан. Если подписчиков правда нет, удалите ${SUBSCRIBERS_KEY} из бакета`,
     )
   }
 
-  const cache: SubscriberCache = { updatedAt: new Date(now()).toISOString(), subscribers }
+  // Платный подписчик остаётся платным, даже если он есть и в free-access.json.
+  const paidIds = new Set(paid.map((s) => String(s.id)))
+  const freeAccess: CachedSubscriber[] = Object.entries(
+    (await readJson(storage, FREE_ACCESS_KEY, FreeAccess)) ?? {},
+  )
+    .filter(([id]) => !paidIds.has(id))
+    .map(([id, email]) => ({
+      id: Number(id),
+      emailHash: hashEmail(email, deps.emailHashSecret),
+      level: FREE_ACCESS_LEVEL,
+    }))
+
+  const cache: SubscriberCache = {
+    updatedAt: new Date(now()).toISOString(),
+    subscribers: [...subscribers, ...freeAccess],
+  }
   await writeJson(storage, SUBSCRIBERS_KEY, cache)
 
-  const paidIds = new Set(paid.map((s) => String(s.id)))
   return {
     total: all.length,
     paid: subscribers.length,
     withEmail: subscribers.filter((s) => s.emailHash !== null).length,
     fromOverrides,
     unusedOverrides: Object.keys(overrides).filter((id) => !paidIds.has(id)).length,
+    freeAccess: freeAccess.length,
     refreshed,
     tokenExpiresAt: new Date(auth.expiresAt).toISOString(),
   }

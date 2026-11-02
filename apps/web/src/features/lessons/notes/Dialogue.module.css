@@ -1,0 +1,38 @@
+.lines {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.line {
+  display: grid;
+  grid-template-columns: minmax(4.5rem, auto) 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.line:not(:has(.speaker)) {
+  grid-template-columns: 1fr;
+}
+
+.speaker {
+  font-weight: 800;
+}
+
+.speaker1 {
+  color: var(--speaker-1);
+}
+
+.speaker2 {
+  color: var(--speaker-2);
+}
+
+.speaker3 {
+  color: var(--speaker-3);
+}
+
+.line :global(.es) {
+  font-weight: 650;
+}

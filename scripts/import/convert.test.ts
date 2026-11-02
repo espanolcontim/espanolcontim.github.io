@@ -226,9 +226,15 @@ describe('splitLesson', () => {
     const { free, paid } = splitLesson('a1-03', converted, access)
     expect(Object.keys(free)).toEqual(['id', 'summary', 'quiz', 'sentences'])
     expect(Object.keys(paid ?? {})).toEqual(['id', 'notes', 'practice', 'extras', 'sentences'])
-    // предложения проверки и выжимки публичны, остальные — только в private
+    // предложения проверки и выжимки публичны, s04 — только в private;
+    // платная половина самодостаточна: в ней и те публичные, на которые ссылаются её части
     expect(free.sentences.map((s) => s.id)).toEqual(['a1-03-s01', 'a1-03-s02', 'a1-03-s03'])
-    expect(paid?.sentences.map((s) => s.id)).toEqual(['a1-03-s04'])
+    expect(paid?.sentences.map((s) => s.id)).toEqual([
+      'a1-03-s01',
+      'a1-03-s02',
+      'a1-03-s03',
+      'a1-03-s04',
+    ])
   })
 
   it('часть без указанного доступа считается платной', () => {

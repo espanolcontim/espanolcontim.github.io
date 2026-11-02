@@ -1,6 +1,6 @@
 import { splitMarks } from '@espanolcontim/content'
 
-/** Текст урока с выделением нового — то же, что Marked.astro, для React-островов. */
+/** Текст урока с выделением нового: "Quiero **aprender** español.". */
 export function MarkedText({
   text,
   lang,

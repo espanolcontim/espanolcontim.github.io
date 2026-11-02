@@ -22,6 +22,7 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc -p packages/content && tsc -p functions/shared && tsc -p functions/sync && tsc -p functions/api && tsc -p scripts && npm run check -w @espanolcontim/web",
     "content:import": "node scripts/content-import.ts",
+    "content:upload": "node scripts/content-upload.ts",
     "functions:build": "node scripts/functions-build.ts",
     "sync:local": "node functions/sync/src/local.ts",
     "api:local": "node functions/api/src/local.ts"

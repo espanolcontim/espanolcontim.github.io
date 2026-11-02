@@ -55,6 +55,7 @@ describe('sitemap', () => {
     expect(await sitemapPaths(lessons)).toEqual([
       '/',
       '/lessons/',
+      '/subscribe/',
       '/lessons/a0-01/',
       '/lessons/a0-01/practice/',
       '/lessons/a0-02/',

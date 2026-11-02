@@ -44,6 +44,8 @@ export type Task =
 
 export type SetKind = 'phrases' | 'extras' | 'quiz'
 
+const KINDS: readonly SetKind[] = ['phrases', 'extras', 'quiz']
+
 export interface PracticeSet {
   /** Он же в адресе: #p1, #x2, #quiz. */
   id: string
@@ -127,3 +129,7 @@ export function buildPracticeSets(body: LessonBody): PracticeSet[] {
 
   return [...phrases, ...extras, ...quiz]
 }
+
+/** Наборы бесплатной половины урока и платной: части в половинах не пересекаются. */
+export const mergeSets = (free: PracticeSet[], paid: PracticeSet[]): PracticeSet[] =>
+  [...free, ...paid].toSorted((a, b) => KINDS.indexOf(a.kind) - KINDS.indexOf(b.kind))

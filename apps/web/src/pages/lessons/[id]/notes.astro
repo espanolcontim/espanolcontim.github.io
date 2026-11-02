@@ -1,13 +1,16 @@
 ---
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
-import Locked from '../../../features/lessons/Locked.astro'
-import NotesContent from '../../../features/lessons/NotesContent.astro'
+import { Locked } from '../../../features/lessons/Locked.tsx'
+import { lessonPath } from '../../../features/lessons/navigation.ts'
+import { NotesContent } from '../../../features/lessons/NotesContent.tsx'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
+import PaidNotes from '../../../features/lessons/PaidNotes.tsx'
 import Page from '../../../app/Page.astro'
 
 export const getStaticPaths = lessonStaticPaths
 
 const { meta, body, channel } = await loadLesson(Astro.params.id)
+const inside = 'теория с транскрипцией, сводные таблицы, диалоги и новые слова'
 ---
 
 <Page
@@ -20,6 +23,11 @@ const { meta, body, channel } = await loadLesson(Astro.params.id)
   {body.notes ? (
     <NotesContent notes={body.notes} />
   ) : (
-    <Locked inside="теория с транскрипцией, сводные таблицы, диалоги и новые слова" />
+    <>
+      <PaidNotes client:only="react" lessonId={meta.id} inside={inside} />
+      <noscript>
+        <Locked inside={inside} from={lessonPath(meta.id, 'notes')} />
+      </noscript>
+    </>
   )}
 </Page>

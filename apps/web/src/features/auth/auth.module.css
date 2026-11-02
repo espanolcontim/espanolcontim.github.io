@@ -1,0 +1,58 @@
+/* Страница входа. Цвета — только из theme.css. */
+
+.login {
+  display: grid;
+  gap: 1rem;
+  max-width: 30rem;
+}
+
+.box {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+  max-width: 30rem;
+}
+
+.box h2:focus {
+  outline: none;
+}
+
+.status {
+  display: block;
+  max-width: 30rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+  width: 100%;
+  font-weight: 700;
+}
+
+/* 16px: при меньшем шрифте iPhone увеличивает страницу, когда поле в фокусе. */
+.input {
+  width: 100%;
+  min-height: 2.5rem;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.notice {
+  color: var(--bad);
+}
+
+.consent {
+  font-size: 0.8125rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

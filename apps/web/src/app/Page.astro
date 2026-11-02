@@ -1,12 +1,14 @@
 ---
 import CookieBanner from '../features/analytics/CookieBanner.astro'
+import AuthLink from '../features/auth/AuthLink.astro'
+import { LOGIN_PATH } from '../features/auth/navigation.ts'
 import LessonsNav from '../features/lessons/LessonsNav.astro'
 import ReviewLink from '../features/review/ReviewLink.astro'
 import Layout from '../shared/ui/Layout.astro'
 import { METRIKA_ID } from './analytics.ts'
 import { container } from './container.ts'
 import { PRIVACY_PATH } from './legal.ts'
-import { LINKS } from './links.ts'
+import { LINKS, SUBSCRIBE_PATH } from './links.ts'
 import Seo from './Seo.astro'
 
 /** Страница сайта: общий каркас с меню всех уроков слева. */
@@ -26,8 +28,12 @@ const links = { youtube: container.videos.channel, ...LINKS }
 <Layout title={title} description={description} links={links} noindex={noindex}>
   <Seo slot="head" title={title} description={description} noindex={noindex} />
   <ReviewLink slot="nav" />
+  <AuthLink slot="nav" />
   <LessonsNav slot="sidebar" current={currentLesson} />
   <slot />
+  <p slot="footer">
+    <a href={SUBSCRIBE_PATH}>Подписка</a> · <a href={LOGIN_PATH}>Вход для подписчиков</a>
+  </p>
   <p slot="footer">
     <a href={PRIVACY_PATH}>Обработка персональных данных</a>
   </p>

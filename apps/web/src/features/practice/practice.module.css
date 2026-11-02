@@ -58,12 +58,6 @@
   border-color: var(--accent);
 }
 
-.locked {
-  display: grid;
-  gap: 0.75rem;
-  justify-items: start;
-}
-
 /* --- сессия ------------------------------------------------------------------------- */
 
 .session {

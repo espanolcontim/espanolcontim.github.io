@@ -1,7 +1,14 @@
 import { hashEmail, MemoryStorage, SUBSCRIBERS_KEY } from '@espanolcontim/functions-shared'
 import { describe, expect, it } from 'vitest'
 import { BoostyClient, type BoostyAuth } from './boosty.ts'
-import { AUTH_KEY, OVERRIDES_KEY, REFRESH_BEFORE_MS, runSync } from './sync.ts'
+import {
+  AUTH_KEY,
+  FREE_ACCESS_KEY,
+  FREE_ACCESS_LEVEL,
+  OVERRIDES_KEY,
+  REFRESH_BEFORE_MS,
+  runSync,
+} from './sync.ts'
 
 const NOW = Date.parse('2026-10-30T12:00:00Z')
 const DAY = 24 * 60 * 60 * 1000
@@ -246,6 +253,66 @@ describe('runSync', () => {
 
     expect(report.paid).toBe(0)
     expect(readFile(storage, SUBSCRIBERS_KEY).subscribers).toEqual([])
+  })
+
+  it('free-access.json даёт вход без подписки; платный остаётся платным', async () => {
+    const storage = storageWith({
+      [AUTH_KEY]: auth(NOW + 20 * DAY),
+      [FREE_ACCESS_KEY]: { '1': 'other@example.com', '100': 'Tester@Example.com' },
+    })
+    const { client } = fakeBoosty({ subscribers: [sub(1), sub(2, { level: freeLevel })] })
+
+    const report = await run(storage, client)
+
+    expect(readFile(storage, SUBSCRIBERS_KEY).subscribers).toEqual([
+      { id: 1, emailHash: hashEmail('user1@example.com', SECRET), level: 'Практика' },
+      { id: 100, emailHash: hashEmail('tester@example.com', SECRET), level: FREE_ACCESS_LEVEL },
+    ])
+    expect(storage.files.get(SUBSCRIBERS_KEY)).not.toContain('example.com')
+    expect(report).toMatchObject({ paid: 1, freeAccess: 1 })
+  })
+
+  it('free-access.json не прячет сбой Boosty: платные пропали — кэш не перезаписан', async () => {
+    const previous = {
+      updatedAt: '2026-10-29T12:00:00.000Z',
+      subscribers: [{ id: 1, emailHash: 'abc', level: 'Практика' }],
+    }
+    const storage = storageWith({
+      [AUTH_KEY]: auth(NOW + 20 * DAY),
+      [SUBSCRIBERS_KEY]: previous,
+      [FREE_ACCESS_KEY]: { '100': 'tester@example.com' },
+    })
+    const { client } = fakeBoosty({ subscribers: [] })
+
+    await expect(run(storage, client)).rejects.toThrow(/0 активных платных/)
+    expect(readFile(storage, SUBSCRIBERS_KEY)).toEqual(previous)
+  })
+
+  it('убрали запись из free-access.json — доступ закрылся, хотя платных нет', async () => {
+    const storage = storageWith({
+      [AUTH_KEY]: auth(NOW + 20 * DAY),
+      [SUBSCRIBERS_KEY]: {
+        updatedAt: '2026-10-29T12:00:00.000Z',
+        subscribers: [{ id: 100, emailHash: 'abc', level: FREE_ACCESS_LEVEL }],
+      },
+    })
+    const { client } = fakeBoosty({ subscribers: [] })
+
+    const report = await run(storage, client)
+
+    expect(report).toMatchObject({ paid: 0, freeAccess: 0 })
+    expect(readFile(storage, SUBSCRIBERS_KEY).subscribers).toEqual([])
+  })
+
+  it('кривой free-access.json — понятная ошибка, кэш не тронут', async () => {
+    const storage = storageWith({
+      [AUTH_KEY]: auth(NOW + 20 * DAY),
+      [FREE_ACCESS_KEY]: { tester: 'не почта' },
+    })
+    const { client } = fakeBoosty({ subscribers: [sub(1)] })
+
+    await expect(run(storage, client)).rejects.toThrow(/free-access\.json/)
+    expect(storage.files.has(SUBSCRIBERS_KEY)).toBe(false)
   })
 
   it('нет токенов в бакете — понятная ошибка', async () => {

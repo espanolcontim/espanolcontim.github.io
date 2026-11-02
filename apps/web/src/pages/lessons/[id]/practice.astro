@@ -1,5 +1,4 @@
 ---
-import { LINKS } from '../../../app/links.ts'
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
 import { buildPracticeSets } from '../../../features/practice/sets.ts'
@@ -10,7 +9,7 @@ export const getStaticPaths = lessonStaticPaths
 
 const { meta, body, channel } = await loadLesson(Astro.params.id)
 const sets = buildPracticeSets(body)
-// Платной части нет в content/public — вместо неё плашка подписки.
+// Платной части нет в content/public: подписчику её загрузит тренажёр, остальным — плашка.
 const locked = {
   phrases: meta.parts.practice === 'paid' && !body.practice,
   extras: meta.parts.extras === 'paid' && !body.extras,
@@ -23,5 +22,5 @@ const locked = {
   description={`Упражнения к уроку ${meta.number} «${meta.title}»: перевод фраз на испанский с автопроверкой и проверка после урока.`}
 >
   <LessonHeader meta={meta} channel={channel} section="Упражнения" />
-  <Trainer client:load lessonId={meta.id} sets={sets} locked={locked} boosty={LINKS.boosty} />
+  <Trainer client:load lessonId={meta.id} sets={sets} locked={locked} />
 </Page>

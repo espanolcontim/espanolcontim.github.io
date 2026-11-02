@@ -1,0 +1,49 @@
+.rule {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.pattern {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.word,
+.slot {
+  padding: 0.125rem 0.625rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+}
+
+.word {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.slot {
+  border: 1px dashed var(--text-3);
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.sign {
+  color: var(--text-3);
+  font-weight: 800;
+}
+
+.text {
+  color: var(--text-2);
+}
+
+.examples {
+  display: grid;
+  gap: 0.375rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.examples :global(.es) {
+  font-weight: 700;
+}

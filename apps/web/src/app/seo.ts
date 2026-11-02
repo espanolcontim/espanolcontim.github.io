@@ -1,6 +1,7 @@
 import type { LessonBody, LessonMeta } from '@espanolcontim/content'
 import type { LessonRepository } from '../features/lessons/LessonRepository.ts'
 import { lessonPath } from '../features/lessons/navigation.ts'
+import { SUBSCRIBE_PATH } from './links.ts'
 
 /** Поиск и превью ссылок: sitemap, описания страниц, Open Graph. */
 
@@ -49,7 +50,7 @@ export function lessonSitemapPaths(meta: LessonMeta, body: LessonBody): string[]
 
 /** Все страницы для sitemap.xml. Повторения нет: это личная страница, у неё noindex. */
 export async function sitemapPaths(lessons: LessonRepository): Promise<string[]> {
-  const paths = ['/', '/lessons/']
+  const paths = ['/', '/lessons/', SUBSCRIBE_PATH]
   for (const meta of await lessons.list()) {
     const body = await lessons.getBody(meta.id)
     if (body) paths.push(...lessonSitemapPaths(meta, body))

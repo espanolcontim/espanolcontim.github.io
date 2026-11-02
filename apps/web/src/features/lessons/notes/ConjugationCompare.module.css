@@ -1,0 +1,50 @@
+.scroll {
+  margin-top: 0.75rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 0.5rem 0.75rem 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+/*
+ * Заголовки столбцов («Единственное число») на телефоне переносятся по слогам —
+ * таблица влезает в экран. Подписи строк — только по словам, иначе рвутся все.
+ */
+.table thead th {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.table thead th {
+  font-weight: 800;
+}
+
+.table thead :global(.ru) {
+  display: block;
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.table tbody th {
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.form {
+  font-weight: 700;
+}
+
+.ending {
+  color: var(--accent);
+  font-weight: 800;
+}

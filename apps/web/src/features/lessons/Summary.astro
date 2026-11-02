@@ -1,7 +1,7 @@
 ---
 import type { Sentence, Summary } from '@espanolcontim/content'
-import Ipa from '../../shared/ui/Ipa.astro'
-import Marked from '../../shared/ui/Marked.astro'
+import { IpaText } from '../../shared/ui/IpaText.tsx'
+import { MarkedText } from '../../shared/ui/MarkedText.tsx'
 import SentenceTask from './SentenceTask.astro'
 
 /** Выжимка урока: ключевые фразы, главное правило, типичная ошибка, мини-практика. */
@@ -22,9 +22,9 @@ const { wrong, right } = summary.mistake
   <ul class="phrases">
     {summary.phrases.map((phrase) => (
       <li>
-        <Marked text={phrase.es} lang="es" class="es" /> <Ipa ipa={phrase.ipa} />
+        <MarkedText text={phrase.es} lang="es" className="es" /> <IpaText ipa={phrase.ipa} />
         <br />
-        <Marked text={phrase.ru} class="ru" />
+        <MarkedText text={phrase.ru} className="ru" />
       </li>
     ))}
   </ul>
@@ -32,7 +32,7 @@ const { wrong, right } = summary.mistake
   <div class="card rule">
     <h3>Главное правило</h3>
     <p>
-      <Marked text={summary.rule} />
+      <MarkedText text={summary.rule} />
     </p>
   </div>
 
@@ -42,10 +42,10 @@ const { wrong, right } = summary.mistake
         <span aria-hidden="true">✗ </span>
         {wrong.label ?? 'так не говорят'}
       </p>
-      <Marked text={wrong.es} lang="es" class="es" />
+      <MarkedText text={wrong.es} lang="es" className="es" />
       {wrong.ru && (
         <p class="ru">
-          <Marked text={wrong.ru} />
+          <MarkedText text={wrong.ru} />
         </p>
       )}
     </div>
@@ -54,10 +54,10 @@ const { wrong, right } = summary.mistake
         <span aria-hidden="true">✓ </span>
         {right.label ?? 'так говорят'}
       </p>
-      <Marked text={right.es} lang="es" class="es" />
+      <MarkedText text={right.es} lang="es" className="es" />
       {right.ru && (
         <p class="ru">
-          <Marked text={right.ru} />
+          <MarkedText text={right.ru} />
         </p>
       )}
     </div>

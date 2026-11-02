@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState, type MouseEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from 'react'
+import { usePaidBody } from '../lessons/usePaidBody.ts'
 import styles from './practice.module.css'
 import { Session } from './Session.tsx'
 import { SetList, type Locked } from './SetList.tsx'
-import type { PracticeSet } from './sets.ts'
+import { buildPracticeSets, mergeSets, type PracticeSet } from './sets.ts'
 
 /** Запись истории, которую тренажёр добавил сам, открыв набор из списка. */
 const FROM_LIST = { practice: 'fromList' }
@@ -12,22 +13,27 @@ const hashId = () => location.hash.slice(1) || undefined
 /**
  * Тренажёр урока — React-остров подраздела «Упражнения». Открытый набор
  * записан в адресе (#p1, #x2, #quiz): «назад» в браузере и на телефоне
- * возвращает к списку, на проверку можно сослаться прямо.
+ * возвращает к списку, на проверку можно сослаться прямо. Закрытые наборы
+ * подписчику приходят из API и встают в тот же список.
  */
 export default function Trainer({
   lessonId,
-  sets,
+  sets: freeSets,
   locked,
-  boosty,
 }: {
   lessonId: string
+  /** Наборы из бесплатной половины урока. */
   sets: PracticeSet[]
   locked: Locked
-  boosty: string
 }) {
   const [openId, setOpenId] = useState<string>()
   const [returnTo, setReturnTo] = useState<string>()
   const root = useRef<HTMLDivElement>(null)
+  const paid = usePaidBody(lessonId, locked.phrases || locked.extras)
+  const sets = useMemo(
+    () => (paid.status === 'ready' ? mergeSets(freeSets, buildPracticeSets(paid.body)) : freeSets),
+    [freeSets, paid],
+  )
   const open = sets.find((set) => set.id === openId)
 
   // Открытый набор и в ref: при возврате к списку фокус встаёт на его ссылку.
@@ -81,7 +87,7 @@ export default function Trainer({
           lessonId={lessonId}
           sets={sets}
           locked={locked}
-          boosty={boosty}
+          paid={paid.status === 'ready' ? { status: 'missing' } : paid}
           returnTo={returnTo}
           onOpen={openSet}
         />

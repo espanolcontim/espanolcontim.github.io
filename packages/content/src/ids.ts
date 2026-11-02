@@ -36,6 +36,11 @@ export function sentenceId(lesson: string, n: number): string {
   return `${lesson}-s${pad(n)}`
 }
 
+/** «a0-11-s07» → «a0-11». */
+export function sentenceLesson(sentence: string): string {
+  return sentence.slice(0, sentence.lastIndexOf('-s'))
+}
+
 /** «a0-11-s07», order → «a0-11-s07.order». */
 export function sentenceExerciseId(sentence: string, type: SentenceExercise): string {
   return `${sentence}.${type}`

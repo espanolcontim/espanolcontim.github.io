@@ -1,0 +1,15 @@
+.locked {
+  display: grid;
+  gap: 1rem;
+  justify-items: start;
+}
+
+.status {
+  display: block;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

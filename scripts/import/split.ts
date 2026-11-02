@@ -29,8 +29,10 @@ export function lessonAccess(
 }
 
 /**
- * Предложение уходит в public, если на него ссылается хотя бы одна бесплатная
- * часть, иначе — в private. Часть, у которой доступ не указан, считается платной.
+ * Предложение уходит в public, если на него ссылается бесплатная часть, и в private,
+ * если платная: у фразы, на которую ссылаются обе, копии в обеих половинах. Платная
+ * половина приходит в браузер без бесплатной и должна быть самодостаточной.
+ * Часть, у которой доступ не указан, считается платной.
  */
 export function splitLesson(
   id: string,
@@ -56,7 +58,7 @@ export function splitLesson(
   const paid: LessonBody = {
     id,
     ...paidParts,
-    sentences: converted.sentences.filter((s) => paidRefs.has(s.id) && !freeRefs.has(s.id)),
+    sentences: converted.sentences.filter((s) => paidRefs.has(s.id)),
   }
   return { free, paid }
 }

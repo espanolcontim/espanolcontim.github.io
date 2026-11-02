@@ -1,6 +1,6 @@
 ---
 import type { Sentence } from '@espanolcontim/content'
-import Marked from '../../shared/ui/Marked.astro'
+import { MarkedText } from '../../shared/ui/MarkedText.tsx'
 
 /** Задание «переведите сами»: русская фраза, ответ — под спойлером. */
 interface Props {
@@ -11,11 +11,11 @@ const { sentence } = Astro.props
 const [answer, ...alternatives] = sentence.es
 ---
 
-<Marked text={sentence.ru} />
+<MarkedText text={sentence.ru} />
 {sentence.hint && <span class="hint">({sentence.hint})</span>}
 <details>
   <summary>Ответ</summary>
-  {answer && <Marked text={answer} lang="es" class="es" />}
+  {answer && <MarkedText text={answer} lang="es" className="es" />}
   {alternatives.length > 0 && (
     <span class="ru">
       {' '}
@@ -23,7 +23,7 @@ const [answer, ...alternatives] = sentence.es
       {alternatives.map((alternative, i) => (
         <>
           {i > 0 && '; '}
-          <Marked text={alternative} lang="es" />
+          <MarkedText text={alternative} lang="es" />
         </>
       ))}
     </span>

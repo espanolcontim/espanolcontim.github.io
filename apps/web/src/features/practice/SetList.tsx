@@ -1,6 +1,8 @@
 import { useEffect, useRef, type MouseEvent, type ReactNode } from 'react'
 import { plural } from '../../shared/plural.ts'
-import { LOCKED_HINT, SUBSCRIPTION } from '../lessons/labels.ts'
+import { lessonPath } from '../lessons/navigation.ts'
+import { PaidNotice } from '../lessons/PaidNotice.tsx'
+import type { PaidNotReady } from '../lessons/usePaidBody.ts'
 import { REVIEW_PATH } from '../review/navigation.ts'
 import { resultKey, type SetResult } from '../review/progress.ts'
 import { useProgress } from '../review/useProgress.ts'
@@ -32,14 +34,16 @@ export function SetList({
   lessonId,
   sets,
   locked,
-  boosty,
+  paid,
   returnTo,
   onOpen,
 }: {
   lessonId: string
   sets: PracticeSet[]
+  /** Что закрыто в бесплатной половине урока. Закрытый набор пришёл из API — ссылка на него. */
   locked: Locked
-  boosty: string
+  /** Что показать вместо закрытого, которое не пришло. */
+  paid: PaidNotReady
   /** Набор, из которого вернулись: на его ссылку — фокус. */
   returnTo: string | undefined
   onOpen: (event: MouseEvent<HTMLAnchorElement>, id: string) => void
@@ -55,6 +59,10 @@ export function SetList({
   const quizBest = quiz && best(quiz)
 
   useEffect(() => back.current?.focus(), [])
+
+  const notice = (inside: string) => (
+    <PaidNotice paid={paid} inside={inside} from={lessonPath(lessonId, 'practice')} />
+  )
 
   const link = (set: PracticeSet, className: string, children: ReactNode) => (
     <a
@@ -81,11 +89,11 @@ export function SetList({
         </p>
       </div>
 
-      {locked.phrases && locked.extras ? (
+      {locked.phrases && locked.extras && phrases.length === 0 && extras.length === 0 ? (
         // Закрыто всё, кроме проверки, — одна плашка вместо двух одинаковых.
         <section className={styles.group} aria-labelledby="practice-locked">
           <h2 id="practice-locked">Фразы урока и дополнительные материалы</h2>
-          <LockedNote boosty={boosty} inside={`${INSIDE.phrases}, ${INSIDE.extras}`} />
+          {notice(`${INSIDE.phrases}, ${INSIDE.extras}`)}
         </section>
       ) : (
         <>
@@ -109,7 +117,7 @@ export function SetList({
                   ))}
                 </ul>
               ) : (
-                <LockedNote boosty={boosty} inside={INSIDE.phrases} />
+                notice(INSIDE.phrases)
               )}
             </section>
           )}
@@ -133,7 +141,7 @@ export function SetList({
                   ))}
                 </ul>
               ) : (
-                <LockedNote boosty={boosty} inside={INSIDE.extras} />
+                notice(INSIDE.extras)
               )}
             </section>
           )}
@@ -172,18 +180,5 @@ function SetMeta({ count, best }: { count: string; best: SetResult | undefined }
         </span>
       )}
     </span>
-  )
-}
-
-function LockedNote({ boosty, inside }: { boosty: string; inside: string }) {
-  return (
-    <div className={`card ${styles.locked}`}>
-      <p className="pill pill--lock">{SUBSCRIPTION}</p>
-      <p>Внутри — {inside}.</p>
-      <p className="ru">{LOCKED_HINT}</p>
-      <a className="button button--ghost" href={boosty}>
-        Подписка на Boosty
-      </a>
-    </div>
   )
 }

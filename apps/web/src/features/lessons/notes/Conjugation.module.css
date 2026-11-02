@@ -1,0 +1,27 @@
+.rows {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.4fr) 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-block: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.pronoun {
+  color: var(--text-2);
+}
+
+.form {
+  font-weight: 700;
+}
+
+.ending {
+  color: var(--accent);
+  font-weight: 800;
+}

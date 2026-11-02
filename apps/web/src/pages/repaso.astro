@@ -7,7 +7,9 @@ import Review from '../features/review/Review.tsx'
 import { reviewSentences } from '../features/review/sentences.ts'
 
 const sentences = await reviewSentences(container.lessons)
-const [first] = await container.lessons.list()
+const lessons = await container.lessons.list()
+const lessonNumbers = Object.fromEntries(lessons.map((lesson) => [lesson.id, lesson.number]))
+const [first] = lessons
 const intervals = BOX_LABELS.map((label) => label.replace('через ', '')).join(', ')
 ---
 
@@ -29,6 +31,7 @@ const intervals = BOX_LABELS.map((label) => label.replace('через ', '')).jo
   <Review
     client:only="react"
     sentences={sentences}
+    lessonNumbers={lessonNumbers}
     start={first ? lessonPath(first.id, 'practice') : '/lessons/'}
   />
   <noscript>
