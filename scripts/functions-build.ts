@@ -8,6 +8,7 @@
  */
 import { execFileSync } from 'node:child_process'
 import { existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
+import { isBuiltin } from 'node:module'
 import { join } from 'node:path'
 import { build } from 'rolldown'
 
@@ -21,7 +22,7 @@ for (const name of names.length ? names : ALL) {
   const dist = join(FUNCTIONS, name, 'dist')
   rmSync(dist, { recursive: true, force: true })
   mkdirSync(dist, { recursive: true })
-  await build({
+  const { output } = await build({
     input,
     platform: 'node',
     // Версия Node в среде nodejs22 Yandex Cloud — 22.15.
@@ -29,6 +30,12 @@ for (const name of names.length ? names : ALL) {
     output: { file: join(dist, 'index.js'), format: 'esm' },
     logLevel: 'warn',
   })
+  // Чего нет в node_modules, сборщик оставляет внешним импортом и не падает,
+  // а в облаке такая функция не загрузится.
+  const missing = output[0].imports.filter((id) => !isBuiltin(id))
+  if (missing.length > 0) {
+    throw new Error(`functions/${name}: не вшито ${missing.join(', ')} — сначала npm ci`)
+  }
   writeFileSync(join(dist, 'package.json'), `${JSON.stringify({ type: 'module' }, null, 2)}\n`)
   // -X — без лишних атрибутов файлов, -j — оба файла в корне архива.
   execFileSync('zip', ['-q', '-X', '-j', `${name}.zip`, 'index.js', 'package.json'], { cwd: dist })
