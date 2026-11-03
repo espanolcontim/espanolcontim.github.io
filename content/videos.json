@@ -1,4 +1,17 @@
 {
   "channel": "https://www.youtube.com/@espanolcontimur",
-  "lessons": {}
+  "lessons": {
+    "a0-01": "https://www.youtube.com/watch?v=nGDDhSmjAuQ",
+    "a0-02": "https://www.youtube.com/watch?v=-nqrr6uF9L4",
+    "a0-03": "https://www.youtube.com/watch?v=OKfPnv4vNxo",
+    "a0-04": "https://www.youtube.com/watch?v=QZjrNdXD9Y0",
+    "a0-05": "https://www.youtube.com/watch?v=JLr95kKYcTA",
+    "a0-06": "https://www.youtube.com/watch?v=KV-wPx9vNyo",
+    "a0-07": "https://www.youtube.com/watch?v=YTGW4tqh9iQ",
+    "a0-08": "https://www.youtube.com/watch?v=QueCnoraM-g",
+    "a0-09": "https://www.youtube.com/watch?v=GomcB-nTpUY",
+    "a0-10": "https://www.youtube.com/watch?v=L-NCdklIWkM",
+    "a0-11": "https://www.youtube.com/watch?v=5bq2MsEVmk0",
+    "a0-12": "https://www.youtube.com/watch?v=DUo8rzP4K_c"
+  }
 }
