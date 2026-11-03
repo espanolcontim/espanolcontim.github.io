@@ -32,3 +32,23 @@ export const normalizeEmail = (email: string): string => email.trim().toLowerCas
  */
 export const hashEmail = (email: string, secret: string): string =>
   createHmac('sha256', secret).update(normalizeEmail(email)).digest('hex')
+
+/**
+ * Тело вызова `sync` из `api`: подписчика нет в кэше — может быть, подписался только что. В этом
+ * режиме `sync` не повторяет запросы к Boosty (ученик ждёт ответа) и не обновляет токен Boosty:
+ * это дело таймера, иначе два запуска разом выбили бы друг друга — refresh token одноразовый.
+ */
+export const LOGIN_SYNC = { mode: 'login' } as const
+
+/** Вызов от `api`, а не таймер и не тест в консоли. Тело может прийти и строкой JSON. */
+export const isLoginSync = (event: unknown): boolean => {
+  let body = event
+  if (typeof body === 'string') {
+    try {
+      body = JSON.parse(body)
+    } catch {
+      return false
+    }
+  }
+  return (body as { mode?: unknown } | null | undefined)?.mode === LOGIN_SYNC.mode
+}

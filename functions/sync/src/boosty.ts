@@ -51,16 +51,22 @@ const TokenResponse = z.object({
 /** 401: accessToken истёк или отозван — стоит обновить токен и попробовать ещё раз. */
 export class BoostyUnauthorized extends Error {}
 
+export interface BoostyClientOptions {
+  fetch?: typeof fetch
+  sleep?: (ms: number) => Promise<void>
+  /** Попыток на страницу при 429 и 5xx. Из `api` — одна: ученик ждёт ответа. */
+  attempts?: number
+}
+
 export class BoostyClient {
   private readonly fetch: typeof fetch
   private readonly sleep: (ms: number) => Promise<void>
+  private readonly attempts: number
 
-  constructor(
-    fetchFn: typeof fetch = fetch,
-    sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms)),
-  ) {
-    this.fetch = fetchFn
-    this.sleep = sleep
+  constructor(options: BoostyClientOptions = {}) {
+    this.fetch = options.fetch ?? fetch
+    this.sleep = options.sleep ?? ((ms) => new Promise<void>((resolve) => setTimeout(resolve, ms)))
+    this.attempts = options.attempts ?? 3
   }
 
   /** Новая пара токенов. Старый refresh token после этого недействителен — новую пару сохранить сразу. */
@@ -123,7 +129,7 @@ export class BoostyClient {
       }
       if (res.status === 401) throw new BoostyUnauthorized('Boosty: 401, токен недействителен')
       // 429 — Boosty просит притормозить; 5xx — временный сбой.
-      if ((res.status === 429 || res.status >= 500) && attempt < 3) {
+      if ((res.status === 429 || res.status >= 500) && attempt < this.attempts) {
         await this.sleep(attempt * 5000)
         continue
       }

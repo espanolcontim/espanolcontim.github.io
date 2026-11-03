@@ -2,12 +2,14 @@
  * Функция `api` в Yandex Cloud Functions — композиционный корень в облаке. Вызывает её
  * API Gateway на `api.espanolcontim.ru` (формат запроса 1.0, `functions/api/gateway.yaml`).
  * Переменные окружения: `BUCKET`, `EMAIL_HASH_SECRET` (тот же, что у `sync`), `SESSION_SECRET`,
- * `SMTP_USER`, `SMTP_PASSWORD`; по желанию `SITE_URL` (по умолчанию https://espanolcontim.ru)
- * и `ALLOWED_ORIGINS` через запятую (по умолчанию — `SITE_URL`).
+ * `SMTP_USER`, `SMTP_PASSWORD`; по желанию `SITE_URL` (по умолчанию https://espanolcontim.ru),
+ * `ALLOWED_ORIGINS` через запятую (по умолчанию — `SITE_URL`) и `SYNC_FUNCTION_ID` — id функции
+ * `sync`: почты нет в кэше — `api` вызывает её сама. Без него новый подписчик ждёт таймера `sync`.
  */
 import { BucketStorage, requireEnv } from '@espanolcontim/functions-shared'
 import { createApi } from './api.ts'
 import { SmtpMailer } from './mailer.ts'
+import { invokeSync } from './sync.ts'
 
 interface GatewayEvent {
   httpMethod: string
@@ -26,6 +28,7 @@ export const handler = async (event: GatewayEvent, context: Context) => {
   const token = context.token?.access_token
   if (!token) throw new Error('Нет context.token: у функции не указан сервисный аккаунт')
   const siteUrl = process.env.SITE_URL ?? 'https://espanolcontim.ru'
+  const syncFunctionId = process.env.SYNC_FUNCTION_ID
   const api = createApi({
     storage: new BucketStorage(requireEnv('BUCKET'), token),
     mailer: new SmtpMailer(requireEnv('SMTP_USER'), requireEnv('SMTP_PASSWORD')),
@@ -34,6 +37,7 @@ export const handler = async (event: GatewayEvent, context: Context) => {
     emailHashSecret: requireEnv('EMAIL_HASH_SECRET'),
     siteUrl,
     allowedOrigins: (process.env.ALLOWED_ORIGINS ?? siteUrl).split(',').map((s) => s.trim()),
+    syncSubscribers: syncFunctionId ? invokeSync(syncFunctionId.trim(), token) : undefined,
   })
 
   const headers = Object.fromEntries(

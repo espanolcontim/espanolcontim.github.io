@@ -30,13 +30,14 @@
    npm run content:import   # пересобирает content/ и создаёт content/private (его нет в git)
    npm run dev              # сайт на http://localhost:4321/
    ```
-4. Claude Code запускать из `espanolcontim` с доступом к урокам:
+4. `.env` — перенести с другого компьютера руками (см. «Секреты»). Сайт, тесты и сборка работают и без него; он нужен для `sync:local`, `api:local` и `content:upload`.
+5. Claude Code запускать из `espanolcontim` с доступом к урокам:
    ```bash
    claude --add-dir ../video-lessons
    ```
-5. Для `git push` по HTTPS GitHub просит не пароль, а personal access token
+6. Для `git push` по HTTPS GitHub просит не пароль, а personal access token
    (GitHub → Settings → Developer settings → Personal access tokens).
-6. Исходник фото на главной (`docs/design/tim.png`) в git не хранится — он нужен, только чтобы заново вырезать фото; перенести вручную, если понадобится.
+7. Исходник фото на главной (`docs/design/tim.png`) в git не хранится — он нужен, только чтобы заново вырезать фото; перенести вручную, если понадобится.
 
 ## Команды
 
@@ -63,7 +64,7 @@
 
 ## Функция sync
 
-Раз в час выгружает подписчиков Boosty и пишет в приватный бакет кэш активных платных: Boosty id, хэш почты, уровень (`functions/sync/`, план — фаза 2 в `docs/SPEC.md`). Сама обновляет токен Boosty за неделю до конца (токен живёт 30 дней). Если Boosty не ответил или ответил странно, кэш не перезаписывается: вход у подписчиков продолжает работать по прежнему списку.
+Раз в час выгружает подписчиков Boosty и пишет в приватный бакет кэш активных платных: Boosty id, хэш почты, уровень (`functions/sync/`, план — фаза 2 в `docs/SPEC.md`). Ещё её вызывает `api`, когда почты нет в кэше: так новый подписчик входит сразу после оплаты. Тогда `sync` не повторяет запросы к Boosty и не обновляет токен. Токен Boosty обновляет только таймер, за неделю до конца (токен живёт 30 дней). Если Boosty не ответил или ответил странно, кэш не перезаписывается: вход у подписчиков продолжает работать по прежнему списку.
 
 **Файлы в приватном бакете** (на компьютере — в папке `.bucket/`, она в `.gitignore`):
 
@@ -104,20 +105,56 @@
 
 ## Функция api
 
-Вход подписчиков и платные уроки (`functions/api/`), за API Gateway на `https://api.espanolcontim.ru` (`docs/backend.md`). Сессия — подписанный токен на 90 дней, субъект — Boosty id; подписка проверяется на каждом запросе по кэшу `sync`. Базы нет: всё — файлы в приватном бакете.
+Вход подписчиков и платные уроки (`functions/api/`), за API Gateway на `https://api.espanolcontim.ru` (`docs/backend.md`). Сессия — подписанный токен на 90 дней, субъект — Boosty id; подписка проверяется на каждом запросе по кэшу `sync` (нет в кэше — как и для почты, сначала вызывает `sync`: так продлившему подписку не нужно входить заново). Базы нет: всё — файлы в приватном бакете.
+
+Переменные в облаке: `BUCKET`, `EMAIL_HASH_SECRET`, `SESSION_SECRET`, `SMTP_USER`, `SMTP_PASSWORD` и `SYNC_FUNCTION_ID` — id функции `sync`, не секрет (`docs/backend.md`, шаг 19). Без `SYNC_FUNCTION_ID` новый подписчик ждёт таймера.
 
 | Запрос | Что делает |
 |---|---|
-| `POST /auth/request {email}` | письмо со ссылкой `https://espanolcontim.ru/login/#token=…` (15 минут), если почта есть среди активных платных подписчиков. Ответ `{ok: true}` в любом случае — кто подписан, не видно. На один адрес — не чаще раза в минуту и не больше 5 писем в час |
+| `POST /auth/request {email}` | письмо со ссылкой `https://espanolcontim.ru/login/#token=…` (15 минут), если почта есть среди активных платных подписчиков. Нет в кэше — сначала вызывает `sync` (не чаще раза в минуту на всех) и смотрит ещё раз. Ответ `{ok: true}` в любом случае и не раньше чем через 3 секунды — ни по ответу, ни по времени не видно, кто подписан. На один адрес — не чаще раза в минуту и не больше 5 писем в час |
 | `POST /auth/verify {token}` | ссылка из письма → `{token, expiresAt}` — сессия на 90 дней |
 | `POST /auth/refresh` | сессия старше недели → новая на 90 дней, иначе та же |
 | `GET /lessons/:id/body` | платная часть урока — `lessons/<id>.json` из бакета |
 
 Сессия передаётся в `Authorization: Bearer …`. Ошибки — `{error: код}`: `bad_request` (400), `invalid_token` (401 — ссылка или сессия недействительна), `not_subscribed` (403 — подписка кончилась), `not_found` (404), `mail_failed` (502 — письмо не ушло). CORS — только для адреса сайта.
 
-**На компьютере** — `npm run api:local`: http://localhost:8787, бакет — `.bucket/`, платные уроки — прямо из `content/private/lessons`, секреты — из `.env` (`SESSION_SECRET`, `EMAIL_HASH_SECRET`, для `--send` — `SMTP_USER` и `SMTP_PASSWORD`). Платных подписчиков пока нет, поэтому для проверки входа — `npm run api:local -- --subscriber почта`. Письма печатаются в консоль; `-- --send` — отправить по-настоящему. `npm run dev` сам ходит на этот адрес: вход на сайте проверяется на http://localhost:4321/login/. Другой адрес API для сборки — `PUBLIC_API_URL`.
+**На компьютере** — `npm run api:local`: http://localhost:8787, бакет — `.bucket/`, платные уроки — прямо из `content/private/lessons`, секреты — из `.env` (`SESSION_SECRET`, `EMAIL_HASH_SECRET`, для `--send` — `SMTP_USER` и `SMTP_PASSWORD`). Войти под любой почтой, не подписываясь, — `npm run api:local -- --subscriber почта`. Письма печатаются в консоль; `-- --send` — отправить по-настоящему. `npm run dev` сам ходит на этот адрес: вход на сайте проверяется на http://localhost:4321/login/. Другой адрес API для сборки — `PUBLIC_API_URL`.
 
 **Платные уроки в бакет** — `npm run content:upload` (`-- --check` — только показать, что изменится). Проверяет файлы схемой, загружает изменённое, удаляет лишнее. Ключ — `CONTENT_UPLOAD_KEY_ID` и `CONTENT_UPLOAD_SECRET` в `.env` (`docs/backend.md`, шаг 16). Запускать после `content:import`, если изменились платные части.
+
+## Yandex Cloud
+
+Всё — в https://console.yandex.cloud под Яндекс ID почты `espanolcontim@yandex.ru`, в двух каталогах. Ключ деплоя сайта до каталога `backend` не дотягивается. Как всё создавалось, по шагам, — `docs/object-storage.md` (сайт) и `docs/backend.md` (вход, шаги 1–18); по ним же разворачивать заново.
+
+| Каталог | Что там |
+|---|---|
+| `site` | бакеты `espanolcontim.ru` (сайт) и `www.espanolcontim.ru` (переадресация), зона DNS `espanolcontim.ru.`, сертификат сайта, сервисный аккаунт `site-deploy` |
+| `backend` | приватный бакет `espanolcontim-private`; функции `sync` и `api` и одноимённые сервисные аккаунты; таймер `sync-hourly` (каждый час в :00 по UTC); API Gateway `api` на `api.espanolcontim.ru` (`functions/api/gateway.yaml`) и его сертификат; сервисный аккаунт `content-upload` |
+
+**Как обновить:**
+- сайт — push в `main`, дальше сам;
+- функцию — `git pull`, `npm ci`, `npm run functions:build` → в консоли функция → «Редактор» → «ZIP-архив» → `functions/<имя>/dist/<имя>.zip` → «Сохранить изменения». Остальные настройки и переменные консоль берёт из прошлой версии. Таймер и шлюз вызывают `$latest`, больше ничего делать не нужно;
+- платные уроки — `npm run content:upload`;
+- `overrides.json`, `free-access.json` — загрузить поверх в корень бакета. Новая почта действует сразу: её нет в кэше, и `api` сама вызовет `sync`. Убранная запись — со следующего запуска по таймеру, в течение часа; сразу — «Тестирование» функции `sync` с входными данными `{}`.
+
+Что делать, если сломалось, — `docs/backend.md`, «Если что-то сломалось».
+
+## Секреты
+
+В git нет ни одного. Значения не вставлять в чаты и не пересылать.
+
+| Секрет | Где лежит | Если утёк или потерялся |
+|---|---|---|
+| Токены Boosty | бакет, `boosty/auth.json`; `sync` обновляет их сама | взять заново из отдельного входа в Boosty («Функция sync») и загрузить поверх |
+| `EMAIL_HASH_SECRET` | переменные `sync` и `api`, `.env`; везде один и тот же | новый — в обе функции и в `.env`, потом тест `sync`: пока кэш не пересчитан, писем не будет никому |
+| `SESSION_SECRET` | переменная `api`. В `.env` — другой, для `api:local`: сессии с компьютера в облаке не действуют | новый у `api`: все сессии недействительны, подписчики входят заново |
+| `SMTP_PASSWORD` (и `SMTP_USER`) | переменные `api`, `.env` | удалить пароль приложения на id.yandex.ru, создать новый, заменить у `api` и в `.env` (`docs/backend.md`, шаг 9) |
+| `CONTENT_UPLOAD_KEY_ID`, `CONTENT_UPLOAD_SECRET` | `.env` | удалить ключ у сервисного аккаунта `content-upload`, выпустить новый (`docs/backend.md`, шаг 16) |
+| `YC_ACCESS_KEY_ID`, `YC_SECRET_ACCESS_KEY` | секреты репозитория на GitHub (Settings → Secrets and variables → Actions) | ключ `site-deploy` — удалить и выпустить новый (`docs/object-storage.md`, шаг 8) |
+
+Почта подписчиков в открытом виде — только в бакете (`overrides.json`, `free-access.json`) и в `.bucket/` на компьютере (в `.gitignore`). Файлы для бакета создавать вне папки проекта и удалять после загрузки (`docs/backend.md`, шаг 17).
+
+`.env` — в корне проекта, на каждом компьютере свой (в `.gitignore`). Строки: `BOOSTY_BLOG`, `EMAIL_HASH_SECRET`, `SESSION_SECRET`, `SMTP_USER`, `SMTP_PASSWORD`, `CONTENT_UPLOAD_KEY_ID`, `CONTENT_UPLOAD_SECRET`. Lockbox не используем: он платный, а переменные функции видит только владелец облака.
 
 ## Устройство
 

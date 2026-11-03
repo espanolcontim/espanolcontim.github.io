@@ -45,6 +45,11 @@ export interface SyncDeps {
   blog: string
   emailHashSecret: string
   now: () => number
+  /**
+   * Можно ли обновлять токен Boosty. Нет — при вызове из `api` (`LOGIN_SYNC`): обновляет только
+   * таймер, иначе два запуска разом выбили бы друг друга. По умолчанию — можно.
+   */
+  refreshToken?: boolean
 }
 
 /** Что сделал `sync` — в логи. Только числа: ни почты, ни имён, ни id. */
@@ -76,6 +81,7 @@ export const isActivePaid = (s: BoostySubscriber): boolean =>
  */
 export async function runSync(deps: SyncDeps): Promise<SyncReport> {
   const { storage, boosty, now } = deps
+  const canRefresh = deps.refreshToken ?? true
 
   let auth = await readJson(storage, AUTH_KEY, BoostyAuth)
   if (!auth) {
@@ -91,13 +97,13 @@ export async function runSync(deps: SyncDeps): Promise<SyncReport> {
     return next
   }
 
-  if (auth.expiresAt - now() < REFRESH_BEFORE_MS) auth = await refresh(auth)
+  if (canRefresh && auth.expiresAt - now() < REFRESH_BEFORE_MS) auth = await refresh(auth)
 
   let all: BoostySubscriber[]
   try {
     all = await boosty.subscribers(deps.blog, auth.accessToken)
   } catch (error) {
-    if (!(error instanceof BoostyUnauthorized) || refreshed) throw error
+    if (!(error instanceof BoostyUnauthorized) || refreshed || !canRefresh) throw error
     auth = await refresh(auth)
     all = await boosty.subscribers(deps.blog, auth.accessToken)
   }

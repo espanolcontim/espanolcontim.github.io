@@ -40,6 +40,7 @@ const fakeBoosty = (options: {
   validTokens?: string[]
   pageSize?: number
   fail?: number
+  attempts?: number
 }) => {
   const valid = new Set(options.validTokens ?? ['access-1'])
   const calls: string[] = []
@@ -73,7 +74,12 @@ const fakeBoosty = (options: {
       total: options.subscribers.length,
     })
   }) as typeof fetch
-  return { client: new BoostyClient(fetchFn, async () => {}), calls }
+  const client = new BoostyClient({
+    fetch: fetchFn,
+    sleep: async () => {},
+    ...(options.attempts ? { attempts: options.attempts } : {}),
+  })
+  return { client, calls }
 }
 
 const auth = (expiresAt: number): BoostyAuth => ({
@@ -92,13 +98,14 @@ const storageWith = (files: Record<string, unknown>) => {
 const readFile = (storage: MemoryStorage, key: string) =>
   JSON.parse(storage.files.get(key) ?? 'null')
 
-const run = (storage: MemoryStorage, client: BoostyClient) =>
+const run = (storage: MemoryStorage, client: BoostyClient, refreshToken = true) =>
   runSync({
     storage,
     boosty: client,
     blog: 'espanolcontim',
     emailHashSecret: SECRET,
     now: () => NOW,
+    refreshToken,
   })
 
 describe('runSync', () => {
@@ -208,6 +215,27 @@ describe('runSync', () => {
     expect(readFile(storage, AUTH_KEY).refreshToken).toBe('refresh-2')
   })
 
+  it('вызов из api — токен не обновляет, даже если до конца меньше недели', async () => {
+    const storage = storageWith({ [AUTH_KEY]: auth(NOW + DAY) })
+    const { client, calls } = fakeBoosty({ subscribers: [sub(1)] })
+
+    const report = await run(storage, client, false)
+
+    expect(calls).not.toContain('POST /oauth/token/')
+    expect(report).toMatchObject({ paid: 1, refreshed: false })
+    expect(readFile(storage, AUTH_KEY).refreshToken).toBe('refresh-1')
+  })
+
+  it('вызов из api, 401 — ошибка без обновления токена: обновит таймер', async () => {
+    const previous = { updatedAt: '2026-10-29T12:00:00.000Z', subscribers: [] }
+    const storage = storageWith({ [AUTH_KEY]: auth(NOW + 20 * DAY), [SUBSCRIBERS_KEY]: previous })
+    const { client, calls } = fakeBoosty({ subscribers: [sub(1)], validTokens: [] })
+
+    await expect(run(storage, client, false)).rejects.toThrow(/401/)
+    expect(calls).not.toContain('POST /oauth/token/')
+    expect(readFile(storage, SUBSCRIBERS_KEY)).toEqual(previous)
+  })
+
   it('Boosty не обновил токен — ошибка, кэш и токены прежние', async () => {
     const previous = { updatedAt: '2026-10-29T12:00:00.000Z', subscribers: [] }
     const storage = storageWith({
@@ -231,6 +259,17 @@ describe('runSync', () => {
 
     await expect(run(storage, client)).rejects.toThrow(/Boosty: 502/)
     expect(readFile(storage, SUBSCRIBERS_KEY)).toEqual(previous)
+  })
+
+  it('на 429 и 5xx — три попытки; с attempts: 1 (из api) — одна', async () => {
+    const storage = storageWith({ [AUTH_KEY]: auth(NOW + 20 * DAY) })
+    const retried = fakeBoosty({ subscribers: [sub(1)], fail: 429 })
+    const once = fakeBoosty({ subscribers: [sub(1)], fail: 429, attempts: 1 })
+
+    await expect(run(storage, retried.client)).rejects.toThrow(/Boosty: 429/)
+    await expect(run(storage, once.client)).rejects.toThrow(/Boosty: 429/)
+    expect(retried.calls).toHaveLength(3)
+    expect(once.calls).toHaveLength(1)
   })
 
   it('был список, а стал пустым — не перезаписывает кэш', async () => {

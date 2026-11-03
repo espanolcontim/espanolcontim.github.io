@@ -1,6 +1,6 @@
 import { hashEmail, MemoryStorage, SUBSCRIBERS_KEY } from '@espanolcontim/functions-shared'
 import { beforeEach, describe, expect, it } from 'vitest'
-import { createApi, LETTERS_PER_HOUR, lessonKey } from './api.ts'
+import { createApi, LETTERS_PER_HOUR, lessonKey, LINK_RESPONSE_MS, SYNC_AFTER_MS } from './api.ts'
 import type { ApiRequest } from './http.ts'
 import type { Letter } from './mailer.ts'
 import {
@@ -22,13 +22,21 @@ let now = START
 let storage: MemoryStorage
 let letters: Letter[]
 let mailFails: boolean
+/** Сколько идёт письмо, мс: на столько сдвигается `now`. */
+let mailTakes: number
+let duringSend: () => void
 let logs: Record<string, unknown>[]
+let slept: number[]
+let syncSubscribers: (() => Promise<void>) | undefined
 
-const setSubscribers = (subscribers: { id: number; email: string | null }[]) =>
+const setSubscribers = (
+  subscribers: { id: number; email: string | null }[],
+  updatedAt = START - DAY,
+) =>
   storage.files.set(
     SUBSCRIBERS_KEY,
     JSON.stringify({
-      updatedAt: new Date(START).toISOString(),
+      updatedAt: new Date(updatedAt).toISOString(),
       subscribers: subscribers.map(({ id, email }) => ({
         id,
         emailHash: email ? hashEmail(email, EMAIL_SECRET) : null,
@@ -43,6 +51,8 @@ const api = () =>
     mailer: {
       async send(letter) {
         if (mailFails) throw Object.assign(new Error('smtp: ivan@example.com'), { code: 'EAUTH' })
+        duringSend()
+        now += mailTakes
         letters.push(letter)
       },
     },
@@ -51,6 +61,10 @@ const api = () =>
     emailHashSecret: EMAIL_SECRET,
     siteUrl: SITE,
     allowedOrigins: [SITE],
+    syncSubscribers,
+    sleep: async (ms) => {
+      slept.push(ms)
+    },
     log: (entry) => logs.push(entry),
   })
 
@@ -81,7 +95,11 @@ beforeEach(() => {
   storage = new MemoryStorage()
   letters = []
   mailFails = false
+  mailTakes = 0
+  duringSend = () => {}
   logs = []
+  slept = []
+  syncSubscribers = undefined
   setSubscribers([
     { id: 101, email: 'ivan@example.com' },
     { id: 102, email: null },
@@ -155,6 +173,92 @@ describe('POST /auth/request', () => {
     const response = await call('POST', '/auth/request', { body: { email: 'ivan@example.com' } })
     expect(response.data).toEqual({ ok: true })
     expect(letters).toHaveLength(0)
+  })
+
+  it('счётчик писем записан до отправки: параллельный запрос его уже увидит', async () => {
+    let counters: unknown[] = []
+    duringSend = () => {
+      counters = [...storage.files]
+        .filter(([key]) => key.startsWith('login-requests/'))
+        .map(([, body]) => JSON.parse(body))
+    }
+    await call('POST', '/auth/request', { body: { email: 'ivan@example.com' } })
+    expect(counters).toEqual([{ sent: [START] }])
+  })
+
+  it('ответ — не раньше чем через 3 секунды: подписчику, не подписчику и на ошибку', async () => {
+    mailTakes = 1200
+    await call('POST', '/auth/request', { body: { email: 'ivan@example.com' } })
+    await call('POST', '/auth/request', { body: { email: 'petr@example.com' } })
+    await call('POST', '/auth/request', { body: { email: 'ivan' } })
+    expect(slept).toEqual([LINK_RESPONSE_MS - 1200, LINK_RESPONSE_MS, LINK_RESPONSE_MS])
+  })
+})
+
+describe('подписались или продлили подписку только что', () => {
+  const subscribeAt = (time: number) => {
+    syncSubscribers = async () => {
+      setSubscribers(
+        [
+          { id: 101, email: 'ivan@example.com' },
+          { id: 103, email: 'olga@example.com' },
+        ],
+        time,
+      )
+    }
+  }
+
+  it('почты нет в кэше — спрашивает sync и сразу отправляет письмо', async () => {
+    subscribeAt(START)
+    await call('POST', '/auth/request', { body: { email: 'olga@example.com' } })
+    expect(letters).toHaveLength(1)
+    expect(verifyToken(linkToken(letters[0]!), 'login', now, SESSION_SECRET)?.sub).toBe('103')
+  })
+
+  it('продлили — платный урок открывается сразу, без нового входа', async () => {
+    storage.files.set(lessonKey('a0-02'), '{"id":"a0-02"}')
+    subscribeAt(START)
+    const response = await call('GET', '/lessons/a0-02/body', { token: session(103) })
+    expect(response.status).toBe(200)
+  })
+
+  it('почта есть в кэше — sync не спрашивает', async () => {
+    let calls = 0
+    syncSubscribers = async () => {
+      calls++
+    }
+    await call('POST', '/auth/request', { body: { email: 'ivan@example.com' } })
+    expect(calls).toBe(0)
+    expect(letters).toHaveLength(1)
+  })
+
+  it('sync — не чаще раза в минуту на всех', async () => {
+    let calls = 0
+    syncSubscribers = async () => {
+      calls++
+      setSubscribers([{ id: 101, email: 'ivan@example.com' }], now)
+    }
+    await call('POST', '/auth/request', { body: { email: 'petr@example.com' } })
+    now += SYNC_AFTER_MS - 1
+    await call('POST', '/auth/request', { body: { email: 'anna@example.com' } })
+    expect(calls).toBe(1)
+
+    now += 1
+    await call('POST', '/auth/request', { body: { email: 'anna@example.com' } })
+    expect(calls).toBe(2)
+    expect(letters).toHaveLength(0)
+  })
+
+  it('sync упала — тот же ответ, письма нет, в логе — предупреждение', async () => {
+    syncSubscribers = async () => {
+      throw new Error('sync: 502')
+    }
+    const response = await call('POST', '/auth/request', { body: { email: 'olga@example.com' } })
+    expect(response.data).toEqual({ ok: true })
+    expect(letters).toHaveLength(0)
+    expect(logs).toContainEqual(
+      expect.objectContaining({ level: 'WARN', message: 'sync on demand' }),
+    )
   })
 })
 
