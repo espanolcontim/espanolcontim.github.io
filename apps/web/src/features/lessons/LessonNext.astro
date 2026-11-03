@@ -1,0 +1,189 @@
+---
+import type { LessonMeta } from '@espanolcontim/content'
+import { sectionNote, SECTIONS } from './labels.ts'
+import {
+  lessonPath,
+  lessonSections,
+  neighbours,
+  nextSection,
+  type LessonPage,
+  type LessonSection,
+} from './navigation.ts'
+import PaidNote from './PaidNote.astro'
+
+/**
+ * Конец страницы урока: следующий шаг — заметной карточкой, ниже — остальные подразделы
+ * и соседние уроки. Порядок: обзор → конспект → допматериалы → упражнения → следующий урок.
+ */
+interface Props {
+  meta: LessonMeta
+  lessons: LessonMeta[]
+  current: LessonPage
+  /** Строка над следующим шагом. */
+  lead?: string | undefined
+}
+
+const { meta, lessons, current, lead } = Astro.props
+const { previous, next } = neighbours(lessons, meta.id)
+const step = nextSection(meta, current)
+/** Подразделы пройдены — следующий шаг — следующий урок, и в паре соседних его уже нет. */
+const nextLesson = step ? undefined : next
+const others = lessonSections(meta).filter((section) => section !== current && section !== step)
+interface Card {
+  href: string
+  kicker?: string | undefined
+  title: string
+  text?: string | undefined
+  note?: string | undefined
+}
+const sectionCard = (section: LessonSection): Card => ({
+  href: lessonPath(meta.id, section),
+  title: SECTIONS[section].title,
+  text: SECTIONS[section].text,
+  note: sectionNote(meta, section),
+})
+const main: Card | undefined = step
+  ? sectionCard(step)
+  : nextLesson && {
+      href: lessonPath(nextLesson.id),
+      kicker: 'Следующий урок',
+      title: `Урок ${nextLesson.number}. ${nextLesson.title}`,
+    }
+/** Это последний вышедший урок — а следующего шага нет. */
+const leadText = lead ?? (main ? undefined : 'Следующий урок ещё не вышел.')
+/** Главная карточка — не этот урок: остальные подписаны, чтобы не путать. */
+const othersTitle = step ? undefined : `Ещё в уроке ${meta.number}`
+const pager = { previous, next: nextLesson ? undefined : next }
+---
+
+<section class="lesson-next" aria-labelledby="lesson-next">
+  <h2 id="lesson-next">Дальше</h2>
+  {leadText && <p class="ru">{leadText}</p>}
+
+  {main && (
+    <a class="step step--main card" href={main.href}>
+      {main.kicker && <span class="kicker">{main.kicker}</span>}
+      <span class="title">{main.title} →</span>
+      {main.text && <span class="ru">{main.text}</span>}
+      {main.note && <PaidNote note={main.note} />}
+    </a>
+  )}
+
+  {others.length > 0 && othersTitle && <h3 class="others-title">{othersTitle}</h3>}
+  {others.length > 0 && (
+    <ul class="others" aria-label="Другие разделы урока">
+      {others.map(sectionCard).map((card) => (
+        <li>
+          <a class="step card" href={card.href}>
+            <span class="title">{card.title} →</span>
+            <span class="ru">{card.text}</span>
+            {card.note && <PaidNote note={card.note} />}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {(pager.previous || pager.next) && (
+    <nav class="pager" aria-label="Соседние уроки">
+      {pager.previous && (
+        <a href={lessonPath(pager.previous.id)} rel="prev">
+          <span class="ru">← Урок {pager.previous.number}</span>
+          <span>{pager.previous.title}</span>
+        </a>
+      )}
+      {pager.next && (
+        <a class="pager-next" href={lessonPath(pager.next.id)} rel="next">
+          <span class="ru">Урок {pager.next.number} →</span>
+          <span>{pager.next.title}</span>
+        </a>
+      )}
+    </nav>
+  )}
+</section>
+
+<style>
+  .lesson-next {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .step {
+    display: grid;
+    gap: 0.375rem;
+    justify-items: start;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .step:hover {
+    border-color: var(--accent);
+  }
+
+  .step .title {
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 750;
+  }
+
+  .step--main {
+    border-color: var(--accent);
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+
+  .step--main .title {
+    font-size: 1.125rem;
+  }
+
+  .kicker {
+    color: var(--text-2);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .others-title {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .others {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .others .step {
+    height: 100%;
+  }
+
+  .pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .pager a {
+    display: grid;
+    gap: 0.125rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .pager a:hover {
+    border-color: var(--accent);
+  }
+
+  .pager .pager-next {
+    grid-column: 2;
+    text-align: right;
+  }
+</style>

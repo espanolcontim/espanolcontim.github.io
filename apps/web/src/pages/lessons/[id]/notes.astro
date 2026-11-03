@@ -1,5 +1,6 @@
 ---
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
+import LessonNext from '../../../features/lessons/LessonNext.astro'
 import { Locked } from '../../../features/lessons/Locked.tsx'
 import { lessonPath } from '../../../features/lessons/navigation.ts'
 import { NotesContent } from '../../../features/lessons/NotesContent.tsx'
@@ -9,7 +10,7 @@ import Page from '../../../app/Page.astro'
 
 export const getStaticPaths = lessonStaticPaths
 
-const { meta, body, channel } = await loadLesson(Astro.params.id)
+const { meta, body, lessons, channel } = await loadLesson(Astro.params.id)
 const inside = 'теория с транскрипцией, сводные таблицы, диалоги и новые слова'
 ---
 
@@ -19,7 +20,7 @@ const inside = 'теория с транскрипцией, сводные та�
   title={`Конспект урока ${meta.number}. ${meta.title}`}
   description={`Конспект урока ${meta.number} «${meta.title}»: правила, таблицы с транскрипцией, диалоги и новые слова.`}
 >
-  <LessonHeader meta={meta} channel={channel} section="Конспект" />
+  <LessonHeader meta={meta} channel={channel} section="notes" />
   {body.notes ? (
     <NotesContent notes={body.notes} />
   ) : (
@@ -30,4 +31,5 @@ const inside = 'теория с транскрипцией, сводные та�
       </noscript>
     </>
   )}
+  <LessonNext meta={meta} lessons={lessons} current="notes" />
 </Page>

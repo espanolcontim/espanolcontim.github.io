@@ -1,16 +1,18 @@
 ---
 import type { LessonMeta } from '@espanolcontim/content'
-import { lessonPath, planLabel, videoLink } from './navigation.ts'
+import { SECTIONS } from './labels.ts'
+import LessonTabs from './LessonTabs.astro'
+import { lessonPath, planLabel, videoLink, type LessonSection } from './navigation.ts'
 
 /**
  * Шапка урока в стиле обложек: надзаголовок, «11/14», уровень, тема.
- * На странице подраздела вместо темы — название подраздела и ссылка на урок.
+ * На странице подраздела вместо темы — название подраздела и ссылка на урок. Внизу — вкладки урока.
  */
 interface Props {
   meta: LessonMeta
   channel: string
-  /** Название подраздела: «Конспект». Без него — шапка самого урока. */
-  section?: string
+  /** Подраздел. Без него — шапка самого урока. */
+  section?: LessonSection | undefined
 }
 
 const { meta, channel, section } = Astro.props
@@ -32,7 +34,7 @@ const { meta, channel, section } = Astro.props
           ← Урок {meta.number}. {meta.title}
         </a>
       </p>
-      <h1>{section}</h1>
+      <h1>{SECTIONS[section].title}</h1>
     </>
   ) : (
     <>
@@ -51,6 +53,7 @@ const { meta, channel, section } = Astro.props
       </p>
     </>
   )}
+  <LessonTabs meta={meta} current={section ?? 'overview'} />
 </header>
 
 <style>

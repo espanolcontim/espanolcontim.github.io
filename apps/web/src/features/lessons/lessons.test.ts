@@ -1,7 +1,21 @@
 import type { LessonBody, LessonMeta } from '@espanolcontim/content'
 import { describe, expect, it } from 'vitest'
-import { patternKind, practiceNote, SUBSCRIPTION } from './labels.ts'
-import { lessonPath, neighbours, planLabel, videoLink } from './navigation.ts'
+import {
+  patternKind,
+  practiceNote,
+  sectionLocked,
+  sectionNote,
+  SUBSCRIPTION,
+  tabTitle,
+} from './labels.ts'
+import {
+  lessonPath,
+  lessonSections,
+  neighbours,
+  nextSection,
+  planLabel,
+  videoLink,
+} from './navigation.ts'
 import { StaticLessonRepository } from './StaticLessonRepository.ts'
 
 const meta = (number: number, planLesson: number, level: 'A0' | 'B2' = 'A0'): LessonMeta => ({
@@ -40,6 +54,7 @@ describe('навигация', () => {
   it('адреса со слешем на конце', () => {
     expect(lessonPath('a0-01')).toBe('/lessons/a0-01/')
     expect(lessonPath('a0-01', 'notes')).toBe('/lessons/a0-01/notes/')
+    expect(lessonPath('a0-01', 'overview')).toBe('/lessons/a0-01/')
   })
 
   it('соседние уроки', () => {
@@ -77,5 +92,41 @@ describe('пометка подписки у упражнений', () => {
     expect(practiceNote({ practice: 'free', quiz: 'paid' })).toBe(`проверка — ${SUBSCRIPTION}`)
     expect(practiceNote({ practice: 'paid', quiz: 'paid' })).toBe(SUBSCRIPTION)
     expect(practiceNote({})).toBeUndefined()
+  })
+})
+
+describe('шаги урока', () => {
+  const full: LessonMeta = {
+    ...meta(2, 2),
+    parts: { summary: 'free', notes: 'free', extras: 'paid', practice: 'free', quiz: 'free' },
+  }
+  const noExtras: LessonMeta = { ...meta(2, 2), parts: { summary: 'free', notes: 'free' } }
+
+  it('обзор → конспект → допматериалы → упражнения, потом — следующий урок', () => {
+    expect(lessonSections(full)).toEqual(['notes', 'extras', 'practice'])
+    expect(nextSection(full, 'overview')).toBe('notes')
+    expect(nextSection(full, 'notes')).toBe('extras')
+    expect(nextSection(full, 'extras')).toBe('practice')
+    expect(nextSection(full, 'practice')).toBeUndefined()
+  })
+
+  it('без допматериалов — сразу к упражнениям', () => {
+    expect(lessonSections(noExtras)).toEqual(['notes', 'practice'])
+    expect(nextSection(noExtras, 'notes')).toBe('practice')
+    expect(nextSection(noExtras, 'extras')).toBeUndefined()
+  })
+
+  it('пометки и замки подразделов', () => {
+    expect(tabTitle('overview')).toBe('Обзор')
+    expect(tabTitle('extras')).toBe('Допматериалы')
+    expect(sectionNote(full, 'notes')).toBeUndefined()
+    expect(sectionNote(full, 'extras')).toBe(SUBSCRIPTION)
+    expect(sectionLocked(full, 'extras')).toBe(true)
+    const paidPhrases: LessonMeta = { ...full, parts: { ...full.parts, practice: 'paid' } }
+    // Проверка после урока открыта — страница упражнений не закрыта целиком.
+    expect(sectionNote(paidPhrases, 'practice')).toBe(`фразы — ${SUBSCRIPTION}`)
+    expect(sectionLocked(paidPhrases, 'practice')).toBe(false)
+    const allPaid: LessonMeta = { ...paidPhrases, parts: { ...paidPhrases.parts, quiz: 'paid' } }
+    expect(sectionLocked(allPaid, 'practice')).toBe(true)
   })
 })

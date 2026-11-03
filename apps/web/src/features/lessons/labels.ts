@@ -1,4 +1,5 @@
-import type { Access, Extras, Level } from '@espanolcontim/content'
+import type { Access, Extras, LessonMeta, Level } from '@espanolcontim/content'
+import type { LessonPage, LessonSection } from './navigation.ts'
 
 /** Подписи интерфейса для уроков. */
 
@@ -36,6 +37,45 @@ export function practiceNote(parts: Partial<Record<'practice' | 'quiz', Access>>
   if (phrases) return `фразы — ${SUBSCRIPTION}`
   if (quiz) return `проверка — ${SUBSCRIPTION}`
   return undefined
+}
+
+/** Подразделы урока: название, короткое — для вкладки, и что внутри. */
+export const SECTIONS: Record<LessonSection, { title: string; tab: string; text: string }> = {
+  notes: {
+    title: 'Конспект',
+    tab: 'Конспект',
+    text: 'Теория с транскрипцией, сводные таблицы, диалоги и новые слова.',
+  },
+  extras: {
+    title: 'Дополнительные материалы',
+    tab: 'Допматериалы',
+    text: 'Живые выражения, мини-история, фразы с характером и «Испания изнутри».',
+  },
+  practice: {
+    title: 'Упражнения',
+    tab: 'Упражнения',
+    text: 'Перевод фраз урока с автопроверкой и проверка после урока.',
+  },
+}
+
+/** Вкладки урока: обзор и подразделы. */
+export function tabTitle(page: LessonPage): string {
+  return page === 'overview' ? 'Обзор' : SECTIONS[page].tab
+}
+
+/** Пометка подписки у подраздела; у «Упражнений» — что именно закрыто. */
+export function sectionNote(meta: LessonMeta, section: LessonSection): string | undefined {
+  const { parts } = meta
+  if (section === 'practice') return practiceNote(parts)
+  const access = parts[section]
+  return access && ACCESS_NOTE[access]
+}
+
+/** Закрыт ли подраздел целиком: тогда у вкладки — замок. */
+export function sectionLocked(meta: LessonMeta, section: LessonSection): boolean {
+  const { parts } = meta
+  if (section === 'practice') return parts.practice === 'paid' && parts.quiz === 'paid'
+  return parts[section] === 'paid'
 }
 
 export const CULTURE_KINDS: Record<Extras['culture']['kind'], string> = {

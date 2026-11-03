@@ -1,0 +1,49 @@
+---
+/**
+ * Пометка «в подписке» с замком: в списке уроков, на странице урока, во вкладках
+ * урока — только замок. Войти на сайт могут только подписчики, поэтому вошедшему
+ * пометка не нужна — скрипт её прячет.
+ */
+interface Props {
+  note: string
+  /** Только замок, текст — для экранных читалок. */
+  icon?: boolean
+}
+
+const { note, icon = false } = Astro.props
+---
+
+{icon ? (
+  <span class="lock" data-paid-note>
+    <span class="visually-hidden">, {note}</span>
+  </span>
+) : (
+  <span class="pill pill--lock" data-paid-note>
+    {note}
+  </span>
+)}
+
+<script>
+  import { auth } from '../../app/browser.ts'
+
+  const update = () => {
+    const signedIn = auth.session() !== undefined
+    for (const note of document.querySelectorAll<HTMLElement>('[data-paid-note]')) {
+      note.hidden = signedIn
+    }
+  }
+
+  update()
+  auth.subscribe(update)
+</script>
+
+<style>
+  .lock {
+    display: inline-flex;
+    color: var(--accent);
+  }
+
+  [data-paid-note][hidden] {
+    display: none;
+  }
+</style>

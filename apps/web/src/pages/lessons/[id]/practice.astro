@@ -1,5 +1,6 @@
 ---
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
+import LessonNext from '../../../features/lessons/LessonNext.astro'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
 import { buildPracticeSets } from '../../../features/practice/sets.ts'
 import Trainer from '../../../features/practice/Trainer.tsx'
@@ -7,7 +8,7 @@ import Page from '../../../app/Page.astro'
 
 export const getStaticPaths = lessonStaticPaths
 
-const { meta, body, channel } = await loadLesson(Astro.params.id)
+const { meta, body, lessons, channel } = await loadLesson(Astro.params.id)
 const sets = buildPracticeSets(body)
 // Платной части нет в content/public: подписчику её загрузит тренажёр, остальным — плашка.
 const locked = {
@@ -21,6 +22,16 @@ const locked = {
   title={`Упражнения к уроку ${meta.number}. ${meta.title}`}
   description={`Упражнения к уроку ${meta.number} «${meta.title}»: перевод фраз на испанский с автопроверкой и проверка после урока.`}
 >
-  <LessonHeader meta={meta} channel={channel} section="Упражнения" />
+  <LessonHeader meta={meta} channel={channel} section="practice" />
   <Trainer client:load lessonId={meta.id} sets={sets} locked={locked} />
+  <div class="next">
+    <LessonNext meta={meta} lessons={lessons} current="practice" />
+  </div>
 </Page>
+
+<style>
+  /* Пока открыт набор, «Дальше» не отвлекает: к списку возвращает кнопка тренажёра. */
+  :global(body:has([data-set-open])) .next {
+    display: none;
+  }
+</style>

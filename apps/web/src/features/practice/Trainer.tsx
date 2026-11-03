@@ -14,7 +14,8 @@ const hashId = () => location.hash.slice(1) || undefined
  * Тренажёр урока — React-остров подраздела «Упражнения». Открытый набор
  * записан в адресе (#p1, #x2, #quiz): «назад» в браузере и на телефоне
  * возвращает к списку, на проверку можно сослаться прямо. Закрытые наборы
- * подписчику приходят из API и встают в тот же список.
+ * подписчику приходят из API и встают в тот же список. Пока набор открыт, у корня —
+ * `data-set-open`: по нему страница прячет блок «Дальше».
  */
 export default function Trainer({
   lessonId,
@@ -79,7 +80,7 @@ export default function Trainer({
   }
 
   return (
-    <div ref={root} className={styles.trainer}>
+    <div ref={root} className={styles.trainer} data-set-open={open ? '' : undefined}>
       {open ? (
         <Session key={open.id} set={open} lessonId={lessonId} onClose={close} />
       ) : (
