@@ -19,8 +19,7 @@ export const ACCESS_NOTE: Record<Access, string | undefined> = {
 }
 
 /** Под плашкой закрытой части: как её открыть. */
-export const LOCKED_HINT =
-  'Подписчики Boosty входят на сайт по ссылке на почту из своего аккаунта. Эти материалы выходят и в PDF на Boosty.'
+export const LOCKED_HINT = 'Подписчики Boosty входят на сайт по ссылке на почту из своего аккаунта.'
 
 /** Под плашкой, если ученик вошёл, а подписка не активна. */
 export const LAPSED_HINT =

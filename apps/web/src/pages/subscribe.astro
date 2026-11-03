@@ -1,8 +1,12 @@
 ---
 import { PARTS, partAccess, type Part } from '@espanolcontim/content'
+import { container } from '../app/container.ts'
 import { LINKS } from '../app/links.ts'
 import Page from '../app/Page.astro'
 import { LOGIN_PATH } from '../features/auth/navigation.ts'
+import { CULTURE_KINDS } from '../features/lessons/labels.ts'
+import { lessonPath } from '../features/lessons/navigation.ts'
+import { IpaText } from '../shared/ui/IpaText.tsx'
 
 /** Таблица — из access.ts: модель доступа поменяется, и страница поменяется с ней. */
 const COLUMNS = [
@@ -21,79 +25,256 @@ const ROWS: { part: Part; title: string }[] = [
   { part: 'extras', title: 'Дополнительные материалы и упражнения к ним' },
   { part: 'quiz', title: 'Проверка после урока' },
 ]
+
+/**
+ * Образец — допматериалы первого урока: они открыты, их можно показать как есть.
+ * Платных текстов на этой странице нет — только темы и вопросы без ответов.
+ */
+const [first] = await container.lessons.list()
+const sample = first && (await container.lessons.getBody(first.id))?.extras
+const samplePhrases = sample?.phrases.filter((phrase) => phrase.ru.includes(' — ')).slice(0, 2)
 ---
 
 <Page
   title="Подписка"
-  description="Что входит в подписку «Практика» на Boosty и как подписчику войти на сайт курса «Испанский с нуля»."
+  description="Подписка «Практика» на Boosty: допматериалы к урокам — живые выражения, мини-история, факты об Испании, пословицы, скороговорки — и как войти на сайт."
 >
   <header class="page-header">
     <p class="overline">Boosty</p>
     <h1>Подписка «Практика»</h1>
     <p class="lead">
-      Видео и основа курса открыты всем. Подписка на Boosty открывает на сайте остальные материалы к
-      урокам и поддерживает выход новых.
+      Видео и основа курса открыты всем. Подписка открывает на сайте остальное — и самое живое в
+      курсе: дополнительные материалы к каждому уроку.
     </p>
-    <p>
+    <p class="actions">
       <a class="button" href={LINKS.boosty}>
         Подписка на Boosty
       </a>
+      {sample && first && (
+        <a class="button button--ghost" href={lessonPath(first.id, 'extras')}>
+          Попробовать бесплатно
+        </a>
+      )}
     </p>
     <p class="ru">
       Уровни «Практика» (290 ₽ в месяц) и «Поддержка курса» (490 ₽ в месяц) открывают одно и то же.
     </p>
   </header>
 
-  <div class="sections">
-    <section aria-labelledby="included">
-      <h2 id="included">Что входит</h2>
-      <div class="scroll">
-        <table>
-          <thead>
-            <tr>
-              <td></td>
-              {COLUMNS.map((column) => (
-                <th scope="col">{column.title}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {ROWS.map((row) => (
-              <tr>
-                <th scope="row">{row.title}</th>
-                {COLUMNS.map((column) =>
-                  partAccess(row.part, column.lesson) === 'paid' ? (
-                    <td class="paid">в подписке</td>
-                  ) : (
-                    <td class="ru">бесплатно</td>
-                  ),
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      {firstLessonOpen && <p class="ru">Первый урок каждого уровня открыт целиком.</p>}
-    </section>
+  <section aria-labelledby="extras">
+    <h2 id="extras">Что в дополнительных материалах</h2>
+    <p class="ru intro">
+      То, чего нет в видео: как говорят испанцы в жизни, немного настоящей Испании и много практики.
+    </p>
+    <ul class="grid">
+      <li class="card">
+        <h3>Живые выражения</h3>
+        <p class="ru">То, что слышишь в Испании на каждом шагу, — с транскрипцией и примером.</p>
+        <p class="es" lang="es">
+          ¡Qué va! · Es pan comido. · ¡Qué guay!
+        </p>
+      </li>
+      <li class="card">
+        <h3>Мини-история</h3>
+        <p class="ru">
+          Сериал с продолжением: Карлос из Москвы в Мадриде, его друзья Ана и Хосе и бабушка Аны,
+          которая всех расспрашивает. После каждой серии — вопросы.
+        </p>
+      </li>
+      <li class="card">
+        <h3>Фразы с характером</h3>
+        <p class="ru">Целая сценка в одной фразе: новые слова запоминаются вместе с ситуацией.</p>
+      </li>
+      <li class="card">
+        <h3>Испания изнутри</h3>
+        <p class="ru">
+          Факты об Испании, пословицы, скороговорки и песни, которые знает каждый испанец.
+        </p>
+      </li>
+      <li class="card">
+        <h3>Упражнения</h3>
+        <p class="ru">
+          Около 30 заданий к уроку: «найдите ошибку», «вставьте слово», перевод на испанский и с
+          испанского. Сайт проверяет сразу.
+        </p>
+      </li>
+      <li class="card">
+        <h3>Ваш ход</h3>
+        <p class="ru">Задание рассказать о себе новыми словами — и образец, чтобы сверить.</p>
+      </li>
+    </ul>
+  </section>
 
-    <section aria-labelledby="how-to">
-      <h2 id="how-to">Как войти на сайт</h2>
-      <ol>
-        <li>Оформите подписку на Boosty. Войти на сайт можно сразу после оплаты.</li>
+  <section aria-labelledby="did-you-know">
+    <h2 id="did-you-know">А вы знали?</h2>
+    <p class="ru intro">Несколько вопросов из рубрики «Испания изнутри». Ответы — в подписке.</p>
+    <ul class="grid questions">
+      <li class="card">
+        <p class="question">
+          Почему испанцы часто называют свой язык не <span lang="es">español</span>, а{' '}
+          <span lang="es">castellano</span> — и на каких ещё языках говорят в Испании?
+        </p>
+        <p class="lesson">Урок 2</p>
+      </li>
+      <li class="card">
+        <p class="question">Почему в Испании ужинают в десять вечера — и при чём тут часы?</p>
+        <p class="lesson">Урок 4</p>
+      </li>
+      <li class="card">
+        <p class="question">
+          Что ответить на <span lang="es">«A quien madruga, Dios le ayuda»</span>, если не любишь
+          рано вставать?
+        </p>
+        <p class="lesson">Урок 7</p>
+      </li>
+      <li class="card">
+        <p class="question">
+          Почему <span lang="es">la foto</span>, а не <span lang="es">el foto</span>, хотя слово
+          кончается на <span lang="es">-o</span>?
+        </p>
+        <p class="lesson">Урок 8</p>
+      </li>
+      <li class="card">
+        <p class="question">
+          Чем <span lang="es">cortado</span> отличается от <span lang="es">café solo</span> и как
+          пьют <span lang="es">café con hielo</span>?
+        </p>
+        <p class="lesson">Урок 10</p>
+      </li>
+      <li class="card">
+        <p class="question">
+          Куда идёт Висенте — <span lang="es">¿Dónde va Vicente?</span> — и над кем так подшучивают?
+        </p>
+        <p class="lesson">Урок 11</p>
+      </li>
+    </ul>
+    <div class="more">
+      <h3>А ещё</h3>
+      <ul>
         <li>
-          На <a href={LOGIN_PATH}>странице входа</a> укажите почту из вашего аккаунта Boosty.
+          пословицы:{' '}
+          <span lang="es" class="es">
+            Querer es poder
+          </span>
+          ,{' '}
+          <span lang="es" class="es">
+            Lo barato sale caro
+          </span>
+          ;
         </li>
         <li>
-          Откройте ссылку из письма: она действует 15 минут. Входить нужно один раз на каждом
-          устройстве.
+          народная песня{' '}
+          <span lang="es" class="es">
+            Vamos a contar mentiras
+          </span>
+          , где зайцы бегают по морю, а сардины — по горам;
         </li>
-      </ol>
-      <p class="ru">
-        В аккаунте Boosty нет почты, например вы регистрировались через VK? Напишите в{' '}
-        <a href={LINKS.boosty}>личку на Boosty</a>: подключим вход вручную.
+        <li>скороговорки, на которых язык привыкает к испанскому r.</li>
+      </ul>
+    </div>
+  </section>
+
+  {sample && first && (
+    <section aria-labelledby="try">
+      <h2 id="try">Попробуйте бесплатно</h2>
+      <p class="ru intro">Допматериалы первого урока открыты целиком. Вот немного оттуда.</p>
+      <div class="grid">
+        {sample.culture.es && (
+          <div class="card">
+            <p class="overline">Испания изнутри · {CULTURE_KINDS[sample.culture.kind]}</p>
+            <p>
+              <span lang="es" class="es big">
+                {sample.culture.es}
+              </span>{' '}
+              <IpaText ipa={sample.culture.ipa} />
+            </p>
+            {sample.culture.ru && <p class="ru">{sample.culture.ru}</p>}
+          </div>
+        )}
+        {samplePhrases && samplePhrases.length > 0 && (
+          <div class="card">
+            <p class="overline">Фразы с характером</p>
+            <ul class="phrases">
+              {samplePhrases.map((phrase) => (
+                <li>
+                  <span lang="es" class="es">
+                    {phrase.es}
+                  </span>
+                  <br />
+                  <span class="ru">{phrase.ru}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+      <p>
+        <a class="button button--ghost" href={lessonPath(first.id, 'extras')}>
+          Все допматериалы урока 1 →
+        </a>
       </p>
     </section>
-  </div>
+  )}
+
+  <section aria-labelledby="included">
+    <h2 id="included">Что бесплатно, а что — в подписке</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            {COLUMNS.map((column) => (
+              <th scope="col">{column.title}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {ROWS.map((row) => (
+            <tr>
+              <th scope="row">{row.title}</th>
+              {COLUMNS.map((column) =>
+                partAccess(row.part, column.lesson) === 'paid' ? (
+                  <td class="paid">в подписке</td>
+                ) : (
+                  <td class="ru">бесплатно</td>
+                ),
+              )}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {firstLessonOpen && <p class="ru">Первый урок каждого уровня открыт целиком.</p>}
+    <div class="card cta">
+      <p>
+        Подписчикам все материалы к урокам открыты на сайте. И подписка поддерживает курс: благодаря
+        ей выходят новые уроки.
+      </p>
+      <p>
+        <a class="button" href={LINKS.boosty}>
+          Подписка на Boosty
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="how-to">
+    <h2 id="how-to">Как войти на сайт</h2>
+    <ol class="steps">
+      <li>Оформите подписку на Boosty. Войти на сайт можно сразу после оплаты.</li>
+      <li>
+        На <a href={LOGIN_PATH}>странице входа</a> укажите почту из вашего аккаунта Boosty.
+      </li>
+      <li>
+        Откройте ссылку из письма: она действует 15 минут. Входить нужно один раз на каждом
+        устройстве.
+      </li>
+    </ol>
+    <p class="ru">
+      В аккаунте Boosty нет почты, например вы регистрировались через VK? Напишите в{' '}
+      <a href={LINKS.boosty}>личку на Boosty</a>: подключим вход вручную.
+    </p>
+  </section>
 </Page>
 
 <style>
@@ -101,22 +282,93 @@ const ROWS: { part: Part; title: string }[] = [
     display: grid;
     gap: 0.75rem;
     max-width: 40rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
 
-  .sections {
-    display: grid;
-    gap: 2.25rem;
-    max-width: 44rem;
+  .lead {
+    color: var(--text-2);
+    font-size: 1.1875rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   section {
     display: grid;
     gap: 0.875rem;
     min-width: 0;
+    margin-top: 2.5rem;
+  }
+
+  .intro,
+  .more {
+    max-width: 40rem;
+  }
+
+  .more {
+    display: grid;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+  }
+
+  .more ul {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .grid .card {
+    display: grid;
+    gap: 0.375rem;
+    align-content: start;
+  }
+
+  .es {
+    font-weight: 700;
+  }
+
+  .big {
+    font-size: 1.125rem;
+  }
+
+  .questions .card {
+    grid-template-rows: 1fr auto;
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+
+  .question {
+    font-weight: 700;
+  }
+
+  .lesson {
+    color: var(--text-3);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .phrases {
+    display: grid;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .scroll {
+    max-width: 44rem;
     overflow-x: auto;
   }
 
@@ -148,9 +400,18 @@ const ROWS: { part: Part; title: string }[] = [
     font-weight: 700;
   }
 
-  ol {
+  .cta {
+    display: grid;
+    gap: 0.875rem;
+    max-width: 44rem;
+    margin-top: 0.75rem;
+    border-color: var(--accent);
+  }
+
+  .steps {
     display: grid;
     gap: 0.5rem;
+    max-width: 44rem;
     margin: 0;
     padding-left: 1.25rem;
   }

@@ -20,9 +20,7 @@ export function PaidNotice({
     case 'loading':
       return <output className={`${styles.status} card`}>Загружаем материалы подписки…</output>
     case 'missing':
-      return (
-        <p className="card">Этих материалов на сайте пока нет — они выходят в PDF на Boosty.</p>
-      )
+      return <p className="card">Этих материалов на сайте пока нет — скоро добавим.</p>
     case 'failed':
       return (
         <div className={`${styles.locked} card`}>

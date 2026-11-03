@@ -1,13 +1,23 @@
 ---
+import { LEVEL_LESSONS, LEVELS } from '@espanolcontim/content'
 import { Picture } from 'astro:assets'
 import { container } from '../app/container.ts'
-import { LINKS } from '../app/links.ts'
+import { LINKS, SUBSCRIBE_PATH } from '../app/links.ts'
 import tim from '../assets/tim.png'
+import { LEVEL_NAMES } from '../features/lessons/labels.ts'
 import { lessonPath } from '../features/lessons/navigation.ts'
+import { REVIEW_PATH } from '../features/review/navigation.ts'
 import Page from '../app/Page.astro'
 
-const [first] = await container.lessons.list()
+const lessons = await container.lessons.list()
+const [first] = lessons
 const channel = container.videos.channel
+/** План курса: уровни, сколько уроков в плане и сколько уже вышло. */
+const plan = LEVELS.flatMap((level) => {
+  const planned = LEVEL_LESSONS[level]
+  const released = lessons.filter((lesson) => lesson.level === level).length
+  return planned ? [{ level, planned, released }] : []
+})
 ---
 
 <Page description="Испанский с нуля для русскоязычных: видеоуроки на YouTube, а здесь — конспекты, дополнительные материалы и упражнения к каждому уроку.">
@@ -29,8 +39,9 @@ const channel = container.videos.channel
     />
     <div class="body">
       <p class="lead">
-        Курс испанского для тех, кто начинает с нуля. Уроки выходят на YouTube, а здесь к каждому
-        уроку — конспект, дополнительные материалы и упражнения.
+        Курс испанского для тех, кто начинает с нуля, и для тех, кто уже учил и хочет продолжить.
+        Уроки выходят на YouTube, а здесь к каждому уроку — конспект, упражнения с автопроверкой и
+        повторение.
       </p>
       <p class="actions">
         {first && (
@@ -45,15 +56,138 @@ const channel = container.videos.channel
     </div>
   </section>
 
-  <section class="method card" aria-labelledby="method">
+  <section class="block" aria-labelledby="audience">
+    <h2 id="audience">Кому подойдёт</h2>
+    <ul class="audience">
+      <li class="card">
+        <h3>Начинаете с нуля</h3>
+        <p class="ru">
+          Идите по порядку с первого урока: каждый следующий опирается на предыдущий. Знать заранее
+          ничего не нужно.
+        </p>
+        {first && (
+          <p>
+            <a href={lessonPath(first.id)}>Начать с урока 1 →</a>
+          </p>
+        )}
+      </li>
+      <li class="card">
+        <h3>Уже учили испанский</h3>
+        <p class="ru">
+          Начните с любого урока. Выжимка на странице урока за пару минут напомнит главное, а
+          проверка после урока — она бесплатна — покажет, что стоит повторить.
+        </p>
+        <p>
+          <a href="/lessons/">Выбрать урок →</a>
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="method">
     <h2 id="method">Как устроен курс</h2>
+    <ul class="features">
+      <li>
+        <h3>Без зубрёжки</h3>
+        <p class="ru">
+          По методу Мишеля Томаса: новые слова появляются только внутри фраз. Никаких списков слов —
+          вы сразу строите предложения сами.
+        </p>
+      </li>
+      <li>
+        <h3>Говорите с первого урока</h3>
+        <p class="ru">
+          Уже в первом уроке вы здороваетесь, знакомитесь и спрашиваете, откуда собеседник, —
+          по-испански.
+        </p>
+      </li>
+      <li>
+        <h3>Грамматика по полочкам</h3>
+        <p class="ru">
+          Каждое правило — короткой формулой, например «<span lang="es">quiero</span> + инфинитив».
+          А в конспекте — сводные таблицы: всё нужное перед глазами.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block" aria-labelledby="how">
+    <h2 id="how">Как заниматься</h2>
+    <ol class="steps">
+      <li>
+        <h3>Посмотрите урок</h3>
+        <p class="ru">
+          На <a href={channel}>YouTube</a>: в каждом видео — одна тема, объяснение и много фраз для
+          перевода.
+        </p>
+      </li>
+      <li>
+        <h3>Прочитайте конспект</h3>
+        <p class="ru">
+          На странице урока — выжимка: главные фразы и правило. В конспекте — всё подробно, с
+          таблицами и диалогами.
+        </p>
+      </li>
+      <li>
+        <h3>Переводите фразы</h3>
+        <p class="ru">
+          Сайт проверяет ответ сразу. Забыли знак над буквой — засчитаем как «почти верно» и
+          подскажем где. Буквы <span lang="es">á, ñ</span> и знаки <span lang="es">¿ ¡</span> —
+          кнопками, удобно с телефона.
+        </p>
+      </li>
+      <li>
+        <h3>Пройдите проверку</h3>
+        <p class="ru">Десяток заданий по фразам урока, в конце — результат и разбор ошибок.</p>
+      </li>
+      <li>
+        <h3>Повторяйте</h3>
+        <p class="ru">
+          Решённые фразы возвращаются в <a href={REVIEW_PATH}>повторение</a> через 1, 3, 7, 14 и 30
+          дней — так они остаются в памяти. Сколько повторить сегодня, видно в шапке сайта.
+        </p>
+      </li>
+    </ol>
+    <p class="ru">Регистрация не нужна: прогресс хранится в вашем браузере.</p>
+  </section>
+
+  <section class="block" aria-labelledby="plan">
+    <h2 id="plan">План курса</h2>
+    <ul class="plan">
+      {plan.map(({ level, planned, released }) => (
+        <li>
+          <span class="level">{level}</span>
+          <span class="level-name">{LEVEL_NAMES[level]}</span>
+          <span class="ru">
+            {released === 0
+              ? `${planned} уроков, скоро`
+              : released < planned
+                ? `вышло ${released} из ${planned}`
+                : `${planned} уроков`}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="block subscription card" aria-labelledby="subscription">
+    <p class="overline">Подписка «Практика»</p>
+    <h2 id="subscription">Ещё больше живого испанского</h2>
     <p>
-      По методу Мишеля Томаса: вы переводите фразы с русского на испанский, а новые слова появляются
-      только внутри предложений — никаких списков слов для зубрёжки.
+      К каждому уроку — дополнительные материалы: выражения, которые слышишь в Испании на каждом
+      шагу, мини-история с продолжением, пословицы, скороговорки и факты об Испании. Например:
+      почему испанцы ужинают в десять вечера? И почему <span lang="es">la foto</span>, а не{' '}
+      <span lang="es">el foto</span>?
     </p>
-    <p>
-      Смотрите урок, потом закрепляйте: конспект напомнит правила, упражнения помогут довести фразы
-      до автоматизма.
+    <p class="actions">
+      <a class="button" href={SUBSCRIBE_PATH}>
+        Что в подписке
+      </a>
+      {first && (
+        <a class="button button--ghost" href={lessonPath(first.id, 'extras')}>
+          Допматериалы урока 1 — бесплатно
+        </a>
+      )}
     </p>
   </section>
 
@@ -167,9 +301,117 @@ const channel = container.videos.channel
     gap: 0.75rem;
   }
 
-  .method {
+  .block {
     display: grid;
+    gap: 0.875rem;
+    margin-top: 2.5rem;
+  }
+
+  .audience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .audience .card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.375rem;
+  }
+
+  .audience a {
+    font-weight: 750;
+    text-decoration: none;
+  }
+
+  .audience a:hover {
+    text-decoration: underline;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.75rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .features li {
+    display: grid;
+    gap: 0.375rem;
+    align-content: start;
+    padding-top: 0.75rem;
+    border-top: 2px solid var(--accent);
+  }
+
+  /* Шаги — номером слева, как в списке уроков. */
+  .steps {
+    display: grid;
+    gap: 1rem;
+    max-width: 40rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .steps li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.25rem 0.75rem;
+    counter-increment: step;
+  }
+
+  .steps li::before {
+    content: counter(step);
+    grid-row: span 2;
+    color: var(--accent);
+    font-size: 1.0625rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .plan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .plan li {
+    display: grid;
+    gap: 0.125rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  .plan .level {
+    color: var(--accent);
+    font-size: 1.3125rem;
+    font-weight: 800;
+  }
+
+  .plan .level-name {
+    font-weight: 700;
+  }
+
+  .plan .ru {
+    font-size: 0.875rem;
+  }
+
+  .subscription {
+    border-color: var(--accent);
+  }
+
+  .subscription p {
+    max-width: 40rem;
   }
 
   .links {

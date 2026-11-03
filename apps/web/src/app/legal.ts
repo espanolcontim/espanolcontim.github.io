@@ -13,7 +13,7 @@ export const OPERATOR = {
 } as const
 
 /** Дата редакции политики и согласия: меняется вместе с текстом. */
-export const POLICY_DATE = '2 ноября 2026 г.'
+export const POLICY_DATE = '3 ноября 2026 г.'
 
 export const PRIVACY_PATH = '/privacy/'
 export const CONSENT_PATH = '/privacy/consent/'
