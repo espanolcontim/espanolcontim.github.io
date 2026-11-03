@@ -28,7 +28,8 @@ const links = { youtube: container.videos.channel, ...LINKS }
 <Layout title={title} description={description} links={links} noindex={noindex}>
   <Seo slot="head" title={title} description={description} noindex={noindex} />
   <ReviewLink slot="nav" />
-  <AuthLink slot="nav" />
+  <AuthLink slot="account" />
+  <ReviewLink slot="menu" menu />
   <LessonsNav slot="sidebar" current={currentLesson} />
   <slot />
   <p slot="footer">

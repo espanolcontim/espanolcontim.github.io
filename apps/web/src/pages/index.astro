@@ -151,7 +151,7 @@ const plan = LEVELS.flatMap((level) => {
     <p class="ru">Регистрация не нужна: прогресс хранится в вашем браузере.</p>
   </section>
 
-  <section class="block" aria-labelledby="plan">
+  <section class="block plan-block" aria-labelledby="plan">
     <h2 id="plan">План курса</h2>
     <ul class="plan">
       {plan.map(({ level, planned, released }) => (
@@ -375,9 +375,17 @@ const plan = LEVELS.flatMap((level) => {
     line-height: 1.2;
   }
 
+  /*
+   * План курса: ячейки раскладываются по ширине блока, а не экрана — меню слева
+   * на широком экране отнимает место. Узко — строками («A0» слева), шире — по две,
+   * совсем широко — четыре карточки. Иначе «подготовительный» не влезает.
+   */
+  .plan-block {
+    container-type: inline-size;
+  }
+
   .plan {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
     gap: 0.75rem;
     margin: 0;
     padding: 0;
@@ -386,24 +394,49 @@ const plan = LEVELS.flatMap((level) => {
 
   .plan li {
     display: grid;
-    gap: 0.125rem;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    grid-template-areas:
+      'level name'
+      'level count';
+    gap: 0 0.5rem;
+    align-items: baseline;
     padding: 0.75rem 1rem;
     border: 1px solid var(--line);
     border-radius: var(--radius);
   }
 
   .plan .level {
+    grid-area: level;
     color: var(--accent);
     font-size: 1.3125rem;
     font-weight: 800;
   }
 
   .plan .level-name {
+    grid-area: name;
     font-weight: 700;
   }
 
   .plan .ru {
+    grid-area: count;
     font-size: 0.875rem;
+  }
+
+  @container (min-width: 30rem) {
+    .plan {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @container (min-width: 56rem) {
+    .plan {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .plan li {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: 'level' 'name' 'count';
+    }
   }
 
   .subscription {

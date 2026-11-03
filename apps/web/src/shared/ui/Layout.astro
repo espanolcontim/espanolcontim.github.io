@@ -7,10 +7,12 @@ import '../styles/theme.css'
 import '../styles/global.css'
 
 /**
- * Каркас страницы: шапка (ссылки — слот nav), слева меню (слот sidebar), справа контент;
+ * Каркас страницы: шапка, слева меню (слот sidebar), справа контент;
  * в <head> — слот head (превью ссылок, значки), в подвале — слот footer, поверх страницы — overlay.
+ * В шапке слот account (вход) — всегда, слот nav и ссылки курса — от планшета; на телефоне
+ * они в выезжающем меню, над слотом sidebar: слот menu и те же ссылки.
  * На широком экране меню видно всегда и не уезжает при прокрутке,
- * на телефоне выезжает по кнопке «Уроки».
+ * на телефоне и планшете выезжает по кнопке «Меню».
  */
 interface Props {
   /** Заголовок страницы; к нему добавится «— Español con Tim». */
@@ -49,15 +51,18 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
           aria-expanded="false"
           data-sidebar-toggle
         >
-          <span aria-hidden="true">☰</span> Уроки
+          <span aria-hidden="true">☰</span> Меню
         </button>
         <a class="logo" href="/">
           <span>Español</span> <span>con Tim</span>
         </a>
         <nav class="topnav" aria-label="Ссылки курса">
-          <slot name="nav" />
-          <a href={links.youtube}>YouTube</a>
-          <a href={links.boosty}>Boosty</a>
+          <span class="wide">
+            <slot name="nav" />
+            <a href={links.youtube}>YouTube</a>
+            <a href={links.boosty}>Boosty</a>
+          </span>
+          <slot name="account" />
         </nav>
       </div>
     </header>
@@ -67,6 +72,14 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
         <button class="sidebar-close" type="button" data-sidebar-close>
           <span aria-hidden="true">✕</span> Закрыть
         </button>
+        <nav class="menu-links" aria-label="Ссылки курса">
+          <slot name="menu" />
+          <p class="menu-external">
+            <a href={links.youtube}>YouTube</a>
+            <a href={links.boosty}>Boosty</a>
+            <a href={links.telegram}>Telegram</a>
+          </p>
+        </nav>
         <slot name="sidebar" />
       </aside>
       <div class="column">
@@ -90,7 +103,7 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
 </html>
 
 <script>
-  // Меню на телефоне: кнопка «Уроки», подложка и Esc закрывают.
+  // Меню на телефоне и планшете: кнопка «Меню», подложка и Esc закрывают.
   const sidebar = document.getElementById('sidebar')
   const backdrop = document.querySelector<HTMLElement>('[data-backdrop]')
   const button = document.querySelector<HTMLButtonElement>('[data-sidebar-toggle]')
@@ -171,7 +184,12 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     margin-left: auto;
   }
 
-  .topnav a {
+  .wide {
+    display: contents;
+  }
+
+  .topnav a,
+  .menu-external a {
     padding-block: 0.375rem;
     color: var(--text-2);
     font-size: 0.875rem;
@@ -179,13 +197,35 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     text-decoration: none;
   }
 
-  .topnav a:hover {
+  .topnav a:hover,
+  .menu-external a:hover {
     color: var(--accent);
   }
 
-  /* На телефоне в шапке только ссылки из слота; YouTube и Boosty — в подвале. */
+  .menu-links {
+    display: grid;
+    gap: 0.25rem;
+    justify-items: start;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .menu-external {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 1.25rem;
+  }
+
+  /* Телефон: в шапке — меню, название и вход; остальное — в выезжающем меню. */
   @media (max-width: 39.99rem) {
-    .topnav a {
+    .wide {
+      display: none;
+    }
+  }
+
+  @media (min-width: 40rem) {
+    .menu-links {
       display: none;
     }
   }
@@ -208,13 +248,6 @@ const fullTitle = title ? `${title} — Español con Tim` : 'Español con Tim �
     font-weight: 700;
     white-space: nowrap;
     cursor: pointer;
-  }
-
-  /* Узкий телефон: промежутки поменьше, чтобы «Повторение» со счётчиком влезало. */
-  @media (max-width: 24.99rem) {
-    .topbar-inner {
-      gap: 0.5rem;
-    }
   }
 
   .sidebar {

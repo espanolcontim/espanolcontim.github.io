@@ -1,10 +1,18 @@
 ---
 import { REVIEW_PATH } from './navigation.ts'
 
-/** Ссылка «Повторение» в шапке со счётчиком фраз на сегодня. Счётчик — из прогресса в браузере. */
+/**
+ * Ссылка «Повторение» со счётчиком фраз на сегодня: в шапке, а на телефоне — в меню (menu),
+ * там крупнее. Счётчик — из прогресса в браузере.
+ */
+interface Props {
+  menu?: boolean
+}
+
+const { menu = false } = Astro.props
 ---
 
-<a class="review-link" href={REVIEW_PATH}>
+<a class:list={['review-link', { menu }]} href={REVIEW_PATH}>
   Повторение
   <span class="count" data-review-due hidden>
     <span class="visually-hidden">, на сегодня: </span>
@@ -45,6 +53,11 @@ import { REVIEW_PATH } from './navigation.ts'
 
   .review-link:hover {
     color: var(--accent);
+  }
+
+  .menu {
+    color: var(--text);
+    font-size: 1rem;
   }
 
   .count {

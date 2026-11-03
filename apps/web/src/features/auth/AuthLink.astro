@@ -2,9 +2,8 @@
 import { LOGIN_PATH } from './navigation.ts'
 
 /**
- * Вход в шапке: «Войти» или «Вы вошли» — там же и выход. На самых узких экранах в шапку
- * не влезает: там вход — в подвале и на плашках подписки. Скрипт есть на всех страницах,
- * поэтому здесь же продлевается сессия.
+ * Вход в шапке: «Войти» или «Вы вошли» — там же и выход. На телефоне — кнопкой в рамке,
+ * как «Меню» напротив. Скрипт есть на всех страницах, поэтому здесь же продлевается сессия.
  */
 ---
 
@@ -45,9 +44,12 @@ import { LOGIN_PATH } from './navigation.ts'
     color: var(--accent);
   }
 
-  @media (max-width: 24.99rem) {
+  @media (max-width: 39.99rem) {
     .auth-link {
-      display: none;
+      padding: 0 0.625rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--text);
     }
   }
 </style>
