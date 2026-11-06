@@ -1,0 +1,1387 @@
+{
+  "id": "a0-12",
+  "summary": {
+    "phrases": [
+      {
+        "es": "¿Dónde **estás**?",
+        "ru": "Где ты?",
+        "ipa": "ˈdonde esˈtas"
+      },
+      {
+        "es": "**Estoy** en la oficina.",
+        "ru": "Я в офисе.",
+        "ipa": "esˈtoj en la ofiˈθina"
+      },
+      {
+        "es": "Los niños **están** en casa.",
+        "ru": "Дети дома.",
+        "ipa": "los ˈniɲos esˈtan en ˈkasa"
+      },
+      {
+        "es": "¿Dónde está el **baño**?",
+        "ru": "Где туалет?",
+        "ipa": "ˈdonde esˈta el ˈbaɲo"
+      },
+      {
+        "es": "¿**Cómo estás**?",
+        "ru": "Как ты?",
+        "ipa": "ˈkomo esˈtas"
+      },
+      {
+        "es": "Hoy estoy **cansado**.",
+        "ru": "Сегодня я устал.",
+        "ipa": "ˈoj esˈtoj kanˈsado"
+      },
+      {
+        "es": "¿**Hay** un baño aquí?",
+        "ru": "Здесь есть туалет?",
+        "ipa": "ˈaj un ˈbaɲo aˈki"
+      },
+      {
+        "es": "**No hay** café.",
+        "ru": "Кофе нет.",
+        "ipa": "no ˈaj kaˈfe"
+      }
+    ],
+    "rule": "Где ты и как ты сейчас — **estar**: Estoy en casa. Estoy cansado. Кто ты и какой — **ser**: Soy de Madrid. Новое, «какое-то» — **hay un / una**: Hay un bar aquí. Известное, «то самое» — **el / la … está**: El bar está aquí.",
+    "mistake": {
+      "wrong": {
+        "es": "**Soy** en casa."
+      },
+      "right": {
+        "es": "**Estoy** en casa.",
+        "ru": "Я дома."
+      }
+    },
+    "practice": [
+      "a0-12-s28",
+      "a0-12-s31",
+      "a0-12-s32",
+      "a0-12-s35",
+      "a0-12-s25"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Глагол estar",
+        "hint": "Второе «быть»: где и как — прямо сейчас",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Где я и как я",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "estar — **Estoy** en casa.",
+                "ru": "Я дома.",
+                "ipa": "esˈtaɾ · esˈtoj en ˈkasa"
+              },
+              {
+                "es": "Hoy **estoy** en Moscú.",
+                "ru": "Сегодня я в Москве.",
+                "ipa": "ˈoj esˈtoj en mosˈku"
+              },
+              {
+                "es": "**Estoy** en la oficina.",
+                "ru": "Я в офисе.",
+                "ipa": "esˈtoj en la ofiˈθina"
+              },
+              {
+                "es": "No **estoy** en casa.",
+                "ru": "Меня нет дома.",
+                "ipa": "no esˈtoj en ˈkasa"
+              },
+              {
+                "es": "**Estoy** bien.",
+                "ru": "У меня всё хорошо.",
+                "ipa": "esˈtoj ˈbjen"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "estar",
+            "ru": "быть, находиться",
+            "rows": [
+              {
+                "stem": "est",
+                "ending": "oy",
+                "ipa": "esˈtoj",
+                "pronoun": "yo",
+                "ru": "я нахожусь"
+              },
+              {
+                "stem": "est",
+                "ending": "ás",
+                "ipa": "esˈtas",
+                "pronoun": "tú",
+                "ru": "ты находишься"
+              },
+              {
+                "stem": "est",
+                "ending": "á",
+                "ipa": "esˈta",
+                "pronoun": "él / ella / usted",
+                "ru": "он, она находится"
+              },
+              {
+                "stem": "est",
+                "ending": "amos",
+                "ipa": "esˈtamos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "мы находимся"
+              },
+              {
+                "stem": "est",
+                "ending": "áis",
+                "ipa": "esˈtais",
+                "pronoun": "vosotros / vosotras",
+                "ru": "вы находитесь"
+              },
+              {
+                "stem": "est",
+                "ending": "án",
+                "ipa": "esˈtan",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "они находятся"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Где ты?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿Dónde **estás**?",
+                "ru": "Где ты?",
+                "ipa": "ˈdonde esˈtas"
+              },
+              {
+                "es": "Ana **está** en Madrid.",
+                "ru": "Ана в Мадриде.",
+                "ipa": "ˈana esˈta en maˈdɾid"
+              },
+              {
+                "es": "**Estamos** en el centro.",
+                "ru": "Мы в центре.",
+                "ipa": "esˈtamos en el ˈθentɾo"
+              },
+              {
+                "es": "Los niños **están** en casa.",
+                "ru": "Дети дома.",
+                "ipa": "los ˈniɲos esˈtan en ˈkasa"
+              }
+            ]
+          },
+          {
+            "type": "conjugationCompare",
+            "title": "hablar и estar",
+            "verbs": [
+              {
+                "verb": "hablar",
+                "ru": "говорить"
+              },
+              {
+                "verb": "estar",
+                "ru": "быть, находиться"
+              }
+            ],
+            "rows": [
+              {
+                "pronoun": "yo",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "o",
+                    "ipa": "ˈablo"
+                  },
+                  {
+                    "stem": "est",
+                    "ending": "oy",
+                    "ipa": "esˈtoj"
+                  }
+                ]
+              },
+              {
+                "pronoun": "tú",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "as",
+                    "ipa": "ˈablas"
+                  },
+                  {
+                    "stem": "est",
+                    "ending": "ás",
+                    "ipa": "esˈtas"
+                  }
+                ]
+              },
+              {
+                "pronoun": "él / ella / usted",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "a",
+                    "ipa": "ˈabla"
+                  },
+                  {
+                    "stem": "est",
+                    "ending": "á",
+                    "ipa": "esˈta"
+                  }
+                ]
+              },
+              {
+                "pronoun": "nosotros / nosotras",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "amos",
+                    "ipa": "aˈblamos"
+                  },
+                  {
+                    "stem": "est",
+                    "ending": "amos",
+                    "ipa": "esˈtamos"
+                  }
+                ]
+              },
+              {
+                "pronoun": "vosotros / vosotras",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "áis",
+                    "ipa": "aˈblais"
+                  },
+                  {
+                    "stem": "est",
+                    "ending": "áis",
+                    "ipa": "esˈtais"
+                  }
+                ]
+              },
+              {
+                "pronoun": "ellos / ellas / ustedes",
+                "forms": [
+                  {
+                    "stem": "habl",
+                    "ending": "an",
+                    "ipa": "ˈablan"
+                  },
+                  {
+                    "stem": "est",
+                    "ending": "án",
+                    "ipa": "esˈtan"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Где? estar en + место",
+        "hint": "Где кто-то или что-то находится — всегда estar",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "В городе",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Estoy en el **supermercado**.",
+                "ru": "Я в супермаркете.",
+                "ipa": "esˈtoj en el supeɾmeɾˈkado"
+              },
+              {
+                "es": "¿Dónde está el **metro**?",
+                "ru": "Где метро?",
+                "ipa": "ˈdonde esˈta el ˈmetɾo"
+              },
+              {
+                "es": "Estamos en un **bar**.",
+                "ru": "Мы в баре.",
+                "ipa": "esˈtamos en un ˈbaɾ"
+              },
+              {
+                "es": "Ana está en el **museo**.",
+                "ru": "Ана в музее.",
+                "ipa": "ˈana esˈta en el muˈse.o"
+              },
+              {
+                "es": "Carlos está en la **plaza**.",
+                "ru": "Карлос на площади.",
+                "ipa": "ˈkaɾlos esˈta en la ˈplaθa"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Где вы сейчас?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Estoy en la **calle**.",
+                "ru": "Я на улице.",
+                "ipa": "esˈtoj en la ˈkaje"
+              },
+              {
+                "es": "Ella está en el **hospital**.",
+                "ru": "Она в больнице.",
+                "ipa": "ˈeja esˈta en el ospiˈtal"
+              },
+              {
+                "es": "El niño está en el **colegio**.",
+                "ru": "Ребёнок в школе.",
+                "ipa": "el ˈniɲo esˈta en el koˈlexjo"
+              },
+              {
+                "es": "Estoy en el **gimnasio**.",
+                "ru": "Я в спортзале.",
+                "ipa": "esˈtoj en el ximˈnasjo"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Дома и рядом",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Ana está en la **cocina**.",
+                "ru": "Ана на кухне.",
+                "ipa": "ˈana esˈta en la koˈθina"
+              },
+              {
+                "es": "¿Dónde está el **baño**?",
+                "ru": "Где туалет?",
+                "ipa": "ˈdonde esˈta el ˈbaɲo"
+              },
+              {
+                "es": "Estoy **aquí**.",
+                "ru": "Я здесь.",
+                "ipa": "esˈtoj aˈki"
+              },
+              {
+                "es": "Estoy **con** Carlos.",
+                "ru": "Я с Карлосом.",
+                "ipa": "esˈtoj kon ˈkaɾlos"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "¿Dónde está…?",
+            "pattern": [
+              "¿dónde está",
+              "+",
+              "el / la",
+              "+",
+              "кто / что"
+            ],
+            "text": "Спрашиваем о конкретном месте или человеке. Если их несколько — están.",
+            "examples": [
+              {
+                "es": "¿Dónde **está** la plaza?",
+                "ru": "Где площадь?",
+                "ipa": "ˈdonde esˈta la ˈplaθa"
+              },
+              {
+                "es": "¿Dónde **están** los niños?",
+                "ru": "Где дети?",
+                "ipa": "ˈdonde esˈtan los ˈniɲos"
+              },
+              {
+                "es": "¿Dónde **está** Carlos?",
+                "ru": "Где Карлос?",
+                "ipa": "ˈdonde esˈta ˈkaɾlos"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Как дела? estar + состояние",
+        "hint": "Как вы себя чувствуете сейчас — тоже estar",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "¿Cómo estás?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**Cómo estás**?",
+                "ru": "Как ты?",
+                "ipa": "ˈkomo esˈtas"
+              },
+              {
+                "es": "¿**Qué tal**?",
+                "ru": "Как дела?",
+                "ipa": "ke ˈtal"
+              },
+              {
+                "es": "**Regular**.",
+                "ru": "Так себе.",
+                "ipa": "reguˈlaɾ"
+              },
+              {
+                "es": "Estoy **fatal**.",
+                "ru": "Мне очень плохо.",
+                "ipa": "esˈtoj faˈtal"
+              },
+              {
+                "es": "¿Cómo **está** usted?",
+                "ru": "Как у вас дела?",
+                "ipa": "ˈkomo esˈta usˈted"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Как вы себя чувствуете",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Hoy estoy **cansado**.",
+                "ru": "Сегодня я устал.",
+                "ipa": "ˈoj esˈtoj kanˈsado"
+              },
+              {
+                "es": "Ana está **enferma**.",
+                "ru": "Ана болеет.",
+                "ipa": "ˈana esˈta enˈfeɾma"
+              },
+              {
+                "es": "Estamos muy **contentos**.",
+                "ru": "Мы очень довольны.",
+                "ipa": "esˈtamos ˈmuj konˈtentos"
+              },
+              {
+                "es": "¿Estás **ocupada**?",
+                "ru": "Ты занята?",
+                "ipa": "esˈtas okuˈpada"
+              },
+              {
+                "es": "Carlos está **listo**.",
+                "ru": "Карлос готов.",
+                "ipa": "ˈkaɾlos esˈta ˈlisto"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "estar + прилагательное",
+            "pattern": [
+              "estar",
+              "+",
+              "прилагательное"
+            ],
+            "text": "Прилагательное согласуется в роде и числе, как в уроке 9.",
+            "examples": [
+              {
+                "es": "Carlos está **cansado**.",
+                "ru": "Карлос устал.",
+                "ipa": "ˈkaɾlos esˈta kanˈsado"
+              },
+              {
+                "es": "Ana está **cansada**.",
+                "ru": "Ана устала.",
+                "ipa": "ˈana esˈta kanˈsada"
+              },
+              {
+                "es": "Ana y Carlos están **cansados**.",
+                "ru": "Ана и Карлос устали.",
+                "ipa": "ˈana i ˈkaɾlos esˈtan kanˈsados"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "hay — «есть, имеется»",
+        "hint": "Есть ли здесь что-то — hay; где именно оно — está",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Здесь есть…",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Hay** un supermercado aquí.",
+                "ru": "Здесь есть супермаркет.",
+                "ipa": "ˈaj un supeɾmeɾˈkado aˈki"
+              },
+              {
+                "es": "¿**Hay** un baño aquí?",
+                "ru": "Здесь есть туалет?",
+                "ipa": "ˈaj un ˈbaɲo aˈki"
+              },
+              {
+                "es": "En casa **hay** pan.",
+                "ru": "Дома есть хлеб.",
+                "ipa": "en ˈkasa ˈaj ˈpan"
+              },
+              {
+                "es": "**No hay** café.",
+                "ru": "Кофе нет.",
+                "ipa": "no ˈaj kaˈfe"
+              },
+              {
+                "es": "**Hay** unos libros en la mesa.",
+                "ru": "На столе лежат книги.",
+                "ipa": "ˈaj ˈunos ˈlibɾos en la ˈmesa"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "hay + un / una",
+            "pattern": [
+              "hay",
+              "+",
+              "un / una",
+              "+",
+              "существительное"
+            ],
+            "text": "hay не меняется. После него — un, una или ничего, но не el и la.",
+            "examples": [
+              {
+                "es": "Hay **un** bar en la plaza.",
+                "ru": "На площади есть бар.",
+                "ipa": "ˈaj un ˈbaɾ en la ˈplaθa"
+              },
+              {
+                "es": "Hay **unas** revistas aquí.",
+                "ru": "Здесь лежат журналы.",
+                "ipa": "ˈaj ˈunas reˈbistas aˈki"
+              },
+              {
+                "es": "**No hay** pan.",
+                "ru": "Хлеба нет.",
+                "ipa": "no ˈaj ˈpan"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "hay или está",
+            "left": {
+              "label": "hay — какой-то",
+              "items": [
+                {
+                  "es": "Hay un bar aquí."
+                },
+                {
+                  "es": "¿Hay un baño aquí?"
+                },
+                {
+                  "es": "Hay un libro en la mesa."
+                }
+              ]
+            },
+            "right": {
+              "label": "está — тот самый",
+              "items": [
+                {
+                  "es": "El bar está aquí."
+                },
+                {
+                  "es": "¿Dónde está el baño?"
+                },
+                {
+                  "es": "El libro está en la mesa."
+                }
+              ]
+            }
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**Está un** baño aquí."
+                },
+                {
+                  "es": "**Hay el** metro aquí."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**Hay un** baño aquí.",
+                  "ru": "Здесь есть туалет."
+                },
+                {
+                  "es": "El metro **está** aquí.",
+                  "ru": "Метро здесь."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "section-5",
+        "title": "ser или estar",
+        "hint": "ser — кто и какой; estar — где и как сейчас",
+        "blocks": [
+          {
+            "type": "compare",
+            "title": "ser или estar",
+            "left": {
+              "label": "ser — кто, какой",
+              "items": [
+                {
+                  "es": "Soy de Madrid."
+                },
+                {
+                  "es": "¿Cómo es Ana?"
+                },
+                {
+                  "es": "Carlos es médico."
+                }
+              ]
+            },
+            "right": {
+              "label": "estar — где, как сейчас",
+              "items": [
+                {
+                  "es": "Estoy en Madrid."
+                },
+                {
+                  "es": "¿Cómo está Ana?"
+                },
+                {
+                  "es": "Carlos está enfermo."
+                }
+              ]
+            }
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**Soy** en casa."
+                },
+                {
+                  "es": "**Soy** cansado."
+                },
+                {
+                  "es": "Ana **está** médica."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**Estoy** en casa.",
+                  "ru": "Я дома."
+                },
+                {
+                  "es": "**Estoy** cansado.",
+                  "ru": "Я устал."
+                },
+                {
+                  "es": "Ana **es** médica.",
+                  "ru": "Ана врач."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Ты где?",
+        "lines": [
+          {
+            "es": "¡Hola, Ana! ¿**Qué tal**?",
+            "ru": "Привет, Ана! Как дела?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡Hola, Carlos! **Estoy** bien. ¿**Dónde estás**?",
+            "ru": "Привет, Карлос! Хорошо. Ты где?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Estoy** en Madrid, en la plaza Mayor.",
+            "ru": "Я в Мадриде, на Пласа-Майор.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿En Madrid? ¿Y **cómo estás**?",
+            "ru": "В Мадриде? И как ты?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Estoy** muy **cansado**. ¿**Hay** un bar aquí?",
+            "ru": "Очень устал. Здесь есть бар?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, **hay** un bar en la plaza.",
+            "ru": "Да, на площади есть бар.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Y tú? ¿**Estás ocupada**?",
+            "ru": "А ты? Ты занята?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí. Pero esta noche vamos a cenar juntos.",
+            "ru": "Да. Но вечером мы вместе поужинаем.",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "estar",
+        "ru": "быть, находиться",
+        "pos": "verb",
+        "ipa": "esˈtaɾ"
+      },
+      {
+        "es": "hay",
+        "ru": "есть, имеется",
+        "pos": "verb",
+        "ipa": "ˈaj"
+      },
+      {
+        "es": "aquí",
+        "ru": "здесь",
+        "pos": "adv",
+        "ipa": "aˈki"
+      },
+      {
+        "es": "con",
+        "ru": "с",
+        "pos": "prep",
+        "ipa": "kon"
+      },
+      {
+        "es": "el supermercado",
+        "ru": "супермаркет",
+        "pos": "noun",
+        "ipa": "el supeɾmeɾˈkado"
+      },
+      {
+        "es": "el metro",
+        "ru": "метро",
+        "pos": "noun",
+        "ipa": "el ˈmetɾo"
+      },
+      {
+        "es": "el bar",
+        "ru": "бар",
+        "pos": "noun",
+        "ipa": "el ˈbaɾ"
+      },
+      {
+        "es": "el museo",
+        "ru": "музей",
+        "pos": "noun",
+        "ipa": "el muˈse.o"
+      },
+      {
+        "es": "la plaza",
+        "ru": "площадь",
+        "pos": "noun",
+        "ipa": "la ˈplaθa"
+      },
+      {
+        "es": "la calle",
+        "ru": "улица",
+        "pos": "noun",
+        "ipa": "la ˈkaje"
+      },
+      {
+        "es": "el hospital",
+        "ru": "больница",
+        "pos": "noun",
+        "ipa": "el ospiˈtal"
+      },
+      {
+        "es": "el colegio",
+        "ru": "школа",
+        "pos": "noun",
+        "ipa": "el koˈlexjo"
+      },
+      {
+        "es": "el gimnasio",
+        "ru": "спортзал",
+        "pos": "noun",
+        "ipa": "el ximˈnasjo"
+      },
+      {
+        "es": "la cocina",
+        "ru": "кухня",
+        "pos": "noun",
+        "ipa": "la koˈθina"
+      },
+      {
+        "es": "el baño",
+        "ru": "туалет, ванная",
+        "pos": "noun",
+        "ipa": "el ˈbaɲo"
+      },
+      {
+        "es": "cansado",
+        "ru": "уставший",
+        "pos": "adj",
+        "ipa": "kanˈsado"
+      },
+      {
+        "es": "enfermo",
+        "ru": "больной",
+        "pos": "adj",
+        "ipa": "enˈfeɾmo"
+      },
+      {
+        "es": "contento",
+        "ru": "довольный",
+        "pos": "adj",
+        "ipa": "konˈtento"
+      },
+      {
+        "es": "ocupado",
+        "ru": "занятый",
+        "pos": "adj",
+        "ipa": "okuˈpado"
+      },
+      {
+        "es": "listo",
+        "ru": "готовый",
+        "pos": "adj",
+        "ipa": "ˈlisto"
+      },
+      {
+        "es": "¿cómo estás?",
+        "ru": "как ты?, как дела?",
+        "pos": "phrase",
+        "ipa": "ˈkomo esˈtas"
+      },
+      {
+        "es": "¿qué tal?",
+        "ru": "как дела?",
+        "pos": "phrase",
+        "ipa": "ke ˈtal"
+      },
+      {
+        "es": "regular",
+        "ru": "так себе",
+        "pos": "adv",
+        "ipa": "reguˈlaɾ"
+      },
+      {
+        "es": "fatal",
+        "ru": "ужасно, очень плохо",
+        "pos": "adv",
+        "ipa": "faˈtal"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Спрягать estar: estoy, estás, está, estamos",
+        "Говорить, где вы: estoy en casa, ¿dónde está…?",
+        "Говорить, как вы: estoy cansado, ¿qué tal?",
+        "Говорить, что где есть: hay un bar aquí",
+        "Выбирать между ser и estar"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 13: моё — tener, притяжательные, числа"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Где?",
+      "sentenceIds": [
+        "a0-12-s01",
+        "a0-12-s02",
+        "a0-12-s03",
+        "a0-12-s04",
+        "a0-12-s05",
+        "a0-12-s06",
+        "a0-12-s07",
+        "a0-12-s08",
+        "a0-12-s09"
+      ]
+    },
+    {
+      "name": "Как дела?",
+      "sentenceIds": [
+        "a0-12-s10",
+        "a0-12-s11",
+        "a0-12-s12",
+        "a0-12-s13",
+        "a0-12-s14",
+        "a0-12-s15",
+        "a0-12-s16",
+        "a0-12-s17",
+        "a0-12-s18"
+      ]
+    },
+    {
+      "name": "Hay или está",
+      "sentenceIds": [
+        "a0-12-s19",
+        "a0-12-s20",
+        "a0-12-s21",
+        "a0-12-s22",
+        "a0-12-s23",
+        "a0-12-s24",
+        "a0-12-s25",
+        "a0-12-s26",
+        "a0-12-s27"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-12-s28",
+        "a0-12-s29",
+        "a0-12-s30",
+        "a0-12-s31",
+        "a0-12-s32",
+        "a0-12-s33",
+        "a0-12-s34",
+        "a0-12-s35",
+        "a0-12-s36",
+        "a0-12-s37",
+        "a0-12-s38"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-12-s28.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s28"
+    },
+    {
+      "id": "a0-12-s29.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s29"
+    },
+    {
+      "id": "a0-12-s30.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s30"
+    },
+    {
+      "id": "a0-12-s31.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s31"
+    },
+    {
+      "id": "a0-12-s32.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s32"
+    },
+    {
+      "id": "a0-12-s33.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s33"
+    },
+    {
+      "id": "a0-12-s35.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s35"
+    },
+    {
+      "id": "a0-12-s36.translate",
+      "type": "translate",
+      "sentenceId": "a0-12-s36"
+    },
+    {
+      "id": "a0-12-s34.order",
+      "type": "order",
+      "sentenceId": "a0-12-s34"
+    },
+    {
+      "id": "a0-12-s37.order",
+      "type": "order",
+      "sentenceId": "a0-12-s37"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-12-s01",
+      "ru": "Я дома.",
+      "es": [
+        "Estoy en casa."
+      ],
+      "ipa": "esˈtoj en ˈkasa"
+    },
+    {
+      "id": "a0-12-s02",
+      "ru": "Где ты?",
+      "es": [
+        "¿Dónde estás?"
+      ],
+      "ipa": "ˈdonde esˈtas"
+    },
+    {
+      "id": "a0-12-s03",
+      "ru": "Мы в спортзале.",
+      "es": [
+        "Estamos en el gimnasio.",
+        "Nosotros estamos en el gimnasio."
+      ],
+      "ipa": "esˈtamos en el ximˈnasjo"
+    },
+    {
+      "id": "a0-12-s04",
+      "ru": "Где метро?",
+      "es": [
+        "¿Dónde está el metro?"
+      ],
+      "ipa": "ˈdonde esˈta el ˈmetɾo"
+    },
+    {
+      "id": "a0-12-s05",
+      "ru": "Дети в школе.",
+      "es": [
+        "Los niños están en el colegio."
+      ],
+      "ipa": "los ˈniɲos esˈtan en el koˈlexjo"
+    },
+    {
+      "id": "a0-12-s06",
+      "ru": "Ана на кухне.",
+      "es": [
+        "Ana está en la cocina."
+      ],
+      "ipa": "ˈana esˈta en la koˈθina"
+    },
+    {
+      "id": "a0-12-s07",
+      "ru": "Вы где?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Dónde estáis?",
+        "¿Dónde estáis vosotros?"
+      ],
+      "ipa": "ˈdonde esˈtais"
+    },
+    {
+      "id": "a0-12-s08",
+      "ru": "Вы в Мадриде?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted está en Madrid?",
+        "¿Está usted en Madrid?"
+      ],
+      "ipa": "usˈted esˈta en maˈdɾid"
+    },
+    {
+      "id": "a0-12-s09",
+      "ru": "Я на улице, с Карлосом.",
+      "es": [
+        "Estoy en la calle, con Carlos."
+      ],
+      "ipa": "esˈtoj en la ˈkaje kon ˈkaɾlos"
+    },
+    {
+      "id": "a0-12-s10",
+      "ru": "Как дела?",
+      "es": [
+        "¿Qué tal?",
+        "¿Cómo estás?"
+      ],
+      "ipa": "ke ˈtal"
+    },
+    {
+      "id": "a0-12-s11",
+      "ru": "Как у вас дела?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Cómo está usted?",
+        "¿Cómo está?"
+      ],
+      "ipa": "ˈkomo esˈta usˈted"
+    },
+    {
+      "id": "a0-12-s12",
+      "ru": "Я устал.",
+      "es": [
+        "Estoy cansado."
+      ],
+      "ipa": "esˈtoj kanˈsado"
+    },
+    {
+      "id": "a0-12-s13",
+      "ru": "Ты занят?",
+      "es": [
+        "¿Estás ocupado?"
+      ],
+      "ipa": "esˈtas okuˈpado"
+    },
+    {
+      "id": "a0-12-s14",
+      "ru": "Карлос и Ана очень довольны.",
+      "es": [
+        "Carlos y Ana están muy contentos."
+      ],
+      "ipa": "ˈkaɾlos i ˈana esˈtan ˈmuj konˈtentos"
+    },
+    {
+      "id": "a0-12-s15",
+      "ru": "Так себе. А ты?",
+      "es": [
+        "Regular. ¿Y tú?"
+      ],
+      "ipa": "reguˈlaɾ · i ˈtu"
+    },
+    {
+      "id": "a0-12-s16",
+      "ru": "Ты готова?",
+      "es": [
+        "¿Estás lista?"
+      ],
+      "ipa": "esˈtas ˈlista"
+    },
+    {
+      "id": "a0-12-s17",
+      "ru": "Вы устали?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Estáis cansadas?",
+        "¿Vosotras estáis cansadas?"
+      ],
+      "ipa": "esˈtais kanˈsadas"
+    },
+    {
+      "id": "a0-12-s18",
+      "ru": "Сегодня мне очень плохо.",
+      "es": [
+        "Hoy estoy fatal.",
+        "Hoy estoy muy mal."
+      ],
+      "ipa": "ˈoj esˈtoj faˈtal"
+    },
+    {
+      "id": "a0-12-s19",
+      "ru": "Здесь есть супермаркет.",
+      "es": [
+        "Hay un supermercado aquí.",
+        "Aquí hay un supermercado."
+      ],
+      "ipa": "ˈaj un supeɾmeɾˈkado aˈki"
+    },
+    {
+      "id": "a0-12-s20",
+      "ru": "Здесь есть туалет?",
+      "es": [
+        "¿Hay un baño aquí?",
+        "¿Aquí hay un baño?"
+      ],
+      "ipa": "ˈaj un ˈbaɲo aˈki"
+    },
+    {
+      "id": "a0-12-s21",
+      "ru": "Где туалет?",
+      "es": [
+        "¿Dónde está el baño?"
+      ],
+      "ipa": "ˈdonde esˈta el ˈbaɲo"
+    },
+    {
+      "id": "a0-12-s22",
+      "ru": "Дома нет хлеба.",
+      "es": [
+        "No hay pan en casa.",
+        "En casa no hay pan."
+      ],
+      "ipa": "no ˈaj ˈpan en ˈkasa"
+    },
+    {
+      "id": "a0-12-s23",
+      "ru": "На площади есть бар.",
+      "es": [
+        "Hay un bar en la plaza.",
+        "En la plaza hay un bar."
+      ],
+      "ipa": "ˈaj un ˈbaɾ en la ˈplaθa"
+    },
+    {
+      "id": "a0-12-s24",
+      "ru": "Бар на площади.",
+      "es": [
+        "El bar está en la plaza."
+      ],
+      "ipa": "el ˈbaɾ esˈta en la ˈplaθa"
+    },
+    {
+      "id": "a0-12-s25",
+      "ru": "В центре есть музей.",
+      "es": [
+        "Hay un museo en el centro.",
+        "En el centro hay un museo."
+      ],
+      "ipa": "ˈaj un muˈse.o en el ˈθentɾo"
+    },
+    {
+      "id": "a0-12-s26",
+      "ru": "Музей в центре.",
+      "es": [
+        "El museo está en el centro."
+      ],
+      "ipa": "el muˈse.o esˈta en el ˈθentɾo"
+    },
+    {
+      "id": "a0-12-s27",
+      "ru": "На столе лежат журналы.",
+      "es": [
+        "Hay unas revistas en la mesa.",
+        "Hay revistas en la mesa."
+      ],
+      "ipa": "ˈaj ˈunas reˈbistas en la ˈmesa"
+    },
+    {
+      "id": "a0-12-s28",
+      "ru": "Я из Москвы, но сейчас я в Мадриде.",
+      "es": [
+        "Soy de Moscú, pero ahora estoy en Madrid."
+      ],
+      "ipa": "ˈsoj de mosˈku ˈpeɾo aˈoɾa esˈtoj en maˈdɾid"
+    },
+    {
+      "id": "a0-12-s29",
+      "ru": "Карлос врач, он сейчас в больнице.",
+      "es": [
+        "Carlos es médico y ahora está en el hospital.",
+        "Carlos es médico, ahora está en el hospital."
+      ],
+      "ipa": "ˈkaɾlos ˈes ˈmediko i aˈoɾa esˈta en el ospiˈtal"
+    },
+    {
+      "id": "a0-12-s30",
+      "ru": "Какая она, Ана? — Очень красивая.",
+      "es": [
+        "¿Cómo es Ana? — Es muy bonita."
+      ],
+      "ipa": "ˈkomo ˈes ˈana · ˈes ˈmuj boˈnita"
+    },
+    {
+      "id": "a0-12-s31",
+      "ru": "Как Ана? — Болеет.",
+      "es": [
+        "¿Cómo está Ana? — Está enferma."
+      ],
+      "ipa": "ˈkomo esˈta ˈana · esˈta enˈfeɾma"
+    },
+    {
+      "id": "a0-12-s32",
+      "ru": "Книга интересная. Она на столе.",
+      "es": [
+        "El libro es interesante. Está en la mesa."
+      ],
+      "ipa": "el ˈlibɾo ˈes inteɾeˈsante · esˈta en la ˈmesa"
+    },
+    {
+      "id": "a0-12-s33",
+      "ru": "Я устала, хочу отдохнуть.",
+      "es": [
+        "Estoy cansada, quiero descansar.",
+        "Estoy cansada y quiero descansar."
+      ],
+      "ipa": "esˈtoj kanˈsada ˈkjeɾo deskanˈsaɾ"
+    },
+    {
+      "id": "a0-12-s34",
+      "ru": "Я занят, мне нужно работать.",
+      "es": [
+        "Estoy ocupado, tengo que trabajar.",
+        "Estoy ocupado, necesito trabajar."
+      ],
+      "ipa": "esˈtoj okuˈpado ˈtengo ke tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-12-s35",
+      "ru": "Где Ана? — В библиотеке.",
+      "es": [
+        "¿Dónde está Ana? — En la biblioteca.",
+        "¿Dónde está Ana? — Está en la biblioteca."
+      ],
+      "ipa": "ˈdonde esˈta ˈana · en la biblioˈteka"
+    },
+    {
+      "id": "a0-12-s36",
+      "ru": "Почему Карлос дома? — Потому что болеет.",
+      "es": [
+        "¿Por qué está Carlos en casa? — Porque está enfermo."
+      ],
+      "ipa": "poɾ ˈke esˈta ˈkaɾlos en ˈkasa · ˈpoɾke esˈta enˈfeɾmo"
+    },
+    {
+      "id": "a0-12-s37",
+      "ru": "Завтра мы будем в Мадриде.",
+      "es": [
+        "Mañana vamos a estar en Madrid.",
+        "Mañana estamos en Madrid."
+      ],
+      "ipa": "maˈɲana ˈbamos a esˈtaɾ en maˈdɾid"
+    },
+    {
+      "id": "a0-12-s38",
+      "ru": "Мне нравится быть дома.",
+      "es": [
+        "Me gusta estar en casa."
+      ],
+      "ipa": "me ˈgusta esˈtaɾ en ˈkasa"
+    }
+  ]
+}

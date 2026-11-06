@@ -230,6 +230,30 @@
         "extras": "paid",
         "quiz": "free"
       }
+    },
+    {
+      "id": "a0-12",
+      "number": 12,
+      "level": "A0",
+      "planLesson": 12,
+      "title": "Где и как: estar и hay",
+      "grammar": [
+        "настоящее время estar",
+        "estar en + место",
+        "¿dónde está…? — где находится",
+        "estar + прилагательное состояния",
+        "hay + un / una + существительное",
+        "hay и está: неопределённое и конкретное",
+        "ser и estar: «кто, какой» и «где, как сейчас»"
+      ],
+      "youtubeUrl": "https://www.youtube.com/watch?v=DUo8rzP4K_c&list=PLZbYC_qWyI38",
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
     }
   ]
 }
