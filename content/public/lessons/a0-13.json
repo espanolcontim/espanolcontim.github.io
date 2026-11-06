@@ -1,0 +1,1524 @@
+{
+  "id": "a0-13",
+  "summary": {
+    "phrases": [
+      {
+        "es": "**Tengo** un gato.",
+        "ru": "У меня есть кот.",
+        "ipa": "ˈtengo un ˈgato"
+      },
+      {
+        "es": "No **tengo** dinero.",
+        "ru": "У меня нет денег.",
+        "ipa": "no ˈtengo diˈneɾo"
+      },
+      {
+        "es": "¿Tienes **hermanos**?",
+        "ru": "У тебя есть братья или сёстры?",
+        "ipa": "ˈtjenes eɾˈmanos"
+      },
+      {
+        "es": "**Mi** casa es pequeña.",
+        "ru": "Мой дом маленький.",
+        "ipa": "mi ˈkasa ˈes peˈkeɲa"
+      },
+      {
+        "es": "¿Dónde están **tus** libros?",
+        "ru": "Где твои книги?",
+        "ipa": "ˈdonde esˈtan tus ˈlibɾos"
+      },
+      {
+        "es": "**Su** madre es ingeniera.",
+        "ru": "Её мама инженер.",
+        "ipa": "su ˈmadɾe ˈes inxeˈnjeɾa"
+      },
+      {
+        "es": "**Nuestra** casa es vieja.",
+        "ru": "Наш дом старый.",
+        "ipa": "ˈnwestɾa ˈkasa ˈes ˈbjexa"
+      },
+      {
+        "es": "¿Cuántos **años** tienes?",
+        "ru": "Сколько тебе лет?",
+        "ipa": "ˈkwantos ˈaɲos ˈtjenes"
+      },
+      {
+        "es": "**Tengo** veinte **años**.",
+        "ru": "Мне двадцать лет.",
+        "ipa": "ˈtengo ˈbejnte ˈaɲos"
+      }
+    ],
+    "rule": "Есть у кого-то — **tener**: Tengo un perro. Есть где-то — **hay**: Hay un perro aquí. Возраст — тоже **tener**: Tengo veinte años. **Mi, tu, su** — без артикля, а если предметов несколько — **mis, tus, sus**: mi casa, mis amigos.",
+    "mistake": {
+      "wrong": {
+        "es": "**A mí** veinte años."
+      },
+      "right": {
+        "es": "**Tengo** veinte años.",
+        "ru": "Мне двадцать лет."
+      }
+    },
+    "practice": [
+      "a0-13-s27",
+      "a0-13-s29",
+      "a0-13-s30",
+      "a0-13-s33"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Глагол tener",
+        "hint": "Что у вас есть: «у меня есть» — tengo",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "tener + существительное",
+            "pattern": [
+              "tener",
+              "+",
+              "un / una",
+              "+",
+              "существительное"
+            ],
+            "text": "С отрицанием un и una обычно не ставим.",
+            "examples": [
+              {
+                "es": "Tengo **un** problema.",
+                "ru": "У меня проблема.",
+                "ipa": "ˈtengo un pɾoˈblema"
+              },
+              {
+                "es": "Tengo **una** amiga aquí.",
+                "ru": "У меня здесь есть подруга.",
+                "ipa": "ˈtengo ˈuna aˈmiga aˈki"
+              },
+              {
+                "es": "No tengo **perro**.",
+                "ru": "У меня нет собаки.",
+                "ipa": "no ˈtengo ˈpero"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "У меня есть…",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "tener — **Tengo** un coche.",
+                "ru": "У меня есть машина.",
+                "ipa": "teˈneɾ · ˈtengo un ˈkotʃe"
+              },
+              {
+                "es": "**Tengo** un gato.",
+                "ru": "У меня есть кот.",
+                "ipa": "ˈtengo un ˈgato"
+              },
+              {
+                "es": "**Tengo** un piso pequeño.",
+                "ru": "У меня маленькая квартира.",
+                "ipa": "ˈtengo un ˈpiso peˈkeɲo"
+              },
+              {
+                "es": "No **tengo** dinero.",
+                "ru": "У меня нет денег.",
+                "ipa": "no ˈtengo diˈneɾo"
+              }
+            ]
+          },
+          {
+            "type": "conjugation",
+            "verb": "tener",
+            "ru": "иметь",
+            "rows": [
+              {
+                "stem": "teng",
+                "ending": "o",
+                "ipa": "ˈtengo",
+                "pronoun": "yo",
+                "ru": "у меня есть"
+              },
+              {
+                "stem": "tien",
+                "ending": "es",
+                "ipa": "ˈtjenes",
+                "pronoun": "tú",
+                "ru": "у тебя есть"
+              },
+              {
+                "stem": "tien",
+                "ending": "e",
+                "ipa": "ˈtjene",
+                "pronoun": "él / ella / usted",
+                "ru": "у него, у неё, у вас есть"
+              },
+              {
+                "stem": "ten",
+                "ending": "emos",
+                "ipa": "teˈnemos",
+                "pronoun": "nosotros / nosotras",
+                "ru": "у нас есть"
+              },
+              {
+                "stem": "ten",
+                "ending": "éis",
+                "ipa": "teˈneis",
+                "pronoun": "vosotros / vosotras",
+                "ru": "у вас есть"
+              },
+              {
+                "stem": "tien",
+                "ending": "en",
+                "ipa": "ˈtjenen",
+                "pronoun": "ellos / ellas / ustedes",
+                "ru": "у них, у вас есть"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "У тебя, у нас, у них",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿**Tienes** un bolígrafo?",
+                "ru": "У тебя есть ручка?",
+                "ipa": "ˈtjenes un boˈligɾafo"
+              },
+              {
+                "es": "Carlos **tiene** un ordenador.",
+                "ru": "У Карлоса есть компьютер.",
+                "ipa": "ˈkaɾlos ˈtjene un oɾdenaˈdoɾ"
+              },
+              {
+                "es": "**Tenemos** un perro.",
+                "ru": "У нас есть собака.",
+                "ipa": "teˈnemos un ˈpero"
+              },
+              {
+                "es": "¿**Tenéis** un piso aquí?",
+                "ru": "У вас есть квартира здесь?",
+                "ipa": "teˈneis un ˈpiso aˈki"
+              },
+              {
+                "es": "**Tienen** una casa grande.",
+                "ru": "У них большой дом.",
+                "ipa": "ˈtjenen ˈuna ˈkasa ˈgɾande"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "hay или tener",
+            "left": {
+              "label": "hay — есть где-то",
+              "items": [
+                {
+                  "es": "Hay un perro aquí."
+                },
+                {
+                  "es": "¿Hay pan?"
+                },
+                {
+                  "es": "No hay dinero."
+                }
+              ]
+            },
+            "right": {
+              "label": "tener — есть у кого-то",
+              "items": [
+                {
+                  "es": "Tengo un perro."
+                },
+                {
+                  "es": "¿Tienes pan?"
+                },
+                {
+                  "es": "No tengo dinero."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Мой, твой, его, наш, ваш",
+        "hint": "Стоят перед существительным, без артикля",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Мой и твой",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Mi** casa es pequeña.",
+                "ru": "Мой дом маленький.",
+                "ipa": "mi ˈkasa ˈes peˈkeɲa"
+              },
+              {
+                "es": "**Mi** perro está aquí.",
+                "ru": "Моя собака здесь.",
+                "ipa": "mi ˈpero esˈta aˈki"
+              },
+              {
+                "es": "¿Dónde está **tu** coche?",
+                "ru": "Где твоя машина?",
+                "ipa": "ˈdonde esˈta tu ˈkotʃe"
+              },
+              {
+                "es": "**Mis** amigos viven aquí.",
+                "ru": "Мои друзья живут здесь.",
+                "ipa": "mis aˈmigos ˈbiben aˈki"
+              },
+              {
+                "es": "¿Dónde están **tus** libros?",
+                "ru": "Где твои книги?",
+                "ipa": "ˈdonde esˈtan tus ˈlibɾos"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Со знаком и без",
+            "left": {
+              "label": "tu, mi — твой, мой",
+              "items": [
+                {
+                  "es": "¿Dónde está **tu** casa?"
+                },
+                {
+                  "es": "**Mi** trabajo es fácil."
+                }
+              ]
+            },
+            "right": {
+              "label": "tú, a mí — ты, мне",
+              "items": [
+                {
+                  "es": "¿Dónde vives **tú**?"
+                },
+                {
+                  "es": "A **mí** también."
+                }
+              ]
+            }
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**Mi** libros son nuevos."
+                },
+                {
+                  "es": "¿Dónde están **tu** amigos?"
+                },
+                {
+                  "es": "**La mi** casa es bonita."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**Mis** libros son nuevos.",
+                  "ru": "Мои книги новые."
+                },
+                {
+                  "es": "¿Dónde están **tus** amigos?",
+                  "ru": "Где твои друзья?"
+                },
+                {
+                  "es": "**Mi** casa es bonita.",
+                  "ru": "Мой дом красивый."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Моя семья",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Mi **familia** es grande.",
+                "ru": "Моя семья большая.",
+                "ipa": "mi faˈmilja ˈes ˈgɾande"
+              },
+              {
+                "es": "Mi **madre** es médica.",
+                "ru": "Моя мама врач.",
+                "ipa": "mi ˈmadɾe ˈes ˈmedika"
+              },
+              {
+                "es": "Mi **padre** trabaja mucho.",
+                "ru": "Мой отец много работает.",
+                "ipa": "mi ˈpadɾe tɾaˈbaxa ˈmutʃo"
+              },
+              {
+                "es": "¿**Tu madre** habla español?",
+                "ru": "Твоя мама говорит по-испански?",
+                "ipa": "tu ˈmadɾe ˈabla espaˈɲol"
+              },
+              {
+                "es": "Mis **padres** viven en Moscú.",
+                "ru": "Мои родители живут в Москве.",
+                "ipa": "mis ˈpadɾes ˈbiben en mosˈku"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Братья, сёстры, дети",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Mi **hermana** vive en Kazán.",
+                "ru": "Моя сестра живёт в Казани.",
+                "ipa": "mi eɾˈmana ˈbibe en kaˈθan"
+              },
+              {
+                "es": "Mi **hermano** es estudiante.",
+                "ru": "Мой брат студент.",
+                "ipa": "mi eɾˈmano ˈes estuˈdjante"
+              },
+              {
+                "es": "¿Tienes **hermanos**?",
+                "ru": "У тебя есть братья или сёстры?",
+                "ipa": "ˈtjenes eɾˈmanos"
+              },
+              {
+                "es": "Tengo un **hijo** y una **hija**.",
+                "ru": "У меня есть сын и дочь.",
+                "ipa": "ˈtengo un ˈixo i ˈuna ˈixa"
+              },
+              {
+                "es": "¿Tienes **hijos**?",
+                "ru": "У тебя есть дети?",
+                "ipa": "ˈtjenes ˈixos"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "su и sus",
+            "pattern": [
+              "su / sus",
+              "+",
+              "существительное"
+            ],
+            "text": "su — один предмет, sus — несколько. Чей именно — ясно из разговора.",
+            "examples": [
+              {
+                "es": "Los niños están aquí. **Su** madre trabaja.",
+                "ru": "Дети здесь. Их мама работает.",
+                "ipa": "los ˈniɲos esˈtan aˈki · su ˈmadɾe tɾaˈbaxa"
+              },
+              {
+                "es": "Mi amigo vive con **sus** padres.",
+                "ru": "Мой друг живёт со своими родителями.",
+                "ipa": "mi aˈmigo ˈbibe kon sus ˈpadɾes"
+              },
+              {
+                "es": "Ana lee **su** libro.",
+                "ru": "Ана читает свою книгу.",
+                "ipa": "ˈana ˈle.e su ˈlibɾo"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Одно слово: su",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Su** padre es programador.",
+                "ru": "Его отец программист.",
+                "ipa": "su ˈpadɾe ˈes pɾogɾamaˈdoɾ"
+              },
+              {
+                "es": "**Su** madre es ingeniera.",
+                "ru": "Её мама инженер.",
+                "ipa": "su ˈmadɾe ˈes inxeˈnjeɾa"
+              },
+              {
+                "es": "**Su** casa es muy bonita.",
+                "ru": "Их дом очень красивый.",
+                "ipa": "su ˈkasa ˈes ˈmuj boˈnita"
+              },
+              {
+                "es": "¿**Su** hija vive aquí?",
+                "ru": "Ваша дочь живёт здесь?",
+                "ipa": "su ˈixa ˈbibe aˈki"
+              },
+              {
+                "es": "**Sus** padres viven en Madrid.",
+                "ru": "Её родители живут в Мадриде.",
+                "ipa": "sus ˈpadɾes ˈbiben en maˈdɾid"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Наш и ваш",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Nuestra** casa es vieja.",
+                "ru": "Наш дом старый.",
+                "ipa": "ˈnwestɾa ˈkasa ˈes ˈbjexa"
+              },
+              {
+                "es": "**Nuestro** piso es pequeño.",
+                "ru": "Наша квартира маленькая.",
+                "ipa": "ˈnwestɾo ˈpiso ˈes peˈkeɲo"
+              },
+              {
+                "es": "**Nuestros** amigos viven aquí.",
+                "ru": "Наши друзья живут здесь.",
+                "ipa": "ˈnwestɾos aˈmigos ˈbiben aˈki"
+              },
+              {
+                "es": "¿Dónde está **vuestro** coche?",
+                "ru": "Где ваша машина?",
+                "ipa": "ˈdonde esˈta ˈbwestɾo ˈkotʃe"
+              },
+              {
+                "es": "¿Cómo es **vuestra** casa?",
+                "ru": "Какой он, ваш дом?",
+                "ipa": "ˈkomo ˈes ˈbwestɾa ˈkasa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Числа до тридцати",
+        "hint": "Считаем от нуля до тридцати",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "От 0 до 10",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**cero, uno, dos, tres**",
+                "ru": "0, 1, 2, 3",
+                "ipa": "ˈθeɾo ˈuno ˈdos ˈtɾes"
+              },
+              {
+                "es": "**cuatro, cinco, seis**",
+                "ru": "4, 5, 6",
+                "ipa": "ˈkwatɾo ˈθinko ˈsejs"
+              },
+              {
+                "es": "**siete, ocho, nueve, diez**",
+                "ru": "7, 8, 9, 10",
+                "ipa": "ˈsjete ˈotʃo ˈnwebe ˈdjeθ"
+              },
+              {
+                "es": "Tengo **dos** perros.",
+                "ru": "У меня две собаки.",
+                "ipa": "ˈtengo ˈdos ˈperos"
+              },
+              {
+                "es": "Tengo **un** hermano.",
+                "ru": "У меня один брат.",
+                "ipa": "ˈtengo un eɾˈmano"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "От 11 до 20",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**once, doce, trece**",
+                "ru": "11, 12, 13",
+                "ipa": "ˈonθe ˈdoθe ˈtɾeθe"
+              },
+              {
+                "es": "**catorce, quince**",
+                "ru": "14, 15",
+                "ipa": "kaˈtoɾθe ˈkinθe"
+              },
+              {
+                "es": "**dieciséis, diecisiete**",
+                "ru": "16, 17",
+                "ipa": "djeθiˈsejs djeθiˈsjete"
+              },
+              {
+                "es": "**dieciocho, diecinueve**",
+                "ru": "18, 19",
+                "ipa": "djeˈθjotʃo djeθiˈnwebe"
+              },
+              {
+                "es": "**veinte**",
+                "ru": "20",
+                "ipa": "ˈbejnte"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "От 21 до 30",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**veintiuno, veintidós**",
+                "ru": "21, 22",
+                "ipa": "bejnˈtjuno bejntiˈdos"
+              },
+              {
+                "es": "**veintitrés, veinticuatro**",
+                "ru": "23, 24",
+                "ipa": "bejntiˈtɾes bejntiˈkwatɾo"
+              },
+              {
+                "es": "**veinticinco, veintiséis**",
+                "ru": "25, 26",
+                "ipa": "bejntiˈθinko bejntiˈsejs"
+              },
+              {
+                "es": "**veintisiete, veintiocho**",
+                "ru": "27, 28",
+                "ipa": "bejntiˈsjete bejnˈtjotʃo"
+              },
+              {
+                "es": "**veintinueve, treinta**",
+                "ru": "29, 30",
+                "ipa": "bejntiˈnwebe ˈtɾejnta"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "Возраст: tener … años",
+        "hint": "По-испански возраст не «мне», а «я имею»",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "tener + число + años",
+            "pattern": [
+              "tener",
+              "+",
+              "число",
+              "+",
+              "años"
+            ],
+            "text": "Возраст — это tener, а не ser.",
+            "examples": [
+              {
+                "es": "Mi amigo tiene **treinta** años.",
+                "ru": "Моему другу тридцать лет.",
+                "ipa": "mi aˈmigo ˈtjene ˈtɾejnta ˈaɲos"
+              },
+              {
+                "es": "¿Cuántos años **tiene** tu hermano?",
+                "ru": "Сколько лет твоему брату?",
+                "ipa": "ˈkwantos ˈaɲos ˈtjene tu eɾˈmano"
+              },
+              {
+                "es": "¿Cuántos años **tiene** usted?",
+                "ru": "Сколько вам лет?",
+                "ipa": "ˈkwantos ˈaɲos ˈtjene usˈted"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Сколько тебе лет?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "¿Cuántos **años** tienes?",
+                "ru": "Сколько тебе лет?",
+                "ipa": "ˈkwantos ˈaɲos ˈtjenes"
+              },
+              {
+                "es": "**Tengo** veinte **años**.",
+                "ru": "Мне двадцать лет.",
+                "ipa": "ˈtengo ˈbejnte ˈaɲos"
+              },
+              {
+                "es": "Mi hermana **tiene** quince años.",
+                "ru": "Моей сестре пятнадцать лет.",
+                "ipa": "mi eɾˈmana ˈtjene ˈkinθe ˈaɲos"
+              },
+              {
+                "es": "Mi hija tiene **un año**.",
+                "ru": "Моей дочери один год.",
+                "ipa": "mi ˈixa ˈtjene un ˈaɲo"
+              },
+              {
+                "es": "Tengo **veintiún** años.",
+                "ru": "Мне двадцать один год.",
+                "ipa": "ˈtengo bejnˈtjun ˈaɲos"
+              }
+            ]
+          },
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**A mí** veinte años."
+                },
+                {
+                  "es": "**Soy** veinte años."
+                },
+                {
+                  "es": "Tengo **veintiuno** años."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**Tengo** veinte años.",
+                  "ru": "Мне двадцать лет."
+                },
+                {
+                  "es": "**Tengo** veinte años.",
+                  "ru": "Мне двадцать лет."
+                },
+                {
+                  "es": "Tengo **veintiún** años.",
+                  "ru": "Мне двадцать один год."
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "О семье",
+        "lines": [
+          {
+            "es": "Carlos, ¿**tienes** hermanos?",
+            "ru": "Карлос, у тебя есть братья или сёстры?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, **tengo** una hermana.",
+            "ru": "Да, у меня есть сестра.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Cuántos años **tiene**?",
+            "ru": "Сколько ей лет?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Tiene** veintidós años. Es estudiante.",
+            "ru": "Ей двадцать два года. Она студентка.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **tu** familia? ¿**Tus** padres viven aquí?",
+            "ru": "А твоя семья? Твои родители живут здесь?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, en el centro. **Mi** padre es médico.",
+            "ru": "Да, в центре. Мой отец врач.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Y tú? ¿**Tienes** hermanos?",
+            "ru": "А ты? У тебя есть братья или сёстры?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "No, pero **tenemos** un perro.",
+            "ru": "Нет, но у нас есть собака.",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "tener",
+        "ru": "иметь",
+        "pos": "verb",
+        "ipa": "teˈneɾ"
+      },
+      {
+        "es": "mi",
+        "ru": "мой, моя",
+        "pos": "adj",
+        "ipa": "mi"
+      },
+      {
+        "es": "tu",
+        "ru": "твой, твоя",
+        "pos": "adj",
+        "ipa": "tu"
+      },
+      {
+        "es": "su",
+        "ru": "его, её, их, ваш",
+        "pos": "adj",
+        "ipa": "su"
+      },
+      {
+        "es": "nuestro",
+        "ru": "наш",
+        "pos": "adj",
+        "ipa": "ˈnwestɾo"
+      },
+      {
+        "es": "vuestro",
+        "ru": "ваш (нескольким, на «ты»)",
+        "pos": "adj",
+        "ipa": "ˈbwestɾo"
+      },
+      {
+        "es": "la familia",
+        "ru": "семья",
+        "pos": "noun",
+        "ipa": "la faˈmilja"
+      },
+      {
+        "es": "la madre",
+        "ru": "мать, мама",
+        "pos": "noun",
+        "ipa": "la ˈmadɾe"
+      },
+      {
+        "es": "el padre",
+        "ru": "отец, папа; мн. родители",
+        "pos": "noun",
+        "ipa": "el ˈpadɾe"
+      },
+      {
+        "es": "la hermana",
+        "ru": "сестра",
+        "pos": "noun",
+        "ipa": "la eɾˈmana"
+      },
+      {
+        "es": "el hermano",
+        "ru": "брат; мн. братья и сёстры",
+        "pos": "noun",
+        "ipa": "el eɾˈmano"
+      },
+      {
+        "es": "el hijo",
+        "ru": "сын; мн. дети",
+        "pos": "noun",
+        "ipa": "el ˈixo"
+      },
+      {
+        "es": "la hija",
+        "ru": "дочь",
+        "pos": "noun",
+        "ipa": "la ˈixa"
+      },
+      {
+        "es": "el año",
+        "ru": "год",
+        "pos": "noun",
+        "ipa": "el ˈaɲo"
+      },
+      {
+        "es": "cero",
+        "ru": "ноль",
+        "pos": "num",
+        "ipa": "ˈθeɾo"
+      },
+      {
+        "es": "uno",
+        "ru": "один",
+        "pos": "num",
+        "ipa": "ˈuno"
+      },
+      {
+        "es": "dos",
+        "ru": "два",
+        "pos": "num",
+        "ipa": "ˈdos"
+      },
+      {
+        "es": "tres",
+        "ru": "три",
+        "pos": "num",
+        "ipa": "ˈtɾes"
+      },
+      {
+        "es": "cuatro",
+        "ru": "четыре",
+        "pos": "num",
+        "ipa": "ˈkwatɾo"
+      },
+      {
+        "es": "cinco",
+        "ru": "пять",
+        "pos": "num",
+        "ipa": "ˈθinko"
+      },
+      {
+        "es": "seis",
+        "ru": "шесть",
+        "pos": "num",
+        "ipa": "ˈsejs"
+      },
+      {
+        "es": "siete",
+        "ru": "семь",
+        "pos": "num",
+        "ipa": "ˈsjete"
+      },
+      {
+        "es": "ocho",
+        "ru": "восемь",
+        "pos": "num",
+        "ipa": "ˈotʃo"
+      },
+      {
+        "es": "nueve",
+        "ru": "девять",
+        "pos": "num",
+        "ipa": "ˈnwebe"
+      },
+      {
+        "es": "diez",
+        "ru": "десять",
+        "pos": "num",
+        "ipa": "ˈdjeθ"
+      },
+      {
+        "es": "once",
+        "ru": "одиннадцать",
+        "pos": "num",
+        "ipa": "ˈonθe"
+      },
+      {
+        "es": "doce",
+        "ru": "двенадцать",
+        "pos": "num",
+        "ipa": "ˈdoθe"
+      },
+      {
+        "es": "trece",
+        "ru": "тринадцать",
+        "pos": "num",
+        "ipa": "ˈtɾeθe"
+      },
+      {
+        "es": "catorce",
+        "ru": "четырнадцать",
+        "pos": "num",
+        "ipa": "kaˈtoɾθe"
+      },
+      {
+        "es": "quince",
+        "ru": "пятнадцать",
+        "pos": "num",
+        "ipa": "ˈkinθe"
+      },
+      {
+        "es": "dieciséis",
+        "ru": "шестнадцать",
+        "pos": "num",
+        "ipa": "djeθiˈsejs"
+      },
+      {
+        "es": "diecisiete",
+        "ru": "семнадцать",
+        "pos": "num",
+        "ipa": "djeθiˈsjete"
+      },
+      {
+        "es": "dieciocho",
+        "ru": "восемнадцать",
+        "pos": "num",
+        "ipa": "djeˈθjotʃo"
+      },
+      {
+        "es": "diecinueve",
+        "ru": "девятнадцать",
+        "pos": "num",
+        "ipa": "djeθiˈnwebe"
+      },
+      {
+        "es": "veinte",
+        "ru": "двадцать",
+        "pos": "num",
+        "ipa": "ˈbejnte"
+      },
+      {
+        "es": "veintiuno",
+        "ru": "двадцать один",
+        "pos": "num",
+        "ipa": "bejnˈtjuno"
+      },
+      {
+        "es": "veintidós",
+        "ru": "двадцать два",
+        "pos": "num",
+        "ipa": "bejntiˈdos"
+      },
+      {
+        "es": "veintitrés",
+        "ru": "двадцать три",
+        "pos": "num",
+        "ipa": "bejntiˈtɾes"
+      },
+      {
+        "es": "veinticuatro",
+        "ru": "двадцать четыре",
+        "pos": "num",
+        "ipa": "bejntiˈkwatɾo"
+      },
+      {
+        "es": "veinticinco",
+        "ru": "двадцать пять",
+        "pos": "num",
+        "ipa": "bejntiˈθinko"
+      },
+      {
+        "es": "veintiséis",
+        "ru": "двадцать шесть",
+        "pos": "num",
+        "ipa": "bejntiˈsejs"
+      },
+      {
+        "es": "veintisiete",
+        "ru": "двадцать семь",
+        "pos": "num",
+        "ipa": "bejntiˈsjete"
+      },
+      {
+        "es": "veintiocho",
+        "ru": "двадцать восемь",
+        "pos": "num",
+        "ipa": "bejnˈtjotʃo"
+      },
+      {
+        "es": "veintinueve",
+        "ru": "двадцать девять",
+        "pos": "num",
+        "ipa": "bejntiˈnwebe"
+      },
+      {
+        "es": "treinta",
+        "ru": "тридцать",
+        "pos": "num",
+        "ipa": "ˈtɾejnta"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Говорить, что у вас есть: tengo un perro",
+        "Говорить, чьё это: mi madre, tu casa, su padre",
+        "Говорить о семье: mis padres, ¿tienes hermanos?",
+        "Считать от нуля до тридцати",
+        "Называть возраст: tengo veinte años"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 14: итог A0 — me llamo, soy, tengo, quiero"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "У меня есть",
+      "sentenceIds": [
+        "a0-13-s01",
+        "a0-13-s02",
+        "a0-13-s03",
+        "a0-13-s04",
+        "a0-13-s05",
+        "a0-13-s06",
+        "a0-13-s07",
+        "a0-13-s08"
+      ]
+    },
+    {
+      "name": "Мой, твой, его",
+      "sentenceIds": [
+        "a0-13-s09",
+        "a0-13-s10",
+        "a0-13-s11",
+        "a0-13-s12",
+        "a0-13-s13",
+        "a0-13-s14",
+        "a0-13-s15",
+        "a0-13-s16",
+        "a0-13-s17"
+      ]
+    },
+    {
+      "name": "Числа и возраст",
+      "sentenceIds": [
+        "a0-13-s18",
+        "a0-13-s19",
+        "a0-13-s20",
+        "a0-13-s21",
+        "a0-13-s22",
+        "a0-13-s23",
+        "a0-13-s24",
+        "a0-13-s25",
+        "a0-13-s26"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-13-s27",
+        "a0-13-s28",
+        "a0-13-s29",
+        "a0-13-s30",
+        "a0-13-s31",
+        "a0-13-s32",
+        "a0-13-s33",
+        "a0-13-s34",
+        "a0-13-s35",
+        "a0-13-s36",
+        "a0-13-s37",
+        "a0-13-s38"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-13-s27.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s27"
+    },
+    {
+      "id": "a0-13-s28.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s28"
+    },
+    {
+      "id": "a0-13-s29.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s29"
+    },
+    {
+      "id": "a0-13-s30.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s30"
+    },
+    {
+      "id": "a0-13-s31.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s31"
+    },
+    {
+      "id": "a0-13-s34.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s34"
+    },
+    {
+      "id": "a0-13-s35.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s35"
+    },
+    {
+      "id": "a0-13-s36.translate",
+      "type": "translate",
+      "sentenceId": "a0-13-s36"
+    },
+    {
+      "id": "a0-13-s32.order",
+      "type": "order",
+      "sentenceId": "a0-13-s32"
+    },
+    {
+      "id": "a0-13-s33.order",
+      "type": "order",
+      "sentenceId": "a0-13-s33"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-13-s01",
+      "ru": "У меня проблема.",
+      "es": [
+        "Tengo un problema."
+      ],
+      "ipa": "ˈtengo un pɾoˈblema"
+    },
+    {
+      "id": "a0-13-s02",
+      "ru": "У меня есть машина.",
+      "es": [
+        "Tengo un coche.",
+        "Tengo coche."
+      ],
+      "ipa": "ˈtengo un ˈkotʃe"
+    },
+    {
+      "id": "a0-13-s03",
+      "ru": "У тебя есть собака?",
+      "es": [
+        "¿Tienes un perro?",
+        "¿Tienes perro?"
+      ],
+      "ipa": "ˈtjenes un ˈpero"
+    },
+    {
+      "id": "a0-13-s04",
+      "ru": "У нас нет денег.",
+      "es": [
+        "No tenemos dinero.",
+        "Nosotros no tenemos dinero."
+      ],
+      "ipa": "no teˈnemos diˈneɾo"
+    },
+    {
+      "id": "a0-13-s05",
+      "ru": "У них большая квартира.",
+      "es": [
+        "Tienen un piso grande.",
+        "Ellos tienen un piso grande."
+      ],
+      "ipa": "ˈtjenen un ˈpiso ˈgɾande"
+    },
+    {
+      "id": "a0-13-s06",
+      "ru": "У вас есть работа?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Tenéis trabajo?",
+        "¿Vosotros tenéis trabajo?"
+      ],
+      "ipa": "teˈneis tɾaˈbaxo"
+    },
+    {
+      "id": "a0-13-s07",
+      "ru": "У вас есть компьютер?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted tiene un ordenador?",
+        "¿Tiene usted un ordenador?",
+        "¿Tiene un ordenador?"
+      ],
+      "ipa": "usˈted ˈtjene un oɾdenaˈdoɾ"
+    },
+    {
+      "id": "a0-13-s08",
+      "ru": "Здесь есть бар? — Нет, но у меня есть пиво.",
+      "es": [
+        "¿Hay un bar aquí? — No, pero tengo cerveza.",
+        "¿Aquí hay un bar? — No, pero tengo cerveza."
+      ],
+      "ipa": "ˈaj un ˈbaɾ aˈki · ˈno ˈpeɾo ˈtengo θeɾˈbeθa"
+    },
+    {
+      "id": "a0-13-s09",
+      "ru": "Моя мама врач.",
+      "es": [
+        "Mi madre es médica."
+      ],
+      "ipa": "mi ˈmadɾe ˈes ˈmedika"
+    },
+    {
+      "id": "a0-13-s10",
+      "ru": "Твой брат здесь?",
+      "es": [
+        "¿Tu hermano está aquí?",
+        "¿Está aquí tu hermano?"
+      ],
+      "ipa": "tu eɾˈmano esˈta aˈki"
+    },
+    {
+      "id": "a0-13-s11",
+      "ru": "Где твои родители?",
+      "es": [
+        "¿Dónde están tus padres?"
+      ],
+      "ipa": "ˈdonde esˈtan tus ˈpadɾes"
+    },
+    {
+      "id": "a0-13-s12",
+      "ru": "Его сестра живёт в Мадриде.",
+      "es": [
+        "Su hermana vive en Madrid."
+      ],
+      "ipa": "su eɾˈmana ˈbibe en maˈdɾid"
+    },
+    {
+      "id": "a0-13-s13",
+      "ru": "Их дом маленький.",
+      "es": [
+        "Su casa es pequeña."
+      ],
+      "ipa": "su ˈkasa ˈes peˈkeɲa"
+    },
+    {
+      "id": "a0-13-s14",
+      "ru": "Наша квартира новая.",
+      "es": [
+        "Nuestro piso es nuevo."
+      ],
+      "ipa": "ˈnwestɾo ˈpiso ˈes ˈnwebo"
+    },
+    {
+      "id": "a0-13-s15",
+      "ru": "Где ваши книги?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Dónde están vuestros libros?"
+      ],
+      "ipa": "ˈdonde esˈtan ˈbwestɾos ˈlibɾos"
+    },
+    {
+      "id": "a0-13-s16",
+      "ru": "Где ваша дочь?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Dónde está su hija?"
+      ],
+      "ipa": "ˈdonde esˈta su ˈixa"
+    },
+    {
+      "id": "a0-13-s17",
+      "ru": "Твоя мама говорит по-испански? — Нет, по-русски.",
+      "es": [
+        "¿Tu madre habla español? — No, habla ruso.",
+        "¿Tu madre habla español? — No, ruso."
+      ],
+      "ipa": "tu ˈmadɾe ˈabla espaˈɲol · ˈno ˈabla ˈruso"
+    },
+    {
+      "id": "a0-13-s18",
+      "ru": "Пятнадцать.",
+      "es": [
+        "Quince."
+      ],
+      "ipa": "ˈkinθe"
+    },
+    {
+      "id": "a0-13-s19",
+      "ru": "Двадцать два.",
+      "es": [
+        "Veintidós."
+      ],
+      "ipa": "bejntiˈdos"
+    },
+    {
+      "id": "a0-13-s20",
+      "ru": "Сколько тебе лет?",
+      "es": [
+        "¿Cuántos años tienes?"
+      ],
+      "ipa": "ˈkwantos ˈaɲos ˈtjenes"
+    },
+    {
+      "id": "a0-13-s21",
+      "ru": "Мне восемнадцать лет.",
+      "es": [
+        "Tengo dieciocho años."
+      ],
+      "ipa": "ˈtengo djeˈθjotʃo ˈaɲos"
+    },
+    {
+      "id": "a0-13-s22",
+      "ru": "Мне двадцать один год.",
+      "es": [
+        "Tengo veintiún años."
+      ],
+      "ipa": "ˈtengo bejnˈtjun ˈaɲos"
+    },
+    {
+      "id": "a0-13-s23",
+      "ru": "Сколько вам лет?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Cuántos años tiene usted?",
+        "¿Cuántos años tiene?"
+      ],
+      "ipa": "ˈkwantos ˈaɲos ˈtjene usˈted"
+    },
+    {
+      "id": "a0-13-s24",
+      "ru": "Моему брату двадцать шесть лет.",
+      "es": [
+        "Mi hermano tiene veintiséis años."
+      ],
+      "ipa": "mi eɾˈmano ˈtjene bejntiˈsejs ˈaɲos"
+    },
+    {
+      "id": "a0-13-s25",
+      "ru": "У меня две собаки и один кот.",
+      "es": [
+        "Tengo dos perros y un gato."
+      ],
+      "ipa": "ˈtengo ˈdos ˈperos i un ˈgato"
+    },
+    {
+      "id": "a0-13-s26",
+      "ru": "Сколько у тебя детей? — Трое.",
+      "es": [
+        "¿Cuántos hijos tienes? — Tres.",
+        "¿Cuántos hijos tienes? — Tengo tres hijos."
+      ],
+      "ipa": "ˈkwantos ˈixos ˈtjenes · ˈtɾes"
+    },
+    {
+      "id": "a0-13-s27",
+      "ru": "У тебя есть друзья в Мадриде?",
+      "es": [
+        "¿Tienes amigos en Madrid?"
+      ],
+      "ipa": "ˈtjenes aˈmigos en maˈdɾid"
+    },
+    {
+      "id": "a0-13-s28",
+      "ru": "Когда приезжает твоя мама?",
+      "es": [
+        "¿Cuándo llega tu madre?"
+      ],
+      "ipa": "ˈkwando ˈjega tu ˈmadɾe"
+    },
+    {
+      "id": "a0-13-s29",
+      "ru": "Мне двадцать пять лет, и я учитель.",
+      "es": [
+        "Tengo veinticinco años y soy profesor.",
+        "Tengo veinticinco años, soy profesor."
+      ],
+      "ipa": "ˈtengo bejntiˈθinko ˈaɲos i ˈsoj pɾofeˈsoɾ"
+    },
+    {
+      "id": "a0-13-s30",
+      "ru": "Мне нравится жить с родителями.",
+      "es": [
+        "Me gusta vivir con mis padres."
+      ],
+      "ipa": "me ˈgusta biˈbiɾ kon mis ˈpadɾes"
+    },
+    {
+      "id": "a0-13-s31",
+      "ru": "Сегодня у меня нет работы.",
+      "es": [
+        "Hoy no tengo trabajo.",
+        "No tengo trabajo hoy."
+      ],
+      "ipa": "ˈoj no ˈtengo tɾaˈbaxo"
+    },
+    {
+      "id": "a0-13-s32",
+      "ru": "Завтра я буду работать с братом.",
+      "es": [
+        "Mañana voy a trabajar con mi hermano.",
+        "Mañana trabajo con mi hermano."
+      ],
+      "ipa": "maˈɲana ˈboj a tɾabaˈxaɾ kon mi eɾˈmano"
+    },
+    {
+      "id": "a0-13-s33",
+      "ru": "Я хочу купить машину, но у меня нет денег.",
+      "es": [
+        "Quiero comprar un coche, pero no tengo dinero."
+      ],
+      "ipa": "ˈkjeɾo komˈpɾaɾ un ˈkotʃe ˈpeɾo no ˈtengo diˈneɾo"
+    },
+    {
+      "id": "a0-13-s34",
+      "ru": "Мне нужно убрать дом: завтра приезжают мои родители.",
+      "es": [
+        "Tengo que limpiar la casa: mañana llegan mis padres.",
+        "Tengo que limpiar la casa porque mañana llegan mis padres.",
+        "Necesito limpiar la casa: mañana llegan mis padres."
+      ],
+      "ipa": "ˈtengo ke limˈpjaɾ la ˈkasa · maˈɲana ˈjegan mis ˈpadɾes"
+    },
+    {
+      "id": "a0-13-s35",
+      "ru": "Мой брат врач, сейчас он в больнице.",
+      "es": [
+        "Mi hermano es médico y ahora está en el hospital.",
+        "Mi hermano es médico, ahora está en el hospital."
+      ],
+      "ipa": "mi eɾˈmano ˈes ˈmediko i aˈoɾa esˈta en el ospiˈtal"
+    },
+    {
+      "id": "a0-13-s36",
+      "ru": "Где твоя сестра? — Дома, она болеет.",
+      "es": [
+        "¿Dónde está tu hermana? — En casa, está enferma.",
+        "¿Dónde está tu hermana? — Está en casa, está enferma."
+      ],
+      "ipa": "ˈdonde esˈta tu eɾˈmana · en ˈkasa esˈta enˈfeɾma"
+    },
+    {
+      "id": "a0-13-s37",
+      "ru": "Какой он, твой дом? — Маленький, но красивый.",
+      "es": [
+        "¿Cómo es tu casa? — Es pequeña, pero bonita.",
+        "¿Cómo es tu casa? — Pequeña, pero bonita."
+      ],
+      "ipa": "ˈkomo ˈes tu ˈkasa · ˈes peˈkeɲa ˈpeɾo boˈnita"
+    },
+    {
+      "id": "a0-13-s38",
+      "ru": "Почему ты учишь испанский? — Потому что моя мама живёт в Испании.",
+      "es": [
+        "¿Por qué estudias español? — Porque mi madre vive en España.",
+        "¿Por qué aprendes español? — Porque mi madre vive en España."
+      ],
+      "ipa": "poɾ ˈke esˈtudjas espaˈɲol · ˈpoɾke mi ˈmadɾe ˈbibe en esˈpaɲa"
+    }
+  ]
+}

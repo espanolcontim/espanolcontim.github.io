@@ -254,6 +254,28 @@
         "extras": "paid",
         "quiz": "free"
       }
+    },
+    {
+      "id": "a0-13",
+      "number": 13,
+      "level": "A0",
+      "planLesson": 13,
+      "title": "Моё: tener, притяжательные, числа",
+      "grammar": [
+        "tener + существительное — «у меня есть»",
+        "hay и tener: «где-то есть» и «есть у кого-то»",
+        "притяжательные mi, tu, su и их множественное число",
+        "su — «его, её, их, ваш»",
+        "nuestro и vuestro: согласование в роде и числе",
+        "числа 0–30; uno → un, una",
+        "tener … años — возраст"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "quiz": "free"
+      }
     }
   ]
 }
