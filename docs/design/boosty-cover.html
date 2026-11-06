@@ -1,0 +1,126 @@
+<!doctype html>
+<!--
+  Обложка Boosty, 3840×640 (6:1). Снять скриншотом этого окна 3840×640 (Playwright, deviceScaleFactor 1).
+
+  Boosty обрезает обложку по центру (object-fit: cover), замерено 06.11.2026:
+    компьютер — полоса 240px во всю ширину окна (1280px → 5,3:1, 1920px → 8:1, 2560px → 10,7:1);
+    телефон и планшет — 10:3 (390×117), видна середина: x 854–2986, вся высота.
+  Безопасная зона для текста — x 854–2986, y 141–499. Аватар закрывает низ слева: x 411–1383, y от 400.
+  Кнопка-флажок Boosty: на телефоне — справа вверху (x 2810–2986, y 87–230), на компьютере —
+  у правого края колонки, внизу полосы (1440px — x 3480, 1920px — x 3090, 2560px — x 2800): под ней только волны.
+  Цвета — «Sorolla 2» с сайта (apps/web/src/shared/styles/themes/sorolla2.css), шрифт — Manrope.
+-->
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../node_modules/@fontsource-variable/manrope/index.css" />
+    <style>
+      :root {
+        --sea: #0062a8; /* accent «Sorolla 2» */
+        --sea-deep: #004f8a;
+        --sea-light: #0a74c2;
+        --cream: #fffcf6; /* bg «Sorolla 2» */
+        --sun: #f6d58e;
+      }
+
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 3840px;
+        height: 640px;
+        overflow: hidden;
+      }
+
+      body {
+        position: relative;
+        background: linear-gradient(180deg, var(--sea-light) 0%, var(--sea) 55%, var(--sea-deep) 100%);
+        font-family: 'Manrope Variable', sans-serif;
+        color: var(--cream);
+      }
+
+      svg {
+        position: absolute;
+        inset: 0;
+      }
+
+      .text {
+        position: absolute;
+        left: 1920px;
+        top: 316px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 152px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.015em;
+      }
+
+      p {
+        margin-top: 30px;
+        font-size: 64px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: color-mix(in oklab, var(--cream), var(--sea) 18%);
+      }
+
+      .dot {
+        margin-inline: 0.35em;
+        color: var(--sun);
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="3840" height="640" viewBox="0 0 3840 640" aria-hidden="true">
+      <defs>
+        <radialGradient id="glow" cx="3200" cy="290" r="900" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#fffcf6" stop-opacity="0.22" />
+          <stop offset="1" stop-color="#fffcf6" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="3840" height="640" fill="url(#glow)" />
+      <circle cx="3200" cy="290" r="165" fill="none" stroke="#fffcf6" stroke-opacity="0.16" stroke-width="3" />
+      <circle cx="3200" cy="290" r="210" fill="none" stroke="#fffcf6" stroke-opacity="0.09" stroke-width="3" />
+      <circle cx="3200" cy="290" r="112" fill="var(--sun)" />
+      <g id="waves"></g>
+    </svg>
+
+    <div class="text">
+      <h1>Español con Tim</h1>
+      <p>Испанский с нуля<span class="dot">·</span>espanolcontim.ru</p>
+    </div>
+
+    <script>
+      // Море: тонкие волны внизу, ниже — длиннее и заметнее.
+      const NS = 'http://www.w3.org/2000/svg'
+      const waves = document.getElementById('waves')
+      for (let i = 0; i < 7; i++) {
+        const y = 462 + i * 27
+        const amp = 5 + i * 1.6
+        const len = 190 + i * 26
+        const phase = (i * 0.9) % (Math.PI * 2)
+        let d = ''
+        for (let x = -20; x <= 3860; x += 8) {
+          const yy = y + amp * Math.sin((x / len) * Math.PI * 2 + phase)
+          d += (x === -20 ? 'M' : 'L') + x + ' ' + yy.toFixed(1)
+        }
+        const path = document.createElementNS(NS, 'path')
+        path.setAttribute('d', d)
+        path.setAttribute('fill', 'none')
+        path.setAttribute('stroke', '#fffcf6')
+        path.setAttribute('stroke-opacity', String(0.1 + i * 0.025))
+        path.setAttribute('stroke-width', String(3 + i * 0.5))
+        path.setAttribute('stroke-linecap', 'round')
+        waves.appendChild(path)
+      }
+
+    </script>
+  </body>
+</html>
