@@ -170,6 +170,15 @@ export const NoteBlockSchema = z.discriminatedUnion('type', [
     left: CompareSideSchema,
     right: CompareSideSchema,
   }),
+  /**
+   * Связный текст (рассказ, мини-история): испанский абзацем, перевод — абзацем
+   * под ним. Разрезанный на слайды текст склеен.
+   */
+  z.object({
+    type: z.literal('text'),
+    title: Text,
+    sentences: z.array(PhraseSchema.omit({ ipa: true })).min(1),
+  }),
 ])
 
 export const NoteSectionSchema = z.object({

@@ -278,6 +278,22 @@
         "extras": "paid",
         "quiz": "free"
       }
+    },
+    {
+      "id": "a0-14",
+      "number": 14,
+      "level": "A0",
+      "planLesson": 14,
+      "title": "Итоговый урок A0",
+      "grammar": [],
+      "youtubeUrl": "https://www.youtube.com/watch?v=WU1sYNGVZkw&list=PLZbYC_qWyI38",
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "paid",
+        "quiz": "free"
+      }
     }
   ]
 }

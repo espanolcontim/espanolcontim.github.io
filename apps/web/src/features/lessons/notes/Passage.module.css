@@ -1,0 +1,16 @@
+/* Абзацы читаются подряд, поэтому строки чуть свободнее, чем в списках. */
+.es,
+.ru {
+  line-height: 1.65;
+}
+
+.es {
+  margin-top: 0.75rem;
+}
+
+/* Как на слайде: перевод — под чертой. */
+.ru {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}

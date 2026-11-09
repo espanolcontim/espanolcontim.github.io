@@ -1,0 +1,1004 @@
+{
+  "id": "a0-14",
+  "summary": {
+    "phrases": [
+      {
+        "es": "**Me llamo** Carlos.",
+        "ru": "Меня зовут Карлос.",
+        "ipa": "me ˈjamo ˈkaɾlos"
+      },
+      {
+        "es": "**Soy de** Moscú.",
+        "ru": "Я из Москвы.",
+        "ipa": "ˈsoj de mosˈku"
+      },
+      {
+        "es": "Ahora **estoy** en Madrid.",
+        "ru": "Сейчас я в Мадриде.",
+        "ipa": "aˈoɾa esˈtoj en maˈdɾid"
+      },
+      {
+        "es": "**Tengo** treinta **años**.",
+        "ru": "Мне тридцать лет.",
+        "ipa": "ˈtengo ˈtɾejnta ˈaɲos"
+      },
+      {
+        "es": "**Soy** programador.",
+        "ru": "Я программист.",
+        "ipa": "ˈsoj pɾogɾamaˈdoɾ"
+      },
+      {
+        "es": "**Me gusta** viajar.",
+        "ru": "Мне нравится путешествовать.",
+        "ipa": "me ˈgusta bjaˈxaɾ"
+      },
+      {
+        "es": "**Quiero** vivir en España.",
+        "ru": "Я хочу жить в Испании.",
+        "ipa": "ˈkjeɾo biˈbiɾ en esˈpaɲa"
+      },
+      {
+        "es": "**Hay** un bar aquí.",
+        "ru": "Здесь есть бар.",
+        "ipa": "ˈaj un ˈbaɾ aˈki"
+      }
+    ],
+    "rule": "Откуда и кто — **ser**: Soy de Moscú. Где и как сейчас — **estar**: Estoy en Madrid. Возраст — **tener**: Tengo treinta años. Что-то где-то есть — **hay**: Hay un bar aquí. Фразы связываем словами **y** — и, **pero** — но, **porque** — потому что.",
+    "mistake": {
+      "wrong": {
+        "es": "¿Tú **gustas** viajar?"
+      },
+      "right": {
+        "es": "¿**Te gusta** viajar?",
+        "ru": "Тебе нравится путешествовать?"
+      }
+    },
+    "practice": [
+      "a0-14-s34",
+      "a0-14-s36",
+      "a0-14-s37",
+      "a0-14-s38"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Рассказ о себе",
+        "hint": "Кто я, откуда, что люблю и чего хочу",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Кто я",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Me llamo** Carlos.",
+                "ru": "Меня зовут Карлос.",
+                "ipa": "me ˈjamo ˈkaɾlos"
+              },
+              {
+                "es": "**Soy de** Moscú.",
+                "ru": "Я из Москвы.",
+                "ipa": "ˈsoj de mosˈku"
+              },
+              {
+                "es": "Ahora **estoy** en Madrid.",
+                "ru": "Сейчас я в Мадриде.",
+                "ipa": "aˈoɾa esˈtoj en maˈdɾid"
+              },
+              {
+                "es": "**Tengo** treinta **años**.",
+                "ru": "Мне тридцать лет.",
+                "ipa": "ˈtengo ˈtɾejnta ˈaɲos"
+              },
+              {
+                "es": "**Soy** programador.",
+                "ru": "Я программист.",
+                "ipa": "ˈsoj pɾogɾamaˈdoɾ"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Моя жизнь",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Vivo** en Moscú, en el centro.",
+                "ru": "Я живу в Москве, в центре.",
+                "ipa": "ˈbibo en mosˈku en el ˈθentɾo"
+              },
+              {
+                "es": "**Trabajo** en una oficina.",
+                "ru": "Я работаю в офисе.",
+                "ipa": "tɾaˈbaxo en ˈuna ofiˈθina"
+              },
+              {
+                "es": "**Tengo** una hermana.",
+                "ru": "У меня есть сестра.",
+                "ipa": "ˈtengo ˈuna eɾˈmana"
+              },
+              {
+                "es": "**Mis** padres viven en Kazán.",
+                "ru": "Мои родители живут в Казани.",
+                "ipa": "mis ˈpadɾes ˈbiben en kaˈθan"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Что люблю и хочу",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Me gusta** viajar.",
+                "ru": "Мне нравится путешествовать.",
+                "ipa": "me ˈgusta bjaˈxaɾ"
+              },
+              {
+                "es": "**Estudio** español.",
+                "ru": "Я учу испанский.",
+                "ipa": "esˈtudjo espaˈɲol"
+              },
+              {
+                "es": "**Quiero** vivir en España.",
+                "ru": "Я хочу жить в Испании.",
+                "ipa": "ˈkjeɾo biˈbiɾ en esˈpaɲa"
+              },
+              {
+                "es": "Mañana **tengo que** trabajar.",
+                "ru": "Завтра мне нужно работать.",
+                "ipa": "maˈɲana ˈtengo ke tɾabaˈxaɾ"
+              },
+              {
+                "es": "**Voy a** estudiar español.",
+                "ru": "Я буду учить испанский.",
+                "ipa": "ˈboj a estuˈdjaɾ espaˈɲol"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Связываем фразы",
+            "pattern": [
+              "фраза",
+              "+",
+              "y / pero / porque",
+              "+",
+              "фраза"
+            ],
+            "text": "y — и, pero — но, porque — потому что.",
+            "examples": [
+              {
+                "es": "Soy de Moscú, **pero** ahora estoy en Madrid.",
+                "ru": "Я из Москвы, но сейчас я в Мадриде.",
+                "ipa": "ˈsoj de mosˈku ˈpeɾo aˈoɾa esˈtoj en maˈdɾid"
+              },
+              {
+                "es": "Tengo treinta años **y** soy programador.",
+                "ru": "Мне тридцать лет, и я программист.",
+                "ipa": "ˈtengo ˈtɾejnta ˈaɲos i ˈsoj pɾogɾamaˈdoɾ"
+              },
+              {
+                "es": "Estudio español **porque** quiero vivir aquí.",
+                "ru": "Я учу испанский, потому что хочу жить здесь.",
+                "ipa": "esˈtudjo espaˈɲol ˈpoɾke ˈkjeɾo biˈbiɾ aˈki"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "title": "Рассказ Карлоса",
+            "sentences": [
+              {
+                "es": "Me llamo Carlos.",
+                "ru": "Меня зовут Карлос."
+              },
+              {
+                "es": "Soy de Moscú, **pero** ahora estoy en Madrid.",
+                "ru": "Я из Москвы, но сейчас я в Мадриде."
+              },
+              {
+                "es": "Tengo treinta años **y** soy programador.",
+                "ru": "Мне тридцать лет, и я программист."
+              },
+              {
+                "es": "En Moscú vivo en el centro **y** trabajo en una oficina.",
+                "ru": "В Москве я живу в центре и работаю в офисе."
+              },
+              {
+                "es": "Tengo una hermana.",
+                "ru": "У меня есть сестра."
+              },
+              {
+                "es": "Mis padres viven en Kazán.",
+                "ru": "Мои родители живут в Казани."
+              },
+              {
+                "es": "Me gusta viajar.",
+                "ru": "Мне нравится путешествовать."
+              },
+              {
+                "es": "Estudio español **porque** quiero vivir aquí.",
+                "ru": "Я учу испанский, потому что хочу жить здесь."
+              },
+              {
+                "es": "Mañana tengo que trabajar, **pero** voy a estudiar español.",
+                "ru": "Завтра мне нужно работать, но я буду учить испанский."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Ошибка 1: артикль",
+        "hint": "В русском его нет, а в испанском он нужен часто",
+        "blocks": [
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "Casa es grande."
+                },
+                {
+                  "es": "Libro está en la mesa."
+                },
+                {
+                  "es": "Hay bar en la plaza."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**La** casa es grande.",
+                  "ru": "Дом большой."
+                },
+                {
+                  "es": "**El** libro está en la mesa.",
+                  "ru": "Книга на столе."
+                },
+                {
+                  "es": "Hay **un** bar en la plaza.",
+                  "ru": "На площади есть бар."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Нужен или нет",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**El** coche es nuevo.",
+                "ru": "Машина новая.",
+                "ipa": "el ˈkotʃe ˈes ˈnwebo"
+              },
+              {
+                "es": "Tengo **un** perro.",
+                "ru": "У меня есть собака.",
+                "ipa": "ˈtengo un ˈpero"
+              },
+              {
+                "es": "Soy **profesora**.",
+                "ru": "Я учительница.",
+                "ipa": "ˈsoj pɾofeˈsoɾa"
+              },
+              {
+                "es": "**Mi** piso es pequeño.",
+                "ru": "Моя квартира маленькая.",
+                "ipa": "mi ˈpiso ˈes peˈkeɲo"
+              },
+              {
+                "es": "**No** tengo ordenador.",
+                "ru": "У меня нет компьютера.",
+                "ipa": "no ˈtengo oɾdenaˈdoɾ"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Ошибка 2: ser вместо estar",
+        "hint": "Где и как — estar, возраст — tener",
+        "blocks": [
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "**Soy** en Madrid."
+                },
+                {
+                  "es": "Mi madre **es** enferma."
+                },
+                {
+                  "es": "**Soy** dieciocho años."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "**Estoy** en Madrid.",
+                  "ru": "Я в Мадриде."
+                },
+                {
+                  "es": "Mi madre **está** enferma.",
+                  "ru": "Моя мама болеет."
+                },
+                {
+                  "es": "**Tengo** dieciocho años.",
+                  "ru": "Мне восемнадцать лет."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Soy, estoy, tengo, hay",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Soy** de Rusia.",
+                "ru": "Я из России.",
+                "ipa": "ˈsoj de ˈrusja"
+              },
+              {
+                "es": "**Estoy** en casa.",
+                "ru": "Я дома.",
+                "ipa": "esˈtoj en ˈkasa"
+              },
+              {
+                "es": "**Estoy** muy cansada.",
+                "ru": "Я очень устала.",
+                "ipa": "esˈtoj ˈmuj kanˈsada"
+              },
+              {
+                "es": "**Tengo** veintitrés años.",
+                "ru": "Мне двадцать три года.",
+                "ipa": "ˈtengo bejntiˈtɾes ˈaɲos"
+              },
+              {
+                "es": "**Hay** un bar aquí.",
+                "ru": "Здесь есть бар.",
+                "ipa": "ˈaj un ˈbaɾ aˈki"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "Ошибка 3: gustar",
+        "hint": "Не «я люблю», а «мне нравится»: me gusta",
+        "blocks": [
+          {
+            "type": "compare",
+            "title": "Типичная ошибка",
+            "left": {
+              "label": "так не говорят",
+              "tone": "wrong",
+              "items": [
+                {
+                  "es": "¿Tú **gustas** viajar?"
+                },
+                {
+                  "es": "Nosotros **gustamos** bailar."
+                },
+                {
+                  "es": "Él **gusta** cocinar."
+                }
+              ]
+            },
+            "right": {
+              "label": "так говорят",
+              "tone": "right",
+              "items": [
+                {
+                  "es": "¿**Te gusta** viajar?",
+                  "ru": "Тебе нравится путешествовать?"
+                },
+                {
+                  "es": "**Nos gusta** bailar.",
+                  "ru": "Нам нравится танцевать."
+                },
+                {
+                  "es": "**Le gusta** cocinar.",
+                  "ru": "Ему нравится готовить."
+                }
+              ]
+            }
+          },
+          {
+            "type": "words",
+            "title": "Нравится и не нравится",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Me gusta** pasear.",
+                "ru": "Мне нравится гулять.",
+                "ipa": "me ˈgusta paseˈaɾ"
+              },
+              {
+                "es": "**A mí también.**",
+                "ru": "Мне тоже.",
+                "ipa": "a ˈmi tamˈbjen"
+              },
+              {
+                "es": "**No me gusta** correr.",
+                "ru": "Я не люблю бегать.",
+                "ipa": "no me ˈgusta koˈreɾ"
+              },
+              {
+                "es": "**A mí tampoco.**",
+                "ru": "Мне тоже нет.",
+                "ipa": "a ˈmi tamˈpoko"
+              },
+              {
+                "es": "¿**Os gusta** cantar?",
+                "ru": "Вам нравится петь?",
+                "ipa": "os ˈgusta kanˈtaɾ"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Жить в Мадриде",
+        "lines": [
+          {
+            "es": "Carlos, ¿**te gusta** vivir en Moscú?",
+            "ru": "Карлос, тебе нравится жить в Москве?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, pero **quiero** vivir aquí, en Madrid.",
+            "ru": "Да, но я хочу жить здесь, в Мадриде.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y tu trabajo?",
+            "ru": "А твоя работа?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Soy** programador. **Puedo** trabajar en casa.",
+            "ru": "Я программист. Я могу работать дома.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Pero **tengo que** practicar más.",
+            "ru": "Но мне нужно больше заниматься.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡**Podemos** practicar juntos!",
+            "ru": "Мы можем заниматься вместе!",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¡Claro! ¿Mañana?",
+            "ru": "Конечно! Завтра?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Mañana **estoy** ocupada, pero pasado mañana sí.",
+            "ru": "Завтра я занята, но послезавтра — да.",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Рассказывать о себе: me llamo, soy, tengo, vivo",
+        "Связывать фразы: y, pero, porque",
+        "Не забывать артикль: la casa es grande",
+        "Выбирать между ser, estar, tener и hay",
+        "Говорить, что нравится: me gusta, a mí tampoco"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 15: числа до 1000 и цены — ¿cuánto cuesta?"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Артикль, ser и estar",
+      "sentenceIds": [
+        "a0-14-s01",
+        "a0-14-s02",
+        "a0-14-s03",
+        "a0-14-s04",
+        "a0-14-s05",
+        "a0-14-s06",
+        "a0-14-s07",
+        "a0-14-s08",
+        "a0-14-s09"
+      ]
+    },
+    {
+      "name": "Мы и нравится",
+      "sentenceIds": [
+        "a0-14-s10",
+        "a0-14-s11",
+        "a0-14-s12",
+        "a0-14-s13",
+        "a0-14-s14",
+        "a0-14-s15",
+        "a0-14-s16",
+        "a0-14-s17",
+        "a0-14-s18",
+        "a0-14-s19"
+      ]
+    },
+    {
+      "name": "Рассказ о себе",
+      "sentenceIds": [
+        "a0-14-s20",
+        "a0-14-s21",
+        "a0-14-s22",
+        "a0-14-s23",
+        "a0-14-s24",
+        "a0-14-s25",
+        "a0-14-s26",
+        "a0-14-s27"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a0-14-s28",
+        "a0-14-s29",
+        "a0-14-s30",
+        "a0-14-s31",
+        "a0-14-s32",
+        "a0-14-s33",
+        "a0-14-s34",
+        "a0-14-s35",
+        "a0-14-s36",
+        "a0-14-s37",
+        "a0-14-s38",
+        "a0-14-s39",
+        "a0-14-s40"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-14-s28.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s28"
+    },
+    {
+      "id": "a0-14-s29.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s29"
+    },
+    {
+      "id": "a0-14-s30.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s30"
+    },
+    {
+      "id": "a0-14-s31.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s31"
+    },
+    {
+      "id": "a0-14-s32.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s32"
+    },
+    {
+      "id": "a0-14-s33.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s33"
+    },
+    {
+      "id": "a0-14-s34.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s34"
+    },
+    {
+      "id": "a0-14-s37.translate",
+      "type": "translate",
+      "sentenceId": "a0-14-s37"
+    },
+    {
+      "id": "a0-14-s35.order",
+      "type": "order",
+      "sentenceId": "a0-14-s35"
+    },
+    {
+      "id": "a0-14-s36.order",
+      "type": "order",
+      "sentenceId": "a0-14-s36"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-14-s01",
+      "ru": "Я в офисе.",
+      "es": [
+        "Estoy en la oficina."
+      ],
+      "ipa": "esˈtoj en la ofiˈθina"
+    },
+    {
+      "id": "a0-14-s02",
+      "ru": "Телефон на столе.",
+      "es": [
+        "El teléfono está en la mesa."
+      ],
+      "ipa": "el teˈlefono esˈta en la ˈmesa"
+    },
+    {
+      "id": "a0-14-s03",
+      "ru": "Моя сестра врач.",
+      "es": [
+        "Mi hermana es médica."
+      ],
+      "ipa": "mi eɾˈmana ˈes ˈmedika"
+    },
+    {
+      "id": "a0-14-s04",
+      "ru": "Мой брат болеет.",
+      "es": [
+        "Mi hermano está enfermo."
+      ],
+      "ipa": "mi eɾˈmano esˈta enˈfeɾmo"
+    },
+    {
+      "id": "a0-14-s05",
+      "ru": "У меня нет машины.",
+      "es": [
+        "No tengo coche."
+      ],
+      "ipa": "no ˈtengo ˈkotʃe"
+    },
+    {
+      "id": "a0-14-s06",
+      "ru": "Мне двадцать девять лет.",
+      "es": [
+        "Tengo veintinueve años."
+      ],
+      "ipa": "ˈtengo bejntiˈnwebe ˈaɲos"
+    },
+    {
+      "id": "a0-14-s07",
+      "ru": "В центре есть музей?",
+      "es": [
+        "¿Hay un museo en el centro?",
+        "¿En el centro hay un museo?"
+      ],
+      "ipa": "ˈaj un muˈse.o en el ˈθentɾo"
+    },
+    {
+      "id": "a0-14-s08",
+      "ru": "Ты дома? — Нет, я в спортзале.",
+      "es": [
+        "¿Estás en casa? — No, estoy en el gimnasio."
+      ],
+      "ipa": "esˈtas en ˈkasa · ˈno esˈtoj en el ximˈnasjo"
+    },
+    {
+      "id": "a0-14-s09",
+      "ru": "Где дети? — В школе.",
+      "es": [
+        "¿Dónde están los niños? — En el colegio.",
+        "¿Dónde están los niños? — Están en el colegio."
+      ],
+      "ipa": "ˈdonde esˈtan los ˈniɲos · en el koˈlexjo"
+    },
+    {
+      "id": "a0-14-s10",
+      "ru": "Мы студенты.",
+      "es": [
+        "Somos estudiantes.",
+        "Nosotros somos estudiantes."
+      ],
+      "ipa": "ˈsomos estuˈdjantes"
+    },
+    {
+      "id": "a0-14-s11",
+      "ru": "Мы много работаем.",
+      "es": [
+        "Trabajamos mucho.",
+        "Nosotros trabajamos mucho."
+      ],
+      "ipa": "tɾabaˈxamos ˈmutʃo"
+    },
+    {
+      "id": "a0-14-s12",
+      "ru": "Мы можем помочь.",
+      "es": [
+        "Podemos ayudar.",
+        "Nosotros podemos ayudar."
+      ],
+      "ipa": "poˈdemos ajuˈdaɾ"
+    },
+    {
+      "id": "a0-14-s13",
+      "ru": "Мы живём в Москве.",
+      "es": [
+        "Vivimos en Moscú.",
+        "Nosotros vivimos en Moscú."
+      ],
+      "ipa": "biˈbimos en mosˈku"
+    },
+    {
+      "id": "a0-14-s14",
+      "ru": "Тебе нравится танцевать?",
+      "es": [
+        "¿Te gusta bailar?"
+      ],
+      "ipa": "te ˈgusta bajˈlaɾ"
+    },
+    {
+      "id": "a0-14-s15",
+      "ru": "Ей нравится петь.",
+      "es": [
+        "Le gusta cantar.",
+        "A ella le gusta cantar."
+      ],
+      "ipa": "le ˈgusta kanˈtaɾ"
+    },
+    {
+      "id": "a0-14-s16",
+      "ru": "Нам не нравится рано вставать.",
+      "es": [
+        "No nos gusta madrugar."
+      ],
+      "ipa": "no nos ˈgusta madɾuˈgaɾ"
+    },
+    {
+      "id": "a0-14-s17",
+      "ru": "Вам нравится путешествовать?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Os gusta viajar?",
+        "¿A vosotros os gusta viajar?"
+      ],
+      "ipa": "os ˈgusta bjaˈxaɾ"
+    },
+    {
+      "id": "a0-14-s18",
+      "ru": "Мы учим испанский, потому что нам нравится путешествовать.",
+      "es": [
+        "Estudiamos español porque nos gusta viajar.",
+        "Aprendemos español porque nos gusta viajar."
+      ],
+      "ipa": "estuˈdjamos espaˈɲol ˈpoɾke nos ˈgusta bjaˈxaɾ"
+    },
+    {
+      "id": "a0-14-s19",
+      "ru": "Мне нравится плавать. — Мне тоже.",
+      "es": [
+        "Me gusta nadar. — A mí también."
+      ],
+      "ipa": "me ˈgusta naˈdaɾ · a ˈmi tamˈbjen"
+    },
+    {
+      "id": "a0-14-s20",
+      "ru": "Я из Казани, но живу в Москве.",
+      "es": [
+        "Soy de Kazán, pero vivo en Moscú."
+      ],
+      "ipa": "ˈsoj de kaˈθan ˈpeɾo ˈbibo en mosˈku"
+    },
+    {
+      "id": "a0-14-s21",
+      "ru": "Мне двадцать восемь лет, я программистка.",
+      "es": [
+        "Tengo veintiocho años y soy programadora.",
+        "Tengo veintiocho años, soy programadora."
+      ],
+      "ipa": "ˈtengo bejnˈtjotʃo ˈaɲos i ˈsoj pɾogɾamaˈdoɾa"
+    },
+    {
+      "id": "a0-14-s22",
+      "ru": "Я много работаю.",
+      "es": [
+        "Trabajo mucho."
+      ],
+      "ipa": "tɾaˈbaxo ˈmutʃo"
+    },
+    {
+      "id": "a0-14-s23",
+      "ru": "У меня есть брат, он врач.",
+      "es": [
+        "Tengo un hermano, es médico."
+      ],
+      "ipa": "ˈtengo un eɾˈmano ˈes ˈmediko"
+    },
+    {
+      "id": "a0-14-s24",
+      "ru": "Он живёт в Мадриде, и ему двадцать пять лет.",
+      "es": [
+        "Vive en Madrid y tiene veinticinco años.",
+        "Él vive en Madrid y tiene veinticinco años."
+      ],
+      "ipa": "ˈbibe en maˈdɾid i ˈtjene bejntiˈθinko ˈaɲos"
+    },
+    {
+      "id": "a0-14-s25",
+      "ru": "Мне нравится читать и путешествовать.",
+      "es": [
+        "Me gusta leer y viajar."
+      ],
+      "ipa": "me ˈgusta leˈeɾ i bjaˈxaɾ"
+    },
+    {
+      "id": "a0-14-s26",
+      "ru": "Я учу испанский, потому что хочу жить в Испании.",
+      "es": [
+        "Estudio español porque quiero vivir en España.",
+        "Aprendo español porque quiero vivir en España."
+      ],
+      "ipa": "esˈtudjo espaˈɲol ˈpoɾke ˈkjeɾo biˈbiɾ en esˈpaɲa"
+    },
+    {
+      "id": "a0-14-s27",
+      "ru": "Завтра мне нужно работать, но я буду учить испанский.",
+      "es": [
+        "Mañana tengo que trabajar, pero voy a estudiar español."
+      ],
+      "ipa": "maˈɲana ˈtengo ke tɾabaˈxaɾ ˈpeɾo ˈboj a estuˈdjaɾ espaˈɲol"
+    },
+    {
+      "id": "a0-14-s28",
+      "ru": "Откуда ты?",
+      "es": [
+        "¿De dónde eres?"
+      ],
+      "ipa": "de ˈdonde ˈeɾes"
+    },
+    {
+      "id": "a0-14-s29",
+      "ru": "Сколько тебе лет?",
+      "es": [
+        "¿Cuántos años tienes?"
+      ],
+      "ipa": "ˈkwantos ˈaɲos ˈtjenes"
+    },
+    {
+      "id": "a0-14-s30",
+      "ru": "Где ты работаешь?",
+      "es": [
+        "¿Dónde trabajas?"
+      ],
+      "ipa": "ˈdonde tɾaˈbaxas"
+    },
+    {
+      "id": "a0-14-s31",
+      "ru": "Вы говорите по-английски?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted habla inglés?",
+        "¿Habla usted inglés?",
+        "¿Habla inglés?"
+      ],
+      "ipa": "usˈted ˈabla inˈgles"
+    },
+    {
+      "id": "a0-14-s32",
+      "ru": "Сегодня я не могу, мне нужно работать.",
+      "es": [
+        "Hoy no puedo, tengo que trabajar.",
+        "Hoy no puedo, necesito trabajar."
+      ],
+      "ipa": "ˈoj no ˈpwedo ˈtengo ke tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-14-s33",
+      "ru": "Ана устала, она хочет отдохнуть.",
+      "es": [
+        "Ana está cansada, quiere descansar.",
+        "Ana está cansada y quiere descansar."
+      ],
+      "ipa": "ˈana esˈta kanˈsada ˈkjeɾe deskanˈsaɾ"
+    },
+    {
+      "id": "a0-14-s34",
+      "ru": "Моя мама учительница, она живёт в Мадриде.",
+      "es": [
+        "Mi madre es profesora y vive en Madrid.",
+        "Mi madre es profesora, vive en Madrid."
+      ],
+      "ipa": "mi ˈmadɾe ˈes pɾofeˈsoɾa i ˈbibe en maˈdɾid"
+    },
+    {
+      "id": "a0-14-s35",
+      "ru": "Завтра мы будем ужинать с Карлосом.",
+      "es": [
+        "Mañana vamos a cenar con Carlos.",
+        "Mañana cenamos con Carlos."
+      ],
+      "ipa": "maˈɲana ˈbamos a θeˈnaɾ kon ˈkaɾlos"
+    },
+    {
+      "id": "a0-14-s36",
+      "ru": "Здесь нет супермаркета, но есть бар.",
+      "es": [
+        "Aquí no hay supermercado, pero hay un bar.",
+        "No hay supermercado aquí, pero hay un bar."
+      ],
+      "ipa": "aˈki no ˈaj supeɾmeɾˈkado ˈpeɾo ˈaj un ˈbaɾ"
+    },
+    {
+      "id": "a0-14-s37",
+      "ru": "Почему ты не хочешь работать? — Потому что я устал.",
+      "es": [
+        "¿Por qué no quieres trabajar? — Porque estoy cansado."
+      ],
+      "ipa": "poɾ ˈke no ˈkjeɾes tɾabaˈxaɾ · ˈpoɾke esˈtoj kanˈsado"
+    },
+    {
+      "id": "a0-14-s38",
+      "ru": "Тебе нравится жить в Мадриде? — Да, очень.",
+      "es": [
+        "¿Te gusta vivir en Madrid? — Sí, mucho.",
+        "¿Te gusta vivir en Madrid? — Sí, me gusta mucho."
+      ],
+      "ipa": "te ˈgusta biˈbiɾ en maˈdɾid · ˈsi ˈmutʃo"
+    },
+    {
+      "id": "a0-14-s39",
+      "ru": "У тебя есть братья или сёстры? — Да, у меня есть сестра.",
+      "es": [
+        "¿Tienes hermanos? — Sí, tengo una hermana."
+      ],
+      "ipa": "ˈtjenes eɾˈmanos · ˈsi ˈtengo ˈuna eɾˈmana"
+    },
+    {
+      "id": "a0-14-s40",
+      "ru": "Какая она, твоя квартира? — Маленькая, но красивая.",
+      "es": [
+        "¿Cómo es tu piso? — Es pequeño, pero bonito.",
+        "¿Cómo es tu piso? — Pequeño, pero bonito."
+      ],
+      "ipa": "ˈkomo ˈes tu ˈpiso · ˈes peˈkeɲo ˈpeɾo boˈnito"
+    }
+  ]
+}

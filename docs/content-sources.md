@@ -91,6 +91,7 @@
 | `compare` | `title`, `left`/`right: {label, tone?: wrong\|right, items: {es, ru?, ipa?}[]}` | ≤ 3 пунктов | сравнение, «так не говорят / так говорят» |
 | `practice` | `group`, `phrase: {ru, es, ipa?, hint?, alternatives?}`, `pauseMs?` | `alternatives` ≤ 2 | **предложение для тренажёра и повторения** |
 | `dialogue` | `title`, `lines: {speaker, es, ru}[]` | ≤ 4 реплик, длинные режутся | диалог, части склеиваются |
+| `text` | `title`, `sentences: {es, ru}[]` | ≤ 10 предложений, 360 знаков es и 420 ru; длинные режутся | связный текст в теории раздела: испанский абзацем, под чертой — перевод; части склеиваются. Появился 09.11.2026 (`433b16b`), образец — урок 14 |
 | `final` | `title`, `bullets`, `nextTitle`, `nextText`, `outro?` | — | «Теперь вы умеете» + анонс |
 
 - **Фраза** везде одной формы: `{ es, ru, ipa? }`.

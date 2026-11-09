@@ -135,8 +135,9 @@ function practiceGroups(lesson: LessonSource, add: (s: SentenceSource) => string
 // --- конспект --------------------------------------------------------------------
 
 /**
- * Теория по разделам, как в полном PDF: таблицы, правила, спряжения, сравнения.
- * Подряд идущие таблицы с одинаковым заголовком — одна таблица («1/2» на слайдах).
+ * Теория по разделам, как в полном PDF: таблицы, правила, спряжения, сравнения, тексты.
+ * Подряд идущие таблицы (тексты) с одинаковым заголовком — одна таблица (один текст):
+ * на слайдах это «1/2».
  * Разделы без теории («Практика», «Мини-диалог») пропускаются.
  */
 function noteSections(lesson: LessonSource): NoteSection[] {
@@ -197,6 +198,21 @@ function noteSections(lesson: LessonSource): NoteSection[] {
       case 'compare':
         push({ type: 'compare', title: slide.title, left: slide.left, right: slide.right })
         break
+      case 'text': {
+        const sentences = [...slide.sentences]
+        while (true) {
+          const next = slides[i + 1]
+          if (next?.type !== 'text' || next.title !== slide.title) break
+          sentences.push(...next.sentences)
+          i++
+        }
+        push({
+          type: 'text',
+          title: slide.title,
+          sentences: sentences.map(({ es, ru }) => ({ es, ru })),
+        })
+        break
+      }
       default:
         break
     }

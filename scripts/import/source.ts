@@ -86,6 +86,8 @@ const Slide = z.discriminatedUnion('type', [
     title: Text,
     lines: z.array(Phrase.extend({ speaker: Text })).min(1),
   }),
+  /** Связный текст: рассказ о себе, мини-история. Длинный режется на слайды с тем же title. */
+  z.object({ type: z.literal('text'), title: Text, sentences: z.array(Phrase).min(1) }),
   z.object({
     type: z.literal('final'),
     title: Text,

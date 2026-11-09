@@ -3,6 +3,7 @@ import { Compare } from './Compare.tsx'
 import { Conjugation } from './Conjugation.tsx'
 import { ConjugationCompare } from './ConjugationCompare.tsx'
 import styles from './NoteBlock.module.css'
+import { Passage } from './Passage.tsx'
 import { Rule } from './Rule.tsx'
 import { WordList } from './WordList.tsx'
 
@@ -24,5 +25,7 @@ export function NoteBlock({ block }: { block: NoteBlockData }) {
       return <ConjugationCompare {...block} />
     case 'compare':
       return <Compare {...block} />
+    case 'text':
+      return <Passage {...block} />
   }
 }

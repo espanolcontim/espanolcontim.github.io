@@ -142,6 +142,38 @@ describe('convertLesson: конспект', () => {
     ])
   })
 
+  it('текст из двух слайдов с одним заголовком — один текст, без транскрипции', () => {
+    const story = (title: string, es: string, ru: string): SlideSource => ({
+      type: 'text',
+      title,
+      sentences: [{ es, ru, ipa: 'x' }],
+    })
+    const { parts } = convert(
+      lesson([
+        { type: 'section', title: 'Рассказ' },
+        story('Рассказ Карлоса', 'Me llamo Carlos.', 'Меня зовут Карлос.'),
+        story('Рассказ Карлоса', 'Soy **de** Moscú.', 'Я **из** Москвы.'),
+        story('Рассказ Аны', 'Soy Ana.', 'Я Ана.'),
+      ]),
+    )
+    expect(parts.notes?.sections[1]).toEqual({
+      id: 'section-2',
+      title: 'Рассказ',
+      hint: undefined,
+      blocks: [
+        {
+          type: 'text',
+          title: 'Рассказ Карлоса',
+          sentences: [
+            { es: 'Me llamo Carlos.', ru: 'Меня зовут Карлос.' },
+            { es: 'Soy **de** Moscú.', ru: 'Я **из** Москвы.' },
+          ],
+        },
+        { type: 'text', title: 'Рассказ Аны', sentences: [{ es: 'Soy Ana.', ru: 'Я Ана.' }] },
+      ],
+    })
+  })
+
   it('новые слова с транскрипцией, итог урока', () => {
     expect(parts.notes?.vocabulary.map((entry) => entry.ipa)).toEqual(['aˈblaɾ', undefined])
     expect(warnings).toEqual(['нет транскрипции у слова «el idioma»'])
