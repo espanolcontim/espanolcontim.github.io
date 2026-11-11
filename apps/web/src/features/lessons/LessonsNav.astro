@@ -2,11 +2,12 @@
 import { LEVEL_LESSONS, LEVELS } from '@espanolcontim/content'
 import { container } from '../../app/container.ts'
 import { LEVEL_NAMES } from './labels.ts'
-import { lessonPath } from './navigation.ts'
+import { isPractice, lessonPath } from './navigation.ts'
 
 /**
  * Меню всех уроков по уровням. Уровни сворачиваются; открыты A0 и уровень
  * текущего урока. Уровни из плана курса видны, даже если уроков ещё нет.
+ * Практика — между уроками, без номера; в счётчике «14/14» её нет.
  */
 interface Props {
   /** id открытого урока — подсвечивается, его уровень раскрыт. */
@@ -30,7 +31,7 @@ const levels = LEVELS.map((level) => ({
         <span class="level">{level}</span>
         <span class="name">{LEVEL_NAMES[level]}</span>
         <span class="count">
-          {lessons.length}
+          {lessons.filter((lesson) => !isPractice(lesson)).length}
           {planned && `/${planned}`}
         </span>
       </summary>
@@ -42,8 +43,20 @@ const levels = LEVELS.map((level) => ({
                 href={lessonPath(lesson.id)}
                 aria-current={lesson.id === current ? 'page' : undefined}
               >
-                <span class="n">{lesson.planLesson}</span>
-                <span>{lesson.title}</span>
+                {isPractice(lesson) ? (
+                  <>
+                    <span class="n" />
+                    <span>
+                      <span class="kind">Практика · </span>
+                      {lesson.title}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span class="n">{lesson.planLesson}</span>
+                    <span>{lesson.title}</span>
+                  </>
+                )}
               </a>
             </li>
           ))}
@@ -137,6 +150,14 @@ const levels = LEVELS.map((level) => ({
 
   a[aria-current='page'] .n {
     color: var(--accent);
+  }
+
+  .kind {
+    color: var(--text-3);
+  }
+
+  a[aria-current='page'] .kind {
+    color: inherit;
   }
 
   .soon {

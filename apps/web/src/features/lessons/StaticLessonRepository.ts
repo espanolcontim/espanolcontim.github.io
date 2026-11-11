@@ -5,6 +5,7 @@ import {
   type LessonMeta,
 } from '@espanolcontim/content'
 import type { LessonRepository } from './LessonRepository.ts'
+import { courseOrder } from './navigation.ts'
 
 /**
  * Бесплатные части уроков из content/public — читаются при сборке сайта.
@@ -19,7 +20,9 @@ export class StaticLessonRepository implements LessonRepository {
    * @param bodies содержимое content/public/lessons/*.json
    */
   constructor(index: unknown, bodies: unknown[]) {
-    this.lessons = ContentIndexSchema.parse(index).lessons.toSorted((a, b) => a.number - b.number)
+    this.lessons = ContentIndexSchema.parse(index).lessons.toSorted(
+      (a, b) => courseOrder(a) - courseOrder(b),
+    )
     this.bodies = new Map(
       bodies.map((raw) => {
         const body = LessonBodySchema.parse(raw)

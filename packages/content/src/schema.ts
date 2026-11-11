@@ -288,19 +288,28 @@ export const LessonBodySchema = z.object({
   sentences: z.array(SentenceSchema),
 })
 
-/** Метаданные урока — публичны для всех уроков, в том числе платных. */
+/**
+ * Метаданные урока — публичны для всех уроков, в том числе платных.
+ * Практический урок — тоже «урок»: без теории и новых слов, только упражнения
+ * по пройденному. У него есть `repeats`, и в курсе он стоит после урока `repeats.to`.
+ */
 export const LessonMetaSchema = z.object({
   id: LessonIdSchema,
-  /** Сквозной номер: «Урок 11», как в видео. */
+  /** Сквозной номер: «Урок 11», как в видео. У практики — сквозной номер практики. */
   number: z.number().int().positive(),
   level: LevelSchema,
-  /** Номер в уровне: «11/14», как на обложке. */
+  /** Номер в уровне: «11/14», как на обложке. У практики — номер практики в уровне. */
   planLesson: z.number().int().positive(),
   title: Text,
   grammar: z.array(Text),
   youtubeUrl: z.url().optional(),
   /** Какие части есть и как открыты; считает access.ts. */
   parts: z.partialRecord(PartSchema, AccessSchema),
+  /** Только у практики: какие уроки повторяет (сквозные номера); стоит после урока `to`. */
+  repeats: z
+    .object({ from: z.number().int().positive(), to: z.number().int().positive() })
+    .refine((range) => range.from <= range.to, { message: 'from больше to' })
+    .optional(),
 })
 
 /** content/public/index.json */

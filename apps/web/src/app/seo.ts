@@ -1,6 +1,6 @@
 import type { LessonBody, LessonMeta } from '@espanolcontim/content'
 import type { LessonRepository } from '../features/lessons/LessonRepository.ts'
-import { lessonPath } from '../features/lessons/navigation.ts'
+import { lessonPath, lessonSections } from '../features/lessons/navigation.ts'
 import { SUBSCRIBE_PATH } from './links.ts'
 
 /** Поиск и превью ссылок: sitemap, описания страниц, Open Graph. */
@@ -37,14 +37,20 @@ export function fitDescription(
 
 /**
  * Страницы урока для поиска. Закрытые конспект и допматериалы — заглушки
- * с noindex (их тела нет в content/public), в sitemap их нет.
+ * с noindex (их тела нет в content/public), в sitemap их нет. У практики
+ * подразделов нет — только её страница.
  */
 export function lessonSitemapPaths(meta: LessonMeta, body: LessonBody): string[] {
+  const open = {
+    notes: body.notes !== undefined,
+    extras: body.extras !== undefined,
+    practice: true,
+  }
   return [
     lessonPath(meta.id),
-    ...(body.notes ? [lessonPath(meta.id, 'notes')] : []),
-    ...(body.extras ? [lessonPath(meta.id, 'extras')] : []),
-    lessonPath(meta.id, 'practice'),
+    ...lessonSections(meta)
+      .filter((section) => open[section])
+      .map((section) => lessonPath(meta.id, section)),
   ]
 }
 

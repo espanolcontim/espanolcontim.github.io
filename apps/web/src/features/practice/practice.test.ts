@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { container } from '../../app/container.ts'
 import { plural } from '../../shared/plural.ts'
 import { score, shuffle } from './session.ts'
-import { buildPracticeSets, QUIZ_TITLE } from './sets.ts'
+import { buildPracticeSets, QUIZ_TITLE, QUIZ_TITLES } from './sets.ts'
 
 const body: LessonBody = {
   id: 'a0-01',
@@ -72,6 +72,11 @@ describe('buildPracticeSets', () => {
     })
     expect(sets[1]?.tasks[1]).not.toHaveProperty('type')
     expect(sets[2]?.tasks[0]).toMatchObject({ kind: 'order', answers: ['Buenos días.'] })
+  })
+
+  it('на странице практики проверка называется просто «Проверка»', () => {
+    expect(buildPracticeSets(body, 'practice').at(-1)?.title).toBe(QUIZ_TITLES.practice)
+    expect(QUIZ_TITLES.practice).toBe('Проверка')
   })
 
   it('без упражнений — без наборов', () => {

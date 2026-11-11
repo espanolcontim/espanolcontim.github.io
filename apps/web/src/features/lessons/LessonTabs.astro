@@ -17,20 +17,23 @@ const { meta, current } = Astro.props
 const pages: LessonPage[] = ['overview', ...lessonSections(meta)]
 ---
 
-<nav class="lesson-tabs" aria-label="Разделы урока" data-lesson-tabs>
-  <ul>
-    {pages.map((page) => (
-      <li>
-        <a href={lessonPath(meta.id, page)} aria-current={page === current ? 'page' : undefined}>
-          {tabTitle(page)}
-          {page !== 'overview' && sectionLocked(meta, page) && (
-            <PaidNote note={SUBSCRIPTION} icon />
-          )}
-        </a>
-      </li>
-    ))}
-  </ul>
-</nav>
+{/* Без подразделов (практика) вкладка была бы одна — не нужна. */}
+{pages.length > 1 && (
+  <nav class="lesson-tabs" aria-label="Разделы урока" data-lesson-tabs>
+    <ul>
+      {pages.map((page) => (
+        <li>
+          <a href={lessonPath(meta.id, page)} aria-current={page === current ? 'page' : undefined}>
+            {tabTitle(page)}
+            {page !== 'overview' && sectionLocked(meta, page) && (
+              <PaidNote note={SUBSCRIPTION} icon />
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
 
 <script>
   // Только вбок: scrollIntoView прокрутил бы и страницу, если её открыли не с начала.

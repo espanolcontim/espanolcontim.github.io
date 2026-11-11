@@ -4,7 +4,9 @@ import {
   extraExerciseId,
   LESSON_ID,
   lessonId,
+  practiceId,
   SENTENCE_ID,
+  sentenceLesson,
   sentenceExerciseId,
   sentenceId,
 } from './ids.ts'
@@ -13,6 +15,12 @@ describe('id контента', () => {
   it('урок: уровень строчными и номер в уровне с ведущим нулём', () => {
     expect(lessonId({ level: 'A0', planLesson: 1 })).toBe('a0-01')
     expect(lessonId({ level: 'A1', planLesson: 25 })).toBe('a1-25')
+  })
+
+  it('практика: уровень и «p» с номером практики в уровне, без ведущего нуля', () => {
+    expect(practiceId({ level: 'A0', planLesson: 1 })).toBe('a0-p1')
+    expect(practiceId({ level: 'A1', planLesson: 12 })).toBe('a1-p12')
+    expect(sentenceLesson(sentenceId('a0-p1', 3))).toBe('a0-p1')
   })
 
   it('предложение и упражнения', () => {
@@ -31,5 +39,9 @@ describe('id контента', () => {
     expect(EXERCISE_ID.test('a0-11-s07.translate')).toBe(true)
     expect(EXERCISE_ID.test('a0-11-x05')).toBe(true)
     expect(EXERCISE_ID.test('a0-11-s07.choice')).toBe(false)
+    expect(LESSON_ID.test('a0-p1')).toBe(true)
+    expect(LESSON_ID.test('a0-p')).toBe(false)
+    expect(SENTENCE_ID.test('a0-p1-s07')).toBe(true)
+    expect(EXERCISE_ID.test('a0-p1-s07.order')).toBe(true)
   })
 })

@@ -11,8 +11,22 @@ export function lessonPath(id: string, section?: LessonPage): string {
   return section && section !== 'overview' ? `/lessons/${id}/${section}/` : `/lessons/${id}/`
 }
 
+/**
+ * Практический урок: без теории и новых слов, упражнения — прямо на его странице,
+ * подразделов нет.
+ */
+export function isPractice(meta: LessonMeta): boolean {
+  return meta.repeats !== undefined
+}
+
+/** Место в курсе: урок — по сквозному номеру, практика — сразу после урока, который закрывает. */
+export function courseOrder(meta: LessonMeta): number {
+  return meta.repeats ? meta.repeats.to + 0.5 : meta.number
+}
+
 /** Подразделы урока в порядке прохождения. Допматериалов у урока может не быть. */
 export function lessonSections(meta: LessonMeta): LessonSection[] {
+  if (isPractice(meta)) return []
   return meta.parts.extras ? ['notes', 'extras', 'practice'] : ['notes', 'practice']
 }
 
@@ -24,7 +38,7 @@ export function nextSection(meta: LessonMeta, page: LessonPage): LessonSection |
   return i < 0 ? undefined : sections[i + 1]
 }
 
-/** Соседние уроки по сквозному номеру. */
+/** Соседние уроки в порядке курса, практики — среди них. */
 export function neighbours(
   lessons: LessonMeta[],
   id: string,
@@ -34,7 +48,7 @@ export function neighbours(
   return { previous: lessons[i - 1], next: lessons[i + 1] }
 }
 
-/** «11/14», как на обложке; если размер уровня неизвестен — просто номер. */
+/** «11/14», как на обложке; если размер уровня неизвестен — просто номер. Не для практики. */
 export function planLabel(meta: LessonMeta): string {
   const total = LEVEL_LESSONS[meta.level]
   return total ? `${meta.planLesson}/${total}` : String(meta.planLesson)

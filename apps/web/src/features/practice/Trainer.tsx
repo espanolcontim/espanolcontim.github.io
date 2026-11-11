@@ -3,7 +3,7 @@ import { usePaidBody } from '../lessons/usePaidBody.ts'
 import styles from './practice.module.css'
 import { Session } from './Session.tsx'
 import { SetList, type Locked } from './SetList.tsx'
-import { buildPracticeSets, mergeSets, type PracticeSet } from './sets.ts'
+import { buildPracticeSets, mergeSets, type PracticeSet, type TrainerPlace } from './sets.ts'
 
 /** Запись истории, которую тренажёр добавил сам, открыв набор из списка. */
 const FROM_LIST = { practice: 'fromList' }
@@ -21,19 +21,23 @@ export default function Trainer({
   lessonId,
   sets: freeSets,
   locked,
+  place = 'lesson',
 }: {
   lessonId: string
   /** Наборы из бесплатной половины урока. */
   sets: PracticeSet[]
   locked: Locked
+  /** На странице практики — свои подписи и адрес возврата после входа. */
+  place?: TrainerPlace
 }) {
   const [openId, setOpenId] = useState<string>()
   const [returnTo, setReturnTo] = useState<string>()
   const root = useRef<HTMLDivElement>(null)
   const paid = usePaidBody(lessonId, locked.phrases || locked.extras)
   const sets = useMemo(
-    () => (paid.status === 'ready' ? mergeSets(freeSets, buildPracticeSets(paid.body)) : freeSets),
-    [freeSets, paid],
+    () =>
+      paid.status === 'ready' ? mergeSets(freeSets, buildPracticeSets(paid.body, place)) : freeSets,
+    [freeSets, paid, place],
   )
   const open = sets.find((set) => set.id === openId)
 
@@ -86,6 +90,7 @@ export default function Trainer({
       ) : (
         <SetList
           lessonId={lessonId}
+          place={place}
           sets={sets}
           locked={locked}
           paid={paid.status === 'ready' ? { status: 'missing' } : paid}

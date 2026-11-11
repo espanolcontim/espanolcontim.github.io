@@ -1,12 +1,12 @@
 ---
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
 import LessonNext from '../../../features/lessons/LessonNext.astro'
-import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
+import { loadLesson, sectionStaticPaths } from '../../../features/lessons/page.ts'
 import { buildPracticeSets } from '../../../features/practice/sets.ts'
 import Trainer from '../../../features/practice/Trainer.tsx'
 import Page from '../../../app/Page.astro'
 
-export const getStaticPaths = lessonStaticPaths
+export const getStaticPaths = () => sectionStaticPaths('practice')
 
 const { meta, body, lessons, channel } = await loadLesson(Astro.params.id)
 const sets = buildPracticeSets(body)

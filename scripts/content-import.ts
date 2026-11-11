@@ -1,11 +1,12 @@
 /**
  * Импорт контента из ../video-lessons (только чтение):
  *
- *   npm run content:import                все уроки
- *   npm run content:import -- 1 8 11      только эти (сквозные номера уроков)
+ *   npm run content:import                все уроки и практики
+ *   npm run content:import -- 1 8 11 p1   только эти: уроки — сквозными номерами, практики — pN
  *   npm run content:import -- --check     проверить и собрать, ничего не записывая
  *
- * Путь к источнику — CONTENT_SOURCE (по умолчанию ../video-lessons).
+ * Путь к источнику — CONTENT_SOURCE (по умолчанию ../video-lessons). Уроки —
+ * lessons/lesson-NN.json, практические уроки — lessons/practice-NN.json.
  *
  * Каждый запуск пересобирает content/public и content/private целиком: на
  * сайте ровно те уроки, что импортированы этим запуском. id предложений
@@ -21,8 +22,10 @@ import {
   lessonId,
   mergeLessonBodies,
   missingSentences,
+  practiceId,
   VideosSchema,
   type Access,
+  type LessonAddress,
   type LessonBody,
   type LessonMeta,
   type Part,
@@ -43,7 +46,8 @@ const PRIVATE = join(CONTENT, 'private')
 const LOCK = join(CONTENT, 'ids.lock.json')
 const VIDEOS = join(CONTENT, 'videos.json')
 
-const FILE = /^lesson-(\d+)\.json$/
+const LESSON_FILE = /^lesson-(\d+)\.json$/
+const PRACTICE_FILE = /^practice-(\d+)\.json$/
 
 const PART_LABELS: Record<Part, string> = {
   summary: 'выжимка',
@@ -94,12 +98,13 @@ function readSource<T extends { number: number }>(
   dir: 'lessons' | 'extras',
   schema: z.ZodType<T>,
   errors: string[],
+  file = LESSON_FILE,
 ): Map<number, T> {
   const out = new Map<number, T>()
   const path = join(SOURCE, dir)
   if (!existsSync(path)) return out
   for (const name of readdirSync(path).sort()) {
-    const number = FILE.exec(name)?.[1]
+    const number = file.exec(name)?.[1]
     if (!number) continue
     const where = `${dir}/${name}`
     const raw = readJson(join(path, name), errors)
@@ -134,6 +139,8 @@ const numbered = (list: { sentences: number[]; exercises: number[] }): string =>
 
 interface Imported {
   id: string
+  /** «Урок 4», «Практика 1». */
+  name: string
   lesson: LessonSource
   converted: ConvertedLesson
   ids: LessonIds
@@ -143,13 +150,14 @@ interface Imported {
 }
 
 function report(item: Imported): string {
-  const { id, lesson, converted, ids, free, paid, meta } = item
+  const { id, name, lesson, converted, ids, free, paid, meta } = item
   const parts = Object.entries(meta.parts)
     .map(([part, access]) => `${PART_LABELS[part as Part]} — ${ACCESS_LABELS[access]}`)
     .join(', ')
   const extraTasks = converted.parts.extras?.exercises.reduce((sum, b) => sum + b.items.length, 0)
   const lines = [
-    `✓ ${id} · Урок ${lesson.number}. ${lesson.title}`,
+    `✓ ${id} · ${name}. ${lesson.title}` +
+      (meta.repeats ? ` · повторяет уроки ${meta.repeats.from}–${meta.repeats.to}` : ''),
     `    ${parts}`,
     `    предложений ${converted.sentences.length}: public ${free.sentences.length}, private ${paid?.sentences.length ?? 0}` +
       ` · разделов конспекта ${converted.parts.notes?.sections.length ?? 0}` +
@@ -165,6 +173,7 @@ function report(item: Imported): string {
     )
   }
   for (const warning of converted.warnings) lines.push(`    ⚠ ${warning}`)
+  if (!meta.youtubeUrl) lines.push('    ⚠ нет ссылки на видео в content/videos.json')
   return lines.join('\n')
 }
 
@@ -172,9 +181,14 @@ function report(item: Imported): string {
 
 const args = process.argv.slice(2)
 const check = args.includes('--check')
-const wanted = args.filter((arg) => !arg.startsWith('--')).map(Number)
-if (wanted.some((n) => !Number.isInteger(n) || n <= 0)) {
-  console.error('Использование: npm run content:import [-- <номера уроков>] [-- --check]')
+const tokens = args.filter((arg) => !arg.startsWith('--'))
+const wantedLessons = tokens.filter((arg) => /^\d+$/.test(arg)).map(Number)
+const wantedPractices = tokens.flatMap((arg) => /^p(\d+)$/.exec(arg)?.[1] ?? []).map(Number)
+if (
+  tokens.length !== wantedLessons.length + wantedPractices.length ||
+  [...wantedLessons, ...wantedPractices].some((n) => n <= 0)
+) {
+  console.error('Использование: npm run content:import [-- <номера уроков> <pN>] [-- --check]')
   process.exit(1)
 }
 if (!existsSync(SOURCE)) {
@@ -184,19 +198,86 @@ if (!existsSync(SOURCE)) {
 
 const errors: string[] = []
 const lessons = readSource('lessons', LessonSourceSchema, errors)
+const practices = readSource('lessons', LessonSourceSchema, errors, PRACTICE_FILE)
 const extras = readSource('extras', ExtraSourceSchema, errors)
+const fileName = (kind: 'lesson' | 'practice', n: number) =>
+  `lessons/${kind}-${String(n).padStart(2, '0')}.json`
+for (const [n, lesson] of lessons) {
+  if (lesson.kind === 'practice') errors.push(`${fileName('lesson', n)}: kind = practice у урока`)
+}
+for (const [n, practice] of practices) {
+  if (practice.kind !== 'practice') errors.push(`${fileName('practice', n)}: нет kind: practice`)
+}
 for (const n of extras.keys()) {
   if (!lessons.has(n))
     errors.push(`extras/lesson-${String(n).padStart(2, '0')}.json: нет урока ${n}`)
 }
-const numberById = new Map<string, number>()
-for (const [n, lesson] of lessons) {
-  const id = lessonId(lesson)
-  const other = numberById.get(id)
-  if (other !== undefined) errors.push(`уроки ${other} и ${n}: оба получают id ${id}`)
-  numberById.set(id, n)
+
+/**
+ * Что импортировать: урок или практика. Доступ практики — как у урока, после
+ * которого она стоит; повторяет она уроки от предыдущей практики уровня (или
+ * от первого урока уровня) до этого урока — как «Повторяем уроки 1–4» в её PDF.
+ */
+interface Entry {
+  id: string
+  name: string
+  source: LessonSource
+  access: LessonAddress
+  repeats?: LessonMeta['repeats']
 }
-for (const n of wanted) if (!lessons.has(n)) errors.push(`урока ${n} нет в ${SOURCE}/lessons`)
+
+const lessonEntry = (lesson: LessonSource): Entry => ({
+  id: lessonId(lesson),
+  name: `Урок ${lesson.number}`,
+  source: lesson,
+  access: lesson,
+})
+
+function practiceEntry(practice: LessonSource): Entry | undefined {
+  const where = fileName('practice', practice.number)
+  const after = practice.afterLesson === undefined ? undefined : lessons.get(practice.afterLesson)
+  if (!after) {
+    errors.push(`${where}: нет урока ${String(practice.afterLesson)}, после которого она стоит`)
+    return undefined
+  }
+  if (after.level !== practice.level) {
+    errors.push(`${where}: уровень ${practice.level}, а урок ${after.number} — ${after.level}`)
+    return undefined
+  }
+  const previous = [...practices.values()]
+    .filter((other) => other.level === practice.level && other.number < practice.number)
+    .sort((a, b) => a.number - b.number)
+    .at(-1)?.afterLesson
+  const from = previous === undefined ? after.number - after.planLesson + 1 : previous + 1
+  return {
+    id: practiceId(practice),
+    name: `Практика ${practice.number}`,
+    source: practice,
+    access: after,
+    repeats: { from, to: after.number },
+  }
+}
+
+/** В порядке курса: практика — сразу после своего урока. */
+const entries = [
+  ...[...lessons.values()].map(lessonEntry),
+  ...[...practices.values()].flatMap((practice) => practiceEntry(practice) ?? []),
+].sort(
+  (a, b) =>
+    (a.repeats?.to ?? a.source.number) - (b.repeats?.to ?? b.source.number) ||
+    Number(a.repeats !== undefined) - Number(b.repeats !== undefined),
+)
+const nameById = new Map<string, string>()
+for (const entry of entries) {
+  const other = nameById.get(entry.id)
+  if (other !== undefined) errors.push(`${other} и ${entry.name}: оба получают id ${entry.id}`)
+  nameById.set(entry.id, entry.name)
+}
+for (const n of wantedLessons)
+  if (!lessons.has(n)) errors.push(`урока ${n} нет в ${SOURCE}/lessons`)
+for (const n of wantedPractices) {
+  if (!practices.has(n)) errors.push(`практики ${n} нет в ${SOURCE}/lessons`)
+}
 
 const videos: Videos | undefined = existsSync(VIDEOS)
   ? validate(VideosSchema, readJson(VIDEOS, errors), 'content/videos.json', errors)
@@ -205,22 +286,26 @@ const videos: Videos | undefined = existsSync(VIDEOS)
 const lock = readLock(LOCK)
 const all = [...lessons.values()].sort((a, b) => a.number - b.number)
 const selected =
-  wanted.length > 0 ? [...new Set(wanted)].sort((a, b) => a - b) : all.map((l) => l.number)
+  tokens.length === 0
+    ? entries
+    : entries.filter((entry) =>
+        entry.repeats
+          ? wantedPractices.includes(entry.source.number)
+          : wantedLessons.includes(entry.source.number),
+      )
 const imported: Imported[] = []
 
 if (errors.length === 0) {
-  for (const n of selected) {
-    const lesson = lessons.get(n)!
-    const id = lessonId(lesson)
+  for (const { id, name, source: lesson, access: address, repeats } of selected) {
     const ids = lessonIds(lock, id)
     const converted = convertLesson({
       id,
       lesson,
-      extra: extras.get(n),
+      extra: lesson.kind === 'practice' ? undefined : extras.get(lesson.number),
       ids,
       ipa: ipaLookup([lesson, ...all.filter((other) => other !== lesson)]),
     })
-    const access = lessonAccess(lesson, converted)
+    const access = lessonAccess(address, converted)
     const split = splitLesson(id, converted, access)
 
     // Контракт: обе половины проходят схему сайта, ссылки на предложения целы.
@@ -231,8 +316,8 @@ if (errors.length === 0) {
     if (missing.length > 0)
       errors.push(`${id}: ссылки на несуществующие предложения ${missing.join(', ')}`)
 
-    const meta = lessonMeta(id, lesson, access, videos?.lessons[id])
-    imported.push({ id, lesson, converted, ids, free, paid, meta })
+    const meta = lessonMeta(id, lesson, access, videos?.lessons[id], repeats)
+    imported.push({ id, name, lesson, converted, ids, free, paid, meta })
   }
 }
 
@@ -252,7 +337,7 @@ if (errors.length > 0 || !index) {
 for (const item of imported) console.log(report(item))
 
 if (check) {
-  console.log(`\nПроверено уроков: ${imported.length}. --check: ничего не записано.`)
+  console.log(`\nПроверено уроков и практик: ${imported.length}. --check: ничего не записано.`)
   process.exit(0)
 }
 
@@ -271,7 +356,9 @@ for (const { id, free, paid } of imported) {
 writeLock(LOCK, lock)
 
 const privateCount = imported.filter((item) => item.paid).length
+const practiceCount = imported.filter((item) => item.meta.repeats).length
 console.log(
-  `\nУроков: ${imported.length} → content/public (${imported.length}), content/private (${privateCount}).` +
+  `\nУроков: ${imported.length - practiceCount}, практик: ${practiceCount}` +
+    ` → content/public (${imported.length}), content/private (${privateCount}).` +
     ` id — content/ids.lock.json.`,
 )

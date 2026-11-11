@@ -1,6 +1,6 @@
 ---
 import type { LessonMeta } from '@espanolcontim/content'
-import { sectionNote, SECTIONS } from './labels.ts'
+import { lessonName, repeatsLabel, sectionNote, SECTIONS } from './labels.ts'
 import {
   lessonPath,
   lessonSections,
@@ -14,6 +14,7 @@ import PaidNote from './PaidNote.astro'
 /**
  * Конец страницы урока: следующий шаг — заметной карточкой, ниже — остальные подразделы
  * и соседние уроки. Порядок: обзор → конспект → допматериалы → упражнения → следующий урок.
+ * Практика — такой же «следующий урок»: она стоит между уроками, подразделов у неё нет.
  */
 interface Props {
   meta: LessonMeta
@@ -46,8 +47,10 @@ const main: Card | undefined = step
   ? sectionCard(step)
   : nextLesson && {
       href: lessonPath(nextLesson.id),
-      kicker: 'Следующий урок',
-      title: `Урок ${nextLesson.number}. ${nextLesson.title}`,
+      kicker: nextLesson.repeats
+        ? `Практика: повторяем ${repeatsLabel(nextLesson.repeats)}`
+        : 'Следующий урок',
+      title: `${lessonName(nextLesson)}. ${nextLesson.title}`,
     }
 /** Это последний вышедший урок — а следующего шага нет. */
 const leadText = lead ?? (main ? undefined : 'Следующий урок ещё не вышел.')
@@ -88,13 +91,13 @@ const pager = { previous, next: nextLesson ? undefined : next }
     <nav class="pager" aria-label="Соседние уроки">
       {pager.previous && (
         <a href={lessonPath(pager.previous.id)} rel="prev">
-          <span class="ru">← Урок {pager.previous.number}</span>
+          <span class="ru">← {lessonName(pager.previous)}</span>
           <span>{pager.previous.title}</span>
         </a>
       )}
       {pager.next && (
         <a class="pager-next" href={lessonPath(pager.next.id)} rel="next">
-          <span class="ru">Урок {pager.next.number} →</span>
+          <span class="ru">{lessonName(pager.next)} →</span>
           <span>{pager.next.title}</span>
         </a>
       )}

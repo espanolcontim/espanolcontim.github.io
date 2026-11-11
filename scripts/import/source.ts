@@ -99,9 +99,17 @@ const Slide = z.discriminatedUnion('type', [
 
 const MistakeSide = z.object({ label: Text.optional(), es: Marked, ru: Marked.optional() })
 
+/**
+ * lessons/lesson-NN.json — урок, lessons/practice-NN.json — практический урок
+ * (`kind: "practice"`): без теории и новых слов, `number` — сквозной номер
+ * практики, `planLesson` — номер практики в уровне, `afterLesson` — сквозной
+ * номер урока, после которого она стоит.
+ */
 export const LessonSourceSchema = z
   .object({
     schemaVersion: z.literal(3),
+    kind: z.literal('practice').optional(),
+    afterLesson: z.number().int().positive().optional(),
     number: z.number().int().positive(),
     level: z.enum(LEVELS),
     planLesson: z.number().int().positive(),
@@ -140,6 +148,13 @@ export const LessonSourceSchema = z
       .optional(),
   })
   .superRefine((lesson, ctx) => {
+    if ((lesson.kind === 'practice') !== (lesson.afterLesson !== undefined)) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['afterLesson'],
+        message: 'afterLesson есть у практики (kind: "practice") и только у неё',
+      })
+    }
     const groups = new Set(lesson.practiceGroups.map((group) => group.name))
     lesson.slides.forEach((slide, i) => {
       if (slide.type === 'practice' && !groups.has(slide.group)) {

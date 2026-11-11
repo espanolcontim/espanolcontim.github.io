@@ -7,6 +7,7 @@ import {
   PARTS,
   sentenceRefs,
   type Access,
+  type LessonAddress,
   type LessonBody,
   type LessonMeta,
   type LessonParts,
@@ -15,15 +16,18 @@ import {
 import type { ConvertedLesson } from './convert.ts'
 import type { LessonSource } from './source.ts'
 
-/** Какие части у урока есть и как они открыты — по access.ts. */
+/**
+ * Какие части у урока есть и как они открыты — по access.ts.
+ * @param address чей доступ: у урока — свой, у практики — урока, после которого она стоит
+ */
 export function lessonAccess(
-  lesson: LessonSource,
+  address: LessonAddress,
   converted: ConvertedLesson,
 ): Partial<Record<Part, Access>> {
   return Object.fromEntries(
     PARTS.filter((part) => converted.parts[part] !== undefined).map((part) => [
       part,
-      partAccess(part, lesson),
+      partAccess(part, address),
     ]),
   )
 }
@@ -63,11 +67,13 @@ export function splitLesson(
   return { free, paid }
 }
 
+/** @param repeats у практики — какие уроки она повторяет */
 export function lessonMeta(
   id: string,
   lesson: LessonSource,
   access: Partial<Record<Part, Access>>,
   youtubeUrl: string | undefined,
+  repeats?: LessonMeta['repeats'],
 ): LessonMeta {
   return {
     id,
@@ -78,5 +84,6 @@ export function lessonMeta(
     grammar: lesson.newGrammar ?? [],
     youtubeUrl,
     parts: access,
+    repeats,
   }
 }

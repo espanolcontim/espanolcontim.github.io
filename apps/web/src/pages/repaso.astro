@@ -1,6 +1,7 @@
 ---
 import { container } from '../app/container.ts'
 import Page from '../app/Page.astro'
+import { lessonName } from '../features/lessons/labels.ts'
 import { lessonPath } from '../features/lessons/navigation.ts'
 import { BOX_LABELS } from '../features/review/labels.ts'
 import Review from '../features/review/Review.tsx'
@@ -8,7 +9,7 @@ import { reviewSentences } from '../features/review/sentences.ts'
 
 const sentences = await reviewSentences(container.lessons)
 const lessons = await container.lessons.list()
-const lessonNumbers = Object.fromEntries(lessons.map((lesson) => [lesson.id, lesson.number]))
+const lessonNames = Object.fromEntries(lessons.map((lesson) => [lesson.id, lessonName(lesson)]))
 const [first] = lessons
 const intervals = BOX_LABELS.map((label) => label.replace('через ', '')).join(', ')
 ---
@@ -31,7 +32,7 @@ const intervals = BOX_LABELS.map((label) => label.replace('через ', '')).jo
   <Review
     client:only="react"
     sentences={sentences}
-    lessonNumbers={lessonNumbers}
+    lessonNames={lessonNames}
     start={first ? lessonPath(first.id, 'practice') : '/lessons/'}
   />
   <noscript>

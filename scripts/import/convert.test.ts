@@ -242,6 +242,54 @@ describe('convertLesson: предложения и упражнения', () => 
   })
 })
 
+describe('convertLesson: практика', () => {
+  const mixed = Array.from({ length: 12 }, (_, i) =>
+    practice('Вперемешку', `Фраза номер ${i + 1}.`, `Frase número ${i + 1}.`),
+  )
+  const story = [
+    practice('Рассказ', 'Завтра я не работаю.', 'Mañana no trabajo.'),
+    practice('Рассказ', 'Я буду путешествовать.', 'Voy a viajar.'),
+  ]
+  const source: LessonSource = {
+    ...lesson(),
+    kind: 'practice',
+    afterLesson: 4,
+    practiceGroups: [{ name: 'Разминка' }, { name: 'Вперемешку' }, { name: 'Рассказ' }],
+    slides: [{ type: 'title' }, practice('Разминка', 'Я говорю.', 'Hablo.'), ...mixed, ...story],
+  }
+
+  it('проверка — из «Вперемешку», а не из последней группы («Рассказ»)', () => {
+    const { parts, sentences } = convertLesson({
+      id: 'a0-p1',
+      lesson: source,
+      ids: lessonIds({ version: 1, lessons: {} }, 'a0-p1'),
+      ipa: () => undefined,
+    })
+    const ru = new Map(sentences.map((s) => [s.id, s.ru]))
+    const quiz = (parts.quiz ?? []).map((exercise) =>
+      'sentenceId' in exercise ? ru.get(exercise.sentenceId) : undefined,
+    )
+    expect(quiz).toHaveLength(10)
+    expect(quiz.every((text) => text?.startsWith('Фраза номер'))).toBe(true)
+    expect(sentences[0]?.id).toBe('a0-p1-s01')
+  })
+
+  it('у урока проверка по-прежнему с конца практики', () => {
+    const { kind: _kind, afterLesson: _after, ...plain } = source
+    const { parts } = convertLesson({
+      id: 'a1-03',
+      lesson: plain,
+      ids: lessonIds({ version: 1, lessons: {} }, 'a1-03'),
+      ipa: () => undefined,
+    })
+    const quizSentences = parts.quiz?.map((exercise) =>
+      'sentenceId' in exercise ? exercise.sentenceId : undefined,
+    )
+    // s14 и s15 — «Рассказ», последняя группа.
+    expect(quizSentences).toEqual(expect.arrayContaining(['a1-03-s14', 'a1-03-s15']))
+  })
+})
+
 describe('splitLesson', () => {
   const source = lesson()
   const converted = convert(source)

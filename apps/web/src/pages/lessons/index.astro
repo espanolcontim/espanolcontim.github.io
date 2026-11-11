@@ -2,8 +2,13 @@
 import { LEVEL_LESSONS, LEVELS } from '@espanolcontim/content'
 import { container } from '../../app/container.ts'
 import Page from '../../app/Page.astro'
-import { ACCESS_NOTE, LEVEL_NAMES } from '../../features/lessons/labels.ts'
-import { lessonPath } from '../../features/lessons/navigation.ts'
+import {
+  ACCESS_NOTE,
+  LEVEL_NAMES,
+  lessonName,
+  repeatsLabel,
+} from '../../features/lessons/labels.ts'
+import { isPractice, lessonPath } from '../../features/lessons/navigation.ts'
 import PaidNote from '../../features/lessons/PaidNote.astro'
 import LessonMark from '../../features/review/LessonMark.astro'
 
@@ -30,22 +35,30 @@ const levels = LEVELS.map((level) => ({
       </h2>
       {LEVEL_LESSONS[level] && (
         <p class="ru">
-          Вышло {lessons.length} из {LEVEL_LESSONS[level]} уроков
+          Вышло {lessons.filter((lesson) => !isPractice(lesson)).length} из {LEVEL_LESSONS[level]}{' '}
+          уроков
         </p>
       )}
       <ol class="lessons">
         {lessons.map((lesson) => {
-          const note = lesson.parts.notes && ACCESS_NOTE[lesson.parts.notes]
+          // У практики нет конспекта — главное в ней упражнения.
+          const access = isPractice(lesson) ? lesson.parts.practice : lesson.parts.notes
+          const note = access && ACCESS_NOTE[access]
           return (
             <li>
               <a class="lesson" href={lessonPath(lesson.id)}>
-                <span class="n">{lesson.planLesson}</span>
-                <span class="title">{lesson.title}</span>
+                <span class="n">{lesson.repeats ? '' : lesson.planLesson}</span>
+                <span class="title">
+                  {lesson.repeats && <span class="kind">Практика · </span>}
+                  {lesson.title}
+                </span>
                 <span class="badges">
                   <LessonMark lessonId={lesson.id} />
                   {note && <PaidNote note={note} />}
                 </span>
-                <span class="meta">Урок {lesson.number}</span>
+                <span class="meta">
+                  {lesson.repeats ? repeatsLabel(lesson.repeats) : lessonName(lesson)}
+                </span>
               </a>
             </li>
           )
@@ -112,6 +125,11 @@ const levels = LEVELS.map((level) => ({
   .title {
     grid-area: title;
     font-weight: 700;
+  }
+
+  .kind {
+    color: var(--text-2);
+    font-weight: 600;
   }
 
   .meta {

@@ -35,16 +35,26 @@ describe('sitemap', () => {
   it('закрытых конспекта и допматериалов нет', () => {
     const open = { id: 'a0-01', sentences: [], notes, extras: {} } as unknown as LessonBody
     const closed = { id: 'a0-02', sentences: [] } as LessonBody
-    expect(lessonSitemapPaths(meta(1), open)).toEqual([
+    const withExtras = (lesson: LessonMeta, access: 'free' | 'paid'): LessonMeta => ({
+      ...lesson,
+      parts: { ...lesson.parts, extras: access },
+    })
+    expect(lessonSitemapPaths(withExtras(meta(1), 'free'), open)).toEqual([
       '/lessons/a0-01/',
       '/lessons/a0-01/notes/',
       '/lessons/a0-01/extras/',
       '/lessons/a0-01/practice/',
     ])
-    expect(lessonSitemapPaths(meta(2), closed)).toEqual([
+    expect(lessonSitemapPaths(withExtras(meta(2), 'paid'), closed)).toEqual([
       '/lessons/a0-02/',
       '/lessons/a0-02/practice/',
     ])
+  })
+
+  it('у практики подразделов нет — только её страница', () => {
+    const practice: LessonMeta = { ...meta(1), id: 'a0-p1', repeats: { from: 1, to: 4 } }
+    const body = { id: 'a0-p1', sentences: [], notes } as unknown as LessonBody
+    expect(lessonSitemapPaths(practice, body)).toEqual(['/lessons/a0-p1/'])
   })
 
   it('главная, список уроков и уроки по порядку', async () => {

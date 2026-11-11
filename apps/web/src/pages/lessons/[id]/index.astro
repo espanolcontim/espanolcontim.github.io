@@ -1,7 +1,9 @@
 ---
+import { lessonName, repeatsLabel } from '../../../features/lessons/labels.ts'
 import LessonHeader from '../../../features/lessons/LessonHeader.astro'
 import LessonNext from '../../../features/lessons/LessonNext.astro'
 import { lessonStaticPaths, loadLesson } from '../../../features/lessons/page.ts'
+import PracticeLesson from '../../../features/lessons/PracticeLesson.astro'
 import Summary from '../../../features/lessons/Summary.astro'
 import Page from '../../../app/Page.astro'
 import { fitDescription } from '../../../app/seo.ts'
@@ -9,25 +11,34 @@ import { fitDescription } from '../../../app/seo.ts'
 export const getStaticPaths = lessonStaticPaths
 
 const { meta, body, lessons, channel } = await loadLesson(Astro.params.id)
+const name = lessonName(meta)
+const description = meta.repeats
+  ? `${name} курса «Испанский с нуля»: повторяем ${repeatsLabel(meta.repeats)} без новых слов — перевод фраз с автопроверкой, рассказ и мини-диалог.`
+  : fitDescription(`${name} курса «Испанский с нуля»: `, meta.grammar, meta.title)
 ---
 
-<Page
-  currentLesson={meta.id}
-  title={`Урок ${meta.number}. ${meta.title}`}
-  description={fitDescription(
-    `Урок ${meta.number} курса «Испанский с нуля»: `,
-    meta.grammar,
-    meta.title,
-  )}
->
+<Page currentLesson={meta.id} title={`${name}. ${meta.title}`} description={description}>
   <LessonHeader meta={meta} channel={channel} />
 
-  {body.summary && <Summary summary={body.summary} sentences={body.sentences} />}
+  {meta.repeats ? (
+    <PracticeLesson meta={meta} body={body} />
+  ) : (
+    body.summary && <Summary summary={body.summary} sentences={body.sentences} />
+  )}
 
-  <LessonNext
-    meta={meta}
-    lessons={lessons}
-    current="overview"
-    lead={body.summary && 'Выше — только выжимка. Весь урок подробно — в конспекте.'}
-  />
+  <div class="next">
+    <LessonNext
+      meta={meta}
+      lessons={lessons}
+      current="overview"
+      lead={body.summary && 'Выше — только выжимка. Весь урок подробно — в конспекте.'}
+    />
+  </div>
 </Page>
+
+<style>
+  /* На странице практики — тренажёр: пока открыт набор, «Дальше» не отвлекает. */
+  :global(body:has([data-set-open])) .next {
+    display: none;
+  }
+</style>

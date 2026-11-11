@@ -1,3 +1,4 @@
+import { lessonName } from '../lessons/labels.ts'
 import type { LessonRepository } from '../lessons/LessonRepository.ts'
 import { translateTask } from '../practice/sets.ts'
 import type { ReviewSentence } from './session.ts'
@@ -15,7 +16,7 @@ export async function reviewSentences(lessons: LessonRepository): Promise<Review
       sentences.push({
         id: sentence.id,
         task: translateTask(sentence),
-        lesson: `Урок ${meta.number}`,
+        lesson: lessonName(meta),
       })
     }
   }

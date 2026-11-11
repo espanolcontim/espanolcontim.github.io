@@ -84,6 +84,24 @@
       }
     },
     {
+      "id": "a0-p1",
+      "number": 1,
+      "level": "A0",
+      "planLesson": 1,
+      "title": "Я и ты: хочу, могу, собираюсь",
+      "grammar": [],
+      "youtubeUrl": "https://www.youtube.com/watch?v=Dt7Z4jbXEys&list=PLZbYC_qWyI38",
+      "parts": {
+        "notes": "free",
+        "practice": "free",
+        "quiz": "free"
+      },
+      "repeats": {
+        "from": 1,
+        "to": 4
+      }
+    },
+    {
       "id": "a0-05",
       "number": 5,
       "level": "A0",

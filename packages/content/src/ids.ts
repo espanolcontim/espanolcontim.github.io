@@ -5,7 +5,8 @@ import { LEVELS, type LessonAddress } from './levels.ts'
  * постоянные: номера выдаёт импорт и хранит в content/ids.lock.json.
  *
  *   a0-11              урок: уровень + номер в уровне
- *   a0-11-s07          предложение урока
+ *   a0-p1              практический урок: уровень + номер практики в уровне
+ *   a0-11-s07          предложение урока (у практики — a0-p1-s07)
  *   a0-11-s07.order    упражнение на предложении
  *   a0-11-x05          упражнение допматериалов без предложения
  */
@@ -15,7 +16,7 @@ export const SENTENCE_EXERCISES = ['translate', 'order', 'fix'] as const
 export type SentenceExercise = (typeof SENTENCE_EXERCISES)[number]
 
 const LEVEL = `(?:${LEVELS.map((level) => level.toLowerCase()).join('|')})`
-const LESSON = `${LEVEL}-\\d{2}`
+const LESSON = `${LEVEL}-(?:\\d{2}|p\\d+)`
 const SENTENCE = `${LESSON}-s\\d{2,}`
 
 export const LESSON_ID = new RegExp(`^${LESSON}$`)
@@ -29,6 +30,11 @@ const pad = (n: number): string => String(n).padStart(2, '0')
 /** Урок, он же адрес страницы: A0, урок 11 → «a0-11». */
 export function lessonId({ level, planLesson }: LessonAddress): string {
   return `${level.toLowerCase()}-${pad(planLesson)}`
+}
+
+/** Практический урок: A0, практика 1 → «a0-p1». */
+export function practiceId({ level, planLesson }: LessonAddress): string {
+  return `${level.toLowerCase()}-p${planLesson}`
 }
 
 /** «a0-11», 7 → «a0-11-s07». */

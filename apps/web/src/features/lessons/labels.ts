@@ -11,6 +11,16 @@ export const LEVEL_NAMES: Record<Level, string> = {
   B2: 'выше среднего',
 }
 
+/** «Урок 4», «Практика 1» — сквозной номер, как в видео. */
+export function lessonName(meta: LessonMeta): string {
+  return `${meta.repeats ? 'Практика' : 'Урок'} ${meta.number}`
+}
+
+/** Какие уроки повторяет практика: «уроки 1–4», «урок 5». */
+export function repeatsLabel({ from, to }: NonNullable<LessonMeta['repeats']>): string {
+  return from === to ? `урок ${to}` : `уроки ${from}–${to}`
+}
+
 export const SUBSCRIPTION = 'в подписке «Практика»'
 
 export const ACCESS_NOTE: Record<Access, string | undefined> = {

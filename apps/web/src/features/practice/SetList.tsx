@@ -7,7 +7,7 @@ import { REVIEW_PATH } from '../review/navigation.ts'
 import { resultKey, type SetResult } from '../review/progress.ts'
 import { useProgress } from '../review/useProgress.ts'
 import styles from './practice.module.css'
-import type { PracticeSet, SetKind } from './sets.ts'
+import type { PracticeSet, SetKind, TrainerPlace } from './sets.ts'
 
 export interface Locked {
   /** Фразы урока — в подписке. */
@@ -18,6 +18,25 @@ export interface Locked {
 
 const PHRASES = ['фраза', 'фразы', 'фраз'] as const
 const TASKS = ['задание', 'задания', 'заданий'] as const
+
+/**
+ * Подписи списка: в подразделе «Упражнения» урока и на странице практики. На странице
+ * практики заголовок групп фраз стоит над тренажёром (PracticeLesson.astro): там он
+ * открывает весь блок упражнений, вместе с подсказкой, как проверяются ответы.
+ */
+const TEXT: Record<
+  TrainerPlace,
+  { phrases?: { title: string; lead: string } | undefined; quiz: string }
+> = {
+  lesson: {
+    phrases: {
+      title: 'Фразы урока',
+      lead: 'Переводите с русского на испанский — по группам, как в уроке.',
+    },
+    quiz: 'по фразам урока',
+  },
+  practice: { quiz: 'вперемешку по всем темам практики' },
+}
 
 /** Что внутри закрытых наборов. */
 const INSIDE = {
@@ -32,6 +51,7 @@ const INSIDE = {
  */
 export function SetList({
   lessonId,
+  place,
   sets,
   locked,
   paid,
@@ -39,6 +59,7 @@ export function SetList({
   onOpen,
 }: {
   lessonId: string
+  place: TrainerPlace
   sets: PracticeSet[]
   /** Что закрыто в бесплатной половине урока. Закрытый набор пришёл из API — ссылка на него. */
   locked: Locked
@@ -57,11 +78,16 @@ export function SetList({
   /** Лучший результат набора; появляется после загрузки прогресса. */
   const best = (set: PracticeSet) => progress?.results[resultKey(lessonId, set.id)]
   const quizBest = quiz && best(quiz)
+  const heading = TEXT[place].phrases
 
   useEffect(() => back.current?.focus(), [])
 
   const notice = (inside: string) => (
-    <PaidNotice paid={paid} inside={inside} from={lessonPath(lessonId, 'practice')} />
+    <PaidNotice
+      paid={paid}
+      inside={inside}
+      from={lessonPath(lessonId, place === 'practice' ? 'overview' : 'practice')}
+    />
   )
 
   const link = (set: PracticeSet, className: string, children: ReactNode) => (
@@ -98,9 +124,18 @@ export function SetList({
       ) : (
         <>
           {(phrases.length > 0 || locked.phrases) && (
-            <section className={styles.group} aria-labelledby="practice-phrases">
-              <h2 id="practice-phrases">Фразы урока</h2>
-              <p className="ru">Переводите с русского на испанский — по группам, как в уроке.</p>
+            <section
+              className={styles.group}
+              {...(heading
+                ? { 'aria-labelledby': 'practice-phrases' }
+                : { 'aria-label': 'Группы фраз' })}
+            >
+              {heading && (
+                <>
+                  <h2 id="practice-phrases">{heading.title}</h2>
+                  <p className="ru">{heading.lead}</p>
+                </>
+              )}
               {phrases.length > 0 ? (
                 <ul className={styles.sets}>
                   {phrases.map((set) => (
@@ -153,7 +188,7 @@ export function SetList({
           <h2 id="practice-quiz">{quiz.title}</h2>
           <div className={`card ${styles.quiz}`}>
             <p>
-              {plural(quiz.tasks.length, TASKS)} по фразам урока. В конце — результат и разбор
+              {plural(quiz.tasks.length, TASKS)} {TEXT[place].quiz}. В конце — результат и разбор
               ошибок.
             </p>
             {quizBest && (

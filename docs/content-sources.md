@@ -24,6 +24,7 @@
 |---|---|---|
 | `lessons/lesson-NN.json` | урок: метаданные, слайды, `summary`, `handoutTables` | **да** — мета, выжимка, конспект, практика урока |
 | `extras/lesson-NN.json` | дополнительные материалы (платные) | **да** — часть «Práctica» |
+| `lessons/practice-NN.json` | практический урок (с 10.11.2026): `kind: "practice"`, `afterLesson`; слайды `title`, `section`, `practice`, `text`, `dialogue`, `final`, без теории и новых слов. NN — сквозной номер практики, `planLesson` — номер в уровне. Как пишется — `docs/practice-writing.md` в `video-lessons` | **да** — страница практики: группы фраз, проверка, рассказ, мини-диалог, «Что мы повторили» |
 | `scenarios/lesson-NN.md` | сценарий, из которого Claude собирает JSON урока | нет: JSON — уже результат |
 | `handouts/free/Урок N — полный конспект.pdf` | полный конспект (A0 — бесплатно) | нет, сайт рендерит из JSON |
 | `handouts/free/Урок N — краткий конспект.pdf/.png` | выжимка на 1 страницу + картинка для поста | нет |

@@ -49,7 +49,7 @@
 | `npm run typecheck` | проверка типов всех пакетов |
 | `npm run lint` | линтер (oxlint) |
 | `npm run format` | форматирование (Prettier) |
-| `npm run content:import` | импорт уроков из `../video-lessons`; `-- 1 8 11` — только эти, `-- --check` — проверить без записи |
+| `npm run content:import` | импорт уроков и практик из `../video-lessons`; `-- 1 8 11 p1` — только эти, `-- --check` — проверить без записи |
 | `npm run sync:local` | функция `sync` на этом компьютере: настоящий Boosty, вместо бакета — папка `.bucket` |
 | `npm run api:local` | функция `api` на http://localhost:8787; `-- --subscriber почта` — считать её подписчиком, `-- --send` — отправлять письма по-настоящему |
 | `npm run functions:build` | сборка функций Yandex Cloud в `functions/<имя>/dist/` |

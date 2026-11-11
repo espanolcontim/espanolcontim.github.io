@@ -10,11 +10,11 @@ import type { ReviewSentence } from './session.ts'
  * Платные фразы для повторения: страница /repaso/ собрана только из бесплатных, а подписчик
  * решал и платные. Загружаются те уроки, по которым такие фразы есть в его прогрессе.
  * @param lessons id уроков через запятую — строка, чтобы не перезагружать при каждом ответе
- * @param numbers сквозные номера уроков — для подписи «Урок 2»
+ * @param names подписи уроков: «Урок 2», «Практика 1»
  */
 export function usePaidSentences(
   lessons: string,
-  numbers: Record<string, number>,
+  names: Record<string, string>,
 ): {
   sentences: ReviewSentence[]
   /** Пока не ясно, какие фразы доступны, — откладывать «потерянные» рано. */
@@ -35,7 +35,7 @@ export function usePaidSentences(
           (body?.sentences ?? []).map((sentence) => ({
             id: sentence.id,
             task: translateTask(sentence),
-            lesson: `Урок ${numbers[id] ?? ''}`,
+            lesson: names[id] ?? '',
           })),
         )
         setLoaded({ lessons, sentences })
@@ -50,7 +50,7 @@ export function usePaidSentences(
     return () => {
       stale = true
     }
-  }, [active, lessons, numbers])
+  }, [active, lessons, names])
 
   const ready = loaded?.lessons === lessons
   return { sentences: active && ready ? loaded.sentences : [], pending: active && !ready }

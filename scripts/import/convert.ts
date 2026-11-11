@@ -70,7 +70,7 @@ export function convertLesson({ id, lesson, extra, ids, ipa }: ConvertInput): Co
       notes,
       practice: practice.length > 0 ? practice : undefined,
       extras,
-      quiz: practice.length > 0 ? quiz(practice, book.byId) : undefined,
+      quiz: practice.length > 0 ? quiz(quizGroups(lesson, practice), book.byId) : undefined,
     },
     sentences: book.list(),
     warnings,
@@ -310,6 +310,20 @@ function convertExtras(
 }
 
 // --- проверка после урока ------------------------------------------------------------
+
+/**
+ * Группа практического урока, из которой собирается проверка: всё вперемешку.
+ * Последняя группа практики — «Рассказ», предложения одной истории по порядку.
+ * Название задаёт video-lessons, docs/practice-writing.md, раздел 3.
+ */
+export const PRACTICE_QUIZ_GROUP = 'Вперемешку'
+
+/** У практики проверка — из «Вперемешку», если такая группа есть; у урока — из всех. */
+function quizGroups(lesson: LessonSource, practice: Practice): Practice {
+  if (lesson.kind !== 'practice') return practice
+  const mixed = practice.filter((group) => group.name === PRACTICE_QUIZ_GROUP)
+  return mixed.length > 0 ? mixed : practice
+}
 
 const QUIZ_SIZE = 10
 const QUIZ_ORDER = 2

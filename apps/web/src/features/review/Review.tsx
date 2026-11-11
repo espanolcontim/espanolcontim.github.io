@@ -19,13 +19,13 @@ import { updateProgress, useProgress } from './useProgress.ts'
  */
 export default function Review({
   sentences,
-  lessonNumbers,
+  lessonNames,
   start,
 }: {
   /** Все бесплатные фразы; платные подписчику приходят из API. */
   sentences: ReviewSentence[]
-  /** Сквозные номера уроков: урок → номер. */
-  lessonNumbers: Record<string, number>
+  /** Подписи уроков: урок → «Урок 2», «Практика 1». */
+  lessonNames: Record<string, string>
   /** Куда идти, если повторять пока нечего: упражнения первого урока. */
   start: string
 }) {
@@ -38,7 +38,7 @@ export default function Review({
     const ids = progress ? cardsOf(progress).map((card) => card.id) : []
     return [...new Set(ids.filter((id) => !free.has(id)).map(sentenceLesson))].toSorted().join(',')
   }, [progress, free])
-  const paid = usePaidSentences(paidLessons, lessonNumbers)
+  const paid = usePaidSentences(paidLessons, lessonNames)
   const byId = useMemo(
     () => new Map([...sentences, ...paid.sentences].map((sentence) => [sentence.id, sentence])),
     [sentences, paid.sentences],

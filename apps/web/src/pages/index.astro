@@ -5,17 +5,17 @@ import { container } from '../app/container.ts'
 import { LINKS, SUBSCRIBE_PATH } from '../app/links.ts'
 import tim from '../assets/tim.png'
 import { LEVEL_NAMES } from '../features/lessons/labels.ts'
-import { lessonPath } from '../features/lessons/navigation.ts'
+import { isPractice, lessonPath } from '../features/lessons/navigation.ts'
 import { REVIEW_PATH } from '../features/review/navigation.ts'
 import Page from '../app/Page.astro'
 
 const lessons = await container.lessons.list()
 const [first] = lessons
 const channel = container.videos.channel
-/** План курса: уровни, сколько уроков в плане и сколько уже вышло. */
+/** План курса: уровни, сколько уроков в плане и сколько уже вышло (практики не в счёт). */
 const plan = LEVELS.flatMap((level) => {
   const planned = LEVEL_LESSONS[level]
-  const released = lessons.filter((lesson) => lesson.level === level).length
+  const released = lessons.filter((lesson) => lesson.level === level && !isPractice(lesson)).length
   return planned ? [{ level, planned, released }] : []
 })
 ---

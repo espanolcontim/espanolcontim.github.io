@@ -54,7 +54,15 @@ export interface PracticeSet {
   tasks: Task[]
 }
 
-export const QUIZ_TITLE = 'Проверка после урока'
+/** Где тренажёр: в подразделе «Упражнения» урока или прямо на странице практики. */
+export type TrainerPlace = 'lesson' | 'practice'
+
+export const QUIZ_TITLES: Record<TrainerPlace, string> = {
+  lesson: 'Проверка после урока',
+  practice: 'Проверка',
+}
+
+export const QUIZ_TITLE = QUIZ_TITLES.lesson
 
 const sentenceFields = (id: string, sentence: Sentence): SentenceFields => ({
   id,
@@ -78,7 +86,7 @@ export function translateTask(sentence: Sentence): Task {
 export const taskSentence = (task: Task): string | undefined =>
   'sentenceId' in task ? task.sentenceId : undefined
 
-export function buildPracticeSets(body: LessonBody): PracticeSet[] {
+export function buildPracticeSets(body: LessonBody, place: TrainerPlace = 'lesson'): PracticeSet[] {
   const sentences = new Map(body.sentences.map((sentence) => [sentence.id, sentence]))
   const sentence = (id: string): Sentence => {
     const found = sentences.get(id)
@@ -124,7 +132,7 @@ export function buildPracticeSets(body: LessonBody): PracticeSet[] {
   }))
 
   const quiz: PracticeSet[] = body.quiz
-    ? [{ id: 'quiz', kind: 'quiz', title: QUIZ_TITLE, tasks: body.quiz.map(task) }]
+    ? [{ id: 'quiz', kind: 'quiz', title: QUIZ_TITLES[place], tasks: body.quiz.map(task) }]
     : []
 
   return [...phrases, ...extras, ...quiz]

@@ -6,7 +6,7 @@ import type { LessonBody, LessonMeta } from '@espanolcontim/content'
  * через API (ApiLessonRepository).
  */
 export interface LessonRepository {
-  /** Все уроки по порядку номеров. */
+  /** Все уроки в порядке курса: практика — сразу после урока, который она закрывает. */
   list(): Promise<LessonMeta[]>
   getMeta(id: string): Promise<LessonMeta | undefined>
   /** Тело урока — те части, что доступны этому репозиторию. */

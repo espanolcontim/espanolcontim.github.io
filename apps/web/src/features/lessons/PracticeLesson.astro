@@ -1,0 +1,101 @@
+---
+import type { LessonBody, LessonMeta } from '@espanolcontim/content'
+import { buildPracticeSets } from '../practice/sets.ts'
+import Trainer from '../practice/Trainer.tsx'
+import { Dialogue } from './notes/Dialogue.tsx'
+import { Passage } from './notes/Passage.tsx'
+
+/**
+ * Практический урок — одна страница: что повторяем, тренажёр с группами фраз и проверкой,
+ * ниже — рассказ и мини-диалог из видео. Теории и новых слов нет, поэтому нет и подразделов.
+ * Рассказ, диалог и «Что повторим» лежат в конспекте практики (notes): если он
+ * в подписке, их на странице нет — только упражнения.
+ */
+interface Props {
+  meta: LessonMeta
+  body: LessonBody
+}
+
+const { meta, body } = Astro.props
+const sets = buildPracticeSets(body, 'practice')
+// Платной части нет в content/public: подписчику её загрузит тренажёр, остальным — плашка.
+const locked = { phrases: meta.parts.practice === 'paid' && !body.practice, extras: false }
+const outcome = body.notes?.outcome
+const passages =
+  body.notes?.sections.flatMap((section) =>
+    section.blocks.flatMap((block) => (block.type === 'text' ? [block] : [])),
+  ) ?? []
+const dialogues = body.notes?.dialogues ?? []
+---
+
+{outcome && outcome.bullets.length > 0 && (
+  <section class="repeat" aria-labelledby="practice-repeat">
+    <h2 id="practice-repeat">Что повторим</h2>
+    <ul>
+      {outcome.bullets.map((bullet) => (
+        <li>{bullet}</li>
+      ))}
+    </ul>
+  </section>
+)}
+
+<div class="exercises">
+  <h2 id="practice-exercises">Упражнения</h2>
+  <p class="ru">Переводите с русского на испанский — по группам, как в видео.</p>
+</div>
+<Trainer client:load lessonId={meta.id} sets={sets} locked={locked} place="practice" />
+
+{(passages.length > 0 || dialogues.length > 0) && (
+  <section class="reading" aria-labelledby="practice-reading">
+    <h2 id="practice-reading">Рассказ и мини-диалог</h2>
+    <p class="ru">Те же, что в видео. Прочитайте их вслух: все слова вы уже знаете.</p>
+    {passages.map((passage) => (
+      <Passage {...passage} />
+    ))}
+    {dialogues.map((dialogue) => (
+      <Dialogue {...dialogue} />
+    ))}
+  </section>
+)}
+
+<style>
+  .repeat {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .repeat ul {
+    display: grid;
+    gap: 0.375rem;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  .exercises {
+    display: grid;
+    gap: 0.375rem;
+    margin-bottom: 1rem;
+  }
+
+  .reading {
+    display: grid;
+    gap: 1.125rem;
+    margin-top: 2.25rem;
+  }
+
+  .reading > :global(*) {
+    min-width: 0;
+  }
+
+  .reading > .ru {
+    margin-top: -0.625rem;
+  }
+
+  /* Пока открыт набор, ничего лишнего: к списку возвращает кнопка тренажёра. */
+  :global(body:has([data-set-open])) .repeat,
+  :global(body:has([data-set-open])) .exercises,
+  :global(body:has([data-set-open])) .reading {
+    display: none;
+  }
+</style>
