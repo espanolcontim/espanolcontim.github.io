@@ -1,0 +1,820 @@
+{
+  "id": "a0-p2",
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Рассказ",
+        "hint": "Скажите по фразам, потом послушайте целиком",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "Сообщение друзьям",
+            "sentences": [
+              {
+                "es": "¡Hola! Esta noche **no tengo que** trabajar.",
+                "ru": "Привет! Сегодня вечером мне не нужно работать."
+              },
+              {
+                "es": "**Y** mañana **no tenemos que** madrugar.",
+                "ru": "А завтра нам не нужно рано вставать."
+              },
+              {
+                "es": "¿**Queréis** ir de compras?",
+                "ru": "Хотите пойти за покупками?"
+              },
+              {
+                "es": "**Luego podemos** cenar.",
+                "ru": "Потом можем поужинать."
+              },
+              {
+                "es": "**No me gusta** cocinar, **pero** vosotros **cocináis** muy bien.",
+                "ru": "Я не люблю готовить, но вы готовите очень хорошо."
+              },
+              {
+                "es": "¿**Podéis** contestar pronto?",
+                "ru": "Можете ответить поскорее?"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "¿Vamos de compras?",
+        "lines": [
+          {
+            "es": "Ana, ¿**vamos** de compras hoy?",
+            "ru": "Ана, пойдём сегодня за покупками?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Hoy **no puedo**. **Tengo que** limpiar.",
+            "ru": "Сегодня не могу. Мне нужно убираться.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Yo **puedo** ayudar. ¡**Vamos a** limpiar juntos!",
+            "ru": "Я могу помочь. Давай уберёмся вместе!",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡**Muy bien**! Gracias, Carlos.",
+            "ru": "Отлично! Спасибо, Карлос.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "De nada. Pero **no me gusta** limpiar. ¿**Y a ti**?",
+            "ru": "Не за что. Но я не люблю убираться. А ты?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "**A mí tampoco**.",
+            "ru": "Я тоже.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Y luego, ¿**vamos** de compras?",
+            "ru": "А потом пойдём за покупками?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡**Claro**! ¡**Vamos**!",
+            "ru": "Конечно! Давай!",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [],
+    "outcome": {
+      "title": "Что мы повторили",
+      "bullets": [
+        "Спрягать глаголы на -ar во всех лицах: hablamos, hablan",
+        "Обращаться на «вы»: vosotros, usted, ustedes",
+        "Говорить, кто что хочет и должен: queremos, tienen que",
+        "Предлагать: ¡vamos a caminar!",
+        "Говорить, что нравится: les gusta, a mí tampoco"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 8: предметы — род, число и артикли"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Разминка",
+      "sentenceIds": [
+        "a0-p2-s01",
+        "a0-p2-s02",
+        "a0-p2-s03",
+        "a0-p2-s04",
+        "a0-p2-s05",
+        "a0-p2-s06",
+        "a0-p2-s07",
+        "a0-p2-s08",
+        "a0-p2-s09",
+        "a0-p2-s10"
+      ]
+    },
+    {
+      "name": "Он, мы, они и вежливое «вы»",
+      "sentenceIds": [
+        "a0-p2-s11",
+        "a0-p2-s12",
+        "a0-p2-s13",
+        "a0-p2-s14",
+        "a0-p2-s15",
+        "a0-p2-s16",
+        "a0-p2-s17",
+        "a0-p2-s18",
+        "a0-p2-s19",
+        "a0-p2-s20"
+      ]
+    },
+    {
+      "name": "Querer, poder, tener que, ir",
+      "sentenceIds": [
+        "a0-p2-s21",
+        "a0-p2-s22",
+        "a0-p2-s23",
+        "a0-p2-s24",
+        "a0-p2-s25",
+        "a0-p2-s26",
+        "a0-p2-s27",
+        "a0-p2-s28",
+        "a0-p2-s29",
+        "a0-p2-s30"
+      ]
+    },
+    {
+      "name": "Мне нравится",
+      "sentenceIds": [
+        "a0-p2-s31",
+        "a0-p2-s32",
+        "a0-p2-s33",
+        "a0-p2-s34",
+        "a0-p2-s35",
+        "a0-p2-s36",
+        "a0-p2-s37",
+        "a0-p2-s38",
+        "a0-p2-s39",
+        "a0-p2-s40"
+      ]
+    },
+    {
+      "name": "Вперемешку",
+      "sentenceIds": [
+        "a0-p2-s41",
+        "a0-p2-s42",
+        "a0-p2-s43",
+        "a0-p2-s44",
+        "a0-p2-s45",
+        "a0-p2-s46",
+        "a0-p2-s47",
+        "a0-p2-s48",
+        "a0-p2-s49",
+        "a0-p2-s50",
+        "a0-p2-s51",
+        "a0-p2-s52",
+        "a0-p2-s53",
+        "a0-p2-s54",
+        "a0-p2-s55"
+      ]
+    },
+    {
+      "name": "Рассказ",
+      "sentenceIds": [
+        "a0-p2-s56",
+        "a0-p2-s57",
+        "a0-p2-s58",
+        "a0-p2-s59",
+        "a0-p2-s60",
+        "a0-p2-s61"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-p2-s41.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s41"
+    },
+    {
+      "id": "a0-p2-s42.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s42"
+    },
+    {
+      "id": "a0-p2-s43.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s43"
+    },
+    {
+      "id": "a0-p2-s44.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s44"
+    },
+    {
+      "id": "a0-p2-s45.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s45"
+    },
+    {
+      "id": "a0-p2-s46.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s46"
+    },
+    {
+      "id": "a0-p2-s47.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s47"
+    },
+    {
+      "id": "a0-p2-s50.translate",
+      "type": "translate",
+      "sentenceId": "a0-p2-s50"
+    },
+    {
+      "id": "a0-p2-s48.order",
+      "type": "order",
+      "sentenceId": "a0-p2-s48"
+    },
+    {
+      "id": "a0-p2-s49.order",
+      "type": "order",
+      "sentenceId": "a0-p2-s49"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-p2-s01",
+      "ru": "Она много путешествует.",
+      "es": [
+        "Ella viaja mucho.",
+        "Viaja mucho."
+      ],
+      "ipa": "ˈeja ˈbjaxa ˈmutʃo"
+    },
+    {
+      "id": "a0-p2-s02",
+      "ru": "Мы скоро заканчиваем.",
+      "es": [
+        "Terminamos pronto.",
+        "Nosotros terminamos pronto."
+      ],
+      "ipa": "teɾmiˈnamos ˈpɾonto"
+    },
+    {
+      "id": "a0-p2-s03",
+      "ru": "Вы учите итальянский?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Estudiáis italiano?",
+        "¿Vosotras estudiáis italiano?"
+      ],
+      "ipa": "estuˈdjais itaˈljano"
+    },
+    {
+      "id": "a0-p2-s04",
+      "ru": "Они хотят спать.",
+      "es": [
+        "Ellos quieren dormir.",
+        "Quieren dormir."
+      ],
+      "ipa": "ˈejos ˈkjeɾen doɾˈmiɾ"
+    },
+    {
+      "id": "a0-p2-s05",
+      "ru": "Мы можем помочь.",
+      "es": [
+        "Podemos ayudar.",
+        "Nosotros podemos ayudar."
+      ],
+      "ipa": "poˈdemos ajuˈdaɾ"
+    },
+    {
+      "id": "a0-p2-s06",
+      "ru": "Ей нужно позвонить.",
+      "es": [
+        "Ella tiene que llamar.",
+        "Ella necesita llamar."
+      ],
+      "ipa": "ˈeja ˈtjene ke jaˈmaɾ"
+    },
+    {
+      "id": "a0-p2-s07",
+      "ru": "Вы идёте за покупками?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Vais de compras?",
+        "¿Vosotros vais de compras?"
+      ],
+      "ipa": "ˈbais de ˈkompɾas"
+    },
+    {
+      "id": "a0-p2-s08",
+      "ru": "Мне нравится ходить пешком.",
+      "es": [
+        "Me gusta caminar."
+      ],
+      "ipa": "me ˈgusta kamiˈnaɾ"
+    },
+    {
+      "id": "a0-p2-s09",
+      "ru": "Давай отдохнём!",
+      "es": [
+        "¡Vamos a descansar!"
+      ],
+      "ipa": "ˈbamos a deskanˈsaɾ"
+    },
+    {
+      "id": "a0-p2-s10",
+      "ru": "Очень хорошо!",
+      "es": [
+        "¡Muy bien!"
+      ],
+      "ipa": "ˈmuj ˈbjen"
+    },
+    {
+      "id": "a0-p2-s11",
+      "ru": "Они много зарабатывают.",
+      "hint": "о женщинах",
+      "es": [
+        "Ellas ganan mucho.",
+        "Ganan mucho."
+      ],
+      "ipa": "ˈejas ˈganan ˈmutʃo"
+    },
+    {
+      "id": "a0-p2-s12",
+      "ru": "Мы гуляем вместе.",
+      "hint": "говорят две женщины",
+      "es": [
+        "Nosotras paseamos juntas.",
+        "Paseamos juntas."
+      ],
+      "ipa": "noˈsotɾas paseˈamos ˈxuntas"
+    },
+    {
+      "id": "a0-p2-s13",
+      "ru": "Вы заканчиваете сегодня?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Vosotras termináis hoy?",
+        "¿Termináis hoy?"
+      ],
+      "ipa": "boˈsotɾas teɾmiˈnais ˈoj"
+    },
+    {
+      "id": "a0-p2-s14",
+      "ru": "Он спрашивает, а она не отвечает.",
+      "es": [
+        "Él pregunta y ella no contesta.",
+        "Él pregunta, pero ella no contesta."
+      ],
+      "ipa": "ˈel pɾeˈgunta i ˈeja no konˈtesta"
+    },
+    {
+      "id": "a0-p2-s15",
+      "ru": "Вы сегодня возвращаетесь поздно?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted regresa tarde hoy?",
+        "¿Hoy regresa usted tarde?"
+      ],
+      "ipa": "usˈted reˈgɾesa ˈtaɾde ˈoj"
+    },
+    {
+      "id": "a0-p2-s16",
+      "ru": "Вы приходите рано?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿Ustedes llegan temprano?",
+        "¿Llegan ustedes temprano?"
+      ],
+      "ipa": "usˈtedes ˈjegan temˈpɾano"
+    },
+    {
+      "id": "a0-p2-s17",
+      "ru": "Вы приходите рано?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Vosotros llegáis temprano?",
+        "¿Llegáis temprano?"
+      ],
+      "ipa": "boˈsotɾos jeˈgais temˈpɾano"
+    },
+    {
+      "id": "a0-p2-s18",
+      "ru": "Извините, вы говорите по-английски?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "Perdón, ¿ustedes hablan inglés?",
+        "Perdón, ¿hablan ustedes inglés?"
+      ],
+      "ipa": "peɾˈdon usˈtedes ˈablan inˈgles"
+    },
+    {
+      "id": "a0-p2-s19",
+      "ru": "Я из Мадрида. А вы?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "Soy de Madrid. ¿Y usted?"
+      ],
+      "ipa": "ˈsoj de maˈdɾid · i usˈted"
+    },
+    {
+      "id": "a0-p2-s20",
+      "ru": "Они поют, а мы танцуем.",
+      "hint": "они — женщины",
+      "es": [
+        "Ellas cantan y nosotros bailamos.",
+        "Ellas cantan y nosotras bailamos."
+      ],
+      "ipa": "ˈejas ˈkantan i noˈsotɾos bajˈlamos"
+    },
+    {
+      "id": "a0-p2-s21",
+      "ru": "Мы хотим отдохнуть.",
+      "es": [
+        "Queremos descansar.",
+        "Nosotros queremos descansar."
+      ],
+      "ipa": "keˈɾemos deskanˈsaɾ"
+    },
+    {
+      "id": "a0-p2-s22",
+      "ru": "Мы не можем ждать.",
+      "es": [
+        "No podemos esperar.",
+        "Nosotros no podemos esperar."
+      ],
+      "ipa": "no poˈdemos espeˈɾaɾ"
+    },
+    {
+      "id": "a0-p2-s23",
+      "ru": "Вы можете войти.",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "Puede entrar.",
+        "Usted puede entrar."
+      ],
+      "ipa": "ˈpwede enˈtɾaɾ"
+    },
+    {
+      "id": "a0-p2-s24",
+      "ru": "Вы хотите поплавать?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Queréis nadar?",
+        "¿Vosotros queréis nadar?"
+      ],
+      "ipa": "keˈɾeis naˈdaɾ"
+    },
+    {
+      "id": "a0-p2-s25",
+      "ru": "Нам нужно закончить сегодня вечером.",
+      "es": [
+        "Tenemos que terminar esta noche.",
+        "Esta noche tenemos que terminar."
+      ],
+      "ipa": "teˈnemos ke teɾmiˈnaɾ ˈesta ˈnotʃe"
+    },
+    {
+      "id": "a0-p2-s26",
+      "ru": "Вам не нужно убираться.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "No tenéis que limpiar.",
+        "Vosotros no tenéis que limpiar."
+      ],
+      "ipa": "no teˈneis ke limˈpjaɾ"
+    },
+    {
+      "id": "a0-p2-s27",
+      "ru": "Она будет готовить, а он — помогать.",
+      "es": [
+        "Ella va a cocinar y él va a ayudar."
+      ],
+      "ipa": "ˈeja ˈba a koθiˈnaɾ i ˈel ˈba a ajuˈdaɾ"
+    },
+    {
+      "id": "a0-p2-s28",
+      "ru": "Вы скоро вернётесь?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿Ustedes van a regresar pronto?",
+        "¿Van a regresar pronto?",
+        "¿Ustedes regresan pronto?"
+      ],
+      "ipa": "usˈtedes ˈban a regɾeˈsaɾ ˈpɾonto"
+    },
+    {
+      "id": "a0-p2-s29",
+      "ru": "Давайте пройдёмся пешком!",
+      "es": [
+        "¡Vamos a caminar!"
+      ],
+      "ipa": "ˈbamos a kamiˈnaɾ"
+    },
+    {
+      "id": "a0-p2-s30",
+      "ru": "Давай позвоним ещё раз!",
+      "es": [
+        "¡Vamos a llamar otra vez!"
+      ],
+      "ipa": "ˈbamos a jaˈmaɾ ˈotɾa ˈbeθ"
+    },
+    {
+      "id": "a0-p2-s31",
+      "ru": "Вам нравится ходить пешком?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Os gusta caminar?"
+      ],
+      "ipa": "os ˈgusta kamiˈnaɾ"
+    },
+    {
+      "id": "a0-p2-s32",
+      "ru": "Ей не нравится убираться.",
+      "es": [
+        "No le gusta limpiar.",
+        "A ella no le gusta limpiar."
+      ],
+      "ipa": "no le ˈgusta limˈpjaɾ"
+    },
+    {
+      "id": "a0-p2-s33",
+      "ru": "Мы не любим рано вставать.",
+      "es": [
+        "No nos gusta madrugar."
+      ],
+      "ipa": "no nos ˈgusta madɾuˈgaɾ"
+    },
+    {
+      "id": "a0-p2-s34",
+      "ru": "Вам нравится говорить по-итальянски?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Le gusta hablar italiano?",
+        "¿A usted le gusta hablar italiano?"
+      ],
+      "ipa": "le ˈgusta aˈblaɾ itaˈljano"
+    },
+    {
+      "id": "a0-p2-s35",
+      "ru": "Вам нравится ходить за покупками?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿Les gusta ir de compras?",
+        "¿A ustedes les gusta ir de compras?"
+      ],
+      "ipa": "les ˈgusta ˈiɾ de ˈkompɾas"
+    },
+    {
+      "id": "a0-p2-s36",
+      "ru": "Им очень нравится танцевать.",
+      "es": [
+        "Les gusta mucho bailar.",
+        "Les gusta bailar mucho."
+      ],
+      "ipa": "les ˈgusta ˈmutʃo bajˈlaɾ"
+    },
+    {
+      "id": "a0-p2-s37",
+      "ru": "Вы очень хорошо поёте!",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¡Cantáis muy bien!",
+        "¡Vosotras cantáis muy bien!"
+      ],
+      "ipa": "kanˈtais ˈmuj ˈbjen"
+    },
+    {
+      "id": "a0-p2-s38",
+      "ru": "Мне нравится плавать. А тебе?",
+      "es": [
+        "Me gusta nadar. ¿Y a ti?"
+      ],
+      "ipa": "me ˈgusta naˈdaɾ · i a ˈti"
+    },
+    {
+      "id": "a0-p2-s39",
+      "ru": "Я не люблю приходить поздно. — Я тоже.",
+      "es": [
+        "No me gusta llegar tarde. — A mí tampoco."
+      ],
+      "ipa": "no me ˈgusta jeˈgaɾ ˈtaɾde · a ˈmi tamˈpoko"
+    },
+    {
+      "id": "a0-p2-s40",
+      "ru": "Он очень плохо поёт, но очень любит петь.",
+      "es": [
+        "Él canta muy mal, pero le gusta mucho cantar.",
+        "Canta muy mal, pero le gusta mucho cantar."
+      ],
+      "ipa": "ˈel ˈkanta ˈmuj ˈmal ˈpeɾo le ˈgusta ˈmutʃo kanˈtaɾ"
+    },
+    {
+      "id": "a0-p2-s41",
+      "ru": "Мы говорим только по-русски и по-итальянски.",
+      "es": [
+        "Solo hablamos ruso e italiano.",
+        "Nosotros solo hablamos ruso e italiano."
+      ],
+      "ipa": "ˈsolo aˈblamos ˈruso e itaˈljano"
+    },
+    {
+      "id": "a0-p2-s42",
+      "ru": "Мы тоже хотим пойти!",
+      "hint": "говорят две женщины",
+      "es": [
+        "¡Nosotras también queremos ir!",
+        "¡También queremos ir!"
+      ],
+      "ipa": "noˈsotɾas tamˈbjen keˈɾemos ˈiɾ"
+    },
+    {
+      "id": "a0-p2-s43",
+      "ru": "Я много зарабатываю, но мало отдыхаю.",
+      "es": [
+        "Gano mucho, pero descanso poco."
+      ],
+      "ipa": "ˈgano ˈmutʃo ˈpeɾo desˈkanso ˈpoko"
+    },
+    {
+      "id": "a0-p2-s44",
+      "ru": "Ты будешь убираться сегодня? — Нет, завтра.",
+      "es": [
+        "¿Vas a limpiar hoy? — No, mañana."
+      ],
+      "ipa": "ˈbas a limˈpjaɾ ˈoj · ˈno maˈɲana"
+    },
+    {
+      "id": "a0-p2-s45",
+      "ru": "Тебе нравится петь? Давай споём!",
+      "es": [
+        "¿Te gusta cantar? ¡Vamos a cantar!"
+      ],
+      "ipa": "te ˈgusta kanˈtaɾ · ˈbamos a kanˈtaɾ"
+    },
+    {
+      "id": "a0-p2-s46",
+      "ru": "Извините, можно войти? — Да, конечно.",
+      "es": [
+        "Perdón, ¿puedo entrar? — Sí, claro.",
+        "Perdón, ¿puedo entrar? — ¡Claro!"
+      ],
+      "ipa": "peɾˈdon ˈpwedo enˈtɾaɾ · ˈsi ˈklaɾo"
+    },
+    {
+      "id": "a0-p2-s47",
+      "ru": "Вы говорите по-испански? — Да, но очень плохо.",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted habla español? — Sí, pero muy mal.",
+        "¿Habla usted español? — Sí, pero muy mal."
+      ],
+      "ipa": "usˈted ˈabla espaˈɲol · ˈsi ˈpeɾo ˈmuj ˈmal"
+    },
+    {
+      "id": "a0-p2-s48",
+      "ru": "Можете позвонить ещё раз, пожалуйста?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Puede llamar otra vez, por favor?",
+        "¿Usted puede llamar otra vez, por favor?"
+      ],
+      "ipa": "ˈpwede jaˈmaɾ ˈotɾa ˈbeθ poɾ faˈboɾ"
+    },
+    {
+      "id": "a0-p2-s49",
+      "ru": "Мы идём гулять. А вы?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "Vamos a pasear. ¿Y vosotros?",
+        "Nosotros vamos a pasear. ¿Y vosotros?"
+      ],
+      "ipa": "ˈbamos a paseˈaɾ · i boˈsotɾos"
+    },
+    {
+      "id": "a0-p2-s50",
+      "ru": "Вам нравится рано вставать? — Нет, не нравится.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Os gusta madrugar? — No, no nos gusta."
+      ],
+      "ipa": "os ˈgusta madɾuˈgaɾ · ˈno no nos ˈgusta"
+    },
+    {
+      "id": "a0-p2-s51",
+      "ru": "Я очень люблю путешествовать. — Я тоже!",
+      "es": [
+        "Me gusta mucho viajar. — ¡A mí también!",
+        "Me gusta viajar mucho. — ¡A mí también!"
+      ],
+      "ipa": "me ˈgusta ˈmutʃo bjaˈxaɾ · a ˈmi tamˈbjen"
+    },
+    {
+      "id": "a0-p2-s52",
+      "ru": "Я не люблю рано ужинать. — Я тоже.",
+      "es": [
+        "No me gusta cenar temprano. — A mí tampoco."
+      ],
+      "ipa": "no me ˈgusta θeˈnaɾ temˈpɾano · a ˈmi tamˈpoko"
+    },
+    {
+      "id": "a0-p2-s53",
+      "ru": "Он не отвечает. Мне нужно позвонить позже.",
+      "es": [
+        "Él no contesta. Tengo que llamar más tarde.",
+        "No contesta. Tengo que llamar más tarde.",
+        "Él no contesta. Necesito llamar más tarde."
+      ],
+      "ipa": "ˈel no konˈtesta · ˈtengo ke jaˈmaɾ ˈmas ˈtaɾde"
+    },
+    {
+      "id": "a0-p2-s54",
+      "ru": "Сегодня они не могут: им нужно работать.",
+      "hint": "о женщинах",
+      "es": [
+        "Hoy ellas no pueden, tienen que trabajar.",
+        "Ellas no pueden hoy, tienen que trabajar.",
+        "Hoy ellas no pueden, necesitan trabajar."
+      ],
+      "ipa": "ˈoj ˈejas no ˈpweden ˈtjenen ke tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-p2-s55",
+      "ru": "Она скоро вернётся, вам нужно только подождать.",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "Ella va a regresar pronto, usted solo tiene que esperar.",
+        "Ella va a regresar pronto, solo tiene que esperar.",
+        "Ella regresa pronto, usted solo tiene que esperar."
+      ],
+      "ipa": "ˈeja ˈba a regɾeˈsaɾ ˈpɾonto usˈted ˈsolo ˈtjene ke espeˈɾaɾ"
+    },
+    {
+      "id": "a0-p2-s56",
+      "ru": "Привет! Сегодня вечером мне не нужно работать.",
+      "es": [
+        "¡Hola! Esta noche no tengo que trabajar.",
+        "¡Hola! Esta noche no necesito trabajar."
+      ],
+      "ipa": "ˈola · ˈesta ˈnotʃe no ˈtengo ke tɾabaˈxaɾ"
+    },
+    {
+      "id": "a0-p2-s57",
+      "ru": "А завтра нам не нужно рано вставать.",
+      "es": [
+        "Y mañana no tenemos que madrugar.",
+        "Y mañana no necesitamos madrugar."
+      ],
+      "ipa": "i maˈɲana no teˈnemos ke madɾuˈgaɾ"
+    },
+    {
+      "id": "a0-p2-s58",
+      "ru": "Хотите пойти за покупками?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Queréis ir de compras?",
+        "¿Vosotros queréis ir de compras?"
+      ],
+      "ipa": "keˈɾeis ˈiɾ de ˈkompɾas"
+    },
+    {
+      "id": "a0-p2-s59",
+      "ru": "Потом можем поужинать.",
+      "es": [
+        "Luego podemos cenar.",
+        "Después podemos cenar."
+      ],
+      "ipa": "ˈlwego poˈdemos θeˈnaɾ"
+    },
+    {
+      "id": "a0-p2-s60",
+      "ru": "Я не люблю готовить, но вы готовите очень хорошо.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "No me gusta cocinar, pero vosotros cocináis muy bien.",
+        "No me gusta cocinar, pero cocináis muy bien."
+      ],
+      "ipa": "no me ˈgusta koθiˈnaɾ ˈpeɾo boˈsotɾos koθiˈnais ˈmuj ˈbjen"
+    },
+    {
+      "id": "a0-p2-s61",
+      "ru": "Можете ответить поскорее?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Podéis contestar pronto?",
+        "¿Vosotros podéis contestar pronto?"
+      ],
+      "ipa": "poˈdeis kontesˈtaɾ ˈpɾonto"
+    }
+  ]
+}

@@ -165,6 +165,24 @@
       }
     },
     {
+      "id": "a0-p2",
+      "number": 2,
+      "level": "A0",
+      "planLesson": 2,
+      "title": "Все лица и «мне нравится»",
+      "grammar": [],
+      "youtubeUrl": "https://www.youtube.com/watch?v=7RPIgJ8ZXfw&list=PLZbYC_qWyI38",
+      "parts": {
+        "notes": "free",
+        "practice": "free",
+        "quiz": "free"
+      },
+      "repeats": {
+        "from": 5,
+        "to": 7
+      }
+    },
+    {
       "id": "a0-08",
       "number": 8,
       "level": "A0",
