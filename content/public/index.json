@@ -246,6 +246,24 @@
       }
     },
     {
+      "id": "a0-p3",
+      "number": 3,
+      "level": "A0",
+      "planLesson": 3,
+      "title": "Предметы, ser, глаголы на -er и -ir",
+      "grammar": [],
+      "youtubeUrl": "https://www.youtube.com/watch?v=vF74QN0eKzE&list=PLZbYC_qWyI38",
+      "parts": {
+        "notes": "free",
+        "practice": "free",
+        "quiz": "free"
+      },
+      "repeats": {
+        "from": 8,
+        "to": 10
+      }
+    },
+    {
       "id": "a0-11",
       "number": 11,
       "level": "A0",

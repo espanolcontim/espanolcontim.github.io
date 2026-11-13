@@ -1,0 +1,819 @@
+{
+  "id": "a0-p3",
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Рассказ",
+        "hint": "Скажите по фразам, потом послушайте целиком",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "Продаю мебель",
+            "sentences": [
+              {
+                "es": "**Vivo en** Moscú, **en** un piso **pequeño**.",
+                "ru": "Я живу в Москве, в маленькой квартире."
+              },
+              {
+                "es": "Pronto voy a **vivir en** España.",
+                "ru": "Скоро я буду жить в Испании."
+              },
+              {
+                "es": "**Vendo una** cama, **una** mesa **y unas** sillas.",
+                "ru": "Я продаю кровать, стол и стулья."
+              },
+              {
+                "es": "**La** cama es **vieja**, **pero** muy **bonita**.",
+                "ru": "Кровать старая, но очень красивая."
+              },
+              {
+                "es": "**Las** sillas **son nuevas y baratas**.",
+                "ru": "Стулья новые и дешёвые."
+              },
+              {
+                "es": "**La** mesa también es **barata**.",
+                "ru": "Стол тоже дешёвый."
+              },
+              {
+                "es": "¿Queréis comprar **la** cama **o la** mesa?",
+                "ru": "Хотите купить кровать или стол?"
+              },
+              {
+                "es": "**Podéis** llamar hoy **o** mañana.",
+                "ru": "Можете позвонить сегодня или завтра."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "¿Lees en español?",
+        "lines": [
+          {
+            "es": "Carlos, tienes que leer más en español.",
+            "ru": "Карлос, тебе нужно больше читать по-испански.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, pero **los** libros **son difíciles**.",
+            "ru": "Да, но книги трудные.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **las** revistas? **Son fáciles y baratas**.",
+            "ru": "А журналы? Они лёгкие и дешёвые.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¡Muy bien! Mañana voy a comprar **una** revista.",
+            "ru": "Отлично! Завтра куплю журнал.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **el** libro? ¿**Escribes** mucho?",
+            "ru": "А книга? Ты много пишешь?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, hoy **escribo** todo el día.",
+            "ru": "Да, сегодня пишу весь день.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿**Es interesante**?",
+            "ru": "Она интересная?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¡Claro! Y **no es difícil**.",
+            "ru": "Конечно! И не трудная.",
+            "speaker": "Ana"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [],
+    "outcome": {
+      "title": "Что мы повторили",
+      "bullets": [
+        "Называть предметы с артиклем: un coche, la mesa, las flores",
+        "Говорить, кто вы и откуда: soy profesor, soy de Rusia",
+        "Описывать предметы: un piso grande, las sillas son nuevas",
+        "Спрягать глаголы на -er и -ir: comemos, vivimos"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 11: вопросы — qué, dónde, cuándo, por qué"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Разминка",
+      "sentenceIds": [
+        "a0-p3-s01",
+        "a0-p3-s02",
+        "a0-p3-s03",
+        "a0-p3-s04",
+        "a0-p3-s05",
+        "a0-p3-s06",
+        "a0-p3-s07",
+        "a0-p3-s08",
+        "a0-p3-s09",
+        "a0-p3-s10"
+      ]
+    },
+    {
+      "name": "Предметы и артикли",
+      "sentenceIds": [
+        "a0-p3-s11",
+        "a0-p3-s12",
+        "a0-p3-s13",
+        "a0-p3-s14",
+        "a0-p3-s15",
+        "a0-p3-s16",
+        "a0-p3-s17",
+        "a0-p3-s18",
+        "a0-p3-s19",
+        "a0-p3-s20"
+      ]
+    },
+    {
+      "name": "Кто и какой: ser",
+      "sentenceIds": [
+        "a0-p3-s21",
+        "a0-p3-s22",
+        "a0-p3-s23",
+        "a0-p3-s24",
+        "a0-p3-s25",
+        "a0-p3-s26",
+        "a0-p3-s27",
+        "a0-p3-s28",
+        "a0-p3-s29",
+        "a0-p3-s30"
+      ]
+    },
+    {
+      "name": "Глаголы на -er и -ir",
+      "sentenceIds": [
+        "a0-p3-s31",
+        "a0-p3-s32",
+        "a0-p3-s33",
+        "a0-p3-s34",
+        "a0-p3-s35",
+        "a0-p3-s36",
+        "a0-p3-s37",
+        "a0-p3-s38",
+        "a0-p3-s39",
+        "a0-p3-s40"
+      ]
+    },
+    {
+      "name": "Вперемешку",
+      "sentenceIds": [
+        "a0-p3-s41",
+        "a0-p3-s42",
+        "a0-p3-s43",
+        "a0-p3-s44",
+        "a0-p3-s45",
+        "a0-p3-s46",
+        "a0-p3-s47",
+        "a0-p3-s48",
+        "a0-p3-s49",
+        "a0-p3-s50",
+        "a0-p3-s51",
+        "a0-p3-s52",
+        "a0-p3-s53",
+        "a0-p3-s54",
+        "a0-p3-s55"
+      ]
+    },
+    {
+      "name": "Рассказ",
+      "sentenceIds": [
+        "a0-p3-s56",
+        "a0-p3-s57",
+        "a0-p3-s58",
+        "a0-p3-s59",
+        "a0-p3-s60",
+        "a0-p3-s61",
+        "a0-p3-s62",
+        "a0-p3-s63"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-p3-s41.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s41"
+    },
+    {
+      "id": "a0-p3-s42.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s42"
+    },
+    {
+      "id": "a0-p3-s44.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s44"
+    },
+    {
+      "id": "a0-p3-s45.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s45"
+    },
+    {
+      "id": "a0-p3-s46.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s46"
+    },
+    {
+      "id": "a0-p3-s47.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s47"
+    },
+    {
+      "id": "a0-p3-s48.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s48"
+    },
+    {
+      "id": "a0-p3-s49.translate",
+      "type": "translate",
+      "sentenceId": "a0-p3-s49"
+    },
+    {
+      "id": "a0-p3-s43.order",
+      "type": "order",
+      "sentenceId": "a0-p3-s43"
+    },
+    {
+      "id": "a0-p3-s50.order",
+      "type": "order",
+      "sentenceId": "a0-p3-s50"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-p3-s01",
+      "ru": "Девочка читает.",
+      "es": [
+        "La niña lee."
+      ],
+      "ipa": "la ˈniɲa ˈle.e"
+    },
+    {
+      "id": "a0-p3-s02",
+      "ru": "Она продаёт журналы.",
+      "es": [
+        "Ella vende revistas.",
+        "Vende revistas."
+      ],
+      "ipa": "ˈeja ˈbende reˈbistas"
+    },
+    {
+      "id": "a0-p3-s03",
+      "ru": "Собака много бегает.",
+      "es": [
+        "El perro corre mucho."
+      ],
+      "ipa": "el ˈpero ˈkore ˈmutʃo"
+    },
+    {
+      "id": "a0-p3-s04",
+      "ru": "Ты испанка?",
+      "es": [
+        "¿Eres española?"
+      ],
+      "ipa": "ˈeɾes espaˈɲola"
+    },
+    {
+      "id": "a0-p3-s05",
+      "ru": "Машина старая.",
+      "es": [
+        "El coche es viejo."
+      ],
+      "ipa": "el ˈkotʃe ˈes ˈbjexo"
+    },
+    {
+      "id": "a0-p3-s06",
+      "ru": "Мы врачи.",
+      "hint": "говорят две женщины",
+      "es": [
+        "Somos médicas.",
+        "Nosotras somos médicas."
+      ],
+      "ipa": "ˈsomos ˈmedikas"
+    },
+    {
+      "id": "a0-p3-s07",
+      "ru": "Мы живём в Мадриде.",
+      "es": [
+        "Vivimos en Madrid.",
+        "Nosotros vivimos en Madrid."
+      ],
+      "ipa": "biˈbimos en maˈdɾid"
+    },
+    {
+      "id": "a0-p3-s08",
+      "ru": "Вы пьёте кофе?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Bebéis café?",
+        "¿Vosotros bebéis café?"
+      ],
+      "ipa": "beˈbeis kaˈfe"
+    },
+    {
+      "id": "a0-p3-s09",
+      "ru": "Ты получаешь письма?",
+      "es": [
+        "¿Recibes cartas?"
+      ],
+      "ipa": "reˈθibes ˈkaɾtas"
+    },
+    {
+      "id": "a0-p3-s10",
+      "ru": "Я не понимаю. Ещё раз, пожалуйста.",
+      "es": [
+        "No comprendo. Otra vez, por favor."
+      ],
+      "ipa": "no komˈpɾendo · ˈotɾa ˈbeθ poɾ faˈboɾ"
+    },
+    {
+      "id": "a0-p3-s11",
+      "ru": "Я покупаю несколько книг.",
+      "es": [
+        "Compro unos libros."
+      ],
+      "ipa": "ˈkompɾo ˈunos ˈlibɾos"
+    },
+    {
+      "id": "a0-p3-s12",
+      "ru": "Нам нужна машина.",
+      "es": [
+        "Necesitamos un coche.",
+        "Nosotros necesitamos un coche."
+      ],
+      "ipa": "neθesiˈtamos un ˈkotʃe"
+    },
+    {
+      "id": "a0-p3-s13",
+      "ru": "Девочке нужна кровать.",
+      "es": [
+        "La niña necesita una cama."
+      ],
+      "ipa": "la ˈniɲa neθeˈsita ˈuna ˈkama"
+    },
+    {
+      "id": "a0-p3-s14",
+      "ru": "Завтра приезжает подруга.",
+      "es": [
+        "Mañana llega una amiga."
+      ],
+      "ipa": "maˈɲana ˈjega ˈuna aˈmiga"
+    },
+    {
+      "id": "a0-p3-s15",
+      "ru": "Подруга приезжает завтра.",
+      "es": [
+        "La amiga llega mañana."
+      ],
+      "ipa": "la aˈmiga ˈjega maˈɲana"
+    },
+    {
+      "id": "a0-p3-s16",
+      "ru": "Кот отдыхает весь день.",
+      "es": [
+        "El gato descansa todo el día."
+      ],
+      "ipa": "el ˈgato desˈkansa ˈtodo el ˈdi.a"
+    },
+    {
+      "id": "a0-p3-s17",
+      "ru": "Девочки поют песни.",
+      "es": [
+        "Las niñas cantan canciones.",
+        "Las niñas cantan unas canciones."
+      ],
+      "ipa": "las ˈniɲas ˈkantan kanˈθjones"
+    },
+    {
+      "id": "a0-p3-s18",
+      "ru": "Сегодня вечером мы слушаем музыку.",
+      "es": [
+        "Esta noche escuchamos música.",
+        "Esta noche nosotros escuchamos música."
+      ],
+      "ipa": "ˈesta ˈnotʃe eskuˈtʃamos ˈmusika"
+    },
+    {
+      "id": "a0-p3-s19",
+      "ru": "Мне нужны ручка и телефон.",
+      "es": [
+        "Necesito un bolígrafo y un teléfono."
+      ],
+      "ipa": "neθeˈsito un boˈligɾafo i un teˈlefono"
+    },
+    {
+      "id": "a0-p3-s20",
+      "ru": "Давайте откроем окна и двери.",
+      "es": [
+        "Vamos a abrir las ventanas y las puertas."
+      ],
+      "ipa": "ˈbamos a aˈbɾiɾ las benˈtanas i las ˈpweɾtas"
+    },
+    {
+      "id": "a0-p3-s21",
+      "ru": "Проблема маленькая.",
+      "es": [
+        "El problema es pequeño."
+      ],
+      "ipa": "el pɾoˈblema ˈes peˈkeɲo"
+    },
+    {
+      "id": "a0-p3-s22",
+      "ru": "Вы учительницы?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Sois profesoras?",
+        "¿Vosotras sois profesoras?"
+      ],
+      "ipa": "ˈsojs pɾofeˈsoɾas"
+    },
+    {
+      "id": "a0-p3-s23",
+      "ru": "Вы из России?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿Ustedes son de Rusia?",
+        "¿Son ustedes de Rusia?"
+      ],
+      "ipa": "usˈtedes ˈson de ˈrusja"
+    },
+    {
+      "id": "a0-p3-s24",
+      "ru": "Я не русский, я испанец.",
+      "es": [
+        "No soy ruso, soy español."
+      ],
+      "ipa": "no ˈsoj ˈruso ˈsoj espaˈɲol"
+    },
+    {
+      "id": "a0-p3-s25",
+      "ru": "Она врач, а он инженер.",
+      "es": [
+        "Ella es médica y él es ingeniero."
+      ],
+      "ipa": "ˈeja ˈes ˈmedika i ˈel ˈes inxeˈnjeɾo"
+    },
+    {
+      "id": "a0-p3-s26",
+      "ru": "Мне нужен дешёвый телефон.",
+      "es": [
+        "Necesito un teléfono barato."
+      ],
+      "ipa": "neθeˈsito un teˈlefono baˈɾato"
+    },
+    {
+      "id": "a0-p3-s27",
+      "ru": "Занятия лёгкие и интересные.",
+      "es": [
+        "Las clases son fáciles e interesantes."
+      ],
+      "ipa": "las ˈklases ˈson ˈfaθiles e inteɾeˈsantes"
+    },
+    {
+      "id": "a0-p3-s28",
+      "ru": "Я хочу купить красивые цветы.",
+      "es": [
+        "Quiero comprar unas flores bonitas.",
+        "Quiero comprar flores bonitas."
+      ],
+      "ipa": "ˈkjeɾo komˈpɾaɾ ˈunas ˈfloɾes boˈnitas"
+    },
+    {
+      "id": "a0-p3-s29",
+      "ru": "Окно маленькое, а дверь большая.",
+      "es": [
+        "La ventana es pequeña y la puerta es grande.",
+        "La ventana es pequeña, pero la puerta es grande."
+      ],
+      "ipa": "la benˈtana ˈes peˈkeɲa i la ˈpweɾta ˈes ˈgɾande"
+    },
+    {
+      "id": "a0-p3-s30",
+      "ru": "Книги дорогие, а журналы дешёвые.",
+      "es": [
+        "Los libros son caros y las revistas son baratas.",
+        "Los libros son caros, pero las revistas son baratas."
+      ],
+      "ipa": "los ˈlibɾos ˈson ˈkaɾos i las reˈbistas ˈson baˈɾatas"
+    },
+    {
+      "id": "a0-p3-s31",
+      "ru": "Мы не пьём пиво.",
+      "es": [
+        "No bebemos cerveza.",
+        "Nosotros no bebemos cerveza."
+      ],
+      "ipa": "no beˈbemos θeɾˈbeθa"
+    },
+    {
+      "id": "a0-p3-s32",
+      "ru": "Вы едите мясо?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿Ustedes comen carne?",
+        "¿Comen ustedes carne?"
+      ],
+      "ipa": "usˈtedes ˈkomen ˈkaɾne"
+    },
+    {
+      "id": "a0-p3-s33",
+      "ru": "Дети едят дома.",
+      "es": [
+        "Los niños comen en casa."
+      ],
+      "ipa": "los ˈniɲos ˈkomen en ˈkasa"
+    },
+    {
+      "id": "a0-p3-s34",
+      "ru": "Вы живёте в Испании?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Vivís en España?",
+        "¿Vosotros vivís en España?"
+      ],
+      "ipa": "biˈbis en esˈpaɲa"
+    },
+    {
+      "id": "a0-p3-s35",
+      "ru": "Вы пишете по-испански?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Escribís en español?",
+        "¿Vosotras escribís en español?"
+      ],
+      "ipa": "eskɾiˈbis en espaˈɲol"
+    },
+    {
+      "id": "a0-p3-s36",
+      "ru": "Мы получаем письма из России.",
+      "es": [
+        "Recibimos cartas de Rusia.",
+        "Nosotros recibimos cartas de Rusia."
+      ],
+      "ipa": "reθiˈbimos ˈkaɾtas de ˈrusja"
+    },
+    {
+      "id": "a0-p3-s37",
+      "ru": "Они продают хлеб и рыбу.",
+      "es": [
+        "Venden pan y pescado.",
+        "Ellos venden pan y pescado."
+      ],
+      "ipa": "ˈbenden ˈpan i pesˈkado"
+    },
+    {
+      "id": "a0-p3-s38",
+      "ru": "Вы читаете журналы на работе?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Usted lee revistas en el trabajo?",
+        "¿Lee usted revistas en el trabajo?"
+      ],
+      "ipa": "usˈted ˈle.e reˈbistas en el tɾaˈbaxo"
+    },
+    {
+      "id": "a0-p3-s39",
+      "ru": "Мы ходим пешком, а они бегают.",
+      "hint": "говорят две женщины",
+      "es": [
+        "Nosotras caminamos y ellos corren.",
+        "Caminamos y ellos corren."
+      ],
+      "ipa": "noˈsotɾas kamiˈnamos i ˈejos ˈkoren"
+    },
+    {
+      "id": "a0-p3-s40",
+      "ru": "Я открываю дверь, и мы входим.",
+      "es": [
+        "Abro la puerta y entramos.",
+        "Yo abro la puerta y entramos."
+      ],
+      "ipa": "ˈabɾo la ˈpweɾta i enˈtɾamos"
+    },
+    {
+      "id": "a0-p3-s41",
+      "ru": "Я живу в Мадриде. А вы?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "Vivo en Madrid. ¿Y usted?",
+        "Yo vivo en Madrid. ¿Y usted?"
+      ],
+      "ipa": "ˈbibo en maˈdɾid · i usˈted"
+    },
+    {
+      "id": "a0-p3-s42",
+      "ru": "Мы живём в центре. А вы?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "Vivimos en el centro. ¿Y vosotras?",
+        "Nosotros vivimos en el centro. ¿Y vosotras?"
+      ],
+      "ipa": "biˈbimos en el ˈθentɾo · i boˈsotɾas"
+    },
+    {
+      "id": "a0-p3-s43",
+      "ru": "Вы хотите быть инженерами?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Queréis ser ingenieras?",
+        "¿Vosotras queréis ser ingenieras?"
+      ],
+      "ipa": "keˈɾeis ˈseɾ inxeˈnjeɾas"
+    },
+    {
+      "id": "a0-p3-s44",
+      "ru": "Я не ем мясо. — Я тоже.",
+      "es": [
+        "No como carne. — Yo tampoco."
+      ],
+      "ipa": "no ˈkomo ˈkaɾne · ˈjo tamˈpoko"
+    },
+    {
+      "id": "a0-p3-s45",
+      "ru": "Ты пьёшь пиво? — Нет, только кофе.",
+      "es": [
+        "¿Bebes cerveza? — No, solo café.",
+        "¿Bebes cerveza? — No, solo bebo café."
+      ],
+      "ipa": "ˈbebes θeɾˈbeθa · ˈno ˈsolo kaˈfe"
+    },
+    {
+      "id": "a0-p3-s46",
+      "ru": "Ты из Испании? — Нет, из России.",
+      "es": [
+        "¿Eres de España? — No, de Rusia.",
+        "¿Eres de España? — No, soy de Rusia."
+      ],
+      "ipa": "ˈeɾes de esˈpaɲa · ˈno de ˈrusja"
+    },
+    {
+      "id": "a0-p3-s47",
+      "ru": "Вы врач? — Нет, я учитель.",
+      "hint": "вежливо, мужчине",
+      "es": [
+        "¿Usted es médico? — No, soy profesor.",
+        "¿Es usted médico? — No, soy profesor."
+      ],
+      "ipa": "usˈted ˈes ˈmediko · ˈno ˈsoj pɾofeˈsoɾ"
+    },
+    {
+      "id": "a0-p3-s48",
+      "ru": "Вам нравится бегать? — Да, мы много бегаем.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Os gusta correr? — Sí, corremos mucho."
+      ],
+      "ipa": "os ˈgusta koˈreɾ · ˈsi koˈremos ˈmutʃo"
+    },
+    {
+      "id": "a0-p3-s49",
+      "ru": "Можешь купить еду, пожалуйста? — Конечно!",
+      "es": [
+        "¿Puedes comprar comida, por favor? — ¡Claro!",
+        "¿Puedes comprar la comida, por favor? — ¡Claro!"
+      ],
+      "ipa": "ˈpwedes komˈpɾaɾ koˈmida poɾ faˈboɾ · ˈklaɾo"
+    },
+    {
+      "id": "a0-p3-s50",
+      "ru": "Они испанки, но живут в Москве.",
+      "es": [
+        "Ellas son españolas, pero viven en Moscú.",
+        "Son españolas, pero viven en Moscú."
+      ],
+      "ipa": "ˈejas ˈson espaˈɲolas ˈpeɾo ˈbiben en mosˈku"
+    },
+    {
+      "id": "a0-p3-s51",
+      "ru": "Мне нравится читать, но книги очень дорогие.",
+      "es": [
+        "Me gusta leer, pero los libros son muy caros."
+      ],
+      "ipa": "me ˈgusta leˈeɾ ˈpeɾo los ˈlibɾos ˈson ˈmuj ˈkaɾos"
+    },
+    {
+      "id": "a0-p3-s52",
+      "ru": "Сегодня трудный день: мне нужно много работать.",
+      "es": [
+        "Hoy es un día difícil: tengo que trabajar mucho.",
+        "Hoy es un día difícil: necesito trabajar mucho."
+      ],
+      "ipa": "ˈoj ˈes un ˈdi.a diˈfiθil ˈtengo ke tɾabaˈxaɾ ˈmutʃo"
+    },
+    {
+      "id": "a0-p3-s53",
+      "ru": "Спасибо! Книга очень интересная. — Не за что.",
+      "es": [
+        "¡Gracias! El libro es muy interesante. — De nada."
+      ],
+      "ipa": "ˈgɾaθjas · el ˈlibɾo ˈes ˈmuj inteɾeˈsante · de ˈnada"
+    },
+    {
+      "id": "a0-p3-s54",
+      "ru": "Я спрашиваю по-испански, а они отвечают по-русски.",
+      "es": [
+        "Pregunto en español y ellos contestan en ruso.",
+        "Pregunto en español, pero ellos contestan en ruso."
+      ],
+      "ipa": "pɾeˈgunto en espaˈɲol i ˈejos konˈtestan en ˈruso"
+    },
+    {
+      "id": "a0-p3-s55",
+      "ru": "Друзья приезжают завтра: нам нужно убрать квартиру.",
+      "es": [
+        "Los amigos llegan mañana: tenemos que limpiar el piso.",
+        "Los amigos llegan mañana: necesitamos limpiar el piso."
+      ],
+      "ipa": "los aˈmigos ˈjegan maˈɲana teˈnemos ke limˈpjaɾ el ˈpiso"
+    },
+    {
+      "id": "a0-p3-s56",
+      "ru": "Я живу в Москве, в маленькой квартире.",
+      "es": [
+        "Vivo en Moscú, en un piso pequeño."
+      ],
+      "ipa": "ˈbibo en mosˈku en un ˈpiso peˈkeɲo"
+    },
+    {
+      "id": "a0-p3-s57",
+      "ru": "Скоро я буду жить в Испании.",
+      "es": [
+        "Pronto voy a vivir en España."
+      ],
+      "ipa": "ˈpɾonto ˈboj a biˈbiɾ en esˈpaɲa"
+    },
+    {
+      "id": "a0-p3-s58",
+      "ru": "Я продаю кровать, стол и стулья.",
+      "es": [
+        "Vendo una cama, una mesa y unas sillas.",
+        "Vendo una cama, una mesa y sillas."
+      ],
+      "ipa": "ˈbendo ˈuna ˈkama ˈuna ˈmesa i ˈunas ˈsijas"
+    },
+    {
+      "id": "a0-p3-s59",
+      "ru": "Кровать старая, но очень красивая.",
+      "es": [
+        "La cama es vieja, pero muy bonita.",
+        "La cama es vieja, pero es muy bonita."
+      ],
+      "ipa": "la ˈkama ˈes ˈbjexa ˈpeɾo ˈmuj boˈnita"
+    },
+    {
+      "id": "a0-p3-s60",
+      "ru": "Стулья новые и дешёвые.",
+      "es": [
+        "Las sillas son nuevas y baratas."
+      ],
+      "ipa": "las ˈsijas ˈson ˈnwebas i baˈɾatas"
+    },
+    {
+      "id": "a0-p3-s61",
+      "ru": "Стол тоже дешёвый.",
+      "es": [
+        "La mesa también es barata."
+      ],
+      "ipa": "la ˈmesa tamˈbjen ˈes baˈɾata"
+    },
+    {
+      "id": "a0-p3-s62",
+      "ru": "Хотите купить кровать или стол?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Queréis comprar la cama o la mesa?",
+        "¿Vosotros queréis comprar la cama o la mesa?"
+      ],
+      "ipa": "keˈɾeis komˈpɾaɾ la ˈkama o la ˈmesa"
+    },
+    {
+      "id": "a0-p3-s63",
+      "ru": "Можете позвонить сегодня или завтра.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "Podéis llamar hoy o mañana.",
+        "Vosotros podéis llamar hoy o mañana."
+      ],
+      "ipa": "poˈdeis jaˈmaɾ ˈoj o maˈɲana"
+    }
+  ]
+}
