@@ -4,11 +4,12 @@ import { buildPracticeSets } from '../practice/sets.ts'
 import Trainer from '../practice/Trainer.tsx'
 import { Dialogue } from './notes/Dialogue.tsx'
 import { Passage } from './notes/Passage.tsx'
+import { WordList } from './notes/WordList.tsx'
 
 /**
  * Практический урок — одна страница: что повторяем, тренажёр с группами фраз и проверкой,
  * ниже — рассказ и мини-диалог из видео. Теории и новых слов нет, поэтому нет и подразделов.
- * Рассказ, диалог и «Что повторим» лежат в конспекте практики (notes): если он
+ * Памятки, рассказ, диалог и «Что повторим» лежат в конспекте практики (notes): если он
  * в подписке, их на странице нет — только упражнения.
  */
 interface Props {
@@ -21,6 +22,10 @@ const sets = buildPracticeSets(body, 'practice')
 // Платной части нет в content/public: подписчику её загрузит тренажёр, остальным — плашка.
 const locked = { phrases: meta.parts.practice === 'paid' && !body.practice, extras: false }
 const outcome = body.notes?.outcome
+const reminders =
+  body.notes?.sections.flatMap((section) =>
+    section.blocks.flatMap((block) => (block.type === 'words' ? [block] : [])),
+  ) ?? []
 const passages =
   body.notes?.sections.flatMap((section) =>
     section.blocks.flatMap((block) => (block.type === 'text' ? [block] : [])),
@@ -38,6 +43,13 @@ const dialogues = body.notes?.dialogues ?? []
     </ul>
   </section>
 )}
+
+{reminders.map((reminder, i) => (
+  <section class="reminder" aria-labelledby={`practice-reminder-${i + 1}`}>
+    <h2 id={`practice-reminder-${i + 1}`}>{reminder.title}</h2>
+    <WordList rows={reminder.rows} headers={reminder.headers} />
+  </section>
+))}
 
 <div class="exercises">
   <h2 id="practice-exercises">Упражнения</h2>
@@ -78,6 +90,13 @@ const dialogues = body.notes?.dialogues ?? []
     margin-bottom: 1rem;
   }
 
+  .reminder {
+    display: grid;
+    gap: 0.5rem;
+    min-width: 0;
+    margin-bottom: 2rem;
+  }
+
   .reading {
     display: grid;
     gap: 1.125rem;
@@ -94,6 +113,7 @@ const dialogues = body.notes?.dialogues ?? []
 
   /* Пока открыт набор, ничего лишнего: к списку возвращает кнопка тренажёра. */
   :global(body:has([data-set-open])) .repeat,
+  :global(body:has([data-set-open])) .reminder,
   :global(body:has([data-set-open])) .exercises,
   :global(body:has([data-set-open])) .reading {
     display: none;

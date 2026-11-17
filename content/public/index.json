@@ -334,6 +334,24 @@
       }
     },
     {
+      "id": "a0-p4",
+      "number": 4,
+      "level": "A0",
+      "planLesson": 4,
+      "title": "Вопросы, estar и hay, числа",
+      "grammar": [],
+      "youtubeUrl": "https://www.youtube.com/watch?v=wPvBRk77j0w&list=PLZbYC_qWyI38",
+      "parts": {
+        "notes": "free",
+        "practice": "free",
+        "quiz": "free"
+      },
+      "repeats": {
+        "from": 11,
+        "to": 13
+      }
+    },
+    {
       "id": "a0-14",
       "number": 14,
       "level": "A0",

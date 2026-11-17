@@ -1,0 +1,874 @@
+{
+  "id": "a0-p4",
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Моё: tener, притяжательные, числа",
+        "hint": "tengo · mi, su, nuestro · tengo veinte años",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Чьё это?",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**mi** casa, **mis** padres",
+                "ru": "мой дом, мои родители",
+                "ipa": "mi ˈkasa mis ˈpadɾes"
+              },
+              {
+                "es": "**tu** coche, **tus** libros",
+                "ru": "твоя машина, твои книги",
+                "ipa": "tu ˈkotʃe tus ˈlibɾos"
+              },
+              {
+                "es": "**su** casa, **sus** padres",
+                "ru": "его дом, её родители",
+                "ipa": "su ˈkasa sus ˈpadɾes"
+              },
+              {
+                "es": "**nuestro** piso, **nuestra** casa",
+                "ru": "наша квартира, наш дом",
+                "ipa": "ˈnwestɾo ˈpiso ˈnwestɾa ˈkasa"
+              },
+              {
+                "es": "**vuestro** coche, **vuestra** casa",
+                "ru": "ваша машина, ваш дом",
+                "ipa": "ˈbwestɾo ˈkotʃe ˈbwestɾa ˈkasa"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Рассказ",
+        "hint": "Скажите по фразам, потом послушайте целиком",
+        "blocks": [
+          {
+            "type": "text",
+            "title": "Где я живу",
+            "sentences": [
+              {
+                "es": "**Tengo** veintisiete **años y** vivo en Madrid.",
+                "ru": "Мне двадцать семь лет, и я живу в Мадриде."
+              },
+              {
+                "es": "Vivo **con mi** hermana en el centro.",
+                "ru": "Я живу с сестрой в центре."
+              },
+              {
+                "es": "**Nuestro** piso **es viejo**, **pero** muy **bonito**.",
+                "ru": "Наша квартира старая, но очень красивая."
+              },
+              {
+                "es": "En **nuestra** calle **hay un** supermercado **y un** gimnasio.",
+                "ru": "На нашей улице есть супермаркет и спортзал."
+              },
+              {
+                "es": "**Mi** hermana **tiene** dieciocho **años y es** estudiante.",
+                "ru": "Моей сестре восемнадцать лет, она студентка."
+              },
+              {
+                "es": "Ahora **está** en la universidad **y** yo **estoy** en casa.",
+                "ru": "Сейчас она в университете, а я дома."
+              },
+              {
+                "es": "¿Y vosotros? ¿**Dónde** vivís **y con quién**?",
+                "ru": "А вы? Где вы живёте и с кем?"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "¿Qué tal, Carlos?",
+        "lines": [
+          {
+            "es": "Carlos, ¿**qué tal**? ¿**Estás** cansado?",
+            "ru": "Карлос, как дела? Устал?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, **estoy cansado**, pero muy **contento**.",
+            "ru": "Да, устал, но очень доволен.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Contento? ¿**Por qué**?",
+            "ru": "Доволен? Почему?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "**Porque estoy** aquí, en Madrid.",
+            "ru": "Потому что я здесь, в Мадриде.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Y **qué** quieres cenar? **Hay** pescado y carne.",
+            "ru": "А что ты хочешь на ужин? Есть рыба и мясо.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿**Cómo es** el pescado aquí?",
+            "ru": "А какая здесь рыба?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "**Es caro**, pero la carne **es barata**.",
+            "ru": "Дорогая, но мясо дешёвое.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¡Muy bien! Carne y cerveza.",
+            "ru": "Отлично! Мясо и пиво.",
+            "speaker": "Carlos"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [],
+    "outcome": {
+      "title": "Что мы повторили",
+      "bullets": [
+        "Задавать вопросы: ¿quién?, ¿cuántos?, ¿por qué?, ¿con quién?",
+        "Говорить, где вы и как вы: estoy en casa, estoy cansado",
+        "Выбирать между hay и está: hay un bar, el bar está aquí",
+        "Говорить, чьё это: mi casa, su hijo, nuestro piso",
+        "Называть возраст: tengo veintinueve años"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 14: итог A0 — me llamo, soy, tengo, quiero"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Разминка",
+      "sentenceIds": [
+        "a0-p4-s01",
+        "a0-p4-s02",
+        "a0-p4-s03",
+        "a0-p4-s04",
+        "a0-p4-s05",
+        "a0-p4-s06",
+        "a0-p4-s07",
+        "a0-p4-s08"
+      ]
+    },
+    {
+      "name": "Кто, что, где, когда",
+      "sentenceIds": [
+        "a0-p4-s09",
+        "a0-p4-s10",
+        "a0-p4-s11",
+        "a0-p4-s12",
+        "a0-p4-s13",
+        "a0-p4-s14",
+        "a0-p4-s15",
+        "a0-p4-s16",
+        "a0-p4-s17",
+        "a0-p4-s18"
+      ]
+    },
+    {
+      "name": "Какой, сколько, почему, откуда",
+      "sentenceIds": [
+        "a0-p4-s19",
+        "a0-p4-s20",
+        "a0-p4-s21",
+        "a0-p4-s22",
+        "a0-p4-s23",
+        "a0-p4-s24",
+        "a0-p4-s25",
+        "a0-p4-s26",
+        "a0-p4-s27",
+        "a0-p4-s28"
+      ]
+    },
+    {
+      "name": "Где и как: estar и hay",
+      "sentenceIds": [
+        "a0-p4-s29",
+        "a0-p4-s30",
+        "a0-p4-s31",
+        "a0-p4-s32",
+        "a0-p4-s33",
+        "a0-p4-s34",
+        "a0-p4-s35",
+        "a0-p4-s36",
+        "a0-p4-s37"
+      ]
+    },
+    {
+      "name": "Моё: tener, притяжательные, числа",
+      "sentenceIds": [
+        "a0-p4-s38",
+        "a0-p4-s39",
+        "a0-p4-s40",
+        "a0-p4-s41",
+        "a0-p4-s42",
+        "a0-p4-s43",
+        "a0-p4-s44",
+        "a0-p4-s45",
+        "a0-p4-s46"
+      ]
+    },
+    {
+      "name": "Вперемешку",
+      "sentenceIds": [
+        "a0-p4-s47",
+        "a0-p4-s48",
+        "a0-p4-s49",
+        "a0-p4-s50",
+        "a0-p4-s51",
+        "a0-p4-s52",
+        "a0-p4-s53",
+        "a0-p4-s54",
+        "a0-p4-s55",
+        "a0-p4-s56",
+        "a0-p4-s57",
+        "a0-p4-s58"
+      ]
+    },
+    {
+      "name": "Рассказ",
+      "sentenceIds": [
+        "a0-p4-s59",
+        "a0-p4-s60",
+        "a0-p4-s61",
+        "a0-p4-s62",
+        "a0-p4-s63",
+        "a0-p4-s64",
+        "a0-p4-s65"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "id": "a0-p4-s47.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s47"
+    },
+    {
+      "id": "a0-p4-s48.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s48"
+    },
+    {
+      "id": "a0-p4-s49.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s49"
+    },
+    {
+      "id": "a0-p4-s50.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s50"
+    },
+    {
+      "id": "a0-p4-s51.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s51"
+    },
+    {
+      "id": "a0-p4-s52.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s52"
+    },
+    {
+      "id": "a0-p4-s55.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s55"
+    },
+    {
+      "id": "a0-p4-s56.translate",
+      "type": "translate",
+      "sentenceId": "a0-p4-s56"
+    },
+    {
+      "id": "a0-p4-s53.order",
+      "type": "order",
+      "sentenceId": "a0-p4-s53"
+    },
+    {
+      "id": "a0-p4-s54.order",
+      "type": "order",
+      "sentenceId": "a0-p4-s54"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a0-p4-s01",
+      "ru": "Где твой брат?",
+      "es": [
+        "¿Dónde está tu hermano?"
+      ],
+      "ipa": "ˈdonde esˈta tu eɾˈmano"
+    },
+    {
+      "id": "a0-p4-s02",
+      "ru": "У тебя есть сестра?",
+      "es": [
+        "¿Tienes una hermana?",
+        "¿Tienes hermana?"
+      ],
+      "ipa": "ˈtjenes ˈuna eɾˈmana"
+    },
+    {
+      "id": "a0-p4-s03",
+      "ru": "Шесть или шестнадцать?",
+      "es": [
+        "¿Seis o dieciséis?"
+      ],
+      "ipa": "ˈsejs o djeθiˈsejs"
+    },
+    {
+      "id": "a0-p4-s04",
+      "ru": "Четыре, три, два, один, ноль!",
+      "es": [
+        "¡Cuatro, tres, dos, uno, cero!"
+      ],
+      "ipa": "ˈkwatɾo ˈtɾes ˈdos ˈuno ˈθeɾo"
+    },
+    {
+      "id": "a0-p4-s05",
+      "ru": "Здесь есть больница?",
+      "es": [
+        "¿Hay un hospital aquí?",
+        "¿Aquí hay un hospital?"
+      ],
+      "ipa": "ˈaj un ospiˈtal aˈki"
+    },
+    {
+      "id": "a0-p4-s06",
+      "ru": "Как ты? — Так себе, я устала.",
+      "es": [
+        "¿Cómo estás? — Regular, estoy cansada."
+      ],
+      "ipa": "ˈkomo esˈtas · reguˈlaɾ esˈtoj kanˈsada"
+    },
+    {
+      "id": "a0-p4-s07",
+      "ru": "Откуда вы?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿De dónde son ustedes?",
+        "¿De dónde son?"
+      ],
+      "ipa": "de ˈdonde ˈson usˈtedes"
+    },
+    {
+      "id": "a0-p4-s08",
+      "ru": "Вы готовы?",
+      "hint": "к нескольким подругам",
+      "es": [
+        "¿Estáis listas?",
+        "¿Vosotras estáis listas?"
+      ],
+      "ipa": "esˈtais ˈlistas"
+    },
+    {
+      "id": "a0-p4-s09",
+      "ru": "Кто здесь?",
+      "es": [
+        "¿Quién está aquí?"
+      ],
+      "ipa": "ˈkjen esˈta aˈki"
+    },
+    {
+      "id": "a0-p4-s10",
+      "ru": "Что пьют дети?",
+      "es": [
+        "¿Qué beben los niños?"
+      ],
+      "ipa": "ˈke ˈbeben los ˈniɲos"
+    },
+    {
+      "id": "a0-p4-s11",
+      "ru": "Где вы живёте?",
+      "hint": "вежливо, нескольким",
+      "es": [
+        "¿Dónde viven ustedes?",
+        "¿Dónde viven?"
+      ],
+      "ipa": "ˈdonde ˈbiben usˈtedes"
+    },
+    {
+      "id": "a0-p4-s12",
+      "ru": "Когда вы ужинаете?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Cuándo cena usted?",
+        "¿Cuándo cena?"
+      ],
+      "ipa": "ˈkwando ˈθena usˈted"
+    },
+    {
+      "id": "a0-p4-s13",
+      "ru": "Когда вы ходите за покупками?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Cuándo vais de compras?",
+        "¿Cuándo vais vosotros de compras?"
+      ],
+      "ipa": "ˈkwando ˈbais de ˈkompɾas"
+    },
+    {
+      "id": "a0-p4-s14",
+      "ru": "Где твой отец работает?",
+      "es": [
+        "¿Dónde trabaja tu padre?"
+      ],
+      "ipa": "ˈdonde tɾaˈbaxa tu ˈpadɾe"
+    },
+    {
+      "id": "a0-p4-s15",
+      "ru": "Когда твои родители приезжают?",
+      "es": [
+        "¿Cuándo llegan tus padres?"
+      ],
+      "ipa": "ˈkwando ˈjegan tus ˈpadɾes"
+    },
+    {
+      "id": "a0-p4-s16",
+      "ru": "Кто готовит в твоей семье?",
+      "es": [
+        "¿Quién cocina en tu familia?"
+      ],
+      "ipa": "ˈkjen koˈθina en tu faˈmilja"
+    },
+    {
+      "id": "a0-p4-s17",
+      "ru": "Кто дома? — Мама и сестра.",
+      "es": [
+        "¿Quién está en casa? — Mi madre y mi hermana."
+      ],
+      "ipa": "ˈkjen esˈta en ˈkasa · mi ˈmadɾe i mi eɾˈmana"
+    },
+    {
+      "id": "a0-p4-s18",
+      "ru": "Что ты учишь? — Испанский и английский.",
+      "es": [
+        "¿Qué estudias? — Español e inglés.",
+        "¿Qué aprendes? — Español e inglés."
+      ],
+      "ipa": "ˈke esˈtudjas · espaˈɲol e inˈgles"
+    },
+    {
+      "id": "a0-p4-s19",
+      "ru": "Сколько хлеба нам нужно?",
+      "es": [
+        "¿Cuánto pan necesitamos?"
+      ],
+      "ipa": "ˈkwanto ˈpan neθesiˈtamos"
+    },
+    {
+      "id": "a0-p4-s20",
+      "ru": "Сколько мяса вы едите?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Cuánta carne coméis?",
+        "¿Cuánta carne coméis vosotros?"
+      ],
+      "ipa": "ˈkwanta ˈkaɾne koˈmeis"
+    },
+    {
+      "id": "a0-p4-s21",
+      "ru": "Сколько писем ты получаешь?",
+      "es": [
+        "¿Cuántas cartas recibes?"
+      ],
+      "ipa": "ˈkwantas ˈkaɾtas reˈθibes"
+    },
+    {
+      "id": "a0-p4-s22",
+      "ru": "Из какой страны ваш друг?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿De qué país es vuestro amigo?"
+      ],
+      "ipa": "de ˈke paˈis ˈes ˈbwestɾo aˈmigo"
+    },
+    {
+      "id": "a0-p4-s23",
+      "ru": "В какой школе учатся ваши дети?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿En qué colegio estudian sus hijos?"
+      ],
+      "ipa": "en ˈke koˈlexjo esˈtudjan sus ˈixos"
+    },
+    {
+      "id": "a0-p4-s24",
+      "ru": "С кем ты живёшь? — С родителями.",
+      "es": [
+        "¿Con quién vives? — Con mis padres."
+      ],
+      "ipa": "kon ˈkjen ˈbibes · kon mis ˈpadɾes"
+    },
+    {
+      "id": "a0-p4-s25",
+      "ru": "Сколько лет твоему брату? Двадцать три или двадцать шесть?",
+      "es": [
+        "¿Cuántos años tiene tu hermano? ¿Veintitrés o veintiséis?"
+      ],
+      "ipa": "ˈkwantos ˈaɲos ˈtjene tu eɾˈmano · bejntiˈtɾes o bejntiˈsejs"
+    },
+    {
+      "id": "a0-p4-s26",
+      "ru": "Какая она, твоя подруга? — Красивая и интересная.",
+      "es": [
+        "¿Cómo es tu amiga? — Es bonita e interesante.",
+        "¿Cómo es tu amiga? — Bonita e interesante."
+      ],
+      "ipa": "ˈkomo ˈes tu aˈmiga · ˈes boˈnita e inteɾeˈsante"
+    },
+    {
+      "id": "a0-p4-s27",
+      "ru": "Почему ты дома? — Потому что сегодня я не работаю.",
+      "es": [
+        "¿Por qué estás en casa? — Porque hoy no trabajo."
+      ],
+      "ipa": "poɾ ˈke esˈtas en ˈkasa · ˈpoɾke ˈoj no tɾaˈbaxo"
+    },
+    {
+      "id": "a0-p4-s28",
+      "ru": "Почему вы хотите жить в Мадриде? — Потому что он очень красивый.",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Por qué quiere vivir en Madrid? — Porque es muy bonito."
+      ],
+      "ipa": "poɾ ˈke ˈkjeɾe biˈbiɾ en maˈdɾid · ˈpoɾke ˈes ˈmuj boˈnito"
+    },
+    {
+      "id": "a0-p4-s29",
+      "ru": "Как ваша мама?",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "¿Cómo está su madre?"
+      ],
+      "ipa": "ˈkomo esˈta su ˈmadɾe"
+    },
+    {
+      "id": "a0-p4-s30",
+      "ru": "Мы очень довольны.",
+      "es": [
+        "Estamos muy contentos.",
+        "Nosotros estamos muy contentos."
+      ],
+      "ipa": "esˈtamos ˈmuj konˈtentos"
+    },
+    {
+      "id": "a0-p4-s31",
+      "ru": "Где девочки? — На кухне.",
+      "es": [
+        "¿Dónde están las niñas? — En la cocina.",
+        "¿Dónde están las niñas? — Están en la cocina."
+      ],
+      "ipa": "ˈdonde esˈtan las ˈniɲas · en la koˈθina"
+    },
+    {
+      "id": "a0-p4-s32",
+      "ru": "В квартире пять стульев, но нет стола.",
+      "es": [
+        "En el piso hay cinco sillas, pero no hay mesa.",
+        "Hay cinco sillas en el piso, pero no hay mesa."
+      ],
+      "ipa": "en el ˈpiso ˈaj ˈθinko ˈsijas ˈpeɾo no ˈaj ˈmesa"
+    },
+    {
+      "id": "a0-p4-s33",
+      "ru": "На занятии десять девочек и девять мальчиков.",
+      "es": [
+        "En la clase hay diez niñas y nueve niños.",
+        "Hay diez niñas y nueve niños en la clase."
+      ],
+      "ipa": "en la ˈklase ˈaj ˈdjeθ ˈniɲas i ˈnwebe ˈniɲos"
+    },
+    {
+      "id": "a0-p4-s34",
+      "ru": "Здесь есть бар? — Да, он на площади.",
+      "es": [
+        "¿Hay un bar aquí? — Sí, está en la plaza.",
+        "¿Aquí hay un bar? — Sí, está en la plaza."
+      ],
+      "ipa": "ˈaj un ˈbaɾ aˈki · ˈsi esˈta en la ˈplaθa"
+    },
+    {
+      "id": "a0-p4-s35",
+      "ru": "Здесь есть музей. Он очень интересный.",
+      "es": [
+        "Aquí hay un museo. Es muy interesante.",
+        "Hay un museo aquí. Es muy interesante."
+      ],
+      "ipa": "aˈki ˈaj un muˈse.o · ˈes ˈmuj inteɾeˈsante"
+    },
+    {
+      "id": "a0-p4-s36",
+      "ru": "Моему сыну семнадцать лет, сейчас он в библиотеке.",
+      "es": [
+        "Mi hijo tiene diecisiete años y ahora está en la biblioteca.",
+        "Mi hijo tiene diecisiete años, ahora está en la biblioteca."
+      ],
+      "ipa": "mi ˈixo ˈtjene djeθiˈsjete ˈaɲos i aˈoɾa esˈta en la bibljoˈteka"
+    },
+    {
+      "id": "a0-p4-s37",
+      "ru": "Мой брат врач, но сейчас он болеет.",
+      "es": [
+        "Mi hermano es médico, pero ahora está enfermo."
+      ],
+      "ipa": "mi eɾˈmano ˈes ˈmediko ˈpeɾo aˈoɾa esˈta enˈfeɾmo"
+    },
+    {
+      "id": "a0-p4-s38",
+      "ru": "Пятнадцать, двадцать, двадцать пять, тридцать.",
+      "es": [
+        "Quince, veinte, veinticinco, treinta."
+      ],
+      "ipa": "ˈkinθe ˈbejnte bejntiˈθinko ˈtɾejnta"
+    },
+    {
+      "id": "a0-p4-s39",
+      "ru": "Наша кухня очень маленькая.",
+      "es": [
+        "Nuestra cocina es muy pequeña."
+      ],
+      "ipa": "ˈnwestɾa koˈθina ˈes ˈmuj peˈkeɲa"
+    },
+    {
+      "id": "a0-p4-s40",
+      "ru": "Где ваша собака?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Dónde está vuestro perro?"
+      ],
+      "ipa": "ˈdonde esˈta ˈbwestɾo ˈpero"
+    },
+    {
+      "id": "a0-p4-s41",
+      "ru": "Моим детям семь и тринадцать лет.",
+      "es": [
+        "Mis hijos tienen siete y trece años."
+      ],
+      "ipa": "mis ˈixos ˈtjenen ˈsjete i ˈtɾeθe ˈaɲos"
+    },
+    {
+      "id": "a0-p4-s42",
+      "ru": "Их дочери одиннадцать лет, а сыну девятнадцать.",
+      "es": [
+        "Su hija tiene once años y su hijo tiene diecinueve.",
+        "Su hija tiene once años y su hijo, diecinueve."
+      ],
+      "ipa": "su ˈixa ˈtjene ˈonθe ˈaɲos i su ˈixo ˈtjene djeθiˈnwebe"
+    },
+    {
+      "id": "a0-p4-s43",
+      "ru": "Сколько лет твоей дочери? — Восемь.",
+      "es": [
+        "¿Cuántos años tiene tu hija? — Ocho."
+      ],
+      "ipa": "ˈkwantos ˈaɲos ˈtjene tu ˈixa · ˈotʃo"
+    },
+    {
+      "id": "a0-p4-s44",
+      "ru": "Сколько тебе лет? — Двадцать один.",
+      "es": [
+        "¿Cuántos años tienes? — Veintiuno."
+      ],
+      "ipa": "ˈkwantos ˈaɲos ˈtjenes · bejnˈtjuno"
+    },
+    {
+      "id": "a0-p4-s45",
+      "ru": "Её брату двадцать восемь лет, и у него двое детей.",
+      "es": [
+        "Su hermano tiene veintiocho años y dos hijos.",
+        "Su hermano tiene veintiocho años y tiene dos hijos."
+      ],
+      "ipa": "su eɾˈmano ˈtjene bejnˈtjotʃo ˈaɲos i ˈdos ˈixos"
+    },
+    {
+      "id": "a0-p4-s46",
+      "ru": "Мне не тридцать лет, мне двадцать девять!",
+      "es": [
+        "¡No tengo treinta años, tengo veintinueve!"
+      ],
+      "ipa": "no ˈtengo ˈtɾejnta ˈaɲos ˈtengo bejntiˈnwebe"
+    },
+    {
+      "id": "a0-p4-s47",
+      "ru": "Как тебя зовут и сколько тебе лет?",
+      "es": [
+        "¿Cómo te llamas y cuántos años tienes?"
+      ],
+      "ipa": "ˈkomo te ˈjamas i ˈkwantos ˈaɲos ˈtjenes"
+    },
+    {
+      "id": "a0-p4-s48",
+      "ru": "Как дела? — Ужасно: у меня нет работы.",
+      "es": [
+        "¿Qué tal? — Fatal: no tengo trabajo.",
+        "¿Cómo estás? — Fatal: no tengo trabajo."
+      ],
+      "ipa": "ˈke ˈtal · faˈtal no ˈtengo tɾaˈbaxo"
+    },
+    {
+      "id": "a0-p4-s49",
+      "ru": "Извините, где метро? — На площади.",
+      "es": [
+        "Perdón, ¿dónde está el metro? — En la plaza.",
+        "Perdón, ¿dónde está el metro? — Está en la plaza."
+      ],
+      "ipa": "peɾˈdon ˈdonde esˈta el ˈmetɾo · en la ˈplaθa"
+    },
+    {
+      "id": "a0-p4-s50",
+      "ru": "Дома есть еда? — Нет, но у меня есть деньги.",
+      "es": [
+        "¿Hay comida en casa? — No, pero tengo dinero.",
+        "¿En casa hay comida? — No, pero tengo dinero."
+      ],
+      "ipa": "ˈaj koˈmida en ˈkasa · ˈno ˈpeɾo ˈtengo diˈneɾo"
+    },
+    {
+      "id": "a0-p4-s51",
+      "ru": "Мне двадцать один год. А вам? — Двадцать четыре.",
+      "hint": "вежливо, одному человеку",
+      "es": [
+        "Tengo veintiún años. ¿Y usted? — Veinticuatro."
+      ],
+      "ipa": "ˈtengo bejnˈtjun ˈaɲos · i usˈted · bejntiˈkwatɾo"
+    },
+    {
+      "id": "a0-p4-s52",
+      "ru": "Почему вы ходите пешком? — Потому что нам нравится.",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Por qué camináis? — Porque nos gusta.",
+        "¿Por qué camináis? — Porque nos gusta caminar."
+      ],
+      "ipa": "poɾ ˈke kamiˈnais · ˈpoɾke nos ˈgusta"
+    },
+    {
+      "id": "a0-p4-s53",
+      "ru": "Я буду в Мадриде четырнадцать дней.",
+      "es": [
+        "Voy a estar en Madrid catorce días.",
+        "Voy a estar catorce días en Madrid."
+      ],
+      "ipa": "ˈboj a esˈtaɾ en maˈdɾid kaˈtoɾθe ˈdi.as"
+    },
+    {
+      "id": "a0-p4-s54",
+      "ru": "Мне нужно выучить двенадцать слов.",
+      "es": [
+        "Tengo que aprender doce palabras.",
+        "Necesito aprender doce palabras."
+      ],
+      "ipa": "ˈtengo ke apɾenˈdeɾ ˈdoθe paˈlabɾas"
+    },
+    {
+      "id": "a0-p4-s55",
+      "ru": "Почему ты продаёшь свою машину? — Потому что она старая.",
+      "es": [
+        "¿Por qué vendes tu coche? — Porque es viejo."
+      ],
+      "ipa": "poɾ ˈke ˈbendes tu ˈkotʃe · ˈpoɾke ˈes ˈbjexo"
+    },
+    {
+      "id": "a0-p4-s56",
+      "ru": "Вопрос лёгкий, а ответ трудный.",
+      "es": [
+        "La pregunta es fácil, pero la respuesta es difícil.",
+        "La pregunta es fácil y la respuesta es difícil."
+      ],
+      "ipa": "la pɾeˈgunta ˈes ˈfaθil ˈpeɾo la resˈpwesta ˈes diˈfiθil"
+    },
+    {
+      "id": "a0-p4-s57",
+      "ru": "Мы устали, потому что работаем весь день.",
+      "hint": "говорят две женщины",
+      "es": [
+        "Estamos cansadas porque trabajamos todo el día.",
+        "Nosotras estamos cansadas porque trabajamos todo el día."
+      ],
+      "ipa": "esˈtamos kanˈsadas ˈpoɾke tɾabaˈxamos ˈtodo el ˈdi.a"
+    },
+    {
+      "id": "a0-p4-s58",
+      "ru": "Его родители живут в Мадриде, но сейчас они в Москве.",
+      "es": [
+        "Sus padres viven en Madrid, pero ahora están en Moscú."
+      ],
+      "ipa": "sus ˈpadɾes ˈbiben en maˈdɾid ˈpeɾo aˈoɾa esˈtan en mosˈku"
+    },
+    {
+      "id": "a0-p4-s59",
+      "ru": "Мне двадцать семь лет, и я живу в Мадриде.",
+      "es": [
+        "Tengo veintisiete años y vivo en Madrid."
+      ],
+      "ipa": "ˈtengo bejntiˈsjete ˈaɲos i ˈbibo en maˈdɾid"
+    },
+    {
+      "id": "a0-p4-s60",
+      "ru": "Я живу с сестрой в центре.",
+      "es": [
+        "Vivo con mi hermana en el centro."
+      ],
+      "ipa": "ˈbibo kon mi eɾˈmana en el ˈθentɾo"
+    },
+    {
+      "id": "a0-p4-s61",
+      "ru": "Наша квартира старая, но очень красивая.",
+      "es": [
+        "Nuestro piso es viejo, pero muy bonito."
+      ],
+      "ipa": "ˈnwestɾo ˈpiso ˈes ˈbjexo ˈpeɾo ˈmuj boˈnito"
+    },
+    {
+      "id": "a0-p4-s62",
+      "ru": "На нашей улице есть супермаркет и спортзал.",
+      "es": [
+        "En nuestra calle hay un supermercado y un gimnasio.",
+        "Hay un supermercado y un gimnasio en nuestra calle."
+      ],
+      "ipa": "en ˈnwestɾa ˈkaje ˈaj un supeɾmeɾˈkado i un ximˈnasjo"
+    },
+    {
+      "id": "a0-p4-s63",
+      "ru": "Моей сестре восемнадцать лет, она студентка.",
+      "es": [
+        "Mi hermana tiene dieciocho años y es estudiante.",
+        "Mi hermana tiene dieciocho años, es estudiante."
+      ],
+      "ipa": "mi eɾˈmana ˈtjene djeˈθjotʃo ˈaɲos i ˈes estuˈdjante"
+    },
+    {
+      "id": "a0-p4-s64",
+      "ru": "Сейчас она в университете, а я дома.",
+      "es": [
+        "Ahora está en la universidad y yo estoy en casa.",
+        "Ahora ella está en la universidad y yo estoy en casa."
+      ],
+      "ipa": "aˈoɾa esˈta en la unibeɾsiˈdad i ˈjo esˈtoj en ˈkasa"
+    },
+    {
+      "id": "a0-p4-s65",
+      "ru": "А вы? Где вы живёте и с кем?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Y vosotros? ¿Dónde vivís y con quién?"
+      ],
+      "ipa": "i boˈsotɾos · ˈdonde biˈbis i kon ˈkjen"
+    }
+  ]
+}
