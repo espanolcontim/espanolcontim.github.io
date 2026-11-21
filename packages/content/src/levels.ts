@@ -10,4 +10,4 @@ export interface LessonAddress {
 }
 
 /** Уроков в уровне по плану курса (video-lessons, docs/course-plan.md): «11/14». */
-export const LEVEL_LESSONS: Partial<Record<Level, number>> = { A0: 14, A1: 25, A2: 25, B1: 20 }
+export const LEVEL_LESSONS: Partial<Record<Level, number>> = { A0: 14, A1: 26, A2: 25, B1: 20 }

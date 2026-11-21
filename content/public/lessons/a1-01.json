@@ -1,0 +1,1279 @@
+{
+  "id": "a1-01",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Mi piso es **más pequeño**.",
+        "ru": "Моя квартира меньше.",
+        "ipa": "mi ˈpiso es mas peˈkeɲo"
+      },
+      {
+        "es": "Mi casa es **más barata**.",
+        "ru": "Мой дом дешевле.",
+        "ipa": "mi ˈkasa es mas baˈɾata"
+      },
+      {
+        "es": "Mi piso es **más caro que** tu piso.",
+        "ru": "Моя квартира дороже твоей квартиры.",
+        "ipa": "mi ˈpiso es mas ˈkaɾo ke tu ˈpiso"
+      },
+      {
+        "es": "Mi piso es **menos caro**.",
+        "ru": "Моя квартира менее дорогая.",
+        "ipa": "mi ˈpiso es ˈmenos ˈkaɾo"
+      },
+      {
+        "es": "**Quiero** un piso más grande.",
+        "ru": "Я хочу квартиру побольше.",
+        "ipa": "ˈkjeɾo un ˈpiso mas ˈgɾande"
+      },
+      {
+        "es": "Necesito un libro **más fácil**.",
+        "ru": "Мне нужна книга попроще.",
+        "ipa": "neθeˈsito un ˈlibɾo mas ˈfaθil"
+      }
+    ],
+    "rule": "**más / menos + прилагательное + que** — «более / менее …, чем». Если понятно, с чем сравниваем, часть с que можно опустить. Прилагательное согласуется с существительным: piso más caro, casa más cara.",
+    "mistake": {
+      "wrong": {
+        "es": "Mi piso es más caro tu piso."
+      },
+      "right": {
+        "es": "Mi piso es más caro **que** tu piso."
+      }
+    },
+    "practice": [
+      "a1-01-s21",
+      "a1-01-s24",
+      "a1-01-s26",
+      "a1-01-s31"
+    ]
+  },
+  "notes": {
+    "sections": [
+      {
+        "id": "section-1",
+        "title": "Сравниваем два варианта",
+        "hint": "Más + признак + que — более…, чем…",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Начинаем с простого",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Mi piso** es grande.",
+                "ru": "Моя квартира большая.",
+                "ipa": "mi ˈpiso es ˈgɾande"
+              },
+              {
+                "es": "**Tu piso** es pequeño.",
+                "ru": "Твоя квартира маленькая.",
+                "ipa": "tu ˈpiso es peˈkeɲo"
+              },
+              {
+                "es": "Mi **casa** es cara.",
+                "ru": "Мой дом дорогой.",
+                "ipa": "mi ˈkasa es ˈkaɾa"
+              },
+              {
+                "es": "Tu casa es barata.",
+                "ru": "Твой дом дешёвый.",
+                "ipa": "tu ˈkasa es baˈɾata"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Сравниваем с más",
+            "pattern": [
+              "más",
+              "+",
+              "прилагательное",
+              "+",
+              "que"
+            ],
+            "text": "Más усиливает признак; que — «чем».",
+            "examples": [
+              {
+                "es": "Mi piso es **más grande que** tu piso.",
+                "ru": "Моя квартира больше твоей квартиры."
+              },
+              {
+                "es": "Tu casa es **más barata que** mi casa.",
+                "ru": "Твой дом дешевле моего дома."
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Больше или меньше",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Mi piso es **más pequeño**.",
+                "ru": "Моя квартира меньше.",
+                "ipa": "mi ˈpiso es mas peˈkeɲo"
+              },
+              {
+                "es": "Tu piso es **más grande**.",
+                "ru": "Твоя квартира больше.",
+                "ipa": "tu ˈpiso es mas ˈgɾande"
+              },
+              {
+                "es": "Mi casa es **más barata**.",
+                "ru": "Мой дом дешевле.",
+                "ipa": "mi ˈkasa es mas baˈɾata"
+              },
+              {
+                "es": "Tu casa es **más cara**.",
+                "ru": "Твой дом дороже.",
+                "ipa": "tu ˈkasa es mas ˈkaɾa"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Добавляем «чем»",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Mi piso es **más caro que** tu piso.",
+                "ru": "Моя квартира дороже твоей квартиры.",
+                "ipa": "mi ˈpiso es mas ˈkaɾo ke tu ˈpiso"
+              },
+              {
+                "es": "Mi casa es **más cara que** tu casa.",
+                "ru": "Мой дом дороже твоего дома.",
+                "ipa": "mi ˈkasa es mas ˈkaɾa ke tu ˈkasa"
+              },
+              {
+                "es": "Tu piso es **más barato**.",
+                "ru": "Твоя квартира дешевле.",
+                "ipa": "tu ˈpiso es mas baˈɾato"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-2",
+        "title": "Проще и интереснее",
+        "hint": "Та же модель с языками и книгами",
+        "blocks": [
+          {
+            "type": "words",
+            "title": "Языки и книги",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**El español** es fácil.",
+                "ru": "Испанский простой.",
+                "ipa": "el espaˈɲol es ˈfaθil"
+              },
+              {
+                "es": "**El inglés** es difícil.",
+                "ru": "Английский трудный.",
+                "ipa": "el inˈgles es diˈfiθil"
+              },
+              {
+                "es": "**El libro** es interesante.",
+                "ru": "Книга интересная.",
+                "ipa": "el ˈlibɾo es inteɾeˈsante"
+              },
+              {
+                "es": "Mi libro es **más fácil**.",
+                "ru": "Моя книга проще.",
+                "ipa": "mi ˈlibɾo es mas ˈfaθil"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Сравниваем языки",
+            "pattern": [
+              "más",
+              "+",
+              "fácil / difícil",
+              "+",
+              "que"
+            ],
+            "text": "Та же модель; легко и трудно — по вашему мнению.",
+            "examples": [
+              {
+                "es": "El español es **más fácil que** el inglés.",
+                "ru": "Испанский проще английского."
+              },
+              {
+                "es": "El español es **más difícil que** el inglés.",
+                "ru": "Испанский труднее английского."
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Сравниваем с menos",
+            "pattern": [
+              "menos",
+              "+",
+              "прилагательное",
+              "+",
+              "que"
+            ],
+            "text": "Menos — «меньше, менее»; que — «чем».",
+            "examples": [
+              {
+                "es": "Tu libro es **menos interesante que** mi libro.",
+                "ru": "Твоя книга менее интересная, чем моя книга."
+              },
+              {
+                "es": "El inglés es **menos fácil que** el español.",
+                "ru": "Английский менее простой, чем испанский."
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Менее дорогой",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Mi piso es **menos caro**.",
+                "ru": "Моя квартира менее дорогая.",
+                "ipa": "mi ˈpiso es ˈmenos ˈkaɾo"
+              },
+              {
+                "es": "Mi casa es **menos cara**.",
+                "ru": "Мой дом менее дорогой.",
+                "ipa": "mi ˈkasa es ˈmenos ˈkaɾa"
+              },
+              {
+                "es": "Tu libro es **menos difícil**.",
+                "ru": "Твоя книга менее трудная.",
+                "ipa": "tu ˈlibɾo es ˈmenos diˈfiθil"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Сравниваем книги",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "Tu libro es **más interesante**.",
+                "ru": "Твоя книга интереснее.",
+                "ipa": "tu ˈlibɾo es mas inteɾeˈsante"
+              },
+              {
+                "es": "Mi libro es **más difícil**.",
+                "ru": "Моя книга труднее.",
+                "ipa": "mi ˈlibɾo es mas diˈfiθil"
+              },
+              {
+                "es": "Mi libro es **menos interesante**.",
+                "ru": "Моя книга менее интересная.",
+                "ipa": "mi ˈlibɾo es ˈmenos inteɾeˈsante"
+              },
+              {
+                "es": "Tu libro es **menos fácil**.",
+                "ru": "Твоя книга менее простая.",
+                "ipa": "tu ˈlibɾo es ˈmenos ˈfaθil"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-3",
+        "title": "Какой вариант мне нужен",
+        "hint": "Quiero un piso más grande — хочу квартиру побольше",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Хочу вариант побольше",
+            "pattern": [
+              "существительное",
+              "+",
+              "más",
+              "+",
+              "прилагательное"
+            ],
+            "text": "Сравнение после существительного: un piso más grande.",
+            "examples": [
+              {
+                "es": "Quiero un libro **más interesante**.",
+                "ru": "Я хочу книгу поинтереснее."
+              },
+              {
+                "es": "Necesito una casa **más barata**.",
+                "ru": "Мне нужен дом подешевле."
+              },
+              {
+                "es": "Quiero un piso **más barato**.",
+                "ru": "Я хочу квартиру подешевле."
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Хочу или нужно",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Quiero** un piso más grande.",
+                "ru": "Я хочу квартиру побольше.",
+                "ipa": "ˈkjeɾo un ˈpiso mas ˈgɾande"
+              },
+              {
+                "es": "**Necesito** una casa más pequeña.",
+                "ru": "Мне нужен дом поменьше.",
+                "ipa": "neθeˈsito una ˈkasa mas peˈkeɲa"
+              },
+              {
+                "es": "Quiero **comprar** un libro.",
+                "ru": "Я хочу купить книгу.",
+                "ipa": "ˈkjeɾo komˈpɾaɾ un ˈlibɾo"
+              },
+              {
+                "es": "Necesito un libro **más fácil**.",
+                "ru": "Мне нужна книга попроще.",
+                "ipa": "neθeˈsito un ˈlibɾo mas ˈfaθil"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "section-4",
+        "title": "Спрашиваем и выбираем",
+        "hint": "Вопрос, ответ и две мысли с y или pero",
+        "blocks": [
+          {
+            "type": "rule",
+            "title": "Спрашиваем",
+            "pattern": [
+              "¿",
+              "фраза",
+              "?"
+            ],
+            "text": "Слова остаются на месте, меняется интонация.",
+            "examples": [
+              {
+                "es": "¿Tu casa es **más grande**?",
+                "ru": "Твой дом больше?"
+              },
+              {
+                "es": "¿**Quieres** un piso más barato?",
+                "ru": "Ты хочешь квартиру подешевле?"
+              }
+            ]
+          },
+          {
+            "type": "words",
+            "title": "Да, нет или нужно",
+            "headers": {
+              "es": "Испанский",
+              "ru": "Перевод"
+            },
+            "rows": [
+              {
+                "es": "**Sí**, mi piso es más grande.",
+                "ru": "Да, моя квартира больше.",
+                "ipa": "si mi ˈpiso es mas ˈgɾande"
+              },
+              {
+                "es": "**No**, mi casa es más pequeña.",
+                "ru": "Нет, мой дом меньше.",
+                "ipa": "no mi ˈkasa es mas peˈkeɲa"
+              },
+              {
+                "es": "**No quiero** un piso más caro.",
+                "ru": "Я не хочу квартиру подороже.",
+                "ipa": "no ˈkjeɾo un ˈpiso mas ˈkaɾo"
+              },
+              {
+                "es": "¿**Necesitas** un libro más fácil?",
+                "ru": "Тебе нужна книга попроще?",
+                "ipa": "neθeˈsitas un ˈlibɾo mas ˈfaθil"
+              },
+              {
+                "es": "Mi piso **no es** más caro.",
+                "ru": "Моя квартира не дороже.",
+                "ipa": "mi ˈpiso no es mas ˈkaɾo"
+              }
+            ]
+          },
+          {
+            "type": "rule",
+            "title": "Соединяем мысли",
+            "pattern": [
+              "мысль",
+              "+",
+              "y / pero",
+              "+",
+              "мысль"
+            ],
+            "text": "Y — «и», pero — «но»; можно связать и два признака.",
+            "examples": [
+              {
+                "es": "Mi piso es más grande, **pero** es más caro.",
+                "ru": "Моя квартира больше, но она дороже."
+              },
+              {
+                "es": "Quiero una casa **más grande y más barata**.",
+                "ru": "Я хочу дом побольше и подешевле."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tables": [],
+    "dialogues": [
+      {
+        "title": "Квартира побольше",
+        "lines": [
+          {
+            "es": "¿Tu piso es grande?",
+            "ru": "Твоя квартира большая?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "No, mi piso es pequeño.",
+            "ru": "Нет, моя квартира маленькая.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "¿Quieres un piso **más grande**?",
+            "ru": "Ты хочешь квартиру побольше?",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Sí, pero necesito un piso **más barato**.",
+            "ru": "Да, но мне нужна квартира подешевле.",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Mi piso es **más grande que** tu piso.",
+            "ru": "Моя квартира больше твоей квартиры.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "¿Tu piso es **más caro**?",
+            "ru": "Твоя квартира дороже?",
+            "speaker": "Carlos"
+          },
+          {
+            "es": "Sí, es **más caro**.",
+            "ru": "Да, она дороже.",
+            "speaker": "Ana"
+          },
+          {
+            "es": "Quiero un piso **más grande y más barato**.",
+            "ru": "Я хочу квартиру побольше и подешевле.",
+            "speaker": "Carlos"
+          }
+        ]
+      }
+    ],
+    "vocabulary": [
+      {
+        "es": "menos",
+        "ru": "меньше, менее",
+        "pos": "adv",
+        "ipa": "ˈmenos"
+      },
+      {
+        "es": "que",
+        "ru": "чем",
+        "pos": "conj",
+        "ipa": "ke"
+      }
+    ],
+    "outcome": {
+      "title": "Теперь вы умеете",
+      "bullets": [
+        "Сравнивать: más grande que, menos caro que",
+        "Говорить о желаемом варианте: quiero un piso más grande",
+        "Говорить о потребности: necesito un libro más fácil",
+        "Спрашивать и отрицать: ¿es más caro?, no es más caro",
+        "Соединять мысли: y — и, pero — но"
+      ],
+      "next": {
+        "title": "Следующий урок",
+        "text": "Урок 16: числа до 1000 и цены — ¿cuánto cuesta?"
+      }
+    }
+  },
+  "practice": [
+    {
+      "name": "Больше, дешевле, интереснее",
+      "sentenceIds": [
+        "a1-01-s01",
+        "a1-01-s02",
+        "a1-01-s03",
+        "a1-01-s04",
+        "a1-01-s05",
+        "a1-01-s06",
+        "a1-01-s07",
+        "a1-01-s08",
+        "a1-01-s09",
+        "a1-01-s10"
+      ]
+    },
+    {
+      "name": "Менее и без «чем»",
+      "sentenceIds": [
+        "a1-01-s11",
+        "a1-01-s12",
+        "a1-01-s13",
+        "a1-01-s14",
+        "a1-01-s15",
+        "a1-01-s16",
+        "a1-01-s17",
+        "a1-01-s18",
+        "a1-01-s19",
+        "a1-01-s20"
+      ]
+    },
+    {
+      "name": "Всё вместе",
+      "sentenceIds": [
+        "a1-01-s21",
+        "a1-01-s22",
+        "a1-01-s23",
+        "a1-01-s24",
+        "a1-01-s25",
+        "a1-01-s26",
+        "a1-01-s27",
+        "a1-01-s28",
+        "a1-01-s29",
+        "a1-01-s30",
+        "a1-01-s31",
+        "a1-01-s32"
+      ]
+    }
+  ],
+  "extras": {
+    "expressions": [
+      {
+        "es": "¡Mucho mejor!",
+        "ru": "Гораздо лучше! Так намного лучше!",
+        "ipa": "ˈmutʃo meˈxoɾ",
+        "note": "Так реагируют на более подходящий вариант. Mejor — «лучше»: пока запомните выражение целиком. Подробно — в уроке 15 уровня A1, «Сравнения».",
+        "example": {
+          "es": "¿Un libro menos difícil? — ¡Mucho mejor!",
+          "ru": "Книгу попроще? — Так намного лучше!"
+        }
+      },
+      {
+        "es": "¡Ni hablar!",
+        "ru": "Ни за что! Об этом и речи быть не может!",
+        "ipa": "ni aˈblaɾ",
+        "note": "Решительный отказ от предложения. Звучит категорично; для мягкого отказа достаточно no, gracias.",
+        "example": {
+          "es": "¿Quieres un coche más caro? — ¡Ni hablar!",
+          "ru": "Хочешь машину подороже? — Ни за что!"
+        }
+      }
+    ],
+    "exercises": [
+      {
+        "title": "Переведите на испанский",
+        "items": [
+          {
+            "id": "a1-01-s33.translate",
+            "type": "translate",
+            "sentenceId": "a1-01-s33"
+          },
+          {
+            "id": "a1-01-s34.translate",
+            "type": "translate",
+            "sentenceId": "a1-01-s34"
+          },
+          {
+            "id": "a1-01-s35.translate",
+            "type": "translate",
+            "sentenceId": "a1-01-s35"
+          },
+          {
+            "id": "a1-01-s36.translate",
+            "type": "translate",
+            "sentenceId": "a1-01-s36"
+          },
+          {
+            "id": "a1-01-s37.translate",
+            "type": "translate",
+            "sentenceId": "a1-01-s37"
+          },
+          {
+            "id": "a1-01-s38.translate",
+            "type": "translate",
+            "sentenceId": "a1-01-s38"
+          }
+        ]
+      },
+      {
+        "title": "Найдите одну ошибку",
+        "items": [
+          {
+            "id": "a1-01-s39.fix",
+            "type": "fix",
+            "wrong": "Mis padres tiene un perro.",
+            "sentenceId": "a1-01-s39"
+          },
+          {
+            "id": "a1-01-s40.fix",
+            "type": "fix",
+            "wrong": "Nuestro casa está en Madrid.",
+            "sentenceId": "a1-01-s40"
+          },
+          {
+            "id": "a1-01-s41.fix",
+            "type": "fix",
+            "wrong": "Tu ordenador es más caro de mi ordenador.",
+            "sentenceId": "a1-01-s41"
+          },
+          {
+            "id": "a1-01-s42.fix",
+            "type": "fix",
+            "wrong": "Necesito una mesa más barato.",
+            "sentenceId": "a1-01-s42"
+          },
+          {
+            "id": "a1-01-s43.fix",
+            "type": "fix",
+            "wrong": "El museo es menos interesante qué la biblioteca.",
+            "sentenceId": "a1-01-s43"
+          },
+          {
+            "id": "a1-01-s44.fix",
+            "type": "fix",
+            "wrong": "Mis libros son más interesante que tus libros.",
+            "sentenceId": "a1-01-s44"
+          }
+        ]
+      },
+      {
+        "title": "Más, menos или muy? Смотрите на перевод",
+        "items": [
+          {
+            "id": "a1-01-x01",
+            "type": "gap",
+            "text": "Mi hermana está ___ cansada.",
+            "answer": "muy",
+            "options": [
+              "más",
+              "menos",
+              "muy"
+            ],
+            "ru": "Моя сестра очень устала."
+          },
+          {
+            "id": "a1-01-x02",
+            "type": "gap",
+            "text": "Mis padres están ___ contentos.",
+            "answer": "muy",
+            "options": [
+              "más",
+              "menos",
+              "muy"
+            ],
+            "ru": "Мои родители очень довольны."
+          },
+          {
+            "id": "a1-01-x03",
+            "type": "gap",
+            "text": "Quiero un ordenador ___ barato.",
+            "answer": "más",
+            "options": [
+              "más",
+              "menos",
+              "muy"
+            ],
+            "ru": "Я хочу компьютер подешевле."
+          },
+          {
+            "id": "a1-01-x04",
+            "type": "gap",
+            "text": "Su coche es ___ caro que nuestro coche.",
+            "answer": "menos",
+            "options": [
+              "más",
+              "menos",
+              "muy"
+            ],
+            "ru": "Его машина менее дорогая, чем наша машина."
+          },
+          {
+            "id": "a1-01-x05",
+            "type": "gap",
+            "text": "Tu trabajo es ___ interesante que mi trabajo.",
+            "answer": "más",
+            "options": [
+              "más",
+              "menos",
+              "muy"
+            ],
+            "ru": "Твоя работа интереснее моей работы."
+          },
+          {
+            "id": "a1-01-x06",
+            "type": "gap",
+            "text": "Necesitamos un libro ___ difícil.",
+            "answer": "menos",
+            "options": [
+              "más",
+              "menos",
+              "muy"
+            ],
+            "ru": "Нам нужна менее трудная книга."
+          }
+        ]
+      },
+      {
+        "title": "Переведите на русский",
+        "items": [
+          {
+            "id": "a1-01-x07",
+            "type": "read",
+            "es": "Mi hermano tiene veinte años y vive en el centro.",
+            "ru": "Моему брату двадцать лет, и он живёт в центре."
+          },
+          {
+            "id": "a1-01-x08",
+            "type": "read",
+            "es": "En nuestra casa hay tres gatos y solo una silla.",
+            "ru": "В нашем доме три кошки и только один стул."
+          },
+          {
+            "id": "a1-01-x09",
+            "type": "read",
+            "es": "¿Tenéis un perro? — No, tenemos dos gatos.",
+            "ru": "У вас есть собака? — Нет, у нас две кошки."
+          },
+          {
+            "id": "a1-01-x10",
+            "type": "read",
+            "es": "Hoy no puedo estudiar: mis hijos están en casa.",
+            "ru": "Сегодня я не могу заниматься: мои дети дома."
+          },
+          {
+            "id": "a1-01-x11",
+            "type": "read",
+            "es": "Tu coche es menos bonito que mi coche, pero es más barato.",
+            "ru": "Твоя машина менее красивая, чем моя машина, но она дешевле."
+          },
+          {
+            "id": "a1-01-x12",
+            "type": "read",
+            "es": "Necesitamos una casa más pequeña: no queremos limpiar todo el día.",
+            "ru": "Нам нужен дом поменьше: мы не хотим убираться весь день."
+          }
+        ]
+      }
+    ],
+    "story": {
+      "title": "Карлос снова ищет окно",
+      "lines": [
+        {
+          "es": "Mañana corremos los tres. ¿Estás listo, Carlos?",
+          "ru": "Завтра бегаем втроём. Ты готов, Карлос?",
+          "speaker": "Abuela"
+        },
+        {
+          "es": "Estoy cansado. Necesito una cama más grande.",
+          "ru": "Я устал. Мне нужна кровать побольше.",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "¿Más grande que tu cama en Moscú?",
+          "ru": "Больше твоей кровати в Москве?",
+          "speaker": "Ana"
+        },
+        {
+          "es": "Sí. Y quiero un piso menos caro. No tengo mucho dinero.",
+          "ru": "Да. И я хочу менее дорогую квартиру. У меня не очень много денег.",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "Puedes dormir aquí, Carlos. Hay una cama grande.",
+          "ru": "Можешь спать здесь, Карлос. Большая кровать есть.",
+          "speaker": "Abuela"
+        },
+        {
+          "es": "¡Mucho mejor! ¿Y hay una ventana?",
+          "ru": "Так намного лучше! А окно есть?",
+          "speaker": "Carlos"
+        },
+        {
+          "es": "Carlos, ¿por qué necesitas una ventana?",
+          "ru": "Карлос, а зачем тебе окно?",
+          "speaker": "Ana"
+        },
+        {
+          "es": "¡Ni hablar! Mañana corres. La puerta está aquí.",
+          "ru": "Об этом и речи быть не может! Завтра бегаешь. Дверь вот здесь.",
+          "speaker": "Abuela"
+        }
+      ],
+      "questions": [
+        {
+          "question": "¿Qué piso quiere Carlos?",
+          "answer": "Quiere un piso menos caro."
+        },
+        {
+          "question": "¿Dónde puede dormir Carlos?",
+          "answer": "En casa de la abuela."
+        },
+        {
+          "question": "¿Con quién corre Carlos mañana?",
+          "answer": "Con Ana y la abuela."
+        }
+      ]
+    },
+    "phrases": [
+      {
+        "es": "Necesito una cama más grande, no más trabajo.",
+        "ru": "Мне нужна кровать побольше, а не побольше работы."
+      },
+      {
+        "es": "Tu ordenador es más nuevo, pero yo tengo café.",
+        "ru": "Твой компьютер новее, зато у меня есть кофе."
+      },
+      {
+        "es": "¿Un piso más caro? No, gracias. Quiero comer también.",
+        "ru": "Квартира подороже? Нет, спасибо. Я ещё и есть хочу."
+      },
+      {
+        "es": "El libro es menos interesante que mi cama.",
+        "ru": "Книга менее интересная, чем моя кровать."
+      }
+    ],
+    "culture": {
+      "kind": "fact",
+      "title": "Piso: квартира или этаж?",
+      "text": "В Испании piso часто означает «квартира», но этим же словом называют этаж. Поэтому un piso pequeño — «маленькая квартира», а un edificio de tres pisos — «трёхэтажное здание». Для этажа есть и другое слово — planta. Когда выбираете жильё, смотрите на сочетание целиком: piso не всегда относится к отдельной квартире."
+    },
+    "yourTurn": {
+      "task": "Выберите две знакомые вещи одного типа: квартиры, машины, книги или компьютеры. Напишите четыре фразы: сравните их, скажите, какой вариант хотите и какой вам нужен, объясните выбор с y, pero или porque.",
+      "template": [
+        "Mi… es más… que…",
+        "Quiero…",
+        "Necesito…",
+        "No quiero… porque…"
+      ],
+      "model": [
+        {
+          "es": "Mi coche es más pequeño que tu coche.",
+          "ru": "Моя машина меньше твоей машины."
+        },
+        {
+          "es": "Quiero un coche más grande.",
+          "ru": "Я хочу машину побольше."
+        },
+        {
+          "es": "Necesito un coche menos caro que tu coche.",
+          "ru": "Мне нужна машина менее дорогая, чем твоя машина."
+        },
+        {
+          "es": "No quiero un coche más caro porque no tengo mucho dinero.",
+          "ru": "Я не хочу машину подороже, потому что у меня не очень много денег."
+        }
+      ]
+    }
+  },
+  "quiz": [
+    {
+      "id": "a1-01-s21.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s21"
+    },
+    {
+      "id": "a1-01-s22.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s22"
+    },
+    {
+      "id": "a1-01-s23.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s23"
+    },
+    {
+      "id": "a1-01-s24.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s24"
+    },
+    {
+      "id": "a1-01-s25.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s25"
+    },
+    {
+      "id": "a1-01-s26.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s26"
+    },
+    {
+      "id": "a1-01-s27.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s27"
+    },
+    {
+      "id": "a1-01-s30.translate",
+      "type": "translate",
+      "sentenceId": "a1-01-s30"
+    },
+    {
+      "id": "a1-01-s28.order",
+      "type": "order",
+      "sentenceId": "a1-01-s28"
+    },
+    {
+      "id": "a1-01-s29.order",
+      "type": "order",
+      "sentenceId": "a1-01-s29"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a1-01-s01",
+      "ru": "Моя квартира больше твоей квартиры.",
+      "es": [
+        "Mi piso es más grande que tu piso."
+      ]
+    },
+    {
+      "id": "a1-01-s02",
+      "ru": "Твоя квартира дешевле моей квартиры.",
+      "es": [
+        "Tu piso es más barato que mi piso."
+      ]
+    },
+    {
+      "id": "a1-01-s03",
+      "ru": "Мой дом меньше твоего дома.",
+      "es": [
+        "Mi casa es más pequeña que tu casa."
+      ]
+    },
+    {
+      "id": "a1-01-s04",
+      "ru": "Твой дом дороже моего дома.",
+      "es": [
+        "Tu casa es más cara que mi casa."
+      ]
+    },
+    {
+      "id": "a1-01-s05",
+      "ru": "Испанский проще английского.",
+      "es": [
+        "El español es más fácil que el inglés."
+      ]
+    },
+    {
+      "id": "a1-01-s06",
+      "ru": "Английский труднее испанского.",
+      "es": [
+        "El inglés es más difícil que el español."
+      ]
+    },
+    {
+      "id": "a1-01-s07",
+      "ru": "Моя книга интереснее твоей книги.",
+      "es": [
+        "Mi libro es más interesante que tu libro."
+      ]
+    },
+    {
+      "id": "a1-01-s08",
+      "ru": "Твоя книга проще моей книги.",
+      "es": [
+        "Tu libro es más fácil que mi libro."
+      ]
+    },
+    {
+      "id": "a1-01-s09",
+      "ru": "Моя квартира дешевле, но меньше.",
+      "es": [
+        "Mi piso es más barato, pero más pequeño."
+      ]
+    },
+    {
+      "id": "a1-01-s10",
+      "ru": "Твой дом больше, но дороже.",
+      "es": [
+        "Tu casa es más grande, pero más cara."
+      ]
+    },
+    {
+      "id": "a1-01-s11",
+      "ru": "Моя квартира менее дорогая.",
+      "es": [
+        "Mi piso es menos caro."
+      ]
+    },
+    {
+      "id": "a1-01-s12",
+      "ru": "Твой дом менее дорогой, чем мой дом.",
+      "es": [
+        "Tu casa es menos cara que mi casa."
+      ]
+    },
+    {
+      "id": "a1-01-s13",
+      "ru": "Моя книга менее интересная.",
+      "es": [
+        "Mi libro es menos interesante."
+      ]
+    },
+    {
+      "id": "a1-01-s14",
+      "ru": "Твоя книга менее трудная, чем моя книга.",
+      "es": [
+        "Tu libro es menos difícil que mi libro."
+      ]
+    },
+    {
+      "id": "a1-01-s15",
+      "ru": "Я хочу квартиру побольше.",
+      "es": [
+        "Quiero un piso más grande."
+      ]
+    },
+    {
+      "id": "a1-01-s16",
+      "ru": "Мне нужен дом поменьше.",
+      "es": [
+        "Necesito una casa más pequeña."
+      ]
+    },
+    {
+      "id": "a1-01-s17",
+      "ru": "Я хочу книгу попроще.",
+      "es": [
+        "Quiero un libro más fácil."
+      ]
+    },
+    {
+      "id": "a1-01-s18",
+      "ru": "Мне нужна квартира подешевле.",
+      "es": [
+        "Necesito un piso más barato."
+      ]
+    },
+    {
+      "id": "a1-01-s19",
+      "ru": "Я не хочу дом подороже.",
+      "es": [
+        "No quiero una casa más cara."
+      ]
+    },
+    {
+      "id": "a1-01-s20",
+      "ru": "Тебе нужна книга попроще?",
+      "es": [
+        "¿Necesitas un libro más fácil?"
+      ]
+    },
+    {
+      "id": "a1-01-s21",
+      "ru": "Твоя квартира дороже?",
+      "es": [
+        "¿Tu piso es más caro?"
+      ]
+    },
+    {
+      "id": "a1-01-s22",
+      "ru": "Нет, моя квартира дешевле.",
+      "es": [
+        "No, mi piso es más barato."
+      ]
+    },
+    {
+      "id": "a1-01-s23",
+      "ru": "Ты хочешь дом побольше?",
+      "es": [
+        "¿Quieres una casa más grande?"
+      ]
+    },
+    {
+      "id": "a1-01-s24",
+      "ru": "Да, но мне нужен дом подешевле.",
+      "es": [
+        "Sí, pero necesito una casa más barata."
+      ]
+    },
+    {
+      "id": "a1-01-s25",
+      "ru": "Моя квартира меньше, но дешевле.",
+      "es": [
+        "Mi piso es más pequeño, pero más barato."
+      ]
+    },
+    {
+      "id": "a1-01-s26",
+      "ru": "Я хочу квартиру побольше и подешевле.",
+      "es": [
+        "Quiero un piso más grande y más barato."
+      ]
+    },
+    {
+      "id": "a1-01-s27",
+      "ru": "Мне нужна книга поинтереснее.",
+      "es": [
+        "Necesito un libro más interesante."
+      ]
+    },
+    {
+      "id": "a1-01-s28",
+      "ru": "Я хочу купить дом подешевле.",
+      "es": [
+        "Quiero comprar una casa más barata."
+      ]
+    },
+    {
+      "id": "a1-01-s29",
+      "ru": "Тебе нужно купить книгу попроще?",
+      "es": [
+        "¿Necesitas comprar un libro más fácil?"
+      ]
+    },
+    {
+      "id": "a1-01-s30",
+      "ru": "Я не хочу квартиру дороже твоей квартиры.",
+      "es": [
+        "No quiero un piso más caro que tu piso."
+      ]
+    },
+    {
+      "id": "a1-01-s31",
+      "ru": "Мой дом не больше твоего дома.",
+      "es": [
+        "Mi casa no es más grande que tu casa."
+      ]
+    },
+    {
+      "id": "a1-01-s32",
+      "ru": "Твоя квартира дешевле? — Да, но она меньше.",
+      "es": [
+        "¿Tu piso es más barato? — Sí, pero es más pequeño."
+      ]
+    },
+    {
+      "id": "a1-01-s33",
+      "ru": "У нас две кошки и собака.",
+      "es": [
+        "Tenemos dos gatos y un perro."
+      ]
+    },
+    {
+      "id": "a1-01-s34",
+      "ru": "Ваши родители в Мадриде?",
+      "hint": "к нескольким друзьям",
+      "es": [
+        "¿Vuestros padres están en Madrid?",
+        "¿Están vuestros padres en Madrid?"
+      ]
+    },
+    {
+      "id": "a1-01-s35",
+      "ru": "Мой компьютер дешевле твоего компьютера.",
+      "es": [
+        "Mi ordenador es más barato que tu ordenador.",
+        "Mi ordenador es menos caro que tu ordenador."
+      ]
+    },
+    {
+      "id": "a1-01-s36",
+      "ru": "Мне нужна кухня побольше.",
+      "es": [
+        "Necesito una cocina más grande."
+      ]
+    },
+    {
+      "id": "a1-01-s37",
+      "ru": "Я хочу книгу менее трудную, чем твоя книга.",
+      "es": [
+        "Quiero un libro menos difícil que tu libro.",
+        "Quiero un libro más fácil que tu libro."
+      ]
+    },
+    {
+      "id": "a1-01-s38",
+      "ru": "Я не хочу машину подороже, но мне нужна машина побольше.",
+      "es": [
+        "No quiero un coche más caro, pero necesito un coche más grande."
+      ]
+    },
+    {
+      "id": "a1-01-s39",
+      "ru": "У моих родителей есть собака.",
+      "es": [
+        "Mis padres **tienen** un perro."
+      ],
+      "why": "Padres — «они»: tienen."
+    },
+    {
+      "id": "a1-01-s40",
+      "ru": "Наш дом находится в Мадриде.",
+      "es": [
+        "**Nuestra** casa está en Madrid."
+      ],
+      "why": "Casa — женского рода: nuestra."
+    },
+    {
+      "id": "a1-01-s41",
+      "ru": "Твой компьютер дороже моего компьютера.",
+      "es": [
+        "Tu ordenador es más caro **que** mi ordenador."
+      ],
+      "why": "В сравнении «чем» — que."
+    },
+    {
+      "id": "a1-01-s42",
+      "ru": "Мне нужен стол подешевле.",
+      "es": [
+        "Necesito una mesa más **barata**."
+      ],
+      "why": "Mesa — женского рода: barata."
+    },
+    {
+      "id": "a1-01-s43",
+      "ru": "Музей менее интересный, чем библиотека.",
+      "es": [
+        "El museo es menos interesante **que** la biblioteca."
+      ],
+      "why": "Сравнительное que пишется без знака ударения."
+    },
+    {
+      "id": "a1-01-s44",
+      "ru": "Мои книги интереснее твоих книг.",
+      "es": [
+        "Mis libros son más **interesantes** que tus libros."
+      ],
+      "why": "Libros — множественное число: interesantes."
+    }
+  ]
+}

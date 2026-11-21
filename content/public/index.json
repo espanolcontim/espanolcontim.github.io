@@ -366,6 +366,25 @@
         "extras": "paid",
         "quiz": "free"
       }
+    },
+    {
+      "id": "a1-01",
+      "number": 15,
+      "level": "A1",
+      "planLesson": 1,
+      "title": "Проще, дешевле, интереснее: сравниваем по-испански",
+      "grammar": [
+        "сравнение: más / menos + прилагательное + que",
+        "сравнение после существительного: un piso más grande"
+      ],
+      "youtubeUrl": "https://www.youtube.com/watch?v=0IxigeHfq4k",
+      "parts": {
+        "summary": "free",
+        "notes": "free",
+        "practice": "free",
+        "extras": "free",
+        "quiz": "free"
+      }
     }
   ]
 }
