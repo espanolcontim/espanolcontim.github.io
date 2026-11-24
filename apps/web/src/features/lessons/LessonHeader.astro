@@ -19,6 +19,7 @@ interface Props {
 const { meta, channel, section } = Astro.props
 const { repeats } = meta
 const name = lessonName(meta)
+const videoLabel = repeats ? 'Смотреть практику на YouTube' : 'Смотреть урок на YouTube'
 ---
 
 <header class="lesson-header">
@@ -60,7 +61,7 @@ const name = lessonName(meta)
       )}
       <p>
         <a class="button" href={videoLink(meta, channel)}>
-          <span aria-hidden="true">▶</span> Смотреть {repeats ? 'практику' : 'урок'} на YouTube
+          <span aria-hidden="true">▶</span> {meta.youtubeUrl ? videoLabel : 'Канал на YouTube'}
         </a>
       </p>
     </>

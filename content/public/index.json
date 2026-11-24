@@ -385,6 +385,27 @@
         "extras": "free",
         "quiz": "free"
       }
+    },
+    {
+      "id": "a1-02",
+      "number": 16,
+      "level": "A1",
+      "planLesson": 2,
+      "title": "Числа до 1000 и цены",
+      "grammar": [
+        "десятки и единицы с y: treinta y uno",
+        "cien и ciento; сотни до mil",
+        "согласование сотен с существительным: doscientos / doscientas",
+        "uno перед существительным: treinta y un euros, treinta y una preguntas",
+        "годы и чтение номера телефона",
+        "вопрос о цене: ¿cuánto cuesta…? / ¿cuánto cuestan…?"
+      ],
+      "parts": {
+        "summary": "free",
+        "notes": "paid",
+        "practice": "paid",
+        "quiz": "free"
+      }
     }
   ]
 }

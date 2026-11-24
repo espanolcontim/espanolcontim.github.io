@@ -1,0 +1,191 @@
+{
+  "id": "a1-02",
+  "summary": {
+    "phrases": [
+      {
+        "es": "Tengo **treinta y cinco** años.",
+        "ru": "Мне тридцать пять лет.",
+        "ipa": "ˈtengo ˈtɾeinta i ˈθinko ˈaɲos"
+      },
+      {
+        "es": "Tengo **cien** euros.",
+        "ru": "У меня сто евро.",
+        "ipa": "ˈtengo ˈθjen ˈeuɾos"
+      },
+      {
+        "es": "Gano **ciento** veinte euros.",
+        "ru": "Я зарабатываю сто двадцать евро.",
+        "ipa": "ˈgano ˈθjento ˈbeinte ˈeuɾos"
+      },
+      {
+        "es": "Leo **doscientas** palabras.",
+        "ru": "Я читаю двести слов.",
+        "ipa": "ˈle.o dosˈθjentas paˈlabɾas"
+      },
+      {
+        "es": "Es el año **dos mil veintiséis**.",
+        "ru": "Это две тысячи двадцать шестой год.",
+        "ipa": "es el ˈaɲo ˈdos ˈmil beintiˈseis"
+      },
+      {
+        "es": "Las sillas **cuestan** cien euros.",
+        "ru": "Стулья стоят сто евро.",
+        "ipa": "las ˈsijas ˈkwestan ˈθjen ˈeuɾos"
+      },
+      {
+        "es": "Cuesta **mil** euros.",
+        "ru": "Стоит тысячу евро.",
+        "ipa": "ˈkwesta ˈmil ˈeuɾos"
+      }
+    ],
+    "rule": "В числах от 31 до 99 ставим **y** между десятками и единицами. Ровно 100 — **cien**, от 101 до 199 — **ciento** + остаток. О цене одного предмета говорим **cuesta**, о цене нескольких — **cuestan**.",
+    "mistake": {
+      "wrong": {
+        "es": "Tengo cien tres euros."
+      },
+      "right": {
+        "es": "Tengo **ciento tres** euros."
+      }
+    },
+    "practice": [
+      "a1-02-s19",
+      "a1-02-s23",
+      "a1-02-s27",
+      "a1-02-s30"
+    ]
+  },
+  "quiz": [
+    {
+      "id": "a1-02-s19.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s19"
+    },
+    {
+      "id": "a1-02-s20.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s20"
+    },
+    {
+      "id": "a1-02-s21.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s21"
+    },
+    {
+      "id": "a1-02-s22.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s22"
+    },
+    {
+      "id": "a1-02-s23.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s23"
+    },
+    {
+      "id": "a1-02-s24.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s24"
+    },
+    {
+      "id": "a1-02-s25.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s25"
+    },
+    {
+      "id": "a1-02-s28.translate",
+      "type": "translate",
+      "sentenceId": "a1-02-s28"
+    },
+    {
+      "id": "a1-02-s26.order",
+      "type": "order",
+      "sentenceId": "a1-02-s26"
+    },
+    {
+      "id": "a1-02-s27.order",
+      "type": "order",
+      "sentenceId": "a1-02-s27"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "a1-02-s19",
+      "ru": "У меня тридцать один вопрос.",
+      "es": [
+        "Tengo treinta y una preguntas."
+      ]
+    },
+    {
+      "id": "a1-02-s20",
+      "ru": "Я хочу компьютер, но у меня только пятьсот евро.",
+      "es": [
+        "Quiero un ordenador, pero solo tengo quinientos euros."
+      ]
+    },
+    {
+      "id": "a1-02-s21",
+      "ru": "Завтра я собираюсь купить телефон.",
+      "es": [
+        "Mañana voy a comprar un teléfono."
+      ]
+    },
+    {
+      "id": "a1-02-s22",
+      "ru": "Мне нужно больше работать.",
+      "es": [
+        "Necesito trabajar más.",
+        "Tengo que trabajar más."
+      ]
+    },
+    {
+      "id": "a1-02-s23",
+      "ru": "Мне нравится читать, но книга стоит сорок евро.",
+      "es": [
+        "Me gusta leer, pero el libro cuesta cuarenta euros."
+      ]
+    },
+    {
+      "id": "a1-02-s24",
+      "ru": "Мой номер телефона — 600 123 456.",
+      "hint": "назовите по цифрам",
+      "es": [
+        "Mi teléfono es el 600 123 456."
+      ]
+    },
+    {
+      "id": "a1-02-s25",
+      "ru": "Это две тысячи двадцать шестой год.",
+      "es": [
+        "Es el año dos mil veintiséis."
+      ]
+    },
+    {
+      "id": "a1-02-s26",
+      "ru": "Твоя квартира дороже моей квартиры.",
+      "es": [
+        "Tu piso es más caro que mi piso."
+      ]
+    },
+    {
+      "id": "a1-02-s27",
+      "ru": "В нашей библиотеке семьсот книг.",
+      "es": [
+        "Hay setecientos libros en nuestra biblioteca.",
+        "En nuestra biblioteca hay setecientos libros."
+      ]
+    },
+    {
+      "id": "a1-02-s28",
+      "ru": "Нам нужна квартира подешевле, потому что у нас мало денег.",
+      "es": [
+        "Necesitamos un piso más barato porque tenemos poco dinero."
+      ]
+    },
+    {
+      "id": "a1-02-s30",
+      "ru": "Сколько стоят книги? — Сто один евро.",
+      "es": [
+        "¿Cuánto cuestan los libros? — Ciento un euros."
+      ]
+    }
+  ]
+}
